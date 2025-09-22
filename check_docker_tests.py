@@ -33,16 +33,30 @@ def extract_thorns_from_parfile(parfile_path):
     
     return thorns
 
+def create_par_check_directory(docker_container):
+    """Create the par_check directory in the Docker container"""
+    try:
+        result = subprocess.run(
+            ['docker', 'exec', docker_container, 'mkdir', '-p', '/opt/Cactus/par_check'],
+            capture_output=True,
+            text=True,
+            timeout=10
+        )
+        return result.returncode == 0
+    except Exception as e:
+        print(f"Error creating par_check directory: {e}")
+        return False
+
 def check_thorns_with_docker(docker_container, parfile_path):
     """Use Docker to run Cactus and check parameter file"""
     missing_thorns = set()
     
     try:
-        # Run cactus with -P flag inside docker container
+        # Run cactus with -P flag inside docker container from par_check directory
         docker_parfile_path = f"/opt/Cactus/{parfile_path}"
         
         result = subprocess.run(
-            ['docker', 'exec', docker_container, '/opt/Cactus/exe/cactus_sim', '-P', docker_parfile_path],
+            ['docker', 'exec', '-w', '/opt/Cactus/par_check', docker_container, '/opt/Cactus/exe/cactus_sim', '-P', docker_parfile_path],
             capture_output=True,
             text=True,
             timeout=30
@@ -89,6 +103,13 @@ def check_docker_tests(docker_container, test_list_file, cactus_base_dir):
     except Exception as e:
         print(f"Error checking Docker container: {e}")
         return False
+    
+    # Create par_check directory in the container
+    print(f"Creating /opt/Cactus/par_check directory in container...")
+    if not create_par_check_directory(docker_container):
+        print("Warning: Failed to create par_check directory")
+    else:
+        print("Successfully created par_check directory")
     
     print(f"Checking tests for missing thorns using Docker container: {docker_container}")
     print(f"Reading tests from {test_list_file}")

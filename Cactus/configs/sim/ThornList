@@ -319,6 +319,7 @@ EinsteinAnalysis/Outflow
 EinsteinAnalysis/PunctureTracker
 EinsteinAnalysis/QuasiLocalMeasures
 EinsteinAnalysis/WeylScal4
+EinsteinAnalysis/ADMConstraints
 
 # EinsteinBase
 !TARGET   = $ARR
