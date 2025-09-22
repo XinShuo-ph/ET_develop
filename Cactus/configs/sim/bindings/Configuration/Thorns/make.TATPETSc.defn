@@ -1,0 +1,2 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.PETSC.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.TATELLIPTIC.defn

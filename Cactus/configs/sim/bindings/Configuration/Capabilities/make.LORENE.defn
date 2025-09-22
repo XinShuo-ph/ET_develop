@@ -1,0 +1,14 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.BLAS.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.GSL.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.LAPACK.defn
+INC_DIRS +=  $(LORENE_INC_DIRS)
+INC_DIRS_F +=  $(LORENE_INC_DIRS)
+LORENE_BUILD          = 1
+LORENE_EXTRA_LIB_DIRS = 
+LORENE_EXTRA_LIBS     = 
+LORENE_INSTALL_DIR    = 
+LORENE_DIR      = /opt/Cactus/configs/sim/scratch/external/LORENE
+LORENE_INC_DIRS = /opt/Cactus/configs/sim/scratch/external/LORENE/Export/C++/Include /opt/Cactus/configs/sim/scratch/external/LORENE/C++/Include 
+LORENE_LIB_DIRS = /opt/Cactus/configs/sim/scratch/external/LORENE/Lib 
+LORENE_LIBS     = lorene_export lorene lorenef77 
+HAVE_CAPABILITY_LORENE = 1

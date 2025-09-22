@@ -1,0 +1,167 @@
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+extern struct
+{
+  CCTK_REAL offset;
+  CCTK_REAL xorig;
+  CCTK_REAL yorig;
+  CCTK_REAL zorig;
+  CCTK_INT WeylScal4_MaxNumArrayEvolvedVars;
+  CCTK_INT WeylScal4_MaxNumEvolvedVars;
+  CCTK_INT WeylScal4_invars_calc_2nd_calc_every;
+  CCTK_INT WeylScal4_invars_calc_2nd_calc_offset;
+  CCTK_INT WeylScal4_invars_calc_4th_calc_every;
+  CCTK_INT WeylScal4_invars_calc_4th_calc_offset;
+  CCTK_INT WeylScal4_invars_calc_Nth_calc_every;
+  CCTK_INT WeylScal4_invars_calc_Nth_calc_offset;
+  CCTK_INT WeylScal4_psi4_calc_2nd_calc_every;
+  CCTK_INT WeylScal4_psi4_calc_2nd_calc_offset;
+  CCTK_INT WeylScal4_psi4_calc_4th_calc_every;
+  CCTK_INT WeylScal4_psi4_calc_4th_calc_offset;
+  CCTK_INT WeylScal4_psi4_calc_Nth_calc_every;
+  CCTK_INT WeylScal4_psi4_calc_Nth_calc_offset;
+  CCTK_INT WeylScal4_psis_calc_2nd_calc_every;
+  CCTK_INT WeylScal4_psis_calc_2nd_calc_offset;
+  CCTK_INT WeylScal4_psis_calc_4th_calc_every;
+  CCTK_INT WeylScal4_psis_calc_4th_calc_offset;
+  CCTK_INT WeylScal4_psis_calc_Nth_calc_every;
+  CCTK_INT WeylScal4_psis_calc_Nth_calc_offset;
+  CCTK_INT fdOrder;
+  CCTK_INT other_timelevels;
+  CCTK_INT rhs_timelevels;
+  CCTK_INT tile_size;
+  CCTK_INT timelevels;
+  CCTK_INT verbose;
+} RESTRICTED_WEYLSCAL4_STRUCT;
+
+#ifdef __cplusplus
+}
+#endif
+
+#define DECLARE_RESTRICTED_WEYLSCAL4_STRUCT_PARAMS \
+  CCTK_DECLARE_INIT (CCTK_REAL const, offset, CCTK_PARAMETER__WEYLSCAL4__offset); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, xorig, CCTK_PARAMETER__WEYLSCAL4__xorig); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, yorig, CCTK_PARAMETER__WEYLSCAL4__yorig); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, zorig, CCTK_PARAMETER__WEYLSCAL4__zorig); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_MaxNumArrayEvolvedVars, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_MaxNumArrayEvolvedVars); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_MaxNumEvolvedVars, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_MaxNumEvolvedVars); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_invars_calc_2nd_calc_every, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_2nd_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_invars_calc_2nd_calc_offset, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_2nd_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_invars_calc_4th_calc_every, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_4th_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_invars_calc_4th_calc_offset, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_4th_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_invars_calc_Nth_calc_every, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_Nth_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_invars_calc_Nth_calc_offset, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_Nth_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_psi4_calc_2nd_calc_every, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_2nd_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_psi4_calc_2nd_calc_offset, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_2nd_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_psi4_calc_4th_calc_every, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_4th_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_psi4_calc_4th_calc_offset, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_4th_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_psi4_calc_Nth_calc_every, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_Nth_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_psi4_calc_Nth_calc_offset, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_Nth_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_psis_calc_2nd_calc_every, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_2nd_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_psis_calc_2nd_calc_offset, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_2nd_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_psis_calc_4th_calc_every, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_4th_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_psis_calc_4th_calc_offset, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_4th_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_psis_calc_Nth_calc_every, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_Nth_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, WeylScal4_psis_calc_Nth_calc_offset, CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_Nth_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, fdOrder, CCTK_PARAMETER__WEYLSCAL4__fdOrder); \
+  CCTK_DECLARE_INIT (CCTK_INT const, other_timelevels, CCTK_PARAMETER__WEYLSCAL4__other_timelevels); \
+  CCTK_DECLARE_INIT (CCTK_INT const, rhs_timelevels, CCTK_PARAMETER__WEYLSCAL4__rhs_timelevels); \
+  CCTK_DECLARE_INIT (CCTK_INT const, tile_size, CCTK_PARAMETER__WEYLSCAL4__tile_size); \
+  CCTK_DECLARE_INIT (CCTK_INT const, timelevels, CCTK_PARAMETER__WEYLSCAL4__timelevels); \
+  CCTK_DECLARE_INIT (CCTK_INT const, verbose, CCTK_PARAMETER__WEYLSCAL4__verbose); \
+
+
+#ifndef CCTK_PARAMETER__WEYLSCAL4__offset
+#  define CCTK_PARAMETER__WEYLSCAL4__offset RESTRICTED_WEYLSCAL4_STRUCT.offset
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__xorig
+#  define CCTK_PARAMETER__WEYLSCAL4__xorig RESTRICTED_WEYLSCAL4_STRUCT.xorig
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__yorig
+#  define CCTK_PARAMETER__WEYLSCAL4__yorig RESTRICTED_WEYLSCAL4_STRUCT.yorig
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__zorig
+#  define CCTK_PARAMETER__WEYLSCAL4__zorig RESTRICTED_WEYLSCAL4_STRUCT.zorig
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_MaxNumArrayEvolvedVars
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_MaxNumArrayEvolvedVars RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_MaxNumArrayEvolvedVars
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_MaxNumEvolvedVars
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_MaxNumEvolvedVars RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_MaxNumEvolvedVars
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_2nd_calc_every
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_2nd_calc_every RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_invars_calc_2nd_calc_every
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_2nd_calc_offset
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_2nd_calc_offset RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_invars_calc_2nd_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_4th_calc_every
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_4th_calc_every RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_invars_calc_4th_calc_every
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_4th_calc_offset
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_4th_calc_offset RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_invars_calc_4th_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_Nth_calc_every
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_Nth_calc_every RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_invars_calc_Nth_calc_every
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_Nth_calc_offset
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_invars_calc_Nth_calc_offset RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_invars_calc_Nth_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_2nd_calc_every
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_2nd_calc_every RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_psi4_calc_2nd_calc_every
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_2nd_calc_offset
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_2nd_calc_offset RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_psi4_calc_2nd_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_4th_calc_every
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_4th_calc_every RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_psi4_calc_4th_calc_every
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_4th_calc_offset
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_4th_calc_offset RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_psi4_calc_4th_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_Nth_calc_every
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_Nth_calc_every RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_psi4_calc_Nth_calc_every
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_Nth_calc_offset
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psi4_calc_Nth_calc_offset RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_psi4_calc_Nth_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_2nd_calc_every
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_2nd_calc_every RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_psis_calc_2nd_calc_every
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_2nd_calc_offset
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_2nd_calc_offset RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_psis_calc_2nd_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_4th_calc_every
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_4th_calc_every RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_psis_calc_4th_calc_every
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_4th_calc_offset
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_4th_calc_offset RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_psis_calc_4th_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_Nth_calc_every
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_Nth_calc_every RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_psis_calc_Nth_calc_every
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_Nth_calc_offset
+#  define CCTK_PARAMETER__WEYLSCAL4__WeylScal4_psis_calc_Nth_calc_offset RESTRICTED_WEYLSCAL4_STRUCT.WeylScal4_psis_calc_Nth_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__fdOrder
+#  define CCTK_PARAMETER__WEYLSCAL4__fdOrder RESTRICTED_WEYLSCAL4_STRUCT.fdOrder
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__other_timelevels
+#  define CCTK_PARAMETER__WEYLSCAL4__other_timelevels RESTRICTED_WEYLSCAL4_STRUCT.other_timelevels
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__rhs_timelevels
+#  define CCTK_PARAMETER__WEYLSCAL4__rhs_timelevels RESTRICTED_WEYLSCAL4_STRUCT.rhs_timelevels
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__tile_size
+#  define CCTK_PARAMETER__WEYLSCAL4__tile_size RESTRICTED_WEYLSCAL4_STRUCT.tile_size
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__timelevels
+#  define CCTK_PARAMETER__WEYLSCAL4__timelevels RESTRICTED_WEYLSCAL4_STRUCT.timelevels
+#endif
+#ifndef CCTK_PARAMETER__WEYLSCAL4__verbose
+#  define CCTK_PARAMETER__WEYLSCAL4__verbose RESTRICTED_WEYLSCAL4_STRUCT.verbose
+#endif
+

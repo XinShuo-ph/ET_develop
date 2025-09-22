@@ -1,0 +1,52 @@
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+extern struct
+{
+  CCTK_REAL max_walltime;
+  CCTK_REAL on_remaining_walltime;
+  CCTK_REAL output_remtime_every_minutes;
+  const char * termination_file;
+  CCTK_INT check_file_every;
+  CCTK_INT create_termination_file;
+  CCTK_INT termination_from_file;
+} PRIVATE_TERMINATIONTRIGGER_STRUCT;
+
+#ifdef __cplusplus
+}
+#endif
+
+#define DECLARE_PRIVATE_TERMINATIONTRIGGER_STRUCT_PARAMS \
+  CCTK_DECLARE_INIT (CCTK_REAL const, max_walltime, CCTK_PARAMETER__TERMINATIONTRIGGER__max_walltime); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, on_remaining_walltime, CCTK_PARAMETER__TERMINATIONTRIGGER__on_remaining_walltime); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, output_remtime_every_minutes, CCTK_PARAMETER__TERMINATIONTRIGGER__output_remtime_every_minutes); \
+  CCTK_DECLARE_INIT (const char * const, termination_file, CCTK_PARAMETER__TERMINATIONTRIGGER__termination_file); \
+  CCTK_DECLARE_INIT (CCTK_INT const, check_file_every, CCTK_PARAMETER__TERMINATIONTRIGGER__check_file_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, create_termination_file, CCTK_PARAMETER__TERMINATIONTRIGGER__create_termination_file); \
+  CCTK_DECLARE_INIT (CCTK_INT const, termination_from_file, CCTK_PARAMETER__TERMINATIONTRIGGER__termination_from_file); \
+
+
+#ifndef CCTK_PARAMETER__TERMINATIONTRIGGER__max_walltime
+#  define CCTK_PARAMETER__TERMINATIONTRIGGER__max_walltime PRIVATE_TERMINATIONTRIGGER_STRUCT.max_walltime
+#endif
+#ifndef CCTK_PARAMETER__TERMINATIONTRIGGER__on_remaining_walltime
+#  define CCTK_PARAMETER__TERMINATIONTRIGGER__on_remaining_walltime PRIVATE_TERMINATIONTRIGGER_STRUCT.on_remaining_walltime
+#endif
+#ifndef CCTK_PARAMETER__TERMINATIONTRIGGER__output_remtime_every_minutes
+#  define CCTK_PARAMETER__TERMINATIONTRIGGER__output_remtime_every_minutes PRIVATE_TERMINATIONTRIGGER_STRUCT.output_remtime_every_minutes
+#endif
+#ifndef CCTK_PARAMETER__TERMINATIONTRIGGER__termination_file
+#  define CCTK_PARAMETER__TERMINATIONTRIGGER__termination_file PRIVATE_TERMINATIONTRIGGER_STRUCT.termination_file
+#endif
+#ifndef CCTK_PARAMETER__TERMINATIONTRIGGER__check_file_every
+#  define CCTK_PARAMETER__TERMINATIONTRIGGER__check_file_every PRIVATE_TERMINATIONTRIGGER_STRUCT.check_file_every
+#endif
+#ifndef CCTK_PARAMETER__TERMINATIONTRIGGER__create_termination_file
+#  define CCTK_PARAMETER__TERMINATIONTRIGGER__create_termination_file PRIVATE_TERMINATIONTRIGGER_STRUCT.create_termination_file
+#endif
+#ifndef CCTK_PARAMETER__TERMINATIONTRIGGER__termination_from_file
+#  define CCTK_PARAMETER__TERMINATIONTRIGGER__termination_from_file PRIVATE_TERMINATIONTRIGGER_STRUCT.termination_from_file
+#endif
+

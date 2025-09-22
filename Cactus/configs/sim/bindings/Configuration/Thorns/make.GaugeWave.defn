@@ -1,0 +1,2 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.GENERICFD.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.LOOPCONTROL.defn

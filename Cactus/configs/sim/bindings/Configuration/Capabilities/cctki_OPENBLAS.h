@@ -1,0 +1,2 @@
+#define CCTK_BLAS_INT8 0
+#define HAVE_CAPABILITY_OpenBLAS 1

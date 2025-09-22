@@ -1,0 +1,909 @@
+{
+  "total_reanalyzed": 225,
+  "now_passing": [
+    {
+      "test": "CactusExamples/SampleBoundary/test/wavetoyc",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusExamples/WaveMoL/test/gaussian",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusNumerical/InterpToArray/test/wavetoy",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestArrays/test/arrays",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestComplex/test/TestComplexPow",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestComplex/test/TestComplex",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestFpointerNULL/test/test_fpointer_null",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestGlobalReduce/test/TestWeightMax",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestGlobalReduce/test/TestMin",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestGlobalReduce/test/TestMin_dest0",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestGlobalReduce/test/TestWeightSum",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestGlobalReduce/test/TestAvg_dest0",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestGlobalReduce/test/TestScalar",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestGlobalReduce/test/TestSum_dest0",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestGlobalReduce/test/TestWeightMin",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestGlobalReduce/test/TestMax_dest0",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestGlobalReduce/test/TestWeightAvg",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestMoL/test/RK87",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestMoL/test/RK45",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestMoL/test/RK4-MR-2-1",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestMoL/test/ICN-avg",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestMoL/test/RK2-central",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestMoL/test/RK4-RK2",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestMoL/test/RK4",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestMoL/test/RK2",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestMoL/test/RK3",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestMoL/test/RK65",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestMoL/test/RK2-MR-2-1",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestMoL/test/RK45CK",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestMoL/test/ICN",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusTest/TestPar/test/expressions",
+      "message": "Directories match within tolerance"
+    },
+    {
+      "test": "CactusWave/WaveToyC/test/wave_output",
+      "message": "Directories match within tolerance"
+    }
+  ],
+  "still_failing": [
+    {
+      "test": "CactusExamples/Poisson/test/charge_tatelliptic_petsc",
+      "message": "Files only in test_outputs_host/charge_tatelliptic_petsc: [PosixPath('charge_tatelliptic_petsc.par')]\nFile poisson-residual.d.asc:\nLine 25: '0\t15 15 15\t0\t-2.5 -2.5 -2.5\t-4.21651602522388e-12' != '0\t15 15 15\t0\t-2.5 -2.5 -2.5\t-4.21462864608202e-12'\nLine 26: '0\t16 16 16\t0\t-2 -2 -2\t-4.29678514990428e-12' != '0\t16 16 16\t0\t-2 -2 -2\t-4.29989377437323e-12'\nLine 27: '0\t17 17 17\t0\t-1.5 -1.5 -1.5\t-5.67390578964933e-12' != '0\t17 17 17\t0\t-1.5 -1.5 -1.5\t-5.67257352201977e-12'\nLine 28: '0\t18 18 18\t0\t-1 -1 -1\t-..."
+    },
+    {
+      "test": "CactusExamples/WaveToy1DF77/test/wavetoy1df77",
+      "message": "Files only in test_outputs_host/wavetoy1df77: [PosixPath('wavetoy1df77.par')]"
+    },
+    {
+      "test": "CactusExamples/WaveToy2DF77/test/test_WaveToy2D",
+      "message": "Files only in test_outputs_host/test_WaveToy2D: [PosixPath('test_WaveToy2D.par')]"
+    },
+    {
+      "test": "CactusNumerical/Dissipation/test/test_ah",
+      "message": "File BH_diagnostics.ah1.gp:\nLine 43: '0\t0.000\t-0.000000\t-0.000000\t-0.000000\t1.033947203\t1.046961033\t1.037045542\t0.3590887261\t-1.339984289e-17\t2.966196515e-17\t0.3590887261\t1.494766148e-16\t0.3572919128\t-1.038449752\t1.038449752\t-1.038449752\t1.038449752\t-1.046961033\t1.046961033\t21.97889745\t25.05235532\t25.05235532\t1.139836763\t1.139836763\t185.5037091\t1.921061954\t3.842123909\t1.904755209e-15\t-1.904755209e-15\t-1.156123436e-27\t1.904755209e-15\t0.000000000\t0.000000000\t0.000000000\t0.000000000\t0.000000000\t-1...."
+    },
+    {
+      "test": "CactusNumerical/InterpToArray/test/wavetoy2",
+      "message": "File parrays3d[0].z.asc:\nDifferent number of lines: 8 vs 9"
+    },
+    {
+      "test": "CactusNumerical/TestLocalInterp2/test/test_local_interp_2",
+      "message": "Files only in test_outputs_host/test_local_interp_2: [PosixPath('symmetry.xg')]"
+    },
+    {
+      "test": "CactusNumerical/TestLocalReduce/test/TestAvg",
+      "message": "Files only in test_outputs_host/TestAvg: [PosixPath('TestAvg/int_avg_3D.xg'), PosixPath('TestAvg/real_avg_3D.xg')]"
+    },
+    {
+      "test": "CactusNumerical/TestLocalReduce/test/TestMax",
+      "message": "Files only in test_outputs_host/TestMax: [PosixPath('TestMax/int_max_3D.xg'), PosixPath('TestMax/real_max_3D.xg')]"
+    },
+    {
+      "test": "CactusNumerical/TestLocalReduce/test/TestSum",
+      "message": "Files only in test_outputs_host/TestSum: [PosixPath('TestSum/int_sum_3D.xg'), PosixPath('TestSum/real_sum_3D.xg')]"
+    },
+    {
+      "test": "CactusTest/TestGlobalReduce/test/gaussianSum_dest0",
+      "message": "File gf_sum.xg:\nLine 2: '0.0000000000000\t1.5000000000000' != '0.0000000000000\t1.4999999515547'"
+    },
+    {
+      "test": "CactusTest/TestGlobalReduce/test/gaussianMax",
+      "message": "File gf_max.xg:\nLine 2: '0.0000000000000\t0.7619139215916' != '0.0000000000000 0.7619139215916'"
+    },
+    {
+      "test": "CactusTest/TestGlobalReduce/test/gaussianSum",
+      "message": "File gf_sum.xg:\nLine 2: '0.0000000000000\t1.5000000000000' != '0.0000000000000\t1.5000000826204'"
+    },
+    {
+      "test": "CactusTest/TestGlobalReduce/test/TestAvg",
+      "message": "Files only in test_outputs_host/TestAvg: [PosixPath('TestAvg/int_avg_3D.xg'), PosixPath('TestAvg/real_avg_3D.xg'), PosixPath('int_avg_1D.xg'), PosixPath('int_avg_2D.xg'), PosixPath('real_avg_1D.xg'), PosixPath('real_avg_2D.xg')]\nFile int_avg_3D.xg:\nLine 2: '0.0000000000000\t91' != '0.0000000000000\t857'\nFile real_avg_3D.xg:\nLine 2: '0.0000000000000\t41.2500000000000' != '0.0000000000000\t614.1250000000000'"
+    },
+    {
+      "test": "CactusTest/TestGlobalReduce/test/TestMax",
+      "message": "Files only in test_outputs_host/TestMax: [PosixPath('TestMax/int_max_3D.xg'), PosixPath('TestMax/real_max_3D.xg'), PosixPath('int_max_1D.xg'), PosixPath('int_max_2D.xg'), PosixPath('real_max_1D.xg'), PosixPath('real_max_2D.xg')]\nFile int_max_3D.xg:\nLine 2: '0.0000000000000\t330' != '0.0000000000000\t4913'\nFile real_max_3D.xg:\nLine 2: '0.0000000000000\t200.0000000000000' != '0.0000000000000\t4096.0000000000000'"
+    },
+    {
+      "test": "CactusTest/TestGlobalReduce/test/gaussianMax_dest0",
+      "message": "File gf_max.xg:\nLine 2: '0.0000000000000\t0.7619139215916' != '0.0000000000000 0.7619139215916'"
+    },
+    {
+      "test": "CactusTest/TestGlobalReduce/test/TestSum",
+      "message": "Files only in test_outputs_host/TestSum: [PosixPath('TestSum/int_sum_3D.xg'), PosixPath('TestSum/real_sum_3D.xg'), PosixPath('int_sum_1D.xg'), PosixPath('int_sum_2D.xg'), PosixPath('real_sum_1D.xg'), PosixPath('real_sum_2D.xg')]\nFile int_sum_3D.xg:\nLine 2: '0.0000000000000\t18200' != '0.0000000000000\t3511808'\nFile real_sum_3D.xg:\nLine 2: '0.0000000000000\t8250.0000000000000' != '0.0000000000000\t2515456.0000000000000'"
+    },
+    {
+      "test": "CactusUtils/Trigger/test/trigger",
+      "message": "Files only in test_outputs_host/trigger: [PosixPath('trigger.par')]"
+    },
+    {
+      "test": "CactusUtils/Vectors/test/vectors",
+      "message": "Files only in test_outputs_host/vectors: [PosixPath('vectors.par')]"
+    },
+    {
+      "test": "CactusWave/IDScalarWaveElliptic/test/test_waveell",
+      "message": "File phi_nm1.tl:\nLine 2: '0.0000000000000\t0.1867765566287' != '0.0000000000000\t0.1867765534911'\nLine 3: '0.3000000000000\t0.1861610732706' != '0.3000000000000\t0.1861610730267'\nLine 4: '0.6000000000000\t0.1847231649349' != '0.6000000000000\t0.1847231649143'\nFile phi_nm2.tl:\nLine 2: '0.0000000000000\t0.1910204854850' != '0.0000000000000\t0.1910204828174'\nLine 3: '0.3000000000000\t0.1903119931562' != '0.3000000000000\t0.1903119929423'"
+    },
+    {
+      "test": "CactusWave/WaveBinarySource/test/test_binary_1",
+      "message": "Files only in test_outputs_host/test_binary_1: [PosixPath('test_binary_1.par')]"
+    },
+    {
+      "test": "CactusWave/WaveToyC/test/test_rad",
+      "message": "Files only in test_outputs_host/test_rad: [PosixPath('test_rad/phi.xl'), PosixPath('test_rad/phi_max.tl'), PosixPath('test_rad/phi_min.tl'), PosixPath('test_rad/phi_nm1.tl'), PosixPath('test_rad/phi_nm2.tl'), PosixPath('test_rad/phi_norm_inf.tl'), PosixPath('test_rad/test_rad.par'), PosixPath('test_rad.par')]"
+    },
+    {
+      "test": "CactusWave/WaveToyCXX/test/test_rad",
+      "message": "Files only in test_outputs_host/test_rad: [PosixPath('test_rad/phi.xl'), PosixPath('test_rad/phi_max.tl'), PosixPath('test_rad/phi_min.tl'), PosixPath('test_rad/phi_nm1.tl'), PosixPath('test_rad/phi_nm2.tl'), PosixPath('test_rad/phi_norm_inf.tl'), PosixPath('test_rad/test_rad.par'), PosixPath('test_rad.par')]"
+    },
+    {
+      "test": "CactusWave/WaveToyExtra/test/test_custom",
+      "message": "Files only in test_outputs_host/test_custom: [PosixPath('test_custom.par')]"
+    },
+    {
+      "test": "CactusWave/WaveToyF77/test/test_rob",
+      "message": "Files only in test_outputs_host/test_rob: [PosixPath('test_rob.par')]"
+    },
+    {
+      "test": "CactusWave/WaveToyF77/test/test_rad",
+      "message": "Files only in test_outputs_host/test_rad: [PosixPath('test_rad/phi.xl'), PosixPath('test_rad/phi_max.tl'), PosixPath('test_rad/phi_min.tl'), PosixPath('test_rad/phi_nm1.tl'), PosixPath('test_rad/phi_nm2.tl'), PosixPath('test_rad/phi_norm_inf.tl'), PosixPath('test_rad/test_rad.par'), PosixPath('test_rad.par')]"
+    },
+    {
+      "test": "CactusWave/WaveToyF90/test/test_wavef90_zero",
+      "message": "Files only in test_outputs_host/test_wavef90_zero: [PosixPath('test_wavef90_zero.par')]"
+    },
+    {
+      "test": "CactusWave/WaveToyF90/test/test_rad",
+      "message": "Files only in test_outputs_host/test_rad: [PosixPath('test_rad/phi.xl'), PosixPath('test_rad/phi_max.tl'), PosixPath('test_rad/phi_min.tl'), PosixPath('test_rad/phi_nm1.tl'), PosixPath('test_rad/phi_nm2.tl'), PosixPath('test_rad/phi_norm_inf.tl'), PosixPath('test_rad/test_rad.par'), PosixPath('test_rad.par')]"
+    },
+    {
+      "test": "CactusWave/WaveToyF90/test/test_wavef90_flat",
+      "message": "Files only in test_outputs_host/test_wavef90_flat: [PosixPath('test_wavef90_flat.par')]"
+    },
+    {
+      "test": "CactusWave/WaveToyFreeF90/test/test_rad",
+      "message": "Files only in test_outputs_host/test_rad: [PosixPath('test_rad/phi.xl'), PosixPath('test_rad/phi_max.tl'), PosixPath('test_rad/phi_min.tl'), PosixPath('test_rad/phi_nm1.tl'), PosixPath('test_rad/phi_nm2.tl'), PosixPath('test_rad/phi_norm_inf.tl'), PosixPath('test_rad/test_rad.par'), PosixPath('test_rad.par')]"
+    }
+  ],
+  "analysis_errors": [
+    {
+      "test": "EinsteinAnalysis/AHFinder/test/test_AHF_2",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-180-EE",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-inner-expansion",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-inner-expansion-EE",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-product",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/checkpointML-EE",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-modification-radius-EE",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-Cartoon-EE",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-Cartoon",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius-definition-expansion-product-EE",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius-EE",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-EE",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-mean-curvature",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-modification-radius",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-90-EE",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-90",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-180",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-product-EE",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/misner1.2-025",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-EE",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-mean-coordinate-radius",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-mean-coordinate-radius-EE",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-mean-curvature-EE",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/Extract/test/qc0-mclachlan",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/Multipole/test/test_rads",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/Multipole/test/test_trapezoidal",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/Multipole/test/test_44",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/Multipole/test/test_22",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/Multipole/test/test_driscollhealy",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/Multipole/test/test_simpson",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/Multipole/test/test_31",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/Multipole/test/test_vars",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/Outflow/test/moving_tov",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-minkowski",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-shifted",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-EE",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-bl",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-boosted",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-tilted",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/WeylScal4/test/teukolskyID",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/WeylScal4/test/teukolskyParity",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinAnalysis/WeylScal4/test/teukolsky",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/cylexp_tvd_mc2_hlle",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara2_1d",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara5_2d",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/test_tov_carpet_refined_nosync",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/GRHydro_test_shock_mp5",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara4_1d",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara1_2d",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/cylexp_tvd_mc2_hlle_dc",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/GRHydro_test_shock_weno",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara3_2d",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara3_1d",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/GRHydro_test_shock",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara1_1d_dc",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara4_2d",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara1_1d",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara1_2d_dc",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/tov_carpetevolutionmask",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara5_1d",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/GRHydro_test_shock_ppm",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro_InitData/test/magtov_poloidal",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/DistortedBHIVP/test/test_dbh",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/DistortedBHIVP/test/E2xeon_test_dbh",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/Exact/test/bowl-init",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/Hydro_InitExcision/test/diag_pugh_eno",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/Hydro_InitExcision/test/x_flip_pugh_eno",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/Hydro_InitExcision/test/sphere_pugh_ppm",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/Hydro_InitExcision/test/x_pugh_eno",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/Hydro_InitExcision/test/diag_flip_pugh_eno",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/IDAnalyticBH/test/test_misner",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/IDAnalyticBH/test/kerr",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/IDAnalyticBH/test/test_bl",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/IDAxiBrillBH/test/test_axibrill_nostagger",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/IDAxiBrillBH/test/test_axibrill",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/IDAxiOddBrillBH/test/test_axioddbh",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/IDAxiOddBrillBH/test/E2xeon_test_axioddbh",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/IDLinearWaves/test/test_pw_ADM_dir-z",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/RotatingDBHIVP/test/E2xeon_test_rdbh",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/RotatingDBHIVP/test/test_rdbh",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinInitialData/TwoPunctures/test/bhns_interp",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/Carpet/test/no-overlap",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/Carpet/test/64k2",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/Carpet/test/kasner_amr",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/Carpet/test/test_restrict_sync",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/Carpet/test/kasner",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetEvolutionMask/test/CarpetEvolutionMask_test",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetEvolutionMask/test/CarpetEvolutionMask_test_off",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetEvolutionMask/test/buffer_mask",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetIOASCII/test/grid-coords",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetIOASCII/test/newsep",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetIOASCII/test/compact",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetIOASCII/test/coords",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetIOHDF5/test/nobuffers",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetIOScalar/test/coords3",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetIOScalar/test/coords2",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetIOScalar/test/newsep",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetIOScalar/test/coords",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetIntegrateTest/test/carpetintegrate",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetIntegrateTest/test/carpetintegrate-linear",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetInterp/test/waveinterp-2p",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetInterp/test/waveinterp-1p",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_o3",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_o1",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_horest_o3",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_o5",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_o7",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_horest_o5",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_o4",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_o5",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_interp",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_o1",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_tvd_hi",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_o0",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_o2",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_o3",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_tvd",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_tvd_z",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_tvd_y",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_o11",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_tvd_x",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o3",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o2",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o0",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o1",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_o9",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o5",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o4",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetReduce/test/periodic_weight",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetReduce/test/nonstaggered_excl",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetReduce/test/nonstaggered",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetReduce/test/staggered",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetRegrid2/test/regrid2_granularity",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetRegrid2/test/regrid2_2cen",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/CarpetRegrid2/test/regrid2_2D",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/LoopControl/test/test-minkowski-carpet-1lev",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/PeriodicCarpet/test/testperiodicinterp",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/PeriodicCarpet/test/ml-gw1d-small",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "Carpet/PeriodicCarpet/test/ml-gw1d-small-amr",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "CTThorns/CT_MultiLevel/test/constraints_spherical",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "CTThorns/CT_MultiLevel/test/boostedpuncture",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "CTThorns/CT_MultiLevel/test/poisson",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinExact/EinsteinExact_Test/test/ModifiedSchwarzschildBL",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinExact/EinsteinExact_Test/test/GaugeWave",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinExact/EinsteinExact_Test/test/Minkowski",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinExact/EinsteinExact_Test/test/Vaidya2",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "EinsteinExact/EinsteinExact_Test/test/ShiftedGaugeWave",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "ExternalLibraries/PAPI/test/papi",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_O8_sgw3d",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_harmonic_phi",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_harmonic",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_EE_sgw3d",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_NewRad",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_rhs",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_EE_sgw3d_rhs",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "McLachlan/ML_CCZ4_Test/test/ML_CCZ4_sgw3d",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "McLachlan/ML_CCZ4_Test/test/ML_CCZ4_sgw3d_rhs",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "McLachlan/ML_WaveToy_Test/test/gaussian-RK4",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "McLachlan/ML_WaveToy_Test/test/gaussian-RK45-adaptive",
+      "error": "Output directory not found on host"
+    },
+    {
+      "test": "McLachlan/ML_WaveToy_Test/test/gaussian-RK45",
+      "error": "Output directory not found on host"
+    }
+  ]
+}

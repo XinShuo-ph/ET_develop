@@ -1,0 +1,72 @@
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+extern struct
+{
+  CCTK_REAL hydro_initexcision_coordinate_length;
+  CCTK_REAL hydro_initexcision_fraction;
+  CCTK_REAL hydro_initexcision_position_x;
+  CCTK_REAL hydro_initexcision_position_y;
+  CCTK_REAL hydro_initexcision_position_z;
+  const char * hydro_initexcision_type;
+  CCTK_INT hydro_initexcision;
+  CCTK_INT hydro_initexcision_flip;
+  CCTK_INT hydro_initexcision_min_points;
+  CCTK_INT hydro_initexcision_old_mask;
+  CCTK_INT hydro_initexcision_poststep;
+} RESTRICTED_HYDRO_INITEXCISION_STRUCT;
+
+#ifdef __cplusplus
+}
+#endif
+
+#define DECLARE_RESTRICTED_HYDRO_INITEXCISION_STRUCT_PARAMS \
+  CCTK_DECLARE_INIT (CCTK_REAL const, hydro_initexcision_coordinate_length, CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_coordinate_length); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, hydro_initexcision_fraction, CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_fraction); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, hydro_initexcision_position_x, CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_position_x); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, hydro_initexcision_position_y, CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_position_y); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, hydro_initexcision_position_z, CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_position_z); \
+  CCTK_DECLARE_INIT (const char * const, hydro_initexcision_type, CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_type); \
+  CCTK_DECLARE_INIT (CCTK_INT const, hydro_initexcision, CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision); \
+  CCTK_DECLARE_INIT (CCTK_INT const, hydro_initexcision_flip, CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_flip); \
+  CCTK_DECLARE_INIT (CCTK_INT const, hydro_initexcision_min_points, CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_min_points); \
+  CCTK_DECLARE_INIT (CCTK_INT const, hydro_initexcision_old_mask, CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_old_mask); \
+  CCTK_DECLARE_INIT (CCTK_INT const, hydro_initexcision_poststep, CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_poststep); \
+
+
+#ifndef CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_coordinate_length
+#  define CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_coordinate_length RESTRICTED_HYDRO_INITEXCISION_STRUCT.hydro_initexcision_coordinate_length
+#endif
+#ifndef CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_fraction
+#  define CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_fraction RESTRICTED_HYDRO_INITEXCISION_STRUCT.hydro_initexcision_fraction
+#endif
+#ifndef CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_position_x
+#  define CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_position_x RESTRICTED_HYDRO_INITEXCISION_STRUCT.hydro_initexcision_position_x
+#endif
+#ifndef CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_position_y
+#  define CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_position_y RESTRICTED_HYDRO_INITEXCISION_STRUCT.hydro_initexcision_position_y
+#endif
+#ifndef CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_position_z
+#  define CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_position_z RESTRICTED_HYDRO_INITEXCISION_STRUCT.hydro_initexcision_position_z
+#endif
+#ifndef CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_type
+#  define CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_type RESTRICTED_HYDRO_INITEXCISION_STRUCT.hydro_initexcision_type
+#endif
+#ifndef CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision
+#  define CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision RESTRICTED_HYDRO_INITEXCISION_STRUCT.hydro_initexcision
+#endif
+#ifndef CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_flip
+#  define CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_flip RESTRICTED_HYDRO_INITEXCISION_STRUCT.hydro_initexcision_flip
+#endif
+#ifndef CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_min_points
+#  define CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_min_points RESTRICTED_HYDRO_INITEXCISION_STRUCT.hydro_initexcision_min_points
+#endif
+#ifndef CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_old_mask
+#  define CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_old_mask RESTRICTED_HYDRO_INITEXCISION_STRUCT.hydro_initexcision_old_mask
+#endif
+#ifndef CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_poststep
+#  define CCTK_PARAMETER__HYDRO_INITEXCISION__hydro_initexcision_poststep RESTRICTED_HYDRO_INITEXCISION_STRUCT.hydro_initexcision_poststep
+#endif
+

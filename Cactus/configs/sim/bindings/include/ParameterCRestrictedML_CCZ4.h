@@ -1,0 +1,387 @@
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+extern struct
+{
+  CCTK_REAL GammaShift;
+  CCTK_REAL LapseACoeff;
+  CCTK_REAL LapseAdvectionCoeff;
+  CCTK_REAL ShiftAdvectionCoeff;
+  CCTK_REAL ShiftBCoeff;
+  CCTK_REAL alphaDriver;
+  CCTK_REAL betaDriver;
+  CCTK_REAL dampk1;
+  CCTK_REAL dampk2;
+  CCTK_REAL epsDiss;
+  CCTK_REAL harmonicF;
+  CCTK_REAL minimumLapse;
+  CCTK_REAL shiftAlphaPower;
+  CCTK_REAL shiftGammaCoeff;
+  CCTK_REAL spatialBetaDriverRadius;
+  CCTK_REAL spatialShiftGammaCoeffRadius;
+  const char * apply_dissipation;
+  const char * initial_boundary_condition;
+  const char * my_boundary_condition;
+  const char * my_initial_boundary_condition;
+  const char * my_initial_data;
+  const char * my_rhs_boundary_condition;
+  const char * rhs_boundary_condition;
+  const char * rhs_evaluation;
+  CCTK_INT ML_CCZ4_ADMBaseBoundaryScalar_calc_every;
+  CCTK_INT ML_CCZ4_ADMBaseBoundaryScalar_calc_offset;
+  CCTK_INT ML_CCZ4_ADMBaseEverywhere_calc_every;
+  CCTK_INT ML_CCZ4_ADMBaseEverywhere_calc_offset;
+  CCTK_INT ML_CCZ4_ADMBaseInterior_calc_every;
+  CCTK_INT ML_CCZ4_ADMBaseInterior_calc_offset;
+  CCTK_INT ML_CCZ4_ConstraintsEverywhere_calc_every;
+  CCTK_INT ML_CCZ4_ConstraintsEverywhere_calc_offset;
+  CCTK_INT ML_CCZ4_ConstraintsInterior_calc_every;
+  CCTK_INT ML_CCZ4_ConstraintsInterior_calc_offset;
+  CCTK_INT ML_CCZ4_EnforceEverywhere_calc_every;
+  CCTK_INT ML_CCZ4_EnforceEverywhere_calc_offset;
+  CCTK_INT ML_CCZ4_EvolutionAnalysisInit_calc_every;
+  CCTK_INT ML_CCZ4_EvolutionAnalysisInit_calc_offset;
+  CCTK_INT ML_CCZ4_EvolutionAnalysisInterior_calc_every;
+  CCTK_INT ML_CCZ4_EvolutionAnalysisInterior_calc_offset;
+  CCTK_INT ML_CCZ4_EvolutionBoundaryScalar_calc_every;
+  CCTK_INT ML_CCZ4_EvolutionBoundaryScalar_calc_offset;
+  CCTK_INT ML_CCZ4_EvolutionInteriorSplitBy1_calc_every;
+  CCTK_INT ML_CCZ4_EvolutionInteriorSplitBy1_calc_offset;
+  CCTK_INT ML_CCZ4_EvolutionInteriorSplitBy2_calc_every;
+  CCTK_INT ML_CCZ4_EvolutionInteriorSplitBy2_calc_offset;
+  CCTK_INT ML_CCZ4_EvolutionInteriorSplitBy3_calc_every;
+  CCTK_INT ML_CCZ4_EvolutionInteriorSplitBy3_calc_offset;
+  CCTK_INT ML_CCZ4_EvolutionInterior_calc_every;
+  CCTK_INT ML_CCZ4_EvolutionInterior_calc_offset;
+  CCTK_INT ML_CCZ4_InitialADMBase1Everywhere_calc_every;
+  CCTK_INT ML_CCZ4_InitialADMBase1Everywhere_calc_offset;
+  CCTK_INT ML_CCZ4_InitialADMBase2BoundaryScalar_calc_every;
+  CCTK_INT ML_CCZ4_InitialADMBase2BoundaryScalar_calc_offset;
+  CCTK_INT ML_CCZ4_InitialADMBase2Interior_calc_every;
+  CCTK_INT ML_CCZ4_InitialADMBase2Interior_calc_offset;
+  CCTK_INT ML_CCZ4_MaxNumArrayEvolvedVars;
+  CCTK_INT ML_CCZ4_MaxNumEvolvedVars;
+  CCTK_INT advectLapse;
+  CCTK_INT advectShift;
+  CCTK_INT conformalMethod;
+  CCTK_INT evolveA;
+  CCTK_INT evolveB;
+  CCTK_INT fdOrder;
+  CCTK_INT fixAdvectionTerms;
+  CCTK_INT harmonicN;
+  CCTK_INT other_timelevels;
+  CCTK_INT rhs_timelevels;
+  CCTK_INT shiftFormulation;
+  CCTK_INT tile_size;
+  CCTK_INT timelevels;
+  CCTK_INT useSpatialBetaDriver;
+  CCTK_INT useSpatialShiftGammaCoeff;
+  CCTK_INT verbose;
+} RESTRICTED_ML_CCZ4_STRUCT;
+
+#ifdef __cplusplus
+}
+#endif
+
+#define DECLARE_RESTRICTED_ML_CCZ4_STRUCT_PARAMS \
+  CCTK_DECLARE_INIT (CCTK_REAL const, GammaShift, CCTK_PARAMETER__ML_CCZ4__GammaShift); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, LapseACoeff, CCTK_PARAMETER__ML_CCZ4__LapseACoeff); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, LapseAdvectionCoeff, CCTK_PARAMETER__ML_CCZ4__LapseAdvectionCoeff); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, ShiftAdvectionCoeff, CCTK_PARAMETER__ML_CCZ4__ShiftAdvectionCoeff); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, ShiftBCoeff, CCTK_PARAMETER__ML_CCZ4__ShiftBCoeff); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, alphaDriver, CCTK_PARAMETER__ML_CCZ4__alphaDriver); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, betaDriver, CCTK_PARAMETER__ML_CCZ4__betaDriver); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, dampk1, CCTK_PARAMETER__ML_CCZ4__dampk1); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, dampk2, CCTK_PARAMETER__ML_CCZ4__dampk2); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, epsDiss, CCTK_PARAMETER__ML_CCZ4__epsDiss); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, harmonicF, CCTK_PARAMETER__ML_CCZ4__harmonicF); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, minimumLapse, CCTK_PARAMETER__ML_CCZ4__minimumLapse); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, shiftAlphaPower, CCTK_PARAMETER__ML_CCZ4__shiftAlphaPower); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, shiftGammaCoeff, CCTK_PARAMETER__ML_CCZ4__shiftGammaCoeff); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, spatialBetaDriverRadius, CCTK_PARAMETER__ML_CCZ4__spatialBetaDriverRadius); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, spatialShiftGammaCoeffRadius, CCTK_PARAMETER__ML_CCZ4__spatialShiftGammaCoeffRadius); \
+  CCTK_DECLARE_INIT (const char * const, apply_dissipation, CCTK_PARAMETER__ML_CCZ4__apply_dissipation); \
+  CCTK_DECLARE_INIT (const char * const, initial_boundary_condition, CCTK_PARAMETER__ML_CCZ4__initial_boundary_condition); \
+  CCTK_DECLARE_INIT (const char * const, my_boundary_condition, CCTK_PARAMETER__ML_CCZ4__my_boundary_condition); \
+  CCTK_DECLARE_INIT (const char * const, my_initial_boundary_condition, CCTK_PARAMETER__ML_CCZ4__my_initial_boundary_condition); \
+  CCTK_DECLARE_INIT (const char * const, my_initial_data, CCTK_PARAMETER__ML_CCZ4__my_initial_data); \
+  CCTK_DECLARE_INIT (const char * const, my_rhs_boundary_condition, CCTK_PARAMETER__ML_CCZ4__my_rhs_boundary_condition); \
+  CCTK_DECLARE_INIT (const char * const, rhs_boundary_condition, CCTK_PARAMETER__ML_CCZ4__rhs_boundary_condition); \
+  CCTK_DECLARE_INIT (const char * const, rhs_evaluation, CCTK_PARAMETER__ML_CCZ4__rhs_evaluation); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_ADMBaseBoundaryScalar_calc_every, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseBoundaryScalar_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_ADMBaseBoundaryScalar_calc_offset, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseBoundaryScalar_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_ADMBaseEverywhere_calc_every, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseEverywhere_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_ADMBaseEverywhere_calc_offset, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseEverywhere_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_ADMBaseInterior_calc_every, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseInterior_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_ADMBaseInterior_calc_offset, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseInterior_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_ConstraintsEverywhere_calc_every, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ConstraintsEverywhere_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_ConstraintsEverywhere_calc_offset, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ConstraintsEverywhere_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_ConstraintsInterior_calc_every, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ConstraintsInterior_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_ConstraintsInterior_calc_offset, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ConstraintsInterior_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_EnforceEverywhere_calc_every, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EnforceEverywhere_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_EnforceEverywhere_calc_offset, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EnforceEverywhere_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_EvolutionAnalysisInit_calc_every, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionAnalysisInit_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_EvolutionAnalysisInit_calc_offset, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionAnalysisInit_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_EvolutionAnalysisInterior_calc_every, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionAnalysisInterior_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_EvolutionAnalysisInterior_calc_offset, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionAnalysisInterior_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_EvolutionBoundaryScalar_calc_every, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionBoundaryScalar_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_EvolutionBoundaryScalar_calc_offset, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionBoundaryScalar_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_EvolutionInteriorSplitBy1_calc_every, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy1_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_EvolutionInteriorSplitBy1_calc_offset, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy1_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_EvolutionInteriorSplitBy2_calc_every, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy2_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_EvolutionInteriorSplitBy2_calc_offset, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy2_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_EvolutionInteriorSplitBy3_calc_every, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy3_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_EvolutionInteriorSplitBy3_calc_offset, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy3_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_EvolutionInterior_calc_every, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInterior_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_EvolutionInterior_calc_offset, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInterior_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_InitialADMBase1Everywhere_calc_every, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase1Everywhere_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_InitialADMBase1Everywhere_calc_offset, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase1Everywhere_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_InitialADMBase2BoundaryScalar_calc_every, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase2BoundaryScalar_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_InitialADMBase2BoundaryScalar_calc_offset, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase2BoundaryScalar_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_InitialADMBase2Interior_calc_every, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase2Interior_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_InitialADMBase2Interior_calc_offset, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase2Interior_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_MaxNumArrayEvolvedVars, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_MaxNumArrayEvolvedVars); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_CCZ4_MaxNumEvolvedVars, CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_MaxNumEvolvedVars); \
+  CCTK_DECLARE_INIT (CCTK_INT const, advectLapse, CCTK_PARAMETER__ML_CCZ4__advectLapse); \
+  CCTK_DECLARE_INIT (CCTK_INT const, advectShift, CCTK_PARAMETER__ML_CCZ4__advectShift); \
+  CCTK_DECLARE_INIT (CCTK_INT const, conformalMethod, CCTK_PARAMETER__ML_CCZ4__conformalMethod); \
+  CCTK_DECLARE_INIT (CCTK_INT const, evolveA, CCTK_PARAMETER__ML_CCZ4__evolveA); \
+  CCTK_DECLARE_INIT (CCTK_INT const, evolveB, CCTK_PARAMETER__ML_CCZ4__evolveB); \
+  CCTK_DECLARE_INIT (CCTK_INT const, fdOrder, CCTK_PARAMETER__ML_CCZ4__fdOrder); \
+  CCTK_DECLARE_INIT (CCTK_INT const, fixAdvectionTerms, CCTK_PARAMETER__ML_CCZ4__fixAdvectionTerms); \
+  CCTK_DECLARE_INIT (CCTK_INT const, harmonicN, CCTK_PARAMETER__ML_CCZ4__harmonicN); \
+  CCTK_DECLARE_INIT (CCTK_INT const, other_timelevels, CCTK_PARAMETER__ML_CCZ4__other_timelevels); \
+  CCTK_DECLARE_INIT (CCTK_INT const, rhs_timelevels, CCTK_PARAMETER__ML_CCZ4__rhs_timelevels); \
+  CCTK_DECLARE_INIT (CCTK_INT const, shiftFormulation, CCTK_PARAMETER__ML_CCZ4__shiftFormulation); \
+  CCTK_DECLARE_INIT (CCTK_INT const, tile_size, CCTK_PARAMETER__ML_CCZ4__tile_size); \
+  CCTK_DECLARE_INIT (CCTK_INT const, timelevels, CCTK_PARAMETER__ML_CCZ4__timelevels); \
+  CCTK_DECLARE_INIT (CCTK_INT const, useSpatialBetaDriver, CCTK_PARAMETER__ML_CCZ4__useSpatialBetaDriver); \
+  CCTK_DECLARE_INIT (CCTK_INT const, useSpatialShiftGammaCoeff, CCTK_PARAMETER__ML_CCZ4__useSpatialShiftGammaCoeff); \
+  CCTK_DECLARE_INIT (CCTK_INT const, verbose, CCTK_PARAMETER__ML_CCZ4__verbose); \
+
+
+#ifndef CCTK_PARAMETER__ML_CCZ4__GammaShift
+#  define CCTK_PARAMETER__ML_CCZ4__GammaShift RESTRICTED_ML_CCZ4_STRUCT.GammaShift
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__LapseACoeff
+#  define CCTK_PARAMETER__ML_CCZ4__LapseACoeff RESTRICTED_ML_CCZ4_STRUCT.LapseACoeff
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__LapseAdvectionCoeff
+#  define CCTK_PARAMETER__ML_CCZ4__LapseAdvectionCoeff RESTRICTED_ML_CCZ4_STRUCT.LapseAdvectionCoeff
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ShiftAdvectionCoeff
+#  define CCTK_PARAMETER__ML_CCZ4__ShiftAdvectionCoeff RESTRICTED_ML_CCZ4_STRUCT.ShiftAdvectionCoeff
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ShiftBCoeff
+#  define CCTK_PARAMETER__ML_CCZ4__ShiftBCoeff RESTRICTED_ML_CCZ4_STRUCT.ShiftBCoeff
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__alphaDriver
+#  define CCTK_PARAMETER__ML_CCZ4__alphaDriver RESTRICTED_ML_CCZ4_STRUCT.alphaDriver
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__betaDriver
+#  define CCTK_PARAMETER__ML_CCZ4__betaDriver RESTRICTED_ML_CCZ4_STRUCT.betaDriver
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__dampk1
+#  define CCTK_PARAMETER__ML_CCZ4__dampk1 RESTRICTED_ML_CCZ4_STRUCT.dampk1
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__dampk2
+#  define CCTK_PARAMETER__ML_CCZ4__dampk2 RESTRICTED_ML_CCZ4_STRUCT.dampk2
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__epsDiss
+#  define CCTK_PARAMETER__ML_CCZ4__epsDiss RESTRICTED_ML_CCZ4_STRUCT.epsDiss
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__harmonicF
+#  define CCTK_PARAMETER__ML_CCZ4__harmonicF RESTRICTED_ML_CCZ4_STRUCT.harmonicF
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__minimumLapse
+#  define CCTK_PARAMETER__ML_CCZ4__minimumLapse RESTRICTED_ML_CCZ4_STRUCT.minimumLapse
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__shiftAlphaPower
+#  define CCTK_PARAMETER__ML_CCZ4__shiftAlphaPower RESTRICTED_ML_CCZ4_STRUCT.shiftAlphaPower
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__shiftGammaCoeff
+#  define CCTK_PARAMETER__ML_CCZ4__shiftGammaCoeff RESTRICTED_ML_CCZ4_STRUCT.shiftGammaCoeff
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__spatialBetaDriverRadius
+#  define CCTK_PARAMETER__ML_CCZ4__spatialBetaDriverRadius RESTRICTED_ML_CCZ4_STRUCT.spatialBetaDriverRadius
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__spatialShiftGammaCoeffRadius
+#  define CCTK_PARAMETER__ML_CCZ4__spatialShiftGammaCoeffRadius RESTRICTED_ML_CCZ4_STRUCT.spatialShiftGammaCoeffRadius
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__apply_dissipation
+#  define CCTK_PARAMETER__ML_CCZ4__apply_dissipation RESTRICTED_ML_CCZ4_STRUCT.apply_dissipation
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__initial_boundary_condition
+#  define CCTK_PARAMETER__ML_CCZ4__initial_boundary_condition RESTRICTED_ML_CCZ4_STRUCT.initial_boundary_condition
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__my_boundary_condition
+#  define CCTK_PARAMETER__ML_CCZ4__my_boundary_condition RESTRICTED_ML_CCZ4_STRUCT.my_boundary_condition
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__my_initial_boundary_condition
+#  define CCTK_PARAMETER__ML_CCZ4__my_initial_boundary_condition RESTRICTED_ML_CCZ4_STRUCT.my_initial_boundary_condition
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__my_initial_data
+#  define CCTK_PARAMETER__ML_CCZ4__my_initial_data RESTRICTED_ML_CCZ4_STRUCT.my_initial_data
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__my_rhs_boundary_condition
+#  define CCTK_PARAMETER__ML_CCZ4__my_rhs_boundary_condition RESTRICTED_ML_CCZ4_STRUCT.my_rhs_boundary_condition
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__rhs_boundary_condition
+#  define CCTK_PARAMETER__ML_CCZ4__rhs_boundary_condition RESTRICTED_ML_CCZ4_STRUCT.rhs_boundary_condition
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__rhs_evaluation
+#  define CCTK_PARAMETER__ML_CCZ4__rhs_evaluation RESTRICTED_ML_CCZ4_STRUCT.rhs_evaluation
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseBoundaryScalar_calc_every
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseBoundaryScalar_calc_every RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_ADMBaseBoundaryScalar_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseBoundaryScalar_calc_offset
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseBoundaryScalar_calc_offset RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_ADMBaseBoundaryScalar_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseEverywhere_calc_every
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseEverywhere_calc_every RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_ADMBaseEverywhere_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseEverywhere_calc_offset
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseEverywhere_calc_offset RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_ADMBaseEverywhere_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseInterior_calc_every
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseInterior_calc_every RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_ADMBaseInterior_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseInterior_calc_offset
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ADMBaseInterior_calc_offset RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_ADMBaseInterior_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ConstraintsEverywhere_calc_every
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ConstraintsEverywhere_calc_every RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_ConstraintsEverywhere_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ConstraintsEverywhere_calc_offset
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ConstraintsEverywhere_calc_offset RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_ConstraintsEverywhere_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ConstraintsInterior_calc_every
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ConstraintsInterior_calc_every RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_ConstraintsInterior_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ConstraintsInterior_calc_offset
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_ConstraintsInterior_calc_offset RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_ConstraintsInterior_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EnforceEverywhere_calc_every
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EnforceEverywhere_calc_every RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_EnforceEverywhere_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EnforceEverywhere_calc_offset
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EnforceEverywhere_calc_offset RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_EnforceEverywhere_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionAnalysisInit_calc_every
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionAnalysisInit_calc_every RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_EvolutionAnalysisInit_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionAnalysisInit_calc_offset
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionAnalysisInit_calc_offset RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_EvolutionAnalysisInit_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionAnalysisInterior_calc_every
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionAnalysisInterior_calc_every RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_EvolutionAnalysisInterior_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionAnalysisInterior_calc_offset
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionAnalysisInterior_calc_offset RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_EvolutionAnalysisInterior_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionBoundaryScalar_calc_every
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionBoundaryScalar_calc_every RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_EvolutionBoundaryScalar_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionBoundaryScalar_calc_offset
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionBoundaryScalar_calc_offset RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_EvolutionBoundaryScalar_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy1_calc_every
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy1_calc_every RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_EvolutionInteriorSplitBy1_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy1_calc_offset
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy1_calc_offset RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_EvolutionInteriorSplitBy1_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy2_calc_every
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy2_calc_every RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_EvolutionInteriorSplitBy2_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy2_calc_offset
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy2_calc_offset RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_EvolutionInteriorSplitBy2_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy3_calc_every
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy3_calc_every RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_EvolutionInteriorSplitBy3_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy3_calc_offset
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInteriorSplitBy3_calc_offset RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_EvolutionInteriorSplitBy3_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInterior_calc_every
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInterior_calc_every RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_EvolutionInterior_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInterior_calc_offset
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_EvolutionInterior_calc_offset RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_EvolutionInterior_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase1Everywhere_calc_every
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase1Everywhere_calc_every RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_InitialADMBase1Everywhere_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase1Everywhere_calc_offset
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase1Everywhere_calc_offset RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_InitialADMBase1Everywhere_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase2BoundaryScalar_calc_every
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase2BoundaryScalar_calc_every RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_InitialADMBase2BoundaryScalar_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase2BoundaryScalar_calc_offset
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase2BoundaryScalar_calc_offset RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_InitialADMBase2BoundaryScalar_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase2Interior_calc_every
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase2Interior_calc_every RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_InitialADMBase2Interior_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase2Interior_calc_offset
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_InitialADMBase2Interior_calc_offset RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_InitialADMBase2Interior_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_MaxNumArrayEvolvedVars
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_MaxNumArrayEvolvedVars RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_MaxNumArrayEvolvedVars
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_MaxNumEvolvedVars
+#  define CCTK_PARAMETER__ML_CCZ4__ML_CCZ4_MaxNumEvolvedVars RESTRICTED_ML_CCZ4_STRUCT.ML_CCZ4_MaxNumEvolvedVars
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__advectLapse
+#  define CCTK_PARAMETER__ML_CCZ4__advectLapse RESTRICTED_ML_CCZ4_STRUCT.advectLapse
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__advectShift
+#  define CCTK_PARAMETER__ML_CCZ4__advectShift RESTRICTED_ML_CCZ4_STRUCT.advectShift
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__conformalMethod
+#  define CCTK_PARAMETER__ML_CCZ4__conformalMethod RESTRICTED_ML_CCZ4_STRUCT.conformalMethod
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__evolveA
+#  define CCTK_PARAMETER__ML_CCZ4__evolveA RESTRICTED_ML_CCZ4_STRUCT.evolveA
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__evolveB
+#  define CCTK_PARAMETER__ML_CCZ4__evolveB RESTRICTED_ML_CCZ4_STRUCT.evolveB
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__fdOrder
+#  define CCTK_PARAMETER__ML_CCZ4__fdOrder RESTRICTED_ML_CCZ4_STRUCT.fdOrder
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__fixAdvectionTerms
+#  define CCTK_PARAMETER__ML_CCZ4__fixAdvectionTerms RESTRICTED_ML_CCZ4_STRUCT.fixAdvectionTerms
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__harmonicN
+#  define CCTK_PARAMETER__ML_CCZ4__harmonicN RESTRICTED_ML_CCZ4_STRUCT.harmonicN
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__other_timelevels
+#  define CCTK_PARAMETER__ML_CCZ4__other_timelevels RESTRICTED_ML_CCZ4_STRUCT.other_timelevels
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__rhs_timelevels
+#  define CCTK_PARAMETER__ML_CCZ4__rhs_timelevels RESTRICTED_ML_CCZ4_STRUCT.rhs_timelevels
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__shiftFormulation
+#  define CCTK_PARAMETER__ML_CCZ4__shiftFormulation RESTRICTED_ML_CCZ4_STRUCT.shiftFormulation
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__tile_size
+#  define CCTK_PARAMETER__ML_CCZ4__tile_size RESTRICTED_ML_CCZ4_STRUCT.tile_size
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__timelevels
+#  define CCTK_PARAMETER__ML_CCZ4__timelevels RESTRICTED_ML_CCZ4_STRUCT.timelevels
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__useSpatialBetaDriver
+#  define CCTK_PARAMETER__ML_CCZ4__useSpatialBetaDriver RESTRICTED_ML_CCZ4_STRUCT.useSpatialBetaDriver
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__useSpatialShiftGammaCoeff
+#  define CCTK_PARAMETER__ML_CCZ4__useSpatialShiftGammaCoeff RESTRICTED_ML_CCZ4_STRUCT.useSpatialShiftGammaCoeff
+#endif
+#ifndef CCTK_PARAMETER__ML_CCZ4__verbose
+#  define CCTK_PARAMETER__ML_CCZ4__verbose RESTRICTED_ML_CCZ4_STRUCT.verbose
+#endif
+

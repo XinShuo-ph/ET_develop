@@ -1,0 +1,3 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.HTTPD.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.IOUTIL.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.MPI.defn

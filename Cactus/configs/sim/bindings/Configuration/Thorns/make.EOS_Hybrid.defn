@@ -1,0 +1,2 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.EOS_BASE.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.EOS_POLYTROPE.defn

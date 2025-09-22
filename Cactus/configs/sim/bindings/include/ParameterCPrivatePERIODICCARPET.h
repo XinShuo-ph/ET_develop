@@ -1,0 +1,42 @@
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+extern struct
+{
+  CCTK_INT periodic;
+  CCTK_INT periodic_x;
+  CCTK_INT periodic_y;
+  CCTK_INT periodic_z;
+  CCTK_INT verbose;
+} PRIVATE_PERIODICCARPET_STRUCT;
+
+#ifdef __cplusplus
+}
+#endif
+
+#define DECLARE_PRIVATE_PERIODICCARPET_STRUCT_PARAMS \
+  CCTK_DECLARE_INIT (CCTK_INT const, periodic, CCTK_PARAMETER__PERIODICCARPET__periodic); \
+  CCTK_DECLARE_INIT (CCTK_INT const, periodic_x, CCTK_PARAMETER__PERIODICCARPET__periodic_x); \
+  CCTK_DECLARE_INIT (CCTK_INT const, periodic_y, CCTK_PARAMETER__PERIODICCARPET__periodic_y); \
+  CCTK_DECLARE_INIT (CCTK_INT const, periodic_z, CCTK_PARAMETER__PERIODICCARPET__periodic_z); \
+  CCTK_DECLARE_INIT (CCTK_INT const, verbose, CCTK_PARAMETER__PERIODICCARPET__verbose); \
+
+
+#ifndef CCTK_PARAMETER__PERIODICCARPET__periodic
+#  define CCTK_PARAMETER__PERIODICCARPET__periodic PRIVATE_PERIODICCARPET_STRUCT.periodic
+#endif
+#ifndef CCTK_PARAMETER__PERIODICCARPET__periodic_x
+#  define CCTK_PARAMETER__PERIODICCARPET__periodic_x PRIVATE_PERIODICCARPET_STRUCT.periodic_x
+#endif
+#ifndef CCTK_PARAMETER__PERIODICCARPET__periodic_y
+#  define CCTK_PARAMETER__PERIODICCARPET__periodic_y PRIVATE_PERIODICCARPET_STRUCT.periodic_y
+#endif
+#ifndef CCTK_PARAMETER__PERIODICCARPET__periodic_z
+#  define CCTK_PARAMETER__PERIODICCARPET__periodic_z PRIVATE_PERIODICCARPET_STRUCT.periodic_z
+#endif
+#ifndef CCTK_PARAMETER__PERIODICCARPET__verbose
+#  define CCTK_PARAMETER__PERIODICCARPET__verbose PRIVATE_PERIODICCARPET_STRUCT.verbose
+#endif
+

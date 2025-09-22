@@ -1,0 +1,2 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.CARPETLIB.defn
+HAVE_CAPABILITY_Timers = 1

@@ -1,0 +1,37 @@
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+extern struct
+{
+  CCTK_REAL eos_gamma;
+  CCTK_REAL eos_k;
+  CCTK_REAL gamma_ini;
+  CCTK_INT use_cgs;
+} RESTRICTED_EOS_2D_POLYTROPE_STRUCT;
+
+#ifdef __cplusplus
+}
+#endif
+
+#define DECLARE_RESTRICTED_EOS_2D_POLYTROPE_STRUCT_PARAMS \
+  CCTK_DECLARE_INIT (CCTK_REAL const, eos_gamma, CCTK_PARAMETER__EOS_2D_POLYTROPE__eos_gamma); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, eos_k, CCTK_PARAMETER__EOS_2D_POLYTROPE__eos_k); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, gamma_ini, CCTK_PARAMETER__EOS_2D_POLYTROPE__gamma_ini); \
+  CCTK_DECLARE_INIT (CCTK_INT const, use_cgs, CCTK_PARAMETER__EOS_2D_POLYTROPE__use_cgs); \
+
+
+#ifndef CCTK_PARAMETER__EOS_2D_POLYTROPE__eos_gamma
+#  define CCTK_PARAMETER__EOS_2D_POLYTROPE__eos_gamma RESTRICTED_EOS_2D_POLYTROPE_STRUCT.eos_gamma
+#endif
+#ifndef CCTK_PARAMETER__EOS_2D_POLYTROPE__eos_k
+#  define CCTK_PARAMETER__EOS_2D_POLYTROPE__eos_k RESTRICTED_EOS_2D_POLYTROPE_STRUCT.eos_k
+#endif
+#ifndef CCTK_PARAMETER__EOS_2D_POLYTROPE__gamma_ini
+#  define CCTK_PARAMETER__EOS_2D_POLYTROPE__gamma_ini RESTRICTED_EOS_2D_POLYTROPE_STRUCT.gamma_ini
+#endif
+#ifndef CCTK_PARAMETER__EOS_2D_POLYTROPE__use_cgs
+#  define CCTK_PARAMETER__EOS_2D_POLYTROPE__use_cgs RESTRICTED_EOS_2D_POLYTROPE_STRUCT.use_cgs
+#endif
+

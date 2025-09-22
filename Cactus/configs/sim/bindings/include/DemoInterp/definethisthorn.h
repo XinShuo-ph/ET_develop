@@ -1,0 +1,11 @@
+/* Defines for thorn this file is part of */
+
+#ifndef DEFINE_THIS_THORN_H
+#define DEFINE_THIS_THORN_H 1
+#define THORN_IS_DemoInterp 1
+#define CCTK_THORN DemoInterp
+#define CCTK_THORNSTRING "DemoInterp"
+#define CCTK_ARRANGEMENT CactusExamples
+#define CCTK_ARRANGEMENTSTRING "CactusExamples"
+#endif
+

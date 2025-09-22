@@ -1,0 +1,6 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.CARPETLIB.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.IOUTIL.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.LOOPCONTROL.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.MPI.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.TIMERS.defn
+HAVE_CAPABILITY_Carpet = 1

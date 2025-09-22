@@ -1,0 +1,3 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.CYCLECLOCK.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.VECTORS.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.HWLOC.defn

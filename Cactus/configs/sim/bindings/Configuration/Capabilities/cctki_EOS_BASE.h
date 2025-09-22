@@ -1,0 +1,1 @@
+#define HAVE_CAPABILITY_EOS_Base 1

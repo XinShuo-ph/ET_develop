@@ -1,0 +1,59 @@
+#define DECLARE_CCTK_PARAMETERS \
+CCTK_DECLARE(CCTK_INT,NullExact_MaxEvolvedArraySize,)&&\
+CCTK_DECLARE(CCTK_INT,NullExact_NumArrayEvolvedVars,)&&\
+CCTK_DECLARE(CCTK_INT,l_in_Ylm,)&&\
+CCTK_DECLARE(CCTK_INT,m_in_Ylm,)&&\
+COMMON /NullExactrest/NullExact_MaxEvolvedArraySize, NullExact_NumArrayEvolvedVars, l_in_Ylm, m_in_Ylm&&\
+CCTK_DECLARE(CCTK_REAL,A_r0,)&&\
+CCTK_DECLARE(CCTK_REAL,Constant_C1i,)&&\
+CCTK_DECLARE(CCTK_REAL,Constant_C1r,)&&\
+CCTK_DECLARE(CCTK_REAL,Constant_C2i,)&&\
+CCTK_DECLARE(CCTK_REAL,Constant_C2r,)&&\
+CCTK_DECLARE(CCTK_REAL,F_r0,)&&\
+CCTK_DECLARE(CCTK_REAL,amplitude,)&&\
+CCTK_DECLARE(CCTK_REAL,beta0i,)&&\
+CCTK_DECLARE(CCTK_REAL,beta0r,)&&\
+CCTK_DECLARE(CCTK_REAL,omm,)&&\
+CCTK_DECLARE(CCTK_STRING,error_mask_type,)&&\
+CCTK_DECLARE(CCTK_INT,analytic_fields,)&&\
+CCTK_DECLARE(CCTK_INT,testbed_ID,)&&\
+CCTK_DECLARE(CCTK_INT,verbose,)&&\
+COMMON /NullExactpriv/A_r0, Constant_C1i, Constant_C1r, Constant_C2i, Constant_C2r, F_r0, amplitude, beta0i, beta0r, omm, error_mask_type, analytic_fields, testbed_ID, verbose&&\
+CCTK_DECLARE(CCTK_INT,MoL_Max_Evolved_Array_Size,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH0,)&&\
+CCTK_DECLARE(CCTK_INT,MoL_Num_ArrayEvolved_Vars,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH1,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH2,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH3,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH4,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH5,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH6,)&&\
+COMMON /METHODOFLINESrest/MoL_Max_Evolved_Array_Size, CCTKH0, MoL_Num_ArrayEvolved_Vars, CCTKH1, CCTKH2, CCTKH3, CCTKH4, CCTKH5, CCTKH6&&\
+CCTK_DECLARE(CCTK_REAL,CCTKH16,)&&\
+CCTK_DECLARE(CCTK_STRING,boundary_data,)&&\
+CCTK_DECLARE(CCTK_STRING,initial_J_data,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH7,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH8,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH9,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH10,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH11,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH12,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH13,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH14,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH15,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH17,)&&\
+CCTK_DECLARE(CCTK_INT,first_order_scheme,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH18,)&&\
+COMMON /NULLEVOLVErest/CCTKH16, boundary_data, initial_J_data, CCTKH7, CCTKH8, CCTKH9, CCTKH10, CCTKH11, CCTKH12, CCTKH13, CCTKH14, CCTKH15, CCTKH17, first_order_scheme, CCTKH18&&\
+CCTK_DECLARE(CCTK_REAL,CCTKH19,)&&\
+CCTK_DECLARE(CCTK_REAL,null_xin,)&&\
+CCTK_DECLARE(CCTK_INT,N_ang_ev_outside_eq,)&&\
+CCTK_DECLARE(CCTK_INT,N_ang_ghost_pts,)&&\
+CCTK_DECLARE(CCTK_INT,N_ang_pts_inside_eq,)&&\
+CCTK_DECLARE(CCTK_INT,N_ang_stencil_size,)&&\
+CCTK_DECLARE(CCTK_INT,N_radial_pts,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH20,)&&\
+COMMON /NULLGRIDrest/CCTKH19, null_xin, N_ang_ev_outside_eq, N_ang_ghost_pts, N_ang_pts_inside_eq, N_ang_stencil_size, N_radial_pts, CCTKH20&&\
+CCTK_DECLARE(CCTK_INT,linearized_news,)&&\
+COMMON /NULLNEWSrest/linearized_news&&\
+

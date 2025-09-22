@@ -1,0 +1,6 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.BOUNDARY.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.CARPET.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.CARTGRID3D.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.EOS_OMNI.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.EOS_POLYTROPE.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.SPACEMASK.deps

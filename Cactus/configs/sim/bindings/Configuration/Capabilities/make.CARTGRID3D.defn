@@ -1,0 +1,2 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.COORDBASE.defn
+HAVE_CAPABILITY_CartGrid3D = 1

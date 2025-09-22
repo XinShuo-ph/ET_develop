@@ -1,0 +1,4 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.BLAS.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.LAPACK.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.MPI.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.PETSC.deps

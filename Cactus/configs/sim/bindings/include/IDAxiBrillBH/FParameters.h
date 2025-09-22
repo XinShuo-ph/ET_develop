@@ -1,0 +1,42 @@
+#define DECLARE_CCTK_PARAMETERS \
+CCTK_DECLARE(CCTK_REAL,amp,)&&\
+CCTK_DECLARE(CCTK_REAL,error_tolerance,)&&\
+CCTK_DECLARE(CCTK_REAL,eta0,)&&\
+CCTK_DECLARE(CCTK_REAL,etamax,)&&\
+CCTK_DECLARE(CCTK_REAL,sigma,)&&\
+CCTK_DECLARE(CCTK_STRING,interpolator_name,)&&\
+CCTK_DECLARE(CCTK_STRING,interpolator_pars,)&&\
+CCTK_DECLARE(CCTK_STRING,output_psi2D_file_name,)&&\
+CCTK_DECLARE(CCTK_INT,debug,)&&\
+CCTK_DECLARE(CCTK_INT,debug_i,)&&\
+CCTK_DECLARE(CCTK_INT,debug_ii,)&&\
+CCTK_DECLARE(CCTK_INT,debug_j,)&&\
+CCTK_DECLARE(CCTK_INT,debug_jj,)&&\
+CCTK_DECLARE(CCTK_INT,debug_k,)&&\
+CCTK_DECLARE(CCTK_INT,generate_StaticConformal_metric,)&&\
+CCTK_DECLARE(CCTK_INT,interpolation_order,)&&\
+CCTK_DECLARE(CCTK_INT,n,)&&\
+CCTK_DECLARE(CCTK_INT,ne,)&&\
+CCTK_DECLARE(CCTK_INT,nq,)&&\
+CCTK_DECLARE(CCTK_INT,output_psi2D,)&&\
+COMMON /IDAxiBrillBHpriv/amp, error_tolerance, eta0, etamax, sigma, interpolator_name, interpolator_pars, output_psi2D_file_name, debug, debug_i, debug_ii, debug_j, debug_jj, debug_k, generate_StaticConformal_metric, interpolation_order, n, ne, nq, output_psi2D&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH0,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH1,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH2,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH3,)&&\
+CCTK_DECLARE(CCTK_STRING,initial_data,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH4,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH5,)&&\
+CCTK_DECLARE(CCTK_STRING,initial_lapse,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH6,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH7,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH8,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH10,)&&\
+CCTK_DECLARE(CCTK_STRING,metric_type,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH12,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH13,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH9,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH11,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH14,)&&\
+COMMON /ADMBASErest/CCTKH0, CCTKH1, CCTKH2, CCTKH3, initial_data, CCTKH4, CCTKH5, initial_lapse, CCTKH6, CCTKH7, CCTKH8, CCTKH10, metric_type, CCTKH12, CCTKH13, CCTKH9, CCTKH11, CCTKH14&&\
+

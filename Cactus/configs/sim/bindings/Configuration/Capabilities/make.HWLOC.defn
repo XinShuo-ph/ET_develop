@@ -1,0 +1,10 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.ZLIB.defn
+INC_DIRS +=  $(HWLOC_INC_DIRS)
+INC_DIRS_F +=  $(HWLOC_INC_DIRS)
+HWLOC_BUILD       = 
+HWLOC_INSTALL_DIR = 
+HWLOC_DIR      = /usr
+HWLOC_INC_DIRS = 
+HWLOC_LIB_DIRS = 
+HWLOC_LIBS     =  hwloc m numa ltdl pthread dl 
+HAVE_CAPABILITY_hwloc = 1

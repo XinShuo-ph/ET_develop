@@ -1,0 +1,24 @@
+#define DECLARE_CCTK_PARAMETERS \
+CCTK_DECLARE(CCTK_REAL,Gamma_Initial,)&&\
+CCTK_DECLARE(CCTK_REAL,K_Initial,)&&\
+CCTK_DECLARE(CCTK_REAL,random_pert,)&&\
+CCTK_DECLARE(CCTK_INT,pure_hydro_run,)&&\
+CCTK_DECLARE(CCTK_INT,random_seed,)&&\
+COMMON /ID_converter_ILGRMHDpriv/Gamma_Initial, K_Initial, random_pert, pure_hydro_run, random_seed&&\
+CCTK_DECLARE(CCTK_REAL,GAMMA_SPEED_LIMIT,)&&\
+CCTK_DECLARE(CCTK_REAL,K_poly,)&&\
+CCTK_DECLARE(CCTK_REAL,Psi6threshold,)&&\
+CCTK_DECLARE(CCTK_REAL,Sym_Bz,)&&\
+CCTK_DECLARE(CCTK_REAL,gamma_th,)&&\
+CCTK_DECLARE(CCTK_REAL,rho_b_atm,)&&\
+CCTK_DECLARE(CCTK_REAL,rho_b_max,)&&\
+CCTK_DECLARE(CCTK_REAL,tau_atm,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH0,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH2,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH3,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH1,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH4,)&&\
+CCTK_DECLARE(CCTK_INT,neos,)&&\
+CCTK_DECLARE(CCTK_INT,update_Tmunu,)&&\
+COMMON /ILLINOISGRMHDrest/GAMMA_SPEED_LIMIT, K_poly, Psi6threshold, Sym_Bz, gamma_th, rho_b_atm, rho_b_max, tau_atm, CCTKH0, CCTKH2, CCTKH3, CCTKH1, CCTKH4, neos, update_Tmunu&&\
+

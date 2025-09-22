@@ -1,0 +1,42 @@
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+extern struct
+{
+  CCTK_REAL Gamma_Initial;
+  CCTK_REAL K_Initial;
+  CCTK_REAL random_pert;
+  CCTK_INT pure_hydro_run;
+  CCTK_INT random_seed;
+} PRIVATE_ID_CONVERTER_ILGRMHD_STRUCT;
+
+#ifdef __cplusplus
+}
+#endif
+
+#define DECLARE_PRIVATE_ID_CONVERTER_ILGRMHD_STRUCT_PARAMS \
+  CCTK_DECLARE_INIT (CCTK_REAL const, Gamma_Initial, CCTK_PARAMETER__ID_CONVERTER_ILGRMHD__Gamma_Initial); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, K_Initial, CCTK_PARAMETER__ID_CONVERTER_ILGRMHD__K_Initial); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, random_pert, CCTK_PARAMETER__ID_CONVERTER_ILGRMHD__random_pert); \
+  CCTK_DECLARE_INIT (CCTK_INT const, pure_hydro_run, CCTK_PARAMETER__ID_CONVERTER_ILGRMHD__pure_hydro_run); \
+  CCTK_DECLARE_INIT (CCTK_INT const, random_seed, CCTK_PARAMETER__ID_CONVERTER_ILGRMHD__random_seed); \
+
+
+#ifndef CCTK_PARAMETER__ID_CONVERTER_ILGRMHD__Gamma_Initial
+#  define CCTK_PARAMETER__ID_CONVERTER_ILGRMHD__Gamma_Initial PRIVATE_ID_CONVERTER_ILGRMHD_STRUCT.Gamma_Initial
+#endif
+#ifndef CCTK_PARAMETER__ID_CONVERTER_ILGRMHD__K_Initial
+#  define CCTK_PARAMETER__ID_CONVERTER_ILGRMHD__K_Initial PRIVATE_ID_CONVERTER_ILGRMHD_STRUCT.K_Initial
+#endif
+#ifndef CCTK_PARAMETER__ID_CONVERTER_ILGRMHD__random_pert
+#  define CCTK_PARAMETER__ID_CONVERTER_ILGRMHD__random_pert PRIVATE_ID_CONVERTER_ILGRMHD_STRUCT.random_pert
+#endif
+#ifndef CCTK_PARAMETER__ID_CONVERTER_ILGRMHD__pure_hydro_run
+#  define CCTK_PARAMETER__ID_CONVERTER_ILGRMHD__pure_hydro_run PRIVATE_ID_CONVERTER_ILGRMHD_STRUCT.pure_hydro_run
+#endif
+#ifndef CCTK_PARAMETER__ID_CONVERTER_ILGRMHD__random_seed
+#  define CCTK_PARAMETER__ID_CONVERTER_ILGRMHD__random_seed PRIVATE_ID_CONVERTER_ILGRMHD_STRUCT.random_seed
+#endif
+

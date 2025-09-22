@@ -1,0 +1,3 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.CARPET.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.CARPETLIB.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.MPI.defn

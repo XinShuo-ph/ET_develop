@@ -1,0 +1,65 @@
+#include "GaugeWave/cctk_Arguments.h"
+
+#ifdef CCODE
+#ifdef __cplusplus
+extern "C"
+#endif
+int GaugeWave_Startup (void);
+#endif /* CCODE */
+
+#ifdef CCODE
+#ifdef __cplusplus
+extern "C"
+#endif
+void GaugeWave_RegisterSymmetries (CCTK_ARGUMENTS) CCTK_ATTRIBUTE_NONNULL(1);
+#endif /* CCODE */
+
+#ifdef CCODE
+#ifdef __cplusplus
+extern "C"
+#endif
+void GaugeWave_initial (CCTK_ARGUMENTS) CCTK_ATTRIBUTE_NONNULL(1);
+#endif /* CCODE */
+
+#ifdef CCODE
+#ifdef __cplusplus
+extern "C"
+#endif
+void GaugeWave_always (CCTK_ARGUMENTS) CCTK_ATTRIBUTE_NONNULL(1);
+#endif /* CCODE */
+
+#ifdef CCODE
+#ifdef __cplusplus
+extern "C"
+#endif
+void GaugeWave_exact (CCTK_ARGUMENTS) CCTK_ATTRIBUTE_NONNULL(1);
+#endif /* CCODE */
+
+#ifdef CCODE
+#ifdef __cplusplus
+extern "C"
+#endif
+void GaugeWave_SelectBoundConds (CCTK_ARGUMENTS) CCTK_ATTRIBUTE_NONNULL(1);
+#endif /* CCODE */
+
+#ifdef CCODE
+#ifdef __cplusplus
+extern "C"
+#endif
+void GaugeWave_CheckBoundaries (CCTK_ARGUMENTS) CCTK_ATTRIBUTE_NONNULL(1);
+#endif /* CCODE */
+
+#ifdef CCODE
+#ifdef __cplusplus
+extern "C"
+#endif
+void GaugeWave_RegisterVars (CCTK_ARGUMENTS) CCTK_ATTRIBUTE_NONNULL(1);
+#endif /* CCODE */
+
+#ifdef CCODE
+#ifdef __cplusplus
+extern "C"
+#endif
+void GaugeWave_ParamCheck (CCTK_ARGUMENTS) CCTK_ATTRIBUTE_NONNULL(1);
+#endif /* CCODE */
+

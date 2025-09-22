@@ -1,0 +1,32 @@
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+extern struct
+{
+  CCTK_INT array_nx;
+  CCTK_INT array_ny;
+  CCTK_INT array_nz;
+} PRIVATE_TESTLOCALREDUCE_STRUCT;
+
+#ifdef __cplusplus
+}
+#endif
+
+#define DECLARE_PRIVATE_TESTLOCALREDUCE_STRUCT_PARAMS \
+  CCTK_DECLARE_INIT (CCTK_INT const, array_nx, CCTK_PARAMETER__TESTLOCALREDUCE__array_nx); \
+  CCTK_DECLARE_INIT (CCTK_INT const, array_ny, CCTK_PARAMETER__TESTLOCALREDUCE__array_ny); \
+  CCTK_DECLARE_INIT (CCTK_INT const, array_nz, CCTK_PARAMETER__TESTLOCALREDUCE__array_nz); \
+
+
+#ifndef CCTK_PARAMETER__TESTLOCALREDUCE__array_nx
+#  define CCTK_PARAMETER__TESTLOCALREDUCE__array_nx PRIVATE_TESTLOCALREDUCE_STRUCT.array_nx
+#endif
+#ifndef CCTK_PARAMETER__TESTLOCALREDUCE__array_ny
+#  define CCTK_PARAMETER__TESTLOCALREDUCE__array_ny PRIVATE_TESTLOCALREDUCE_STRUCT.array_ny
+#endif
+#ifndef CCTK_PARAMETER__TESTLOCALREDUCE__array_nz
+#  define CCTK_PARAMETER__TESTLOCALREDUCE__array_nz PRIVATE_TESTLOCALREDUCE_STRUCT.array_nz
+#endif
+

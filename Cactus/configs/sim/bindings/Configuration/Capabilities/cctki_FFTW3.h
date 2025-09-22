@@ -1,0 +1,1 @@
+#define HAVE_CAPABILITY_FFTW3 1

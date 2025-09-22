@@ -1,0 +1,42 @@
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+extern struct
+{
+  CCTK_REAL SetMask_RadiusFactor[10];
+  const char * SetMask_MaskName;
+  const char * SetMask_SurfaceName[10];
+  CCTK_INT SetMask_SurfaceIndex[10];
+  CCTK_INT SetMask_TrueShape[10];
+} PRIVATE_SETMASK_SPHERICALSURFACE_STRUCT;
+
+#ifdef __cplusplus
+}
+#endif
+
+#define DECLARE_PRIVATE_SETMASK_SPHERICALSURFACE_STRUCT_PARAMS \
+  CCTK_DECLARE_INIT (CCTK_REAL const * const, SetMask_RadiusFactor, CCTK_PARAMETER__SETMASK_SPHERICALSURFACE__SetMask_RadiusFactor); \
+  CCTK_DECLARE_INIT (const char * const, SetMask_MaskName, CCTK_PARAMETER__SETMASK_SPHERICALSURFACE__SetMask_MaskName); \
+  CCTK_DECLARE_INIT (const char * const * const, SetMask_SurfaceName, CCTK_PARAMETER__SETMASK_SPHERICALSURFACE__SetMask_SurfaceName); \
+  CCTK_DECLARE_INIT (CCTK_INT const * const, SetMask_SurfaceIndex, CCTK_PARAMETER__SETMASK_SPHERICALSURFACE__SetMask_SurfaceIndex); \
+  CCTK_DECLARE_INIT (CCTK_INT const * const, SetMask_TrueShape, CCTK_PARAMETER__SETMASK_SPHERICALSURFACE__SetMask_TrueShape); \
+
+
+#ifndef CCTK_PARAMETER__SETMASK_SPHERICALSURFACE__SetMask_RadiusFactor
+#  define CCTK_PARAMETER__SETMASK_SPHERICALSURFACE__SetMask_RadiusFactor PRIVATE_SETMASK_SPHERICALSURFACE_STRUCT.SetMask_RadiusFactor
+#endif
+#ifndef CCTK_PARAMETER__SETMASK_SPHERICALSURFACE__SetMask_MaskName
+#  define CCTK_PARAMETER__SETMASK_SPHERICALSURFACE__SetMask_MaskName PRIVATE_SETMASK_SPHERICALSURFACE_STRUCT.SetMask_MaskName
+#endif
+#ifndef CCTK_PARAMETER__SETMASK_SPHERICALSURFACE__SetMask_SurfaceName
+#  define CCTK_PARAMETER__SETMASK_SPHERICALSURFACE__SetMask_SurfaceName PRIVATE_SETMASK_SPHERICALSURFACE_STRUCT.SetMask_SurfaceName
+#endif
+#ifndef CCTK_PARAMETER__SETMASK_SPHERICALSURFACE__SetMask_SurfaceIndex
+#  define CCTK_PARAMETER__SETMASK_SPHERICALSURFACE__SetMask_SurfaceIndex PRIVATE_SETMASK_SPHERICALSURFACE_STRUCT.SetMask_SurfaceIndex
+#endif
+#ifndef CCTK_PARAMETER__SETMASK_SPHERICALSURFACE__SetMask_TrueShape
+#  define CCTK_PARAMETER__SETMASK_SPHERICALSURFACE__SetMask_TrueShape PRIVATE_SETMASK_SPHERICALSURFACE_STRUCT.SetMask_TrueShape
+#endif
+

@@ -1,0 +1,17 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.MPI.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.ZLIB.defn
+INC_DIRS +=  $(HDF5_INC_DIRS)
+INC_DIRS_F +=  $(HDF5_INC_DIRS)
+HDF5_BUILD          = 
+HDF5_ENABLE_CXX     = no
+HDF5_ENABLE_FORTRAN = yes
+LIBSZ_DIR           = 
+LIBZ_DIR            = 
+HDF5_INSTALL_DIR    = 
+HDF5_DIR            = /usr
+HDF5_ENABLE_CXX     = no
+HDF5_ENABLE_FORTRAN = yes
+HDF5_INC_DIRS       = /usr/lib/x86_64-linux-gnu/hdf5/openmpi /usr/lib/openmpi/lib /usr/include/openmpi /usr/include/hdf5/openmpi  /usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent /usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include /usr/lib/openmpi/include /usr/lib/openmpi/include/openmpi 
+HDF5_LIB_DIRS       = /usr/lib/x86_64-linux-gnu/hdf5/openmpi /usr/lib/openmpi/lib    /usr/lib/openmpi/lib 
+HDF5_LIBS           = hdf5hl_fortran hdf5_fortran hdf5_hl hdf5 mpi sz z mpi_cxx mpi m z
+HAVE_CAPABILITY_HDF5 = 1

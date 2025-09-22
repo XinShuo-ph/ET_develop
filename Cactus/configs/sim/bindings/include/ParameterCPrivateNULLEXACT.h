@@ -1,0 +1,87 @@
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+extern struct
+{
+  CCTK_REAL A_r0;
+  CCTK_REAL Constant_C1i;
+  CCTK_REAL Constant_C1r;
+  CCTK_REAL Constant_C2i;
+  CCTK_REAL Constant_C2r;
+  CCTK_REAL F_r0;
+  CCTK_REAL amplitude;
+  CCTK_REAL beta0i;
+  CCTK_REAL beta0r;
+  CCTK_REAL omm;
+  const char * error_mask_type;
+  CCTK_INT analytic_fields;
+  CCTK_INT testbed_ID;
+  CCTK_INT verbose;
+} PRIVATE_NULLEXACT_STRUCT;
+
+#ifdef __cplusplus
+}
+#endif
+
+#define DECLARE_PRIVATE_NULLEXACT_STRUCT_PARAMS \
+  CCTK_DECLARE_INIT (CCTK_REAL const, A_r0, CCTK_PARAMETER__NULLEXACT__A_r0); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, Constant_C1i, CCTK_PARAMETER__NULLEXACT__Constant_C1i); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, Constant_C1r, CCTK_PARAMETER__NULLEXACT__Constant_C1r); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, Constant_C2i, CCTK_PARAMETER__NULLEXACT__Constant_C2i); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, Constant_C2r, CCTK_PARAMETER__NULLEXACT__Constant_C2r); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, F_r0, CCTK_PARAMETER__NULLEXACT__F_r0); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, amplitude, CCTK_PARAMETER__NULLEXACT__amplitude); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, beta0i, CCTK_PARAMETER__NULLEXACT__beta0i); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, beta0r, CCTK_PARAMETER__NULLEXACT__beta0r); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, omm, CCTK_PARAMETER__NULLEXACT__omm); \
+  CCTK_DECLARE_INIT (const char * const, error_mask_type, CCTK_PARAMETER__NULLEXACT__error_mask_type); \
+  CCTK_DECLARE_INIT (CCTK_INT const, analytic_fields, CCTK_PARAMETER__NULLEXACT__analytic_fields); \
+  CCTK_DECLARE_INIT (CCTK_INT const, testbed_ID, CCTK_PARAMETER__NULLEXACT__testbed_ID); \
+  CCTK_DECLARE_INIT (CCTK_INT const, verbose, CCTK_PARAMETER__NULLEXACT__verbose); \
+
+
+#ifndef CCTK_PARAMETER__NULLEXACT__A_r0
+#  define CCTK_PARAMETER__NULLEXACT__A_r0 PRIVATE_NULLEXACT_STRUCT.A_r0
+#endif
+#ifndef CCTK_PARAMETER__NULLEXACT__Constant_C1i
+#  define CCTK_PARAMETER__NULLEXACT__Constant_C1i PRIVATE_NULLEXACT_STRUCT.Constant_C1i
+#endif
+#ifndef CCTK_PARAMETER__NULLEXACT__Constant_C1r
+#  define CCTK_PARAMETER__NULLEXACT__Constant_C1r PRIVATE_NULLEXACT_STRUCT.Constant_C1r
+#endif
+#ifndef CCTK_PARAMETER__NULLEXACT__Constant_C2i
+#  define CCTK_PARAMETER__NULLEXACT__Constant_C2i PRIVATE_NULLEXACT_STRUCT.Constant_C2i
+#endif
+#ifndef CCTK_PARAMETER__NULLEXACT__Constant_C2r
+#  define CCTK_PARAMETER__NULLEXACT__Constant_C2r PRIVATE_NULLEXACT_STRUCT.Constant_C2r
+#endif
+#ifndef CCTK_PARAMETER__NULLEXACT__F_r0
+#  define CCTK_PARAMETER__NULLEXACT__F_r0 PRIVATE_NULLEXACT_STRUCT.F_r0
+#endif
+#ifndef CCTK_PARAMETER__NULLEXACT__amplitude
+#  define CCTK_PARAMETER__NULLEXACT__amplitude PRIVATE_NULLEXACT_STRUCT.amplitude
+#endif
+#ifndef CCTK_PARAMETER__NULLEXACT__beta0i
+#  define CCTK_PARAMETER__NULLEXACT__beta0i PRIVATE_NULLEXACT_STRUCT.beta0i
+#endif
+#ifndef CCTK_PARAMETER__NULLEXACT__beta0r
+#  define CCTK_PARAMETER__NULLEXACT__beta0r PRIVATE_NULLEXACT_STRUCT.beta0r
+#endif
+#ifndef CCTK_PARAMETER__NULLEXACT__omm
+#  define CCTK_PARAMETER__NULLEXACT__omm PRIVATE_NULLEXACT_STRUCT.omm
+#endif
+#ifndef CCTK_PARAMETER__NULLEXACT__error_mask_type
+#  define CCTK_PARAMETER__NULLEXACT__error_mask_type PRIVATE_NULLEXACT_STRUCT.error_mask_type
+#endif
+#ifndef CCTK_PARAMETER__NULLEXACT__analytic_fields
+#  define CCTK_PARAMETER__NULLEXACT__analytic_fields PRIVATE_NULLEXACT_STRUCT.analytic_fields
+#endif
+#ifndef CCTK_PARAMETER__NULLEXACT__testbed_ID
+#  define CCTK_PARAMETER__NULLEXACT__testbed_ID PRIVATE_NULLEXACT_STRUCT.testbed_ID
+#endif
+#ifndef CCTK_PARAMETER__NULLEXACT__verbose
+#  define CCTK_PARAMETER__NULLEXACT__verbose PRIVATE_NULLEXACT_STRUCT.verbose
+#endif
+

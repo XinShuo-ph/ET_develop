@@ -1,0 +1,62 @@
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+extern struct
+{
+  CCTK_INT ML_ADMConstraints_MaxNumArrayEvolvedVars;
+  CCTK_INT ML_ADMConstraints_MaxNumEvolvedVars;
+  CCTK_INT ML_ADMConstraints_evaluate_calc_every;
+  CCTK_INT ML_ADMConstraints_evaluate_calc_offset;
+  CCTK_INT other_timelevels;
+  CCTK_INT rhs_timelevels;
+  CCTK_INT tile_size;
+  CCTK_INT timelevels;
+  CCTK_INT verbose;
+} RESTRICTED_ML_ADMCONSTRAINTS_STRUCT;
+
+#ifdef __cplusplus
+}
+#endif
+
+#define DECLARE_RESTRICTED_ML_ADMCONSTRAINTS_STRUCT_PARAMS \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_ADMConstraints_MaxNumArrayEvolvedVars, CCTK_PARAMETER__ML_ADMCONSTRAINTS__ML_ADMConstraints_MaxNumArrayEvolvedVars); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_ADMConstraints_MaxNumEvolvedVars, CCTK_PARAMETER__ML_ADMCONSTRAINTS__ML_ADMConstraints_MaxNumEvolvedVars); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_ADMConstraints_evaluate_calc_every, CCTK_PARAMETER__ML_ADMCONSTRAINTS__ML_ADMConstraints_evaluate_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_ADMConstraints_evaluate_calc_offset, CCTK_PARAMETER__ML_ADMCONSTRAINTS__ML_ADMConstraints_evaluate_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, other_timelevels, CCTK_PARAMETER__ML_ADMCONSTRAINTS__other_timelevels); \
+  CCTK_DECLARE_INIT (CCTK_INT const, rhs_timelevels, CCTK_PARAMETER__ML_ADMCONSTRAINTS__rhs_timelevels); \
+  CCTK_DECLARE_INIT (CCTK_INT const, tile_size, CCTK_PARAMETER__ML_ADMCONSTRAINTS__tile_size); \
+  CCTK_DECLARE_INIT (CCTK_INT const, timelevels, CCTK_PARAMETER__ML_ADMCONSTRAINTS__timelevels); \
+  CCTK_DECLARE_INIT (CCTK_INT const, verbose, CCTK_PARAMETER__ML_ADMCONSTRAINTS__verbose); \
+
+
+#ifndef CCTK_PARAMETER__ML_ADMCONSTRAINTS__ML_ADMConstraints_MaxNumArrayEvolvedVars
+#  define CCTK_PARAMETER__ML_ADMCONSTRAINTS__ML_ADMConstraints_MaxNumArrayEvolvedVars RESTRICTED_ML_ADMCONSTRAINTS_STRUCT.ML_ADMConstraints_MaxNumArrayEvolvedVars
+#endif
+#ifndef CCTK_PARAMETER__ML_ADMCONSTRAINTS__ML_ADMConstraints_MaxNumEvolvedVars
+#  define CCTK_PARAMETER__ML_ADMCONSTRAINTS__ML_ADMConstraints_MaxNumEvolvedVars RESTRICTED_ML_ADMCONSTRAINTS_STRUCT.ML_ADMConstraints_MaxNumEvolvedVars
+#endif
+#ifndef CCTK_PARAMETER__ML_ADMCONSTRAINTS__ML_ADMConstraints_evaluate_calc_every
+#  define CCTK_PARAMETER__ML_ADMCONSTRAINTS__ML_ADMConstraints_evaluate_calc_every RESTRICTED_ML_ADMCONSTRAINTS_STRUCT.ML_ADMConstraints_evaluate_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_ADMCONSTRAINTS__ML_ADMConstraints_evaluate_calc_offset
+#  define CCTK_PARAMETER__ML_ADMCONSTRAINTS__ML_ADMConstraints_evaluate_calc_offset RESTRICTED_ML_ADMCONSTRAINTS_STRUCT.ML_ADMConstraints_evaluate_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_ADMCONSTRAINTS__other_timelevels
+#  define CCTK_PARAMETER__ML_ADMCONSTRAINTS__other_timelevels RESTRICTED_ML_ADMCONSTRAINTS_STRUCT.other_timelevels
+#endif
+#ifndef CCTK_PARAMETER__ML_ADMCONSTRAINTS__rhs_timelevels
+#  define CCTK_PARAMETER__ML_ADMCONSTRAINTS__rhs_timelevels RESTRICTED_ML_ADMCONSTRAINTS_STRUCT.rhs_timelevels
+#endif
+#ifndef CCTK_PARAMETER__ML_ADMCONSTRAINTS__tile_size
+#  define CCTK_PARAMETER__ML_ADMCONSTRAINTS__tile_size RESTRICTED_ML_ADMCONSTRAINTS_STRUCT.tile_size
+#endif
+#ifndef CCTK_PARAMETER__ML_ADMCONSTRAINTS__timelevels
+#  define CCTK_PARAMETER__ML_ADMCONSTRAINTS__timelevels RESTRICTED_ML_ADMCONSTRAINTS_STRUCT.timelevels
+#endif
+#ifndef CCTK_PARAMETER__ML_ADMCONSTRAINTS__verbose
+#  define CCTK_PARAMETER__ML_ADMCONSTRAINTS__verbose RESTRICTED_ML_ADMCONSTRAINTS_STRUCT.verbose
+#endif
+

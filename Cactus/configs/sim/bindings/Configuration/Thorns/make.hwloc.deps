@@ -1,0 +1,2 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.HWLOC.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.ZLIB.deps

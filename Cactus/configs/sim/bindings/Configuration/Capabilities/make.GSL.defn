@@ -1,0 +1,9 @@
+INC_DIRS +=  $(GSL_INC_DIRS)
+INC_DIRS_F +=  $(GSL_INC_DIRS)
+GSL_BUILD       = 
+GSL_INSTALL_DIR = 
+GSL_DIR      = /usr
+GSL_INC_DIRS = 
+GSL_LIB_DIRS = /usr/lib/x86_64-linux-gnu 
+GSL_LIBS     =  gsl gslcblas m
+HAVE_CAPABILITY_GSL = 1

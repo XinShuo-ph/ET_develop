@@ -1,0 +1,20 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.BLAS.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.LAPACK.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.MPI.defn
+INC_DIRS +=  $(PETSC_INC_DIRS)
+INC_DIRS_F +=  $(PETSC_INC_DIRS)
+PETSC_BUILD                 = 
+PETSC_INT8                  = 
+PETSC_BLAS_EXTRA_LIB_DIRS   = 
+PETSC_BLAS_EXTRA_LIBS       = 
+PETSC_LAPACK_EXTRA_LIB_DIRS = 
+PETSC_LAPACK_EXTRA_LIBS     = 
+PETSC_MPI_EXTRA_LIB_DIRS    = 
+PETSC_MPI_EXTRA_LIBS        = 
+PETSC_INSTALL_DIR           = 
+PETSC_DIR      = /usr/lib/petsc
+PETSC_ARCH     = 
+PETSC_INC_DIRS = /usr/lib/petsc/include /usr/lib/petsc/bmake/ /usr/lib/petsc/include 
+PETSC_LIB_DIRS = /usr/lib/petsc/lib/ /usr/lib/petsc/lib /usr/lib/petsc/lib 
+PETSC_LIBS     = petsc m
+HAVE_CAPABILITY_PETSc = 1

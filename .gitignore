@@ -1,0 +1,98 @@
+# Compiled objects and executables
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+/Cactus/bin/
+/Cactus/exe/
+/Cactus/lib/
+/Cactus/simfactory/
+/Cactus/configs/*/lib/
+/Cactus/configs/*/exe/
+/Cactus/configs/*/build/
+/Cactus/configs/*/scratch/
+
+# Build artifacts
+Makefile.machine
+config-data
+config-info
+make.cache.deps
+
+# Log files
+*.log
+/log_files_host/
+/Cactus/configs/*/log
+
+# Test outputs and results (comment out if you want to track reference outputs)
+/test_outputs_host/
+*.tl
+*.xg
+*.asc
+*.hdf5
+*.h5
+
+# Temporary and backup files
+*~
+*.tmp
+*.bak
+*.swp
+*.swo
+.#*
+\#*#
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Linux/Unix system files
+*~
+.directory
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Data and output directories (adjust as needed)
+/data/
+/output/
+/results/
+
+# Docker artifacts
+.dockerignore
+
+# Einstein Toolkit specific
+/Cactus/repos/
+/Cactus/arrangements/*/src/
+/Cactus/arrangements/*/build/
+/Cactus/arrangements/*/doc/
+simfactory2_login
+
+# data
+et_code_data/
+et_test_data/

@@ -1,0 +1,4 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.CYCLECLOCK.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.LOOPCONTROL.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.MPI.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.VECTORS.defn

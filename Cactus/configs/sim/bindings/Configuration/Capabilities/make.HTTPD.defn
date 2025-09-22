@@ -1,0 +1,4 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.MPI.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.PTHREADS.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.SOCKET.defn
+HAVE_CAPABILITY_HTTPD = 1

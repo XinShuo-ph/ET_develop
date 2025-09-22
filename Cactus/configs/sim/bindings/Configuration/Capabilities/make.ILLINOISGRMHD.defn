@@ -1,0 +1,5 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.BOUNDARY.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.CARTGRID3D.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.EOS_OMNI.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.SPACEMASK.defn
+HAVE_CAPABILITY_IllinoisGRMHD = 1

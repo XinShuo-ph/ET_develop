@@ -1,0 +1,2 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.EOS_BASE.defn
+HAVE_CAPABILITY_EOS_Polytrope = 1

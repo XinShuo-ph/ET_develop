@@ -1,0 +1,1 @@
+#define HAVE_CAPABILITY_SOCKET 1

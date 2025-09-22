@@ -1,0 +1,2 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.EOS_OMNI.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.FORTRAN.deps

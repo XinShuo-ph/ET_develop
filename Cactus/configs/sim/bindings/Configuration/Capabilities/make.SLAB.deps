@@ -1,0 +1,2 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.LOOPCONTROL.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.MPI.deps

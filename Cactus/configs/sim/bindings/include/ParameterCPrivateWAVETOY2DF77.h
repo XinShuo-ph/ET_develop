@@ -1,0 +1,42 @@
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+extern struct
+{
+  CCTK_REAL amplitude;
+  CCTK_REAL sigma;
+  CCTK_REAL xcenter;
+  CCTK_REAL ycenter;
+  const char * bound;
+} PRIVATE_WAVETOY2DF77_STRUCT;
+
+#ifdef __cplusplus
+}
+#endif
+
+#define DECLARE_PRIVATE_WAVETOY2DF77_STRUCT_PARAMS \
+  CCTK_DECLARE_INIT (CCTK_REAL const, amplitude, CCTK_PARAMETER__WAVETOY2DF77__amplitude); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, sigma, CCTK_PARAMETER__WAVETOY2DF77__sigma); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, xcenter, CCTK_PARAMETER__WAVETOY2DF77__xcenter); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, ycenter, CCTK_PARAMETER__WAVETOY2DF77__ycenter); \
+  CCTK_DECLARE_INIT (const char * const, bound, CCTK_PARAMETER__WAVETOY2DF77__bound); \
+
+
+#ifndef CCTK_PARAMETER__WAVETOY2DF77__amplitude
+#  define CCTK_PARAMETER__WAVETOY2DF77__amplitude PRIVATE_WAVETOY2DF77_STRUCT.amplitude
+#endif
+#ifndef CCTK_PARAMETER__WAVETOY2DF77__sigma
+#  define CCTK_PARAMETER__WAVETOY2DF77__sigma PRIVATE_WAVETOY2DF77_STRUCT.sigma
+#endif
+#ifndef CCTK_PARAMETER__WAVETOY2DF77__xcenter
+#  define CCTK_PARAMETER__WAVETOY2DF77__xcenter PRIVATE_WAVETOY2DF77_STRUCT.xcenter
+#endif
+#ifndef CCTK_PARAMETER__WAVETOY2DF77__ycenter
+#  define CCTK_PARAMETER__WAVETOY2DF77__ycenter PRIVATE_WAVETOY2DF77_STRUCT.ycenter
+#endif
+#ifndef CCTK_PARAMETER__WAVETOY2DF77__bound
+#  define CCTK_PARAMETER__WAVETOY2DF77__bound PRIVATE_WAVETOY2DF77_STRUCT.bound
+#endif
+

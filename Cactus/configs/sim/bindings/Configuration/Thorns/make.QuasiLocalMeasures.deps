@@ -1,0 +1,5 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.BOUNDARY.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.FORTRAN.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.LAPACK.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.MPI.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.TGRTENSOR.deps

@@ -1,0 +1,67 @@
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+extern struct
+{
+  CCTK_REAL override_Rin;
+  CCTK_REAL override_Rout;
+  CCTK_REAL r_extract;
+  const char * metric_data_filename;
+  CCTK_INT order;
+  CCTK_INT override_extraction_parameters;
+  CCTK_INT override_na;
+  CCTK_INT override_nn;
+  CCTK_INT override_spin;
+  CCTK_INT time_derivative_in_file;
+} PRIVATE_SPHERICALHARMONICRECON_STRUCT;
+
+#ifdef __cplusplus
+}
+#endif
+
+#define DECLARE_PRIVATE_SPHERICALHARMONICRECON_STRUCT_PARAMS \
+  CCTK_DECLARE_INIT (CCTK_REAL const, override_Rin, CCTK_PARAMETER__SPHERICALHARMONICRECON__override_Rin); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, override_Rout, CCTK_PARAMETER__SPHERICALHARMONICRECON__override_Rout); \
+  CCTK_DECLARE_INIT (CCTK_REAL const, r_extract, CCTK_PARAMETER__SPHERICALHARMONICRECON__r_extract); \
+  CCTK_DECLARE_INIT (const char * const, metric_data_filename, CCTK_PARAMETER__SPHERICALHARMONICRECON__metric_data_filename); \
+  CCTK_DECLARE_INIT (CCTK_INT const, order, CCTK_PARAMETER__SPHERICALHARMONICRECON__order); \
+  CCTK_DECLARE_INIT (CCTK_INT const, override_extraction_parameters, CCTK_PARAMETER__SPHERICALHARMONICRECON__override_extraction_parameters); \
+  CCTK_DECLARE_INIT (CCTK_INT const, override_na, CCTK_PARAMETER__SPHERICALHARMONICRECON__override_na); \
+  CCTK_DECLARE_INIT (CCTK_INT const, override_nn, CCTK_PARAMETER__SPHERICALHARMONICRECON__override_nn); \
+  CCTK_DECLARE_INIT (CCTK_INT const, override_spin, CCTK_PARAMETER__SPHERICALHARMONICRECON__override_spin); \
+  CCTK_DECLARE_INIT (CCTK_INT const, time_derivative_in_file, CCTK_PARAMETER__SPHERICALHARMONICRECON__time_derivative_in_file); \
+
+
+#ifndef CCTK_PARAMETER__SPHERICALHARMONICRECON__override_Rin
+#  define CCTK_PARAMETER__SPHERICALHARMONICRECON__override_Rin PRIVATE_SPHERICALHARMONICRECON_STRUCT.override_Rin
+#endif
+#ifndef CCTK_PARAMETER__SPHERICALHARMONICRECON__override_Rout
+#  define CCTK_PARAMETER__SPHERICALHARMONICRECON__override_Rout PRIVATE_SPHERICALHARMONICRECON_STRUCT.override_Rout
+#endif
+#ifndef CCTK_PARAMETER__SPHERICALHARMONICRECON__r_extract
+#  define CCTK_PARAMETER__SPHERICALHARMONICRECON__r_extract PRIVATE_SPHERICALHARMONICRECON_STRUCT.r_extract
+#endif
+#ifndef CCTK_PARAMETER__SPHERICALHARMONICRECON__metric_data_filename
+#  define CCTK_PARAMETER__SPHERICALHARMONICRECON__metric_data_filename PRIVATE_SPHERICALHARMONICRECON_STRUCT.metric_data_filename
+#endif
+#ifndef CCTK_PARAMETER__SPHERICALHARMONICRECON__order
+#  define CCTK_PARAMETER__SPHERICALHARMONICRECON__order PRIVATE_SPHERICALHARMONICRECON_STRUCT.order
+#endif
+#ifndef CCTK_PARAMETER__SPHERICALHARMONICRECON__override_extraction_parameters
+#  define CCTK_PARAMETER__SPHERICALHARMONICRECON__override_extraction_parameters PRIVATE_SPHERICALHARMONICRECON_STRUCT.override_extraction_parameters
+#endif
+#ifndef CCTK_PARAMETER__SPHERICALHARMONICRECON__override_na
+#  define CCTK_PARAMETER__SPHERICALHARMONICRECON__override_na PRIVATE_SPHERICALHARMONICRECON_STRUCT.override_na
+#endif
+#ifndef CCTK_PARAMETER__SPHERICALHARMONICRECON__override_nn
+#  define CCTK_PARAMETER__SPHERICALHARMONICRECON__override_nn PRIVATE_SPHERICALHARMONICRECON_STRUCT.override_nn
+#endif
+#ifndef CCTK_PARAMETER__SPHERICALHARMONICRECON__override_spin
+#  define CCTK_PARAMETER__SPHERICALHARMONICRECON__override_spin PRIVATE_SPHERICALHARMONICRECON_STRUCT.override_spin
+#endif
+#ifndef CCTK_PARAMETER__SPHERICALHARMONICRECON__time_derivative_in_file
+#  define CCTK_PARAMETER__SPHERICALHARMONICRECON__time_derivative_in_file PRIVATE_SPHERICALHARMONICRECON_STRUCT.time_derivative_in_file
+#endif
+

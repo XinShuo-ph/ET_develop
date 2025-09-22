@@ -1,0 +1,3 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.MPI.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.PTHREADS.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.SOCKET.deps

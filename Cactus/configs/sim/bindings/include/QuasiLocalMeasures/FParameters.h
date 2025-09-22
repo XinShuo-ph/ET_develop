@@ -1,0 +1,51 @@
+#define DECLARE_CCTK_PARAMETERS \
+CCTK_DECLARE(CCTK_REAL,begin_qlm_calculations_after,(100))&&\
+CCTK_DECLARE(CCTK_STRING,coordsystem,)&&\
+CCTK_DECLARE(CCTK_STRING,interpolator,)&&\
+CCTK_DECLARE(CCTK_STRING,interpolator_options,)&&\
+CCTK_DECLARE(CCTK_STRING,killing_vector_method,)&&\
+CCTK_DECLARE(CCTK_STRING,killing_vector_normalisation,)&&\
+CCTK_DECLARE(CCTK_STRING,surface_name,(100))&&\
+CCTK_DECLARE(CCTK_INT,num_surfaces,)&&\
+CCTK_DECLARE(CCTK_INT,output_vtk_every,)&&\
+CCTK_DECLARE(CCTK_INT,spatial_order,)&&\
+CCTK_DECLARE(CCTK_INT,surface_index,(100))&&\
+CCTK_DECLARE(CCTK_INT,verbose,)&&\
+CCTK_DECLARE(CCTK_INT,veryverbose,)&&\
+COMMON /QuasiLocalMeasurespriv/begin_qlm_calculations_after, coordsystem, interpolator, interpolator_options, killing_vector_method, killing_vector_normalisation, surface_name, num_surfaces, output_vtk_every, spatial_order, surface_index, verbose, veryverbose&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH0,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH1,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH2,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH3,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH4,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH5,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH6,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH7,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH8,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH9,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH10,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH12,)&&\
+CCTK_DECLARE(CCTK_STRING,metric_type,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH14,)&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH15,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH11,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH13,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH16,)&&\
+COMMON /ADMBASErest/CCTKH0, CCTKH1, CCTKH2, CCTKH3, CCTKH4, CCTKH5, CCTKH6, CCTKH7, CCTKH8, CCTKH9, CCTKH10, CCTKH12, metric_type, CCTKH14, CCTKH15, CCTKH11, CCTKH13, CCTKH16&&\
+CCTK_DECLARE(CCTK_REAL,CCTKH18,(42))&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH17,(42))&&\
+CCTK_DECLARE(CCTK_STRING,CCTKH19,(42))&&\
+CCTK_DECLARE(CCTK_INT,auto_res,(42))&&\
+CCTK_DECLARE(CCTK_INT,maxnphi,)&&\
+CCTK_DECLARE(CCTK_INT,maxntheta,)&&\
+CCTK_DECLARE(CCTK_INT,nghostsphi,(42))&&\
+CCTK_DECLARE(CCTK_INT,nghoststheta,(42))&&\
+CCTK_DECLARE(CCTK_INT,nphi,(42))&&\
+CCTK_DECLARE(CCTK_INT,nsurfaces,)&&\
+CCTK_DECLARE(CCTK_INT,ntheta,(42))&&\
+CCTK_DECLARE(CCTK_INT,symmetric_x,(42))&&\
+CCTK_DECLARE(CCTK_INT,symmetric_y,(42))&&\
+CCTK_DECLARE(CCTK_INT,symmetric_z,(42))&&\
+CCTK_DECLARE(CCTK_INT,CCTKH20,)&&\
+COMMON /SPHERICALSURFACErest/CCTKH18, CCTKH17, CCTKH19, auto_res, maxnphi, maxntheta, nghostsphi, nghoststheta, nphi, nsurfaces, ntheta, symmetric_x, symmetric_y, symmetric_z, CCTKH20&&\
+

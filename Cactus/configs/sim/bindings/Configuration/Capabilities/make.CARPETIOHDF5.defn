@@ -1,0 +1,6 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.CARPET.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.CARPETLIB.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.HDF5.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.IOUTIL.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.MPI.defn
+HAVE_CAPABILITY_CarpetIOHDF5 = 1

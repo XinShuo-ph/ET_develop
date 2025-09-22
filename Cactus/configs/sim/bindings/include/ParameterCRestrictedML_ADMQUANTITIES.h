@@ -1,0 +1,67 @@
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+extern struct
+{
+  CCTK_INT ML_ADMQuantities_MaxNumArrayEvolvedVars;
+  CCTK_INT ML_ADMQuantities_MaxNumEvolvedVars;
+  CCTK_INT ML_ADMQuantities_calculate_calc_every;
+  CCTK_INT ML_ADMQuantities_calculate_calc_offset;
+  CCTK_INT conformalMethod;
+  CCTK_INT other_timelevels;
+  CCTK_INT rhs_timelevels;
+  CCTK_INT tile_size;
+  CCTK_INT timelevels;
+  CCTK_INT verbose;
+} RESTRICTED_ML_ADMQUANTITIES_STRUCT;
+
+#ifdef __cplusplus
+}
+#endif
+
+#define DECLARE_RESTRICTED_ML_ADMQUANTITIES_STRUCT_PARAMS \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_ADMQuantities_MaxNumArrayEvolvedVars, CCTK_PARAMETER__ML_ADMQUANTITIES__ML_ADMQuantities_MaxNumArrayEvolvedVars); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_ADMQuantities_MaxNumEvolvedVars, CCTK_PARAMETER__ML_ADMQUANTITIES__ML_ADMQuantities_MaxNumEvolvedVars); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_ADMQuantities_calculate_calc_every, CCTK_PARAMETER__ML_ADMQUANTITIES__ML_ADMQuantities_calculate_calc_every); \
+  CCTK_DECLARE_INIT (CCTK_INT const, ML_ADMQuantities_calculate_calc_offset, CCTK_PARAMETER__ML_ADMQUANTITIES__ML_ADMQuantities_calculate_calc_offset); \
+  CCTK_DECLARE_INIT (CCTK_INT const, conformalMethod, CCTK_PARAMETER__ML_ADMQUANTITIES__conformalMethod); \
+  CCTK_DECLARE_INIT (CCTK_INT const, other_timelevels, CCTK_PARAMETER__ML_ADMQUANTITIES__other_timelevels); \
+  CCTK_DECLARE_INIT (CCTK_INT const, rhs_timelevels, CCTK_PARAMETER__ML_ADMQUANTITIES__rhs_timelevels); \
+  CCTK_DECLARE_INIT (CCTK_INT const, tile_size, CCTK_PARAMETER__ML_ADMQUANTITIES__tile_size); \
+  CCTK_DECLARE_INIT (CCTK_INT const, timelevels, CCTK_PARAMETER__ML_ADMQUANTITIES__timelevels); \
+  CCTK_DECLARE_INIT (CCTK_INT const, verbose, CCTK_PARAMETER__ML_ADMQUANTITIES__verbose); \
+
+
+#ifndef CCTK_PARAMETER__ML_ADMQUANTITIES__ML_ADMQuantities_MaxNumArrayEvolvedVars
+#  define CCTK_PARAMETER__ML_ADMQUANTITIES__ML_ADMQuantities_MaxNumArrayEvolvedVars RESTRICTED_ML_ADMQUANTITIES_STRUCT.ML_ADMQuantities_MaxNumArrayEvolvedVars
+#endif
+#ifndef CCTK_PARAMETER__ML_ADMQUANTITIES__ML_ADMQuantities_MaxNumEvolvedVars
+#  define CCTK_PARAMETER__ML_ADMQUANTITIES__ML_ADMQuantities_MaxNumEvolvedVars RESTRICTED_ML_ADMQUANTITIES_STRUCT.ML_ADMQuantities_MaxNumEvolvedVars
+#endif
+#ifndef CCTK_PARAMETER__ML_ADMQUANTITIES__ML_ADMQuantities_calculate_calc_every
+#  define CCTK_PARAMETER__ML_ADMQUANTITIES__ML_ADMQuantities_calculate_calc_every RESTRICTED_ML_ADMQUANTITIES_STRUCT.ML_ADMQuantities_calculate_calc_every
+#endif
+#ifndef CCTK_PARAMETER__ML_ADMQUANTITIES__ML_ADMQuantities_calculate_calc_offset
+#  define CCTK_PARAMETER__ML_ADMQUANTITIES__ML_ADMQuantities_calculate_calc_offset RESTRICTED_ML_ADMQUANTITIES_STRUCT.ML_ADMQuantities_calculate_calc_offset
+#endif
+#ifndef CCTK_PARAMETER__ML_ADMQUANTITIES__conformalMethod
+#  define CCTK_PARAMETER__ML_ADMQUANTITIES__conformalMethod RESTRICTED_ML_ADMQUANTITIES_STRUCT.conformalMethod
+#endif
+#ifndef CCTK_PARAMETER__ML_ADMQUANTITIES__other_timelevels
+#  define CCTK_PARAMETER__ML_ADMQUANTITIES__other_timelevels RESTRICTED_ML_ADMQUANTITIES_STRUCT.other_timelevels
+#endif
+#ifndef CCTK_PARAMETER__ML_ADMQUANTITIES__rhs_timelevels
+#  define CCTK_PARAMETER__ML_ADMQUANTITIES__rhs_timelevels RESTRICTED_ML_ADMQUANTITIES_STRUCT.rhs_timelevels
+#endif
+#ifndef CCTK_PARAMETER__ML_ADMQUANTITIES__tile_size
+#  define CCTK_PARAMETER__ML_ADMQUANTITIES__tile_size RESTRICTED_ML_ADMQUANTITIES_STRUCT.tile_size
+#endif
+#ifndef CCTK_PARAMETER__ML_ADMQUANTITIES__timelevels
+#  define CCTK_PARAMETER__ML_ADMQUANTITIES__timelevels RESTRICTED_ML_ADMQUANTITIES_STRUCT.timelevels
+#endif
+#ifndef CCTK_PARAMETER__ML_ADMQUANTITIES__verbose
+#  define CCTK_PARAMETER__ML_ADMQUANTITIES__verbose RESTRICTED_ML_ADMQUANTITIES_STRUCT.verbose
+#endif
+

@@ -1,0 +1,12 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.HWLOC.defn
+INC_DIRS +=  $(MPI_INC_DIRS)
+INC_DIRS_F +=  $(MPI_LIB_DIRS)
+MPI_BUILD       = 
+MPI_INSTALL_DIR = 
+HWLOC_DIR       = /usr
+CCTK_MPI     = 1
+MPI_DIR      = /usr
+MPI_INC_DIRS = /usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent /usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include /usr/lib/openmpi/include /usr/lib/openmpi/include/openmpi
+MPI_LIB_DIRS = /usr/lib/openmpi/lib
+MPI_LIBS     = mpi_cxx mpi
+HAVE_CAPABILITY_MPI = 1

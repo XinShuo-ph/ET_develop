@@ -1,0 +1,17 @@
+#define DECLARE_CCTK_PARAMETERS \
+CCTK_DECLARE(CCTK_INT,WaveMoL_MaxNumConstrainedVars,)&&\
+CCTK_DECLARE(CCTK_INT,WaveMoL_MaxNumEvolvedVars,)&&\
+COMMON /wavemolrest/WaveMoL_MaxNumConstrainedVars, WaveMoL_MaxNumEvolvedVars&&\
+CCTK_DECLARE(CCTK_STRING,bound,)&&\
+COMMON /WaveMoLpriv/bound&&\
+CCTK_DECLARE(CCTK_INT,CCTKH0,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH1,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH2,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH3,)&&\
+CCTK_DECLARE(CCTK_INT,MoL_Num_Constrained_Vars,)&&\
+CCTK_DECLARE(CCTK_INT,MoL_Num_Evolved_Vars,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH4,)&&\
+CCTK_DECLARE(CCTK_INT,MoL_Num_SaveAndRestore_Vars,)&&\
+CCTK_DECLARE(CCTK_INT,CCTKH5,)&&\
+COMMON /METHODOFLINESrest/CCTKH0, CCTKH1, CCTKH2, CCTKH3, MoL_Num_Constrained_Vars, MoL_Num_Evolved_Vars, CCTKH4, MoL_Num_SaveAndRestore_Vars, CCTKH5&&\
+

@@ -1,0 +1,1 @@
+#define HAVE_CAPABILITY_CycleClock 1

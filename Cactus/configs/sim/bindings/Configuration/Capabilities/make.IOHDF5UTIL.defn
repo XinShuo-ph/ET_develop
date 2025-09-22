@@ -1,0 +1,5 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.HDF5.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.IOUTIL.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.MPI.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.PUGH.defn
+HAVE_CAPABILITY_IOHDF5Util = 1

@@ -1,0 +1,4 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.HDF5.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.IOUTIL.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.MPI.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.PUGH.deps

@@ -1,0 +1,1 @@
+#define HAVE_CAPABILITY_PAPI 1

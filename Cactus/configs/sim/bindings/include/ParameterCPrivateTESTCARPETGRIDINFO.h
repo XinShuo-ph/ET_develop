@@ -1,0 +1,27 @@
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+extern struct
+{
+  CCTK_INT N_maps;
+  CCTK_INT test_local_mode;
+} PRIVATE_TESTCARPETGRIDINFO_STRUCT;
+
+#ifdef __cplusplus
+}
+#endif
+
+#define DECLARE_PRIVATE_TESTCARPETGRIDINFO_STRUCT_PARAMS \
+  CCTK_DECLARE_INIT (CCTK_INT const, N_maps, CCTK_PARAMETER__TESTCARPETGRIDINFO__N_maps); \
+  CCTK_DECLARE_INIT (CCTK_INT const, test_local_mode, CCTK_PARAMETER__TESTCARPETGRIDINFO__test_local_mode); \
+
+
+#ifndef CCTK_PARAMETER__TESTCARPETGRIDINFO__N_maps
+#  define CCTK_PARAMETER__TESTCARPETGRIDINFO__N_maps PRIVATE_TESTCARPETGRIDINFO_STRUCT.N_maps
+#endif
+#ifndef CCTK_PARAMETER__TESTCARPETGRIDINFO__test_local_mode
+#  define CCTK_PARAMETER__TESTCARPETGRIDINFO__test_local_mode PRIVATE_TESTCARPETGRIDINFO_STRUCT.test_local_mode
+#endif
+

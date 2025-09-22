@@ -1,0 +1,3 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.BLAS.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.GSL.deps
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.LAPACK.deps

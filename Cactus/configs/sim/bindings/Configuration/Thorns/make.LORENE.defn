@@ -1,0 +1,4 @@
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.BLAS.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.GSL.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.LAPACK.defn
+include /opt/Cactus/configs/sim/bindings/Configuration/Capabilities/make.LORENE.defn
