@@ -3,12 +3,15 @@
    @date      6 May 2003
    @author    David Rideout
    @desc
-              Register the boundary conditions that this thorn provides
+              Registration of physical boundary conditions
    @enddesc
    @version   $Id$
  @@*/
 
 #include "cctk.h"
+#include "cctk_Arguments.h"
+#include "cctk_FortranString.h"
+
 #include "SampleBnd.h"
 
 /* the rcs ID and its dummy function to use it */
@@ -16,7 +19,25 @@ static const char *rcsid = "$Header$";
 CCTK_FILEVERSION(CactusExamples_SampleBoundary_Register_c);
 
 /********************************************************************
- ********************    External Routines   ************************
+ *********************     Local Data Types   ***********************
+ ********************************************************************/
+
+/********************************************************************
+ ********************* Local Routine Prototypes *********************
+ ********************************************************************/
+
+void SampleBoundary_RegisterBCs(CCTK_ARGUMENTS);
+
+/********************************************************************
+ ********************* Other Routine Prototypes *********************
+ ********************************************************************/
+
+/********************************************************************
+ *********************     Local Data   *****************************
+ ********************************************************************/
+
+/********************************************************************
+ *********************     External Routines   **********************
  ********************************************************************/
 
 /*@@
@@ -24,28 +45,33 @@ CCTK_FILEVERSION(CactusExamples_SampleBoundary_Register_c);
    @date       6 May 2003
    @author     David Rideout
    @desc
-               Register the boundary conditions that this thorn provides
+               Register all the boundary conditions that this thorn
+               provides.
    @enddesc
    @calls      Boundary_RegisterPhysicalBC
 
-   @returntype int
+   @var        CCTK_ARGUMENTS
+   @vdesc      arguments as passed by the flesh
+   @vtype      CCTK_ARGUMENTS
+   @vio        in
+   @endvar
+
+   @returntype void
    @returndesc
-      return code of @seeroutine Boundary_RegisterPhysicalBC <BR>
-      0 for success
    @endreturndesc
 @@*/
-int SampleBoundary_RegisterBCs(void)
+
+void SampleBoundary_RegisterBCs(CCTK_ARGUMENTS)
 {
+  DECLARE_CCTK_ARGUMENTS;
   int err;
 
-  /* Register the linear extrapolation boundary condition with the boundary thorn */
-  err = Boundary_RegisterPhysicalBC((CCTK_POINTER_TO_CONST) NULL,
-                                   (CCTK_INT) BndLinExtrap,
+  /* Register the linear extrapolation boundary condition under the 
+     name "LinearExtrap" */
+  err = Boundary_RegisterPhysicalBC(cctkGH, (CCTK_FPOINTER) BndLinExtrap, 
                                    "LinearExtrap");
-  if (err)
+  if (err < 0)
   {
-    CCTK_WARN(0, "Failed to register boundary condition LinearExtrap");
+    CCTK_WARN(0, "Failed to register LinearExtrap boundary condition");
   }
-
-  return err;
 }

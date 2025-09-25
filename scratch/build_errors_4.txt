@@ -90,21 +90,13 @@ Checking status of thorn RegridSyncTest
 Checking status of thorn RotatingDBHIVP
 Checking status of thorn SampleBoundary
 Checking status of thorn SampleIO
+Checking status of thorn Seed_Magnetic_Fields
 COMPILING arrangements/CactusExamples/SampleBoundary/src/Register.c
 In file included from /opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/Register.c:13:0:
-/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/SampleBnd.h:28:30: error: expected ';', ',' or ')' before 'function_pointer'
-       CCTK_INT CCTK_FPOINTER function_pointer(CCTK_POINTER_TO_CONST GH,
-                              ^
-/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/SampleBnd.h:36:21: error: 'CCTK_FNAME' declared as function returning a function
- CCTK_INT CCTK_FCALL CCTK_FNAME(SymmetryTableHandleForGrid)
-                     ^
-/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/SampleBnd.h:37:6: warning: parameter names (without types) in function declaration
-      (CCTK_POINTER_TO_CONST cctkGH);
-      ^
-/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/SampleBnd.h:59:17: error: 'CCTK_FNAME' declared as function returning a function
- void CCTK_FCALL CCTK_FNAME(Linear_extrap_one_bndry)(int *doBC,
+/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/SampleBnd.h:62:17: error: 'CCTK_FNAME' declared as function returning a function
+ void CCTK_FCALL CCTK_FNAME(Linear_extrap_one_bndry)(int *doBC, 
                  ^
-/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/SampleBnd.h:61:53: warning: parameter names (without types) in function declaration
+/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/SampleBnd.h:64:53: warning: parameter names (without types) in function declaration
                                                      CCTK_REAL *var_ptr);
                                                      ^
 /opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/Register.c: In function 'SampleBoundary_RegisterBCs':
@@ -124,6 +116,7 @@ make[3]: *** [Register.c.o] Error 1
 make[2]: *** [make.checked] Error 2
 /opt/Cactus/lib/make/make.configuration:181: recipe for target '/opt/Cactus/configs/sim/lib/libthorn_SampleBoundary.a' failed
 make[1]: *** [/opt/Cactus/configs/sim/lib/libthorn_SampleBoundary.a] Error 2
+make[1]: *** Waiting for unfinished jobs....
 Makefile:256: recipe for target 'sim' failed
 make: *** [sim] Error 2
 

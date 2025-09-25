@@ -1,5 +1,5 @@
 /*@@
-   @file      SampleBnd.h
+   @header    SampleBnd.h
    @date      6 May 2003
    @author    David Rideout
    @desc 
@@ -19,45 +19,48 @@ extern "C"
 #endif
 
 /********************************************************************
- *********************     Function Prototypes   *******************
+ *********************     Constants       ***********************
  ********************************************************************/
 
-/* Aliased function prototypes */
-CCTK_INT CCTK_FCALL CCTK_FNAME(Boundary_RegisterPhysicalBC)
-     (CCTK_POINTER_TO_CONST GH,
-      CCTK_INT CCTK_FPOINTER function_pointer(CCTK_POINTER_TO_CONST GH,
-                                              CCTK_INT num_vars,
-                                              CCTK_INT *var_indices,
-                                              CCTK_INT *faces,
-                                              CCTK_INT *boundary_widths,
-                                              CCTK_INT *table_handles),
-      CCTK_STRING bc_name);
+/* Define return codes for the boundary condition function */
+#define BOUNDARY_NO_ERROR                 0
+#define BOUNDARY_INVALID_FACES           -1
+#define BOUNDARY_UNSUPPORTED_STAGGERING  -2
+#define BOUNDARY_INVALID_WIDTH           -4
+#define BOUNDARY_INVALID_TABLE           -8
+#define BOUNDARY_UNSUPPORTED_DIM        -16
+#define BOUNDARY_GRID_SCALAR            -32
 
-CCTK_INT CCTK_FCALL CCTK_FNAME(SymmetryTableHandleForGrid)
-     (CCTK_POINTER_TO_CONST cctkGH);
+/********************************************************************
+ *********************     Typedefs        ***********************
+ ********************************************************************/
 
-/* Function pointer type for boundary condition functions */
-typedef int (*phys_bc_fn_ptr) (const cGH *GH,
-                               int num_vars,
-                               int *vars,
-                               int *faces,
-                               int *widths,
-                               int *tables);
+/* Function pointer type for physical boundary conditions */
+typedef int (*phys_bc_fn_ptr) (const cGH *GH, 
+                               int num_vars, 
+                               int *var_indices, 
+                               int *faces, 
+                               int *boundary_widths, 
+                               int *table_handles);
 
-/* Scheduled function prototypes */
+/********************************************************************
+ *********************     Function Prototypes   *****************
+ ********************************************************************/
+
+/* Scheduled routines */
 void SampleBoundary_RegisterBCs(CCTK_ARGUMENTS);
 
-/* Boundary condition implementation prototypes */
-int BndLinExtrap(const cGH *GH,
-                 int num_vars,
-                 int *vars,
-                 int *faces,
-                 int *widths,
-                 int *tables);
+/* Boundary condition implementation */
+int BndLinExtrap (const cGH *GH, 
+                  int num_vars, 
+                  int *vars, 
+                  int *faces, 
+                  int *widths, 
+                  int *tables);
 
-/* Fortran routine prototype */
-void CCTK_FCALL CCTK_FNAME(Linear_extrap_one_bndry)(int *doBC,
-                                                    const int *lsh,
+/* Fortran interface for the linear extrapolation routine */
+void CCTK_FCALL CCTK_FNAME(Linear_extrap_one_bndry)(int *doBC, 
+                                                    const int *lsh, 
                                                     CCTK_REAL *var_ptr);
 
 #ifdef __cplusplus
