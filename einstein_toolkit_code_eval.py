@@ -22,6 +22,7 @@ import argparse
 from datetime import datetime
 from datasets import load_dataset
 import openai
+from smart_diff_comparison import compare_directories_with_tolerance
 
 # Add the scratch directory to the path so we can import our test modules
 sys.path.append(os.path.join(os.path.dirname(__file__), 'scratch'))
@@ -257,8 +258,8 @@ class EinsteinToolkitTester:
             'stderr': stderr
         }
     
-    def run_tests_for_thorn(self, thorn_name):
-        """Run all tests associated with a specific thorn"""
+    def run_tests_for_thorn(self, thorn_name, rtol=1e-6, atol=1e-12):
+        """Run all tests associated with a specific thorn with smart numerical comparison"""
         tests = self.get_tests_for_thorn(thorn_name)
         if not tests:
             return {
@@ -271,19 +272,27 @@ class EinsteinToolkitTester:
             }
         
         print(f"Running {len(tests)} tests for thorn {thorn_name}")
+        print(f"  Using numerical tolerance: rtol={rtol}, atol={atol}")
         
         test_results = []
         overall_success = True
         
+        # Create host directories for test outputs
+        host_output_base_dir = "test_outputs_host"
+        os.makedirs(host_output_base_dir, exist_ok=True)
+        
         for test_path in tests:
             test_name = os.path.basename(test_path)
             par_file = f"arrangements/{test_path}.par"
+            
+            print(f"  Running test: {test_name}")
             
             # Check if parameter file exists
             check_cmd = f"test -f {par_file} && echo 'EXISTS' || echo 'MISSING'"
             returncode, stdout, stderr = self.docker_manager.execute_in_container(check_cmd)
             
             if 'MISSING' in stdout:
+                print(f"    ERROR: Parameter file {par_file} not found!")
                 test_results.append({
                     'test_name': test_name,
                     'test_path': test_path,
@@ -293,66 +302,171 @@ class EinsteinToolkitTester:
                 overall_success = False
                 continue
             
-            # Run the test with timeout
-            test_cmd = f"timeout 300 ./exe/cactus_sim {par_file} > log_files/{test_name}_test.log 2>&1"
+            # Clean up any existing output directory in container
+            self.docker_manager.execute_in_container(f"rm -rf {test_name}")
+            
+            # Run the simulation (this creates an output directory)
+            print(f"    Running simulation...")
+            test_cmd = f"timeout 600 ./exe/cactus_sim {par_file}"
             returncode, stdout, stderr = self.docker_manager.execute_in_container(test_cmd)
             
-            test_success = (returncode == 0)
+            if returncode != 0:
+                print(f"    ERROR: Simulation failed or timed out!")
+                test_results.append({
+                    'test_name': test_name,
+                    'test_path': test_path,
+                    'success': False,
+                    'error': f'Simulation failed with code {returncode}'
+                })
+                overall_success = False
+                continue
             
-            test_results.append({
-                'test_name': test_name,
-                'test_path': test_path,
-                'success': test_success,
-                'returncode': returncode
-            })
+            # Check if output directory was created
+            check_output_cmd = f"test -d {test_name} && echo 'EXISTS' || echo 'MISSING'"
+            returncode, stdout, stderr = self.docker_manager.execute_in_container(check_output_cmd)
             
-            if not test_success:
+            if 'MISSING' in stdout:
+                print(f"    ERROR: No output directory created!")
+                test_results.append({
+                    'test_name': test_name,
+                    'test_path': test_path,
+                    'success': False,
+                    'error': 'No output directory created'
+                })
+                overall_success = False
+                continue
+            
+            # Copy output directory from container to host
+            host_output_dir = os.path.join(host_output_base_dir, test_name)
+            print(f"    Copying results to host: {host_output_dir}")
+            
+            # Remove existing host output directory if it exists
+            if os.path.exists(host_output_dir):
+                import shutil
+                shutil.rmtree(host_output_dir)
+            
+            # Copy from container to host
+            copy_cmd = f"docker cp {self.docker_manager.container_name}:/opt/Cactus/{test_name} {host_output_dir}"
+            copy_returncode, copy_stdout, copy_stderr = self.docker_manager.run_command(copy_cmd)
+            
+            if copy_returncode != 0:
+                print(f"    ERROR: Failed to copy output from container!")
+                test_results.append({
+                    'test_name': test_name,
+                    'test_path': test_path,
+                    'success': False,
+                    'error': f'Failed to copy output: {copy_stderr}'
+                })
+                overall_success = False
+                continue
+            
+            # Compare with benchmark using smart numerical comparison
+            benchmark_dir = f"Cactus/arrangements/{test_path}"
+            print(f"    Comparing with benchmark using smart numerical comparison...")
+            
+            if not os.path.exists(benchmark_dir):
+                print(f"    ERROR: Benchmark directory not found: {benchmark_dir}")
+                test_results.append({
+                    'test_name': test_name,
+                    'test_path': test_path,
+                    'success': False,
+                    'error': 'Benchmark directory not found'
+                })
+                overall_success = False
+                continue
+            
+            try:
+                # Use smart comparison with specified tolerances
+                matches, comparison_message = compare_directories_with_tolerance(
+                    host_output_dir, benchmark_dir, rtol=rtol, atol=atol
+                )
+                
+                if matches:
+                    print(f"    PASS: Results match benchmark within tolerance")
+                    test_results.append({
+                        'test_name': test_name,
+                        'test_path': test_path,
+                        'success': True,
+                        'comparison_message': comparison_message,
+                        'rtol': rtol,
+                        'atol': atol
+                    })
+                else:
+                    print(f"    FAIL: Results do not match benchmark")
+                    test_results.append({
+                        'test_name': test_name,
+                        'test_path': test_path,
+                        'success': False,
+                        'comparison_message': comparison_message[:500] + '...' if len(comparison_message) > 500 else comparison_message,
+                        'rtol': rtol,
+                        'atol': atol
+                    })
+                    overall_success = False
+                
+            except Exception as e:
+                print(f"    ERROR: Comparison failed: {e}")
+                test_results.append({
+                    'test_name': test_name,
+                    'test_path': test_path,
+                    'success': False,
+                    'error': f'Comparison error: {str(e)}'
+                })
                 overall_success = False
         
         return {
             'success': overall_success,
-            'message': f"Ran {len(tests)} tests",
+            'message': f"Ran {len(tests)} tests with smart numerical comparison",
             'test_results': test_results,
             'total_tests': len(tests),
             'passed_tests': sum(1 for r in test_results if r['success']),
-            'failed_tests': sum(1 for r in test_results if not r['success'])
+            'failed_tests': sum(1 for r in test_results if not r['success']),
+            'rtol': rtol,
+            'atol': atol
         }
 
 class EinsteinToolkitScorer:
     """Score generated code based on build and test results"""
     
     def __init__(self):
-        # Simple scoring: 40 points for build + 60 points for tests = 100 points
+        # Scoring: 40 points for build + 10 points for test run + 50 points for test accuracy = 100 points
         self.build_points = 40
-        self.test_points = 60
+        self.test_run_points = 10
+        self.test_accuracy_points = 50
     
     def calculate_score(self, build_result, test_result):
-        """Calculate overall score: 40 points for build + 60 points for tests = 100 total"""
+        """Calculate overall score: 40 points for build + 10 points for test run + 50 points for test accuracy = 100 total"""
         
         # Build score: 40 points if successful, 0 if failed
         build_score = self.build_points if build_result.get('success', False) else 0.0
         
-        # Test score: 60 points * (passed_tests / total_tests)
-        if test_result.get('total_tests', 0) > 0:
-            test_success_rate = test_result.get('passed_tests', 0) / test_result.get('total_tests', 1)
-            test_score = self.test_points * test_success_rate
-        else:
-            test_success_rate = 0.0
-            test_score = 0.0
+        # Test run score: 10 points if tests were attempted (regardless of outcome)
+        test_run_score = 0.0
+        test_accuracy_score = 0.0
+        test_success_rate = 0.0
         
-        # Overall score is simply build + test points
-        overall_score = build_score + test_score
+        if test_result.get('total_tests', 0) > 0:
+            # 10 points for successfully running tests
+            test_run_score = self.test_run_points
+            
+            # 50 points * (passed_tests / total_tests) for test accuracy
+            test_success_rate = test_result.get('passed_tests', 0) / test_result.get('total_tests', 1)
+            test_accuracy_score = self.test_accuracy_points * test_success_rate
+        
+        # Overall score is build + test run + test accuracy
+        overall_score = build_score + test_run_score + test_accuracy_score
         
         return {
             'overall_score': overall_score,
             'build_score': build_score,
-            'test_score': test_score,
+            'test_run_score': test_run_score,
+            'test_accuracy_score': test_accuracy_score,
             'breakdown': {
                 'build_success': build_result.get('success', False),
                 'total_tests': test_result.get('total_tests', 0),
                 'passed_tests': test_result.get('passed_tests', 0),
                 'failed_tests': test_result.get('failed_tests', 0),
-                'test_success_rate': test_success_rate
+                'test_success_rate': test_success_rate,
+                'tests_attempted': test_result.get('total_tests', 0) > 0
             },
             'grade': self._get_letter_grade(overall_score)
         }
@@ -496,9 +610,11 @@ def load_valid_thorns_from_mapping():
 def main():
     """Main execution function"""
     parser = argparse.ArgumentParser(description='EinsteinToolkit Code Generation and Evaluation')
-    parser.add_argument('--max-examples', type=int, default=3, help='Maximum number of examples to process')
+    parser.add_argument('--max-examples', type=int, default=2, help='Maximum number of examples to process')
     parser.add_argument('--api-key', type=str, help='API key for code generation')
     parser.add_argument('--output-dir', type=str, default='scratch', help='Output directory for results')
+    parser.add_argument('--rtol', type=float, default=1e-6, help='Relative tolerance for numerical comparison')
+    parser.add_argument('--atol', type=float, default=1e-12, help='Absolute tolerance for numerical comparison')
     
     args = parser.parse_args()
     
@@ -518,6 +634,7 @@ def main():
     print(f"Max examples: {args.max_examples}")
     print(f"Output directory: {args.output_dir}")
     print(f"API available: {'Yes' if api_key else 'No (Mock mode)'}")
+    print(f"Numerical tolerance: rtol={args.rtol}, atol={args.atol}")
     print()
     
     # Load dataset and filter valid examples
@@ -667,8 +784,8 @@ void mock_function(CCTK_ARGUMENTS) {{
             # Test if build succeeded
             if build_result['success']:
                 print("Running tests for generated code...")
-                test_result = tester.run_tests_for_thorn(example['thorn_name'])
-                print(f"  - Tests: {test_result['passed_tests']}/{test_result['total_tests']} passed")
+                test_result = tester.run_tests_for_thorn(example['thorn_name'], rtol=args.rtol, atol=args.atol)
+                print(f"  - Tests: {test_result['passed_tests']}/{test_result['total_tests']} passed (rtol={args.rtol}, atol={args.atol})")
             else:
                 print("Skipping tests due to build failure...")
                 test_result = {
@@ -682,6 +799,7 @@ void mock_function(CCTK_ARGUMENTS) {{
             # Calculate score
             score_result = scorer.calculate_score(build_result, test_result)
             print(f"Overall Score: {score_result['overall_score']:.1f}/100 (Grade: {score_result['grade']})")
+            print(f"  Build: {score_result['build_score']:.1f}/40, Test Run: {score_result['test_run_score']:.1f}/10, Test Accuracy: {score_result['test_accuracy_score']:.1f}/50")
             
             # Save results
             result = {
