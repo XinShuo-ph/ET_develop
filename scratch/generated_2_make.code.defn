@@ -1,0 +1,6 @@
+# Main make.code.defn file for thorn Poisson
+# Source files in this directory
+SRCS = uniform_charge.c
+
+# Subdirectories containing source files (if any)
+SUBDIRS =

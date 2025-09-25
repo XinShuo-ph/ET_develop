@@ -126,6 +126,7 @@ class EinsteinToolkitTester:
     def __init__(self, docker_manager):
         self.docker_manager = docker_manager
         self.thorn_to_tests_mapping = {}
+        self.backed_up_files = {}  # Store backup information
         self.load_thorn_test_mapping()
     
     def load_thorn_test_mapping(self):
@@ -155,6 +156,65 @@ class EinsteinToolkitTester:
                         self.thorn_to_tests_mapping[current_thorn].append(test_path)
         
         print(f"Loaded test mapping for {len(self.thorn_to_tests_mapping)} thorns")
+    
+    def backup_source_file(self, thorn_name, src_filename):
+        """Backup the original source file before deploying generated code"""
+        thorn_path = f"/opt/Cactus/arrangements/{thorn_name}"
+        src_dir = f"{thorn_path}/src"
+        source_file = f"{src_dir}/{src_filename}"
+        backup_file = f"{source_file}.backup"
+        
+        # Create backup in container
+        returncode, stdout, stderr = self.docker_manager.execute_in_container(
+            f"cp {source_file} {backup_file}"
+        )
+        
+        if returncode == 0:
+            backup_key = f"{thorn_name}/{src_filename}"
+            self.backed_up_files[backup_key] = backup_file
+            print(f"  - Backed up original file: {source_file} -> {backup_file}")
+            return True
+        else:
+            print(f"  - Warning: Could not backup {source_file}: {stderr}")
+            return False
+    
+    def restore_source_file(self, thorn_name, src_filename):
+        """Restore the original source file after testing"""
+        backup_key = f"{thorn_name}/{src_filename}"
+        
+        if backup_key not in self.backed_up_files:
+            print(f"  - No backup found for {thorn_name}/{src_filename}")
+            return False
+        
+        backup_file = self.backed_up_files[backup_key]
+        thorn_path = f"/opt/Cactus/arrangements/{thorn_name}"
+        src_dir = f"{thorn_path}/src"
+        source_file = f"{src_dir}/{src_filename}"
+        
+        # Restore backup in container
+        returncode, stdout, stderr = self.docker_manager.execute_in_container(
+            f"cp {backup_file} {source_file}"
+        )
+        
+        if returncode == 0:
+            # Clean up backup file
+            self.docker_manager.execute_in_container(f"rm {backup_file}")
+            del self.backed_up_files[backup_key]
+            print(f"  - Restored original file: {backup_file} -> {source_file}")
+            return True
+        else:
+            print(f"  - Error: Could not restore {source_file}: {stderr}")
+            return False
+    
+    def cleanup_backups(self):
+        """Restore all remaining backed up files and clean up"""
+        if not self.backed_up_files:
+            return
+        
+        print(f"Cleaning up {len(self.backed_up_files)} remaining backup files...")
+        for backup_key, backup_file in list(self.backed_up_files.items()):
+            thorn_name, src_filename = backup_key.split('/', 1)
+            self.restore_source_file(thorn_name, src_filename)
     
     def get_tests_for_thorn(self, thorn_name):
         """Get list of tests for a specific thorn"""
@@ -366,9 +426,15 @@ def generate_code_with_api(prompt_text, api_key, max_tokens=4000):
         print(f"Error calling API: {e}")
         return None
 
-def create_einstein_toolkit_prompt(example, context_char_limit=10000):
-    """Create a prompt for EinsteinToolkit code generation"""
+def create_einstein_toolkit_prompt(example, context_char_limit=8000, doc_char_limit=15000):
+    """Create a prompt for EinsteinToolkit code generation with rich documentation context"""
+    # Limit context to avoid token overflow while preserving documentation
     context = example['context'][:context_char_limit] if len(example['context']) > context_char_limit else example['context']
+    
+    # Include documentation context from the enhanced dataset
+    doc_context = ""
+    if 'combined_doc_context' in example and example['combined_doc_context'].strip():
+        doc_context = example['combined_doc_context'][:doc_char_limit] if len(example['combined_doc_context']) > doc_char_limit else example['combined_doc_context']
     
     prompt = f"""You are an expert C/C++ developer working on EinsteinToolkit, a codebase for numerical relativity simulations.
 
@@ -396,15 +462,25 @@ Create C/C++ code for the file `{example['src_filename']}` in thorn `{example['t
 ## Configuration Definition in configuration.ccl:
 ```
 {example['configuration']}
-```
+```"""
+
+    # Add documentation context if available
+    if doc_context:
+        prompt += f"""
+
+## Documentation Context:
+{doc_context}"""
+
+    prompt += f"""
 
 ## Related Code Context:
-```
+
 {context}
-```
+
 
 ## Instructions:
 Generate only the complete C/C++ source code for `{example['src_filename']}`. Include necessary headers, functions, and follow EinsteinToolkit conventions. 
+
 
 IMPORTANT: Return ONLY the raw C/C++ source code. Do NOT use markdown code blocks (```c or ```). Do NOT include any explanations, comments outside the code, or formatting. Just return the plain C/C++ source code that can be directly saved to a .c file.
 
@@ -462,9 +538,10 @@ def main():
     print("Loading HuggingFace dataset...")
     print("  - Downloading dataset files...")
     try:
-        ds = load_dataset("xinshuo/ET_code_with_context")
+        ds = load_dataset("xinshuo/ET_code_with_context_doc")
         train_ds = ds['train']
-        print(f"  - Dataset loaded successfully. Total examples: {len(train_ds)}")
+        print(f"  - Enhanced dataset loaded successfully. Total examples: {len(train_ds)}")
+        print(f"  - Dataset includes documentation files for richer context")
     except Exception as e:
         print(f"Error loading dataset: {e}")
         return 1
@@ -515,6 +592,17 @@ def main():
         prompt = create_einstein_toolkit_prompt(example)
         print(f"  - Prompt created ({len(prompt)} characters)")
         
+        # Show documentation context info
+        if 'combined_doc_context' in example and example['combined_doc_context'].strip():
+            doc_length = len(example['combined_doc_context'])
+            print(f"  - Documentation context included ({doc_length} characters)")
+            if example.get('readme_filename'):
+                print(f"    - README: {example['readme_filename']}")
+            if example.get('doc_tex_filenames'):
+                print(f"    - .tex files: {example['doc_tex_filenames']}")
+        else:
+            print("  - No documentation context available for this example")
+        
         if api_key:
             print("Generating code using API...")
             print("  - Sending request to API...")
@@ -560,6 +648,11 @@ void mock_function(CCTK_ARGUMENTS) {{
         
         # Deploy and test
         print("Deploying generated code to Docker container...")
+        
+        # Backup original source file before deployment
+        print("  - Backing up original source file...")
+        backup_success = tester.backup_source_file(example['thorn_name'], example['src_filename'])
+        
         if tester.deploy_generated_code(example['thorn_name'], example['src_filename'], generated_code):
             print("  - Code deployed successfully")
             
@@ -611,8 +704,20 @@ void mock_function(CCTK_ARGUMENTS) {{
                 'timestamp': datetime.now().isoformat()
             }
             results.append(result)
+            
+            # Restore original source file after testing
+            print("Restoring original source file...")
+            tester.restore_source_file(example['thorn_name'], example['src_filename'])
         else:
             print("Failed to deploy code!")
+            
+            # Still restore original file if backup was created
+            if backup_success:
+                print("Restoring original source file...")
+                tester.restore_source_file(example['thorn_name'], example['src_filename'])
+    
+    # Clean up any remaining backups
+    tester.cleanup_backups()
     
     # Stop Docker container
     docker_mgr.stop_container()

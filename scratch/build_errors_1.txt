@@ -1980,9 +1980,9 @@ COMPILING configs/sim/bindings/Functions/RegisterThornFunctions.c
 Checking status of thorn CartGrid3D
 COMPILING configs/sim/bindings/Functions/ADMConstraints_Functions.c
 Checking status of thorn hwloc
+Checking status of thorn CalcK
 COMPILING configs/sim/bindings/Schedule/ScheduleADMConstraints.c
 COMPILING configs/sim/bindings/Schedule/BindingsSchedule.c
-Checking status of thorn CalcK
 COMPILING configs/sim/bindings/Schedule/BindingsParameterRecovery.c
 Checking status of thorn CarpetProlongateTest
 Checking status of thorn Dissipation
@@ -2033,8 +2033,8 @@ Checking status of thorn PUGHReduce
 Checking status of thorn PUGHSlab
 Checking status of thorn Slab
 Checking status of thorn QuasiLocalMeasures
-COMPILING arrangements/CactusNumerical/Slab/src/slab.cc
 Checking status of thorn ShiftedGaugeWave
+COMPILING arrangements/CactusNumerical/Slab/src/slab.cc
 Checking status of thorn SystemTopology
 Checking status of thorn TATPETSc
 Checking status of thorn TOVSolver
@@ -2051,6 +2051,7 @@ COMPILING configs/sim/bindings/build/ADMConstraints/cctk_ThornBindings.c
 COMPILING arrangements/EinsteinAnalysis/ADMConstraints/src/ParamCheck.c
 Checking status of thorn CT_Analytic
 COMPILING arrangements/EinsteinAnalysis/ADMConstraints/src/ADMConstraints.F
+Checking status of thorn CarpetLib
 /opt/Cactus/configs/sim/build/ADMConstraints/ADMConstraints.f:67:24: Warning: Unused variable 'cdxdg_oo2dx' declared at (1) [-Wunused-variable]
 /opt/Cactus/configs/sim/build/ADMConstraints/ADMConstraints.f:62:24:
 
@@ -2088,7 +2089,6 @@ Warning: Unused variable 'dyydg_oody2' declared at (1) [-Wunused-variable]
                         1
 Warning: Unused variable 'dzzdg_oodz2' declared at (1) [-Wunused-variable]
 COMPILING arrangements/EinsteinAnalysis/ADMConstraints/src/InitSymBound.F
-Checking status of thorn CarpetLib
 Checking status of thorn CarpetMask
 Creating /opt/Cactus/configs/sim/lib/libthorn_ADMConstraints.a
 Checking status of thorn EOS_Omni
@@ -2132,10 +2132,76 @@ Checking status of thorn PeriodicCarpet
 Checking status of thorn Poisson
 COMPILING arrangements/EinsteinInitialData/NoExcision/src/getlevelinfo.cc
 COMPILING arrangements/CactusExamples/Poisson/src/uniform_charge.c
-/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c: In function 'Poisson_solve':
-/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:39:40: error: conflicting type qualifiers for 'r'
-   CCTK_REAL x_coord, y_coord, z_coord, r;
-                                        ^
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c: In function 'Poisson_prepare':
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:15:13: error: conflicting type qualifiers for 'x'
+   CCTK_REAL x, y, z, r;
+             ^
+In file included from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:14:0,
+                 from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_ScheduleFunctions.h:1,
+                 from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk.h:6,
+                 from /opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:1:
+/opt/Cactus/configs/sim/bindings/include/Poisson_Arguments.h:111:48: note: previous definition of 'x' was here
+ CCTK_DECLARE_INIT (CCTK_REAL * restrict const, x, (CCTK_REAL *) CCTKi_VarDataPtrI(cctkGH, 0, cctki_vi_x)); \
+                                                ^
+/opt/Cactus/src/include/cctk_Types.h:293:7: note: in definition of macro 'CCTK_DECLARE_INIT'
+   typ nam CCTK_ATTRIBUTE_UNUSED = (val);
+       ^
+/opt/Cactus/configs/sim/bindings/include/Poisson_Arguments.h:163:96: note: in expansion of macro 'DECLARE_POISSON_PUBLIC_CARGUMENTS'
+ #define DECLARE_POISSON_CARGUMENTS _DECLARE_CCTK_CARGUMENTS DECLARE_POISSON_PRIVATE_CARGUMENTS DECLARE_POISSON_PUBLIC_CARGUMENTS
+                                                                                                ^
+/opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:30:32: note: in expansion of macro 'DECLARE_POISSON_CARGUMENTS'
+ #define DECLARE_CCTK_ARGUMENTS DECLARE_POISSON_CARGUMENTS
+                                ^
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:10:3: note: in expansion of macro 'DECLARE_CCTK_ARGUMENTS'
+   DECLARE_CCTK_ARGUMENTS;
+   ^
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:15:16: error: conflicting type qualifiers for 'y'
+   CCTK_REAL x, y, z, r;
+                ^
+In file included from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:14:0,
+                 from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_ScheduleFunctions.h:1,
+                 from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk.h:6,
+                 from /opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:1:
+/opt/Cactus/configs/sim/bindings/include/Poisson_Arguments.h:114:48: note: previous definition of 'y' was here
+ CCTK_DECLARE_INIT (CCTK_REAL * restrict const, y, (CCTK_REAL *) CCTKi_VarDataPtrI(cctkGH, 0, cctki_vi_y)); \
+                                                ^
+/opt/Cactus/src/include/cctk_Types.h:293:7: note: in definition of macro 'CCTK_DECLARE_INIT'
+   typ nam CCTK_ATTRIBUTE_UNUSED = (val);
+       ^
+/opt/Cactus/configs/sim/bindings/include/Poisson_Arguments.h:163:96: note: in expansion of macro 'DECLARE_POISSON_PUBLIC_CARGUMENTS'
+ #define DECLARE_POISSON_CARGUMENTS _DECLARE_CCTK_CARGUMENTS DECLARE_POISSON_PRIVATE_CARGUMENTS DECLARE_POISSON_PUBLIC_CARGUMENTS
+                                                                                                ^
+/opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:30:32: note: in expansion of macro 'DECLARE_POISSON_CARGUMENTS'
+ #define DECLARE_CCTK_ARGUMENTS DECLARE_POISSON_CARGUMENTS
+                                ^
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:10:3: note: in expansion of macro 'DECLARE_CCTK_ARGUMENTS'
+   DECLARE_CCTK_ARGUMENTS;
+   ^
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:15:19: error: conflicting type qualifiers for 'z'
+   CCTK_REAL x, y, z, r;
+                   ^
+In file included from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:14:0,
+                 from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_ScheduleFunctions.h:1,
+                 from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk.h:6,
+                 from /opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:1:
+/opt/Cactus/configs/sim/bindings/include/Poisson_Arguments.h:117:48: note: previous definition of 'z' was here
+ CCTK_DECLARE_INIT (CCTK_REAL * restrict const, z, (CCTK_REAL *) CCTKi_VarDataPtrI(cctkGH, 0, cctki_vi_z));
+                                                ^
+/opt/Cactus/src/include/cctk_Types.h:293:7: note: in definition of macro 'CCTK_DECLARE_INIT'
+   typ nam CCTK_ATTRIBUTE_UNUSED = (val);
+       ^
+/opt/Cactus/configs/sim/bindings/include/Poisson_Arguments.h:163:96: note: in expansion of macro 'DECLARE_POISSON_PUBLIC_CARGUMENTS'
+ #define DECLARE_POISSON_CARGUMENTS _DECLARE_CCTK_CARGUMENTS DECLARE_POISSON_PRIVATE_CARGUMENTS DECLARE_POISSON_PUBLIC_CARGUMENTS
+                                                                                                ^
+/opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:30:32: note: in expansion of macro 'DECLARE_POISSON_CARGUMENTS'
+ #define DECLARE_CCTK_ARGUMENTS DECLARE_POISSON_CARGUMENTS
+                                ^
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:10:3: note: in expansion of macro 'DECLARE_CCTK_ARGUMENTS'
+   DECLARE_CCTK_ARGUMENTS;
+   ^
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:15:22: error: conflicting type qualifiers for 'r'
+   CCTK_REAL x, y, z, r;
+                      ^
 In file included from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:14:0,
                  from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_ScheduleFunctions.h:1,
                  from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk.h:6,
@@ -2152,11 +2218,100 @@ In file included from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Argu
 /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:30:32: note: in expansion of macro 'DECLARE_POISSON_CARGUMENTS'
  #define DECLARE_CCTK_ARGUMENTS DECLARE_POISSON_CARGUMENTS
                                 ^
-/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:35:3: note: in expansion of macro 'DECLARE_CCTK_ARGUMENTS'
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:10:3: note: in expansion of macro 'DECLARE_CCTK_ARGUMENTS'
+   DECLARE_CCTK_ARGUMENTS;
+   ^
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c: In function 'Poisson_solve':
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:52:13: error: conflicting type qualifiers for 'x'
+   CCTK_REAL x, y, z, r;
+             ^
+In file included from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:14:0,
+                 from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_ScheduleFunctions.h:1,
+                 from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk.h:6,
+                 from /opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:1:
+/opt/Cactus/configs/sim/bindings/include/Poisson_Arguments.h:111:48: note: previous definition of 'x' was here
+ CCTK_DECLARE_INIT (CCTK_REAL * restrict const, x, (CCTK_REAL *) CCTKi_VarDataPtrI(cctkGH, 0, cctki_vi_x)); \
+                                                ^
+/opt/Cactus/src/include/cctk_Types.h:293:7: note: in definition of macro 'CCTK_DECLARE_INIT'
+   typ nam CCTK_ATTRIBUTE_UNUSED = (val);
+       ^
+/opt/Cactus/configs/sim/bindings/include/Poisson_Arguments.h:163:96: note: in expansion of macro 'DECLARE_POISSON_PUBLIC_CARGUMENTS'
+ #define DECLARE_POISSON_CARGUMENTS _DECLARE_CCTK_CARGUMENTS DECLARE_POISSON_PRIVATE_CARGUMENTS DECLARE_POISSON_PUBLIC_CARGUMENTS
+                                                                                                ^
+/opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:30:32: note: in expansion of macro 'DECLARE_POISSON_CARGUMENTS'
+ #define DECLARE_CCTK_ARGUMENTS DECLARE_POISSON_CARGUMENTS
+                                ^
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:47:3: note: in expansion of macro 'DECLARE_CCTK_ARGUMENTS'
+   DECLARE_CCTK_ARGUMENTS;
+   ^
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:52:16: error: conflicting type qualifiers for 'y'
+   CCTK_REAL x, y, z, r;
+                ^
+In file included from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:14:0,
+                 from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_ScheduleFunctions.h:1,
+                 from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk.h:6,
+                 from /opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:1:
+/opt/Cactus/configs/sim/bindings/include/Poisson_Arguments.h:114:48: note: previous definition of 'y' was here
+ CCTK_DECLARE_INIT (CCTK_REAL * restrict const, y, (CCTK_REAL *) CCTKi_VarDataPtrI(cctkGH, 0, cctki_vi_y)); \
+                                                ^
+/opt/Cactus/src/include/cctk_Types.h:293:7: note: in definition of macro 'CCTK_DECLARE_INIT'
+   typ nam CCTK_ATTRIBUTE_UNUSED = (val);
+       ^
+/opt/Cactus/configs/sim/bindings/include/Poisson_Arguments.h:163:96: note: in expansion of macro 'DECLARE_POISSON_PUBLIC_CARGUMENTS'
+ #define DECLARE_POISSON_CARGUMENTS _DECLARE_CCTK_CARGUMENTS DECLARE_POISSON_PRIVATE_CARGUMENTS DECLARE_POISSON_PUBLIC_CARGUMENTS
+                                                                                                ^
+/opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:30:32: note: in expansion of macro 'DECLARE_POISSON_CARGUMENTS'
+ #define DECLARE_CCTK_ARGUMENTS DECLARE_POISSON_CARGUMENTS
+                                ^
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:47:3: note: in expansion of macro 'DECLARE_CCTK_ARGUMENTS'
+   DECLARE_CCTK_ARGUMENTS;
+   ^
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:52:19: error: conflicting type qualifiers for 'z'
+   CCTK_REAL x, y, z, r;
+                   ^
+In file included from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:14:0,
+                 from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_ScheduleFunctions.h:1,
+                 from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk.h:6,
+                 from /opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:1:
+/opt/Cactus/configs/sim/bindings/include/Poisson_Arguments.h:117:48: note: previous definition of 'z' was here
+ CCTK_DECLARE_INIT (CCTK_REAL * restrict const, z, (CCTK_REAL *) CCTKi_VarDataPtrI(cctkGH, 0, cctki_vi_z));
+                                                ^
+/opt/Cactus/src/include/cctk_Types.h:293:7: note: in definition of macro 'CCTK_DECLARE_INIT'
+   typ nam CCTK_ATTRIBUTE_UNUSED = (val);
+       ^
+/opt/Cactus/configs/sim/bindings/include/Poisson_Arguments.h:163:96: note: in expansion of macro 'DECLARE_POISSON_PUBLIC_CARGUMENTS'
+ #define DECLARE_POISSON_CARGUMENTS _DECLARE_CCTK_CARGUMENTS DECLARE_POISSON_PRIVATE_CARGUMENTS DECLARE_POISSON_PUBLIC_CARGUMENTS
+                                                                                                ^
+/opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:30:32: note: in expansion of macro 'DECLARE_POISSON_CARGUMENTS'
+ #define DECLARE_CCTK_ARGUMENTS DECLARE_POISSON_CARGUMENTS
+                                ^
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:47:3: note: in expansion of macro 'DECLARE_CCTK_ARGUMENTS'
+   DECLARE_CCTK_ARGUMENTS;
+   ^
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:52:22: error: conflicting type qualifiers for 'r'
+   CCTK_REAL x, y, z, r;
+                      ^
+In file included from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:14:0,
+                 from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_ScheduleFunctions.h:1,
+                 from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk.h:6,
+                 from /opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:1:
+/opt/Cactus/configs/sim/bindings/include/Poisson_Arguments.h:108:48: note: previous definition of 'r' was here
+ CCTK_DECLARE_INIT (CCTK_REAL * restrict const, r, (CCTK_REAL *) CCTKi_VarDataPtrI(cctkGH, 0, cctki_vi_r)); \
+                                                ^
+/opt/Cactus/src/include/cctk_Types.h:293:7: note: in definition of macro 'CCTK_DECLARE_INIT'
+   typ nam CCTK_ATTRIBUTE_UNUSED = (val);
+       ^
+/opt/Cactus/configs/sim/bindings/include/Poisson_Arguments.h:163:96: note: in expansion of macro 'DECLARE_POISSON_PUBLIC_CARGUMENTS'
+ #define DECLARE_POISSON_CARGUMENTS _DECLARE_CCTK_CARGUMENTS DECLARE_POISSON_PRIVATE_CARGUMENTS DECLARE_POISSON_PUBLIC_CARGUMENTS
+                                                                                                ^
+/opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:30:32: note: in expansion of macro 'DECLARE_POISSON_CARGUMENTS'
+ #define DECLARE_CCTK_ARGUMENTS DECLARE_POISSON_CARGUMENTS
+                                ^
+/opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:47:3: note: in expansion of macro 'DECLARE_CCTK_ARGUMENTS'
    DECLARE_CCTK_ARGUMENTS;
    ^
 /opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:89:10: warning: implicit declaration of function 'TATelliptic_Solve' [-Wimplicit-function-declaration]
-   ierr = TATelliptic_Solve(cctkGH, options_table, "phi", "res", solver);
+   ierr = TATelliptic_Solve(cctkGH, 1, "potential", "residual", solver, options);
           ^
 /opt/Cactus/configs/sim/config-data/make.config.rules:259: recipe for target 'uniform_charge.c.o' failed
 make[3]: *** [uniform_charge.c.o] Error 1
