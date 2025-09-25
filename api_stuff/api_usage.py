@@ -45,10 +45,20 @@ def encode_image_to_base64(image_path):
 
 def chat():
     import openai
-    base_url = "https://gpt-i18n.byteintl.net/gpt/openapi/online/v2/crawl/openai/deployments/gpt_openapi"
     api_version = "2024-03-01-preview"
+    base_url = "https://genai-sg-og.tiktok-row.org/gpt/openapi/online/v2/crawl/openai/deployments/gpt_openapi"
     ak = os.environ.get("SEED_LLM_API_KEY")
     model_name = "gcp-claude4-sonnet"
+    # model_name = "azure4o_20240806"
+
+    # ak = os.environ.get("YANG_CLAUDE_API_KEY")
+    # model_name = "aws_sdk_claude37_sonnet"
+
+
+    # base_url = "https://search.bytedance.net/gpt/openapi/online/v2/crawl"
+    # ak = os.environ.get("YANG_GPT_API_KEY")
+    # model_name = "gpt-4o-2024-11-20"
+
     max_tokens = 10240  # range: [1, 4095]
     client = openai.AzureOpenAI(
         azure_endpoint=base_url,

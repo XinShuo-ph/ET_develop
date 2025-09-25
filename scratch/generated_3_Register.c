@@ -3,12 +3,12 @@
    @date      6 May 2003
    @author    David Rideout
    @desc
-              Register the linear extrapolation boundary condition
+              Register the boundary conditions that this thorn provides
    @enddesc
+   @version   $Id$
  @@*/
 
 #include "cctk.h"
-
 #include "SampleBnd.h"
 
 /* the rcs ID and its dummy function to use it */
@@ -19,37 +19,33 @@ CCTK_FILEVERSION(CactusExamples_SampleBoundary_Register_c);
  ********************    External Routines   ************************
  ********************************************************************/
 
-void SampleBoundary_RegisterBCs(CCTK_ARGUMENTS);
-
 /*@@
    @routine    SampleBoundary_RegisterBCs
    @date       6 May 2003
    @author     David Rideout
    @desc
-               Register all the boundary conditions.
+               Register the boundary conditions that this thorn provides
    @enddesc
-   @calls     
-   @history
-   @endhistory
+   @calls      Boundary_RegisterPhysicalBC
+
+   @returntype int
+   @returndesc
+      return code of @seeroutine Boundary_RegisterPhysicalBC <BR>
+      0 for success
+   @endreturndesc
 @@*/
-
-void SampleBoundary_RegisterBCs(CCTK_ARGUMENTS)
+int SampleBoundary_RegisterBCs(void)
 {
-  DECLARE_CCTK_ARGUMENTS;
-  
-  int ierr;
+  int err;
 
-  /* Register the linear extrapolation boundary condition */
-  ierr = Boundary_RegisterPhysicalBC(cctkGH, 
-                                     (CCTK_INT (*) (CCTK_POINTER_TO_CONST,
-                                                    CCTK_INT,
-                                                    CCTK_INT const *,
-                                                    CCTK_INT const *,
-                                                    CCTK_INT const *,
-                                                    CCTK_INT const *))BndLinExtrap,
-                                     "LinearExtrap");
-  if (ierr < 0)
+  /* Register the linear extrapolation boundary condition with the boundary thorn */
+  err = Boundary_RegisterPhysicalBC((CCTK_POINTER_TO_CONST) NULL,
+                                   (CCTK_INT) BndLinExtrap,
+                                   "LinearExtrap");
+  if (err)
   {
-    CCTK_WARN(0, "Failed to register LinearExtrap boundary condition");
+    CCTK_WARN(0, "Failed to register boundary condition LinearExtrap");
   }
+
+  return err;
 }

@@ -90,10 +90,9 @@ Checking status of thorn RegridSyncTest
 Checking status of thorn RotatingDBHIVP
 Checking status of thorn SampleBoundary
 Checking status of thorn SampleIO
-Checking status of thorn Seed_Magnetic_Fields
 COMPILING arrangements/CactusExamples/SampleBoundary/src/Register.c
-/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/Register.c:47:5: error: conflicting types for 'SampleBoundary_RegisterBCs'
- int SampleBoundary_RegisterBCs(CCTK_ARGUMENTS)
+/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/Register.c:37:5: error: conflicting types for 'SampleBoundary_RegisterBCs'
+ int SampleBoundary_RegisterBCs(void)
      ^
 In file included from /opt/Cactus/configs/sim/bindings/include/SampleBoundary/cctk.h:6:0,
                  from /opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/Register.c:11:
@@ -101,14 +100,15 @@ In file included from /opt/Cactus/configs/sim/bindings/include/SampleBoundary/cc
  void SampleBoundary_RegisterBCs (CCTK_ARGUMENTS) CCTK_ATTRIBUTE_NONNULL(1);
       ^
 /opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/Register.c: In function 'SampleBoundary_RegisterBCs':
-/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/Register.c:54:37: warning: passing argument 2 of 'Boundary_RegisterPhysicalBC' from incompatible pointer type [-Wincompatible-pointer-types]
-                                     (CCTK_INT (*)(CCTK_POINTER_TO_CONST,
-                                     ^
+/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/Register.c:43:36: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+                                    (CCTK_INT) BndLinExtrap,
+                                    ^
+/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/Register.c:43:36: warning: passing argument 2 of 'Boundary_RegisterPhysicalBC' makes pointer from integer without a cast [-Wint-conversion]
 In file included from /opt/Cactus/configs/sim/bindings/include/SampleBoundary/cctk_Functions.h:23:0,
                  from /opt/Cactus/src/include/cctk_core.h:145,
                  from /opt/Cactus/configs/sim/bindings/include/SampleBoundary/cctk.h:7,
                  from /opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/Register.c:11:
-/opt/Cactus/configs/sim/bindings/include/SampleBoundary_Prototypes.h:18:10: note: expected 'CCTK_INT4 (* const)(const void * const,  const CCTK_INT4,  const CCTK_INT4 *, const CCTK_INT4 *, const CCTK_INT4 *, const CCTK_INT4 *) {aka int (* const)(const void * const,  const int,  const int *, const int *, const int *, const int *)}' but argument is of type 'CCTK_INT4 (*)(const void *, CCTK_INT4,  CCTK_INT4 *, CCTK_INT4 *, CCTK_INT4 *, CCTK_INT4 *) {aka int (*)(const void *, int,  int *, int *, int *, int *)}'
+/opt/Cactus/configs/sim/bindings/include/SampleBoundary_Prototypes.h:18:10: note: expected 'CCTK_INT4 (* const)(const void * const,  const CCTK_INT4,  const CCTK_INT4 *, const CCTK_INT4 *, const CCTK_INT4 *, const CCTK_INT4 *) {aka int (* const)(const void * const,  const int,  const int *, const int *, const int *, const int *)}' but argument is of type 'int'
  CCTK_INT Boundary_RegisterPhysicalBC(const CCTK_POINTER_TO_CONST GH ,
           ^
 /opt/Cactus/configs/sim/config-data/make.config.rules:259: recipe for target 'Register.c.o' failed

@@ -17,20 +17,18 @@ static const char *rcsid = "$Header$";
 
 CCTK_FILEVERSION(CactusExamples_SampleBoundary_LinearExtrapBnd_c);
 
-/* Fortran routine prototype */
-void CCTK_FCALL CCTK_FNAME(Linear_extrap_one_bndry)(
-  int *doBC,
-  int *lsh,
-  CCTK_REAL *var);
+/* Prototype for the Fortran routine */
+void CCTK_FCALL Linear_extrap_one_bndry(CCTK_INT *doBC, CCTK_INT *lsh, CCTK_REAL *var);
 
 /*@@
    @routine    BndLinExtrap
    @date       6 May 2003
    @author     David Rideout
    @desc 
-               C wrapper to apply linear extrapolation boundary condition
+               Linear extrapolation boundary condition.
+               This is the function which is registered as a boundary condition.
    @enddesc 
-   @calls      
+   @calls      Linear_extrap_one_bndry
    @history 
    @endhistory
    @var        GH
@@ -39,103 +37,140 @@ void CCTK_FCALL CCTK_FNAME(Linear_extrap_one_bndry)(
    @vio        in
    @endvar
    @var        num_vars
-   @vdesc      Number of variables to apply BC to
+   @vdesc      number of variables passed in through var_indices[]
    @vtype      const CCTK_INT
-   @vio        in  
+   @vio        in
    @endvar
    @var        var_indices
-   @vdesc      Variable indices to apply BC to
-   @vtype      const CCTK_INT *
+   @vdesc      array of variable indicies to which to apply this boundary
+               condition
+   @vtype      const CCTK_INT*
    @vio        in
    @endvar
    @var        faces
-   @vdesc      Faces on which to apply BC
-   @vtype      const CCTK_INT *
+   @vdesc      array of set of faces to which to apply the bc
+   @vtype      const CCTK_INT*
    @vio        in
    @endvar
    @var        widths
-   @vdesc      Boundary widths
-   @vtype      const CCTK_INT *
+   @vdesc      array of boundary widths for each variable
+   @vtype      const CCTK_INT*
    @vio        in
    @endvar
    @var        table_handles
-   @vdesc      Table handles for options
-   @vtype      const CCTK_INT *
+   @vdesc      array of table handles which hold extra arguments
+   @vtype      const CCTK_INT*
    @vio        in
    @endvar
-   @returntype int
+   @returntype CCTK_INT
    @returndesc
-               0 for success
+               return code of @seeroutine Linear_extrap_one_bndry
+               0  success
+              -1  failure
    @endreturndesc
 @@*/
 
-int BndLinExtrap (const CCTK_POINTER_TO_CONST GH, const CCTK_INT num_vars, 
-                  const CCTK_INT *var_indices, const CCTK_INT *faces, 
-                  const CCTK_INT *widths, const CCTK_INT *table_handles)
+int BndLinExtrap(const CCTK_POINTER_TO_CONST GH, const CCTK_INT num_vars,
+                 const CCTK_INT *var_indices, const CCTK_INT *faces,
+                 const CCTK_INT *widths, const CCTK_INT *table_handles)
 {
-  const cGH *cctkGH = (const cGH *) GH;
-  int i, ierr;
-  int doBC[6];
-  int lsh[3];
+  const cGH *cctkGH = (const cGH *)GH;
+  int i, var, gdim;
+  CCTK_INT doBC[6];
+  CCTK_INT lsh[3];
   CCTK_REAL *var_ptr;
-  int var_index;
-  
-  ierr = 0;
-  
-  /* Check that we are in 3D */
-  if (cctkGH->cctk_dim != 3)
+  int retval = 0;
+
+  /* Check input arguments */
+  if (!GH)
   {
     CCTK_VWarn(1, __LINE__, __FILE__, CCTK_THORNSTRING,
-               "Linear extrapolation boundary condition only implemented "
-               "for 3D");
+               "BndLinExtrap: NULL pointer passed for GH argument");
     return -1;
   }
-  
-  /* Set up local grid size */
-  lsh[0] = cctkGH->cctk_lsh[0];
-  lsh[1] = cctkGH->cctk_lsh[1]; 
-  lsh[2] = cctkGH->cctk_lsh[2];
-  
-  /* Loop over variables */
-  for (i = 0; i < num_vars; i++)
+
+  if (num_vars < 0)
   {
-    var_index = var_indices[i];
-    
-    /* Get pointer to variable data */
-    var_ptr = (CCTK_REAL *) CCTK_VarDataPtrI(cctkGH, 0, var_index);
-    
+    CCTK_VWarn(1, __LINE__, __FILE__, CCTK_THORNSTRING,
+               "BndLinExtrap: num_vars=%d is negative", (int)num_vars);
+    return -1;
+  }
+
+  /* Get grid dimensions */
+  gdim = CCTK_GroupDimFromVarI(var_indices[0]);
+  if (gdim != 3)
+  {
+    CCTK_VWarn(1, __LINE__, __FILE__, CCTK_THORNSTRING,
+               "BndLinExtrap: Linear extrapolation boundary condition "
+               "only implemented for 3D grids (variable has %dD)", gdim);
+    return -1;
+  }
+
+  /* Loop over variables */
+  for (var = 0; var < num_vars; var++)
+  {
+    /* Check variable type */
+    if (CCTK_VarTypeI(var_indices[var]) != CCTK_VARIABLE_REAL)
+    {
+      CCTK_VWarn(1, __LINE__, __FILE__, CCTK_THORNSTRING,
+                 "BndLinExtrap: Variable index %d is not of type CCTK_REAL",
+                 var_indices[var]);
+      retval = -1;
+      continue;
+    }
+
+    /* Get variable data pointer */
+    var_ptr = (CCTK_REAL *) CCTK_VarDataPtrI(cctkGH, 0, var_indices[var]);
     if (!var_ptr)
     {
       CCTK_VWarn(1, __LINE__, __FILE__, CCTK_THORNSTRING,
-                 "Cannot get data pointer for variable index %d", var_index);
-      ierr = -2;
+                 "BndLinExtrap: Cannot get data pointer for variable index %d",
+                 var_indices[var]);
+      retval = -1;
       continue;
     }
-    
-    /* Set up faces array for this variable */
-    if (faces)
+
+    /* Get local grid size */
+    for (i = 0; i < 3; i++)
     {
-      doBC[0] = faces[6*i + 0];  /* x-min */
-      doBC[1] = faces[6*i + 1];  /* x-max */
-      doBC[2] = faces[6*i + 2];  /* y-min */
-      doBC[3] = faces[6*i + 3];  /* y-max */
-      doBC[4] = faces[6*i + 4];  /* z-min */
-      doBC[5] = faces[6*i + 5];  /* z-max */
+      lsh[i] = cctkGH->cctk_lsh[i];
     }
-    else
+
+    /* Set up doBC array based on faces */
+    for (i = 0; i < 6; i++)
     {
-      /* Default: apply to all faces */
-      doBC[0] = 1;
-      doBC[1] = 1;
-      doBC[2] = 1;
-      doBC[3] = 1;
-      doBC[4] = 1;
-      doBC[5] = 1;
+      doBC[i] = (faces[var] == CCTK_ALL_FACES || (faces[var] & (1 << i))) ? 1 : 0;
     }
-    
-    /* Call Fortran routine */
-    CCTK_FNAME(Linear_extrap_one_bndry)(doBC, lsh, var_ptr);
+
+    /* Check that we have enough grid points */
+    if ((doBC[0] || doBC[1]) && lsh[0] < 3)
+    {
+      CCTK_VWarn(1, __LINE__, __FILE__, CCTK_THORNSTRING,
+                 "BndLinExtrap: Not enough grid points in x-direction "
+                 "(need at least 3, have %d)", (int)lsh[0]);
+      retval = -1;
+      continue;
+    }
+    if ((doBC[2] || doBC[3]) && lsh[1] < 3)
+    {
+      CCTK_VWarn(1, __LINE__, __FILE__, CCTK_THORNSTRING,
+                 "BndLinExtrap: Not enough grid points in y-direction "
+                 "(need at least 3, have %d)", (int)lsh[1]);
+      retval = -1;
+      continue;
+    }
+    if ((doBC[4] || doBC[5]) && lsh[2] < 3)
+    {
+      CCTK_VWarn(1, __LINE__, __FILE__, CCTK_THORNSTRING,
+                 "BndLinExtrap: Not enough grid points in z-direction "
+                 "(need at least 3, have %d)", (int)lsh[2]);
+      retval = -1;
+      continue;
+    }
+
+    /* Call the Fortran routine */
+    Linear_extrap_one_bndry(doBC, lsh, var_ptr);
   }
-  
-  return ierr;
+
+  return retval;
 }

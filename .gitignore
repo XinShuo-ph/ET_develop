@@ -96,3 +96,5 @@ simfactory2_login
 # data
 et_code_data/
 et_test_data/
+scratch/
+!scratch/evaluation_results_*.json

@@ -92,38 +92,161 @@ Checking status of thorn SampleBoundary
 Checking status of thorn SampleIO
 Checking status of thorn Seed_Magnetic_Fields
 COMPILING arrangements/CactusExamples/SampleBoundary/src/Register.c
-In file included from /opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/Register.c:15:0:
-/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/SampleBnd.h:41:17: error: 'CCTK_FNAME' declared as function returning a function
- void CCTK_FCALL CCTK_FNAME(Linear_extrap_one_bndry)(int *doBC, 
-                 ^
-/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/SampleBnd.h:43:53: warning: parameter names (without types) in function declaration
-                                                     CCTK_REAL *var_ptr);
-                                                     ^
-/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/Register.c:47:5: error: conflicting types for 'SampleBoundary_RegisterBCs'
- int SampleBoundary_RegisterBCs(CCTK_ARGUMENTS)
-     ^
-In file included from /opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/Register.c:15:0:
-/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/SampleBnd.h:30:6: note: previous declaration of 'SampleBoundary_RegisterBCs' was here
- void SampleBoundary_RegisterBCs(CCTK_ARGUMENTS);
-      ^
-/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/Register.c: In function 'SampleBoundary_RegisterBCs':
-/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/Register.c:54:37: warning: passing argument 2 of 'Boundary_RegisterPhysicalBC' from incompatible pointer type [-Wincompatible-pointer-types]
-                                     (CCTK_INT (*)(CCTK_POINTER_TO_CONST,
-                                     ^
-In file included from /opt/Cactus/configs/sim/bindings/include/SampleBoundary/cctk_Functions.h:23:0,
-                 from /opt/Cactus/src/include/cctk_core.h:145,
-                 from /opt/Cactus/configs/sim/bindings/include/SampleBoundary/cctk.h:7,
-                 from /opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/Register.c:11:
-/opt/Cactus/configs/sim/bindings/include/SampleBoundary_Prototypes.h:18:10: note: expected 'CCTK_INT4 (* const)(const void * const,  const CCTK_INT4,  const CCTK_INT4 *, const CCTK_INT4 *, const CCTK_INT4 *, const CCTK_INT4 *) {aka int (* const)(const void * const,  const int,  const int *, const int *, const int *, const int *)}' but argument is of type 'CCTK_INT4 (*)(const void *, CCTK_INT4,  CCTK_INT4 *, CCTK_INT4 *, CCTK_INT4 *, CCTK_INT4 *) {aka int (*)(const void *, int,  int *, int *, int *, int *)}'
- CCTK_INT Boundary_RegisterPhysicalBC(const CCTK_POINTER_TO_CONST GH ,
-          ^
-/opt/Cactus/configs/sim/config-data/make.config.rules:259: recipe for target 'Register.c.o' failed
-make[3]: *** [Register.c.o] Error 1
-/opt/Cactus/lib/make/make.thornlib:112: recipe for target 'make.checked' failed
-make[2]: *** [make.checked] Error 2
-/opt/Cactus/lib/make/make.configuration:181: recipe for target '/opt/Cactus/configs/sim/lib/libthorn_SampleBoundary.a' failed
-make[1]: *** [/opt/Cactus/configs/sim/lib/libthorn_SampleBoundary.a] Error 2
-make[1]: *** Waiting for unfinished jobs....
+COMPILING arrangements/CactusExamples/SampleBoundary/src/LinearExtrapBnd.c
+Checking status of thorn SetMask_SphericalSurface
+Updating /opt/Cactus/configs/sim/lib/libthorn_SampleBoundary.a
+Checking status of thorn SlabTest
+ar: `u' modifier ignored since `D' is the default (see `U')
+Checking status of thorn StaticConformal
+Checking status of thorn SummationByParts
+Checking status of thorn SymBase
+Checking status of thorn SystemStatistics
+Checking status of thorn TerminationTrigger
+Checking status of thorn TestAllTypes
+Checking status of thorn TestArrays
+Checking status of thorn TestComplex
+Checking status of thorn TestCoordinates
+Checking status of thorn TestFortranCrayPointers
+Checking status of thorn TestFortranDependencies2
+Checking status of thorn TestFpointerNULL
+Checking status of thorn TestFreeF90
+Checking status of thorn TestGlobalReduce
+Checking status of thorn TestInclude1
+Checking status of thorn TestInclude2
+Checking status of thorn TestLocalInterp2
+Checking status of thorn TestLocalReduce
+Checking status of thorn TestLoop
+Checking status of thorn TestMath
+Checking status of thorn TestMoL
+Checking status of thorn TestPar
+Checking status of thorn TestReduce
+Checking status of thorn TestSchedule
+Checking status of thorn TestStrings
+Checking status of thorn TestTable
+Checking status of thorn TestTimers
+Checking status of thorn TestTypes
+Checking status of thorn Time
+Checking status of thorn TimerInfo
+Checking status of thorn TmunuBase
+Checking status of thorn Trigger
+Checking status of thorn TwoPunctures
+Checking status of thorn WatchDog
+Checking status of thorn WaveBinarySource
+Checking status of thorn WaveToy1DF77
+Checking status of thorn WaveToy2DF77
+Checking status of thorn WaveToyExtra
+Checking status of thorn CactusBindings
+Checking status of thorn CartGrid3D
+Checking status of thorn hwloc
+Checking status of thorn CalcK
+Checking status of thorn CarpetProlongateTest
+Checking status of thorn Dissipation
+Checking status of thorn EHFinder
+Checking status of thorn EOS_Polytrope
+Checking status of thorn EllSOR
+Checking status of thorn IDBrillData
+Checking status of thorn IOJpeg
+Checking status of thorn ML_BSSN_Helper
+Checking status of thorn ML_CCZ4_Helper
+Checking status of thorn NullInterp
+Checking status of thorn TestFortranDependencies1
+Checking status of thorn WaveMoL
+Checking status of thorn WaveToyC
+Checking status of thorn WaveToyCXX
+Checking status of thorn WaveToyF77
+Checking status of thorn WaveToyF90
+Checking status of thorn WaveToyFreeF90
+Checking status of thorn ADMAnalysis
+Checking status of thorn ADMBase
+Checking status of thorn SpaceMask
+Checking status of thorn AHFinder
+Checking status of thorn MPI
+Checking status of thorn LoopControl
+Checking status of thorn Cartoon2D
+Checking status of thorn EOS_Hybrid
+Checking status of thorn PETSc
+Checking status of thorn PUGH
+Checking status of thorn GaugeWave
+Checking status of thorn HTTPD
+Checking status of thorn Hydro_Analysis
+Checking status of thorn KerrSchild
+Checking status of thorn ML_ADMConstraints
+Checking status of thorn ML_ADMQuantities
+Checking status of thorn ML_BSSN
+Checking status of thorn ML_CCZ4
+Checking status of thorn ML_WaveToy
+Checking status of thorn MemSpeed
+Checking status of thorn Minkowski
+Checking status of thorn ModifiedSchwarzschildBL
+Checking status of thorn NoMPI
+Checking status of thorn NullEvolve
+Checking status of thorn NullNews
+Checking status of thorn PUGHInterp
+Checking status of thorn PUGHReduce
+Checking status of thorn PUGHSlab
+Checking status of thorn Slab
+Checking status of thorn QuasiLocalMeasures
+Checking status of thorn ShiftedGaugeWave
+Checking status of thorn SystemTopology
+Checking status of thorn TATPETSc
+Checking status of thorn TOVSolver
+Checking status of thorn TestLoopControl
+Checking status of thorn TimerReport
+Checking status of thorn Vaidya2
+Checking status of thorn WeylScal4
+Checking status of thorn Cactus
+Checking status of thorn ADMConstraints
+Checking status of thorn HDF5
+Checking status of thorn CT_Analytic
+Checking status of thorn CarpetLib
+Checking status of thorn CarpetMask
+Checking status of thorn EOS_Omni
+Checking status of thorn EllPETSc
+Checking status of thorn HTTPDExtra
+Checking status of thorn IOHDF5Util
+Checking status of thorn IllinoisGRMHD
+Checking status of thorn Multipole
+Checking status of thorn NullConstr
+Checking status of thorn NullExact
+Checking status of thorn NullPsiInt
+Checking status of thorn NullSHRExtract
+Checking status of thorn Periodic
+Checking status of thorn RotatingSymmetry180
+Checking status of thorn RotatingSymmetry90
+Checking status of thorn SphericalHarmonicDecomp
+Checking status of thorn SphericalHarmonicRecon
+Checking status of thorn SphericalHarmonicReconGen
+Checking status of thorn AHFinderDirect
+Checking status of thorn Timers
+Checking status of thorn GRHydro_InitData
+Checking status of thorn IOHDF5
+Checking status of thorn Carpet
+Checking status of thorn CT_MultiLevel
+Checking status of thorn CarpetEvolutionMask
+Checking status of thorn CarpetIOASCII
+Checking status of thorn CarpetIOBasic
+Checking status of thorn CarpetIOHDF5
+Checking status of thorn CarpetIOScalar
+Checking status of thorn CarpetIntegrateTest
+Checking status of thorn CarpetInterp
+Checking status of thorn CarpetInterp2
+Checking status of thorn CarpetReduce
+Checking status of thorn CarpetRegrid
+Checking status of thorn CarpetRegrid2
+Checking status of thorn CarpetSlab
+Checking status of thorn GRHydro
+Checking status of thorn NoExcision
+Checking status of thorn PeriodicCarpet
+Checking status of thorn Poisson
+Checking status of thorn TestCarpetGridInfo
+Updating /opt/Cactus/configs/sim/lib/libthorn_Poisson.a
+ar: `u' modifier ignored since `D' is the default (see `U')
+Creating cactus_sim in /opt/Cactus/exe from EinsteinAnalysis/ADMAnalysis EinsteinBase/ADMBase EinsteinAnalysis/ADMConstraints EinsteinBase/ADMCoupling EinsteinBase/ADMMacros EinsteinAnalysis/ADMMass Numerical/AEILocalInterp EinsteinAnalysis/AHFinder EinsteinAnalysis/AHFinderDirect CactusBase/Boundary CTThorns/CT_Analytic CTThorns/CT_MultiLevel EinsteinAnalysis/CalcK Carpet/Carpet Carpet/CarpetEvolutionMask Carpet/CarpetIOASCII Carpet/CarpetIOBasic Carpet/CarpetIOHDF5 Carpet/CarpetIOScalar Carpet/CarpetIntegrateTest Carpet/CarpetInterp Carpet/CarpetInterp2 Carpet/CarpetLib Carpet/CarpetMask Carpet/CarpetProlongateTest Carpet/CarpetReduce Carpet/CarpetRegrid Carpet/CarpetRegrid2 Carpet/CarpetRegridTest Carpet/CarpetSlab Carpet/CarpetTracker CactusBase/CartGrid3D CactusNumerical/Cartoon2D EinsteinBase/Constants WVUThorns/Convert_to_HydroBase CactusBase/CoordBase EinsteinBase/CoordGauge Carpet/CycleClock CactusExamples/DemoInterp CactusNumerical/Dissipation EinsteinInitialData/DistortedBHIVP EinsteinAnalysis/EHFinder EinsteinBase/EOS_Base EinsteinEOS/EOS_Hybrid EinsteinEOS/EOS_IdealFluid EinsteinEOS/EOS_Omni EinsteinEOS/EOS_Polytrope EinsteinExact/EinsteinExact_Test CactusElliptic/EllBase CactusElliptic/EllPETSc CactusElliptic/EllSOR EinsteinInitialData/Exact EinsteinAnalysis/Extract ExternalLibraries/FFTW3 CactusExamples/FleshInfo CactusBase/Fortran EinsteinEvolve/GRHydro EinsteinEvolve/GRHydro_InitData ExternalLibraries/GSL EinsteinExact/GaugeWave KrancNumericalTools/GenericFD ExternalLibraries/HDF5 CactusConnect/HTTPD CactusConnect/HTTPDExtra CactusExamples/HelloWorld Carpet/HighOrderWaveTest EinsteinBase/HydroBase EinsteinAnalysis/Hydro_Analysis EinsteinInitialData/Hydro_InitExcision EinsteinInitialData/IDAnalyticBH EinsteinInitialData/IDAxiBrillBH EinsteinInitialData/IDAxiOddBrillBH EinsteinInitialData/IDBrillData EinsteinInitialData/IDConstraintViolate EinsteinInitialData/IDFileADM EinsteinInitialData/IDLinearWaves CactusWave/IDScalarWave CactusWave/IDScalarWaveC CactusWave/IDScalarWaveCXX CactusWave/IDScalarWaveElliptic CactusExamples/IDWaveMoL WVUThorns/ID_converter_ILGRMHD CactusBase/IOASCII CactusBase/IOBasic CactusPUGHIO/IOHDF5 CactusPUGHIO/IOHDF5Util CactusIO/IOJpeg CactusBase/IOUtil WVUThorns/IllinoisGRMHD CactusBase/InitBase CactusNumerical/InterpToArray EinsteinExact/KerrSchild ExternalLibraries/LORENE CactusNumerical/LocalInterp CactusNumerical/LocalInterp2 CactusNumerical/LocalReduce Carpet/LoopControl McLachlan/ML_ADMConstraints McLachlan/ML_ADMQuantities McLachlan/ML_BSSN McLachlan/ML_BSSN_Helper McLachlan/ML_BSSN_Test McLachlan/ML_CCZ4 McLachlan/ML_CCZ4_Helper McLachlan/ML_CCZ4_Test McLachlan/ML_WaveToy McLachlan/ML_WaveToy_Test ExternalLibraries/MPI CactusUtils/MemSpeed EinsteinInitialData/Meudon_Bin_BH EinsteinInitialData/Meudon_Bin_NS EinsteinInitialData/Meudon_Mag_NS EinsteinExact/Minkowski CactusNumerical/MoL EinsteinExact/ModifiedSchwarzschildBL EinsteinAnalysis/Multipole CactusUtils/NaNCatcher CactusUtils/NaNChecker EinsteinEvolve/NewRad CactusUtils/Nice EinsteinInitialData/NoExcision CactusUtils/NoMPI CactusNumerical/Noise CactusNumerical/Norms PITTNullCode/NullConstr PITTNullCode/NullDecomp PITTNullCode/NullEvolve PITTNullCode/NullExact PITTNullCode/NullGrid PITTNullCode/NullInterp PITTNullCode/NullNews PITTNullCode/NullPsiInt PITTNullCode/NullSHRExtract PITTNullCode/NullVars ExternalLibraries/OpenBLAS ExternalLibraries/OpenSSL EinsteinAnalysis/Outflow ExternalLibraries/PAPI ExternalLibraries/PETSc CactusPUGH/PUGH CactusPUGH/PUGHInterp CactusPUGH/PUGHReduce CactusPUGH/PUGHSlab CactusNumerical/Periodic Carpet/PeriodicCarpet CactusExamples/Poisson EinsteinAnalysis/PunctureTracker EinsteinAnalysis/QuasiLocalMeasures Carpet/ReductionTest Carpet/ReductionTest2 Carpet/ReductionTest3 CactusNumerical/ReflectionSymmetry Carpet/RegridSyncTest EinsteinInitialData/RotatingDBHIVP CactusNumerical/RotatingSymmetry180 CactusNumerical/RotatingSymmetry90 CactusExamples/SampleBoundary CactusExamples/SampleIO WVUThorns/Seed_Magnetic_Fields EinsteinUtils/SetMask_SphericalSurface EinsteinExact/ShiftedGaugeWave CactusNumerical/Slab CactusNumerical/SlabTest CactusConnect/Socket CactusNumerical/SpaceMask PITTNullCode/SphericalHarmonicDecomp PITTNullCode/SphericalHarmonicRecon PITTNullCode/SphericalHarmonicReconGen CactusNumerical/SphericalSurface EinsteinBase/StaticConformal CactusNumerical/SummationByParts CactusBase/SymBase CactusUtils/SystemStatistics CactusUtils/SystemTopology CactusElliptic/TATPETSc CactusElliptic/TATelliptic EinsteinUtils/TGRtensor EinsteinInitialData/TOVSolver CactusUtils/TerminationTrigger CactusTest/TestAllTypes CactusTest/TestArrays Carpet/TestCarpetGridInfo CactusTest/TestComplex CactusTest/TestCoordinates CactusTest/TestFortranCrayPointers CactusTest/TestFortranDependencies1 CactusTest/TestFortranDependencies2 CactusTest/TestFpointerNULL CactusTest/TestFreeF90 CactusTest/TestGlobalReduce CactusTest/TestInclude1 CactusTest/TestInclude2 CactusNumerical/TestLocalInterp2 CactusNumerical/TestLocalReduce CactusTest/TestLoop Carpet/TestLoopControl CactusTest/TestMath CactusTest/TestMoL CactusTest/TestPar CactusTest/TestReduce CactusTest/TestSchedule CactusTest/TestStrings CactusTest/TestTable CactusTest/TestTimers CactusTest/TestTypes CactusBase/Time CactusExamples/TimerInfo CactusUtils/TimerReport Carpet/Timers EinsteinBase/TmunuBase CactusUtils/Trigger EinsteinInitialData/TwoPunctures EinsteinExact/Vaidya2 CactusUtils/Vectors CactusUtils/WatchDog CactusWave/WaveBinarySource CactusExamples/WaveMoL CactusExamples/WaveToy1DF77 CactusExamples/WaveToy2DF77 CactusWave/WaveToyC CactusWave/WaveToyCXX CactusWave/WaveToyExtra CactusWave/WaveToyF77 CactusWave/WaveToyF90 CactusWave/WaveToyFreeF90 EinsteinAnalysis/WeylScal4 ExternalLibraries/hwloc ExternalLibraries/libjpeg ExternalLibraries/pthreads ExternalLibraries/zlib
+/opt/Cactus/configs/sim/lib/libthorn_SampleBoundary.a(LinearExtrapBnd.c.o): In function `BndLinExtrap':
+/opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/LinearExtrapBnd.c:172: undefined reference to `Linear_extrap_one_bndry'
+collect2: error: ld returned 1 exit status
+/opt/Cactus/lib/make/make.configuration:149: recipe for target '/opt/Cactus/exe/cactus_sim' failed
+make[1]: *** [/opt/Cactus/exe/cactus_sim] Error 1
 Makefile:256: recipe for target 'sim' failed
 make: *** [sim] Error 2
 
