@@ -1,0 +1,346 @@
+# Thorn to Tests Mapping
+# Generated from checked_tests.txt
+# Total thorns: 66
+# Format: thorn_path: test1, test2, ...
+#
+# NOTE: EinsteinExact/EinsteinExact_Test/test/* tests appear under ALL EinsteinExact physics thorns
+# EinsteinExact physics thorns: ['GaugeWave', 'KerrSchild', 'Minkowski', 'ModifiedSchwarzschildBL', 'ShiftedGaugeWave', 'Vaidya2']
+#
+CactusExamples/Poisson: 1 tests
+  CactusExamples/Poisson/test/charge_tatelliptic_petsc
+
+CactusExamples/SampleBoundary: 1 tests
+  CactusExamples/SampleBoundary/test/wavetoyc
+
+CactusExamples/WaveMoL: 1 tests
+  CactusExamples/WaveMoL/test/gaussian
+
+CactusExamples/WaveToy1DF77: 1 tests
+  CactusExamples/WaveToy1DF77/test/wavetoy1df77
+
+CactusExamples/WaveToy2DF77: 1 tests
+  CactusExamples/WaveToy2DF77/test/test_WaveToy2D
+
+CactusNumerical/Cartoon2D: 2 tests
+  CactusNumerical/Cartoon2D/test/carpet
+  CactusNumerical/Cartoon2D/test/test_cartoon_3
+
+CactusNumerical/Dissipation: 2 tests
+  CactusNumerical/Dissipation/test/test_ah
+  CactusNumerical/Dissipation/test/test_ob
+
+CactusNumerical/InterpToArray: 2 tests
+  CactusNumerical/InterpToArray/test/wavetoy
+  CactusNumerical/InterpToArray/test/wavetoy2
+
+CactusNumerical/RotatingSymmetry180: 3 tests
+  CactusNumerical/RotatingSymmetry180/test/Kerr-EE
+  CactusNumerical/RotatingSymmetry180/test/Kerr-rotating-180-EE
+  CactusNumerical/RotatingSymmetry180/test/Kerr-staggered-EE
+
+CactusNumerical/RotatingSymmetry90: 2 tests
+  CactusNumerical/RotatingSymmetry90/test/Kerr-rotating-90-EE
+  CactusNumerical/RotatingSymmetry90/test/Kerr-rotating-90-staggered-EE
+
+CactusNumerical/Slab: 1 tests
+  CactusNumerical/SlabTest/test/slabtest
+
+CactusNumerical/TestLocalReduce: 3 tests
+  CactusNumerical/TestLocalReduce/test/TestAvg
+  CactusNumerical/TestLocalReduce/test/TestMax
+  CactusNumerical/TestLocalReduce/test/TestSum
+
+CactusTest/TestArrays: 1 tests
+  CactusTest/TestArrays/test/arrays
+
+CactusTest/TestComplex: 2 tests
+  CactusTest/TestComplex/test/TestComplex
+  CactusTest/TestComplex/test/TestComplexPow
+
+CactusTest/TestFpointerNULL: 1 tests
+  CactusTest/TestFpointerNULL/test/test_fpointer_null
+
+CactusTest/TestGlobalReduce: 10 tests
+  CactusTest/TestGlobalReduce/test/TestAvg_dest0
+  CactusTest/TestGlobalReduce/test/TestMax_dest0
+  CactusTest/TestGlobalReduce/test/TestMin
+  CactusTest/TestGlobalReduce/test/TestMin_dest0
+  CactusTest/TestGlobalReduce/test/TestScalar
+  CactusTest/TestGlobalReduce/test/TestSum_dest0
+  CactusTest/TestGlobalReduce/test/TestWeightAvg
+  CactusTest/TestGlobalReduce/test/TestWeightMax
+  CactusTest/TestGlobalReduce/test/TestWeightMin
+  CactusTest/TestGlobalReduce/test/TestWeightSum
+
+CactusTest/TestMoL: 12 tests
+  CactusTest/TestMoL/test/ICN
+  CactusTest/TestMoL/test/ICN-avg
+  CactusTest/TestMoL/test/RK2
+  CactusTest/TestMoL/test/RK2-MR-2-1
+  CactusTest/TestMoL/test/RK2-central
+  CactusTest/TestMoL/test/RK3
+  CactusTest/TestMoL/test/RK4-MR-2-1
+  CactusTest/TestMoL/test/RK4-RK2
+  CactusTest/TestMoL/test/RK45
+  CactusTest/TestMoL/test/RK45CK
+  CactusTest/TestMoL/test/RK65
+  CactusTest/TestMoL/test/RK87
+
+CactusTest/TestPar: 1 tests
+  CactusTest/TestPar/test/expressions
+
+CactusUtils/Trigger: 1 tests
+  CactusUtils/Trigger/test/trigger
+
+CactusUtils/Vectors: 1 tests
+  CactusUtils/Vectors/test/vectors
+
+CactusWave/IDScalarWaveElliptic: 1 tests
+  CactusWave/IDScalarWaveElliptic/test/test_waveell
+
+CactusWave/WaveBinarySource: 1 tests
+  CactusWave/WaveBinarySource/test/test_binary_1
+
+CactusWave/WaveToyC: 1 tests
+  CactusWave/WaveToyC/test/wave_output
+
+CactusWave/WaveToyCXX: 1 tests
+  CactusWave/WaveToyCXX/test/test_rad
+
+CactusWave/WaveToyExtra: 1 tests
+  CactusWave/WaveToyExtra/test/test_custom
+
+CactusWave/WaveToyF77: 2 tests
+  CactusWave/WaveToyF77/test/test_rad
+  CactusWave/WaveToyF77/test/test_rob
+
+CactusWave/WaveToyF90: 3 tests
+  CactusWave/WaveToyF90/test/test_rad
+  CactusWave/WaveToyF90/test/test_wavef90_flat
+  CactusWave/WaveToyF90/test/test_wavef90_zero
+
+CactusWave/WaveToyFreeF90: 1 tests
+  CactusWave/WaveToyFreeF90/test/test_rad
+
+Carpet/Carpet: 2 tests
+  Carpet/Carpet/test/64k2
+  Carpet/Carpet/test/test_restrict_sync
+
+Carpet/CarpetEvolutionMask: 2 tests
+  Carpet/CarpetEvolutionMask/test/CarpetEvolutionMask_test
+  Carpet/CarpetEvolutionMask/test/CarpetEvolutionMask_test_off
+
+Carpet/CarpetIOASCII: 1 tests
+  Carpet/CarpetIOASCII/test/compact
+
+Carpet/CarpetIOHDF5: 1 tests
+  Carpet/CarpetIOHDF5/test/nobuffers
+
+Carpet/CarpetIOScalar: 4 tests
+  Carpet/CarpetIOScalar/test/coords
+  Carpet/CarpetIOScalar/test/coords2
+  Carpet/CarpetIOScalar/test/coords3
+  Carpet/CarpetIOScalar/test/newsep
+
+Carpet/CarpetIntegrateTest: 2 tests
+  Carpet/CarpetIntegrateTest/test/carpetintegrate
+  Carpet/CarpetIntegrateTest/test/carpetintegrate-linear
+
+Carpet/CarpetProlongateTest: 1 tests
+  Carpet/CarpetProlongateTest/test/test_interp
+
+Carpet/CarpetReduce: 1 tests
+  Carpet/CarpetReduce/test/periodic_weight
+
+Carpet/CarpetRegrid2: 2 tests
+  Carpet/CarpetRegrid2/test/regrid2_2D
+  Carpet/CarpetRegrid2/test/regrid2_2cen
+
+Carpet/PeriodicCarpet: 1 tests
+  Carpet/PeriodicCarpet/test/testperiodicinterp
+
+EinsteinAnalysis/ADMMass: 2 tests
+  EinsteinAnalysis/ADMMass/test/tov
+  EinsteinAnalysis/ADMMass/test/tov_carpet
+
+EinsteinAnalysis/AHFinder: 1 tests
+  EinsteinAnalysis/AHFinder/test/test_AHF_2
+
+EinsteinAnalysis/AHFinderDirect: 23 tests
+  EinsteinAnalysis/AHFinderDirect/test/Kerr
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-Cartoon
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-Cartoon-EE
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-EE
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-EE
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-product
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-product-EE
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-inner-expansion
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-inner-expansion-EE
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-mean-curvature
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-mean-curvature-EE
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-modification-radius
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-modification-radius-EE
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-180
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-180-EE
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-90
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-90-EE
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius-EE
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius-definition-expansion-product-EE
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-mean-coordinate-radius
+  EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-mean-coordinate-radius-EE
+
+EinsteinAnalysis/Multipole: 8 tests
+  EinsteinAnalysis/Multipole/test/test_22
+  EinsteinAnalysis/Multipole/test/test_31
+  EinsteinAnalysis/Multipole/test/test_44
+  EinsteinAnalysis/Multipole/test/test_driscollhealy
+  EinsteinAnalysis/Multipole/test/test_rads
+  EinsteinAnalysis/Multipole/test/test_simpson
+  EinsteinAnalysis/Multipole/test/test_trapezoidal
+  EinsteinAnalysis/Multipole/test/test_vars
+
+EinsteinAnalysis/Outflow: 1 tests
+  EinsteinAnalysis/Outflow/test/moving_tov
+
+EinsteinAnalysis/QuasiLocalMeasures: 1 tests
+  EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-EE
+
+EinsteinAnalysis/WeylScal4: 3 tests
+  EinsteinAnalysis/WeylScal4/test/teukolsky
+  EinsteinAnalysis/WeylScal4/test/teukolskyID
+  EinsteinAnalysis/WeylScal4/test/teukolskyParity
+
+EinsteinEvolve/GRHydro: 10 tests
+  EinsteinEvolve/GRHydro/test/GRHydro_test_shock
+  EinsteinEvolve/GRHydro/test/GRHydro_test_shock_mp5
+  EinsteinEvolve/GRHydro/test/GRHydro_test_shock_ppm
+  EinsteinEvolve/GRHydro/test/GRHydro_test_tov_ppm_ML
+  EinsteinEvolve/GRHydro/test/GRHydro_test_tov_ppm_ML_disable_internal_excision
+  EinsteinEvolve/GRHydro/test/GRHydro_test_tov_ppm_no_trp_ML
+  EinsteinEvolve/GRHydro/test/test_one_hybrid
+  EinsteinEvolve/GRHydro/test/tov_carpetevolutionmask
+  EinsteinEvolve/GRHydro/test/tov_carpetevolutionmask2
+  EinsteinEvolve/GRHydro/test/tov_slowsector
+
+EinsteinEvolve/GRHydro_InitData: 2 tests
+  EinsteinEvolve/GRHydro_InitData/test/magtov_poloidal
+  EinsteinEvolve/GRHydro_InitData/test/magtov_poloidal_poloidal_P_p_2
+
+EinsteinExact/GaugeWave: 7 tests
+  EinsteinExact/EinsteinExact_Test/test/GaugeWave
+  EinsteinExact/EinsteinExact_Test/test/KS-tilted-EE
+  EinsteinExact/EinsteinExact_Test/test/KerrSchild
+  EinsteinExact/EinsteinExact_Test/test/Minkowski
+  EinsteinExact/EinsteinExact_Test/test/ModifiedSchwarzschildBL
+  EinsteinExact/EinsteinExact_Test/test/ShiftedGaugeWave
+  EinsteinExact/EinsteinExact_Test/test/Vaidya2
+
+EinsteinExact/KerrSchild: 7 tests
+  EinsteinExact/EinsteinExact_Test/test/GaugeWave
+  EinsteinExact/EinsteinExact_Test/test/KS-tilted-EE
+  EinsteinExact/EinsteinExact_Test/test/KerrSchild
+  EinsteinExact/EinsteinExact_Test/test/Minkowski
+  EinsteinExact/EinsteinExact_Test/test/ModifiedSchwarzschildBL
+  EinsteinExact/EinsteinExact_Test/test/ShiftedGaugeWave
+  EinsteinExact/EinsteinExact_Test/test/Vaidya2
+
+EinsteinExact/Minkowski: 7 tests
+  EinsteinExact/EinsteinExact_Test/test/GaugeWave
+  EinsteinExact/EinsteinExact_Test/test/KS-tilted-EE
+  EinsteinExact/EinsteinExact_Test/test/KerrSchild
+  EinsteinExact/EinsteinExact_Test/test/Minkowski
+  EinsteinExact/EinsteinExact_Test/test/ModifiedSchwarzschildBL
+  EinsteinExact/EinsteinExact_Test/test/ShiftedGaugeWave
+  EinsteinExact/EinsteinExact_Test/test/Vaidya2
+
+EinsteinExact/ModifiedSchwarzschildBL: 7 tests
+  EinsteinExact/EinsteinExact_Test/test/GaugeWave
+  EinsteinExact/EinsteinExact_Test/test/KS-tilted-EE
+  EinsteinExact/EinsteinExact_Test/test/KerrSchild
+  EinsteinExact/EinsteinExact_Test/test/Minkowski
+  EinsteinExact/EinsteinExact_Test/test/ModifiedSchwarzschildBL
+  EinsteinExact/EinsteinExact_Test/test/ShiftedGaugeWave
+  EinsteinExact/EinsteinExact_Test/test/Vaidya2
+
+EinsteinExact/ShiftedGaugeWave: 7 tests
+  EinsteinExact/EinsteinExact_Test/test/GaugeWave
+  EinsteinExact/EinsteinExact_Test/test/KS-tilted-EE
+  EinsteinExact/EinsteinExact_Test/test/KerrSchild
+  EinsteinExact/EinsteinExact_Test/test/Minkowski
+  EinsteinExact/EinsteinExact_Test/test/ModifiedSchwarzschildBL
+  EinsteinExact/EinsteinExact_Test/test/ShiftedGaugeWave
+  EinsteinExact/EinsteinExact_Test/test/Vaidya2
+
+EinsteinExact/Vaidya2: 7 tests
+  EinsteinExact/EinsteinExact_Test/test/GaugeWave
+  EinsteinExact/EinsteinExact_Test/test/KS-tilted-EE
+  EinsteinExact/EinsteinExact_Test/test/KerrSchild
+  EinsteinExact/EinsteinExact_Test/test/Minkowski
+  EinsteinExact/EinsteinExact_Test/test/ModifiedSchwarzschildBL
+  EinsteinExact/EinsteinExact_Test/test/ShiftedGaugeWave
+  EinsteinExact/EinsteinExact_Test/test/Vaidya2
+
+EinsteinInitialData/DistortedBHIVP: 1 tests
+  EinsteinInitialData/DistortedBHIVP/test/test_dbh
+
+EinsteinInitialData/Exact: 2 tests
+  EinsteinInitialData/Exact/test/Schwarzschild_EF
+  EinsteinInitialData/Exact/test/bowl-init
+
+EinsteinInitialData/Hydro_InitExcision: 5 tests
+  EinsteinInitialData/Hydro_InitExcision/test/diag_flip_pugh_eno
+  EinsteinInitialData/Hydro_InitExcision/test/diag_pugh_eno
+  EinsteinInitialData/Hydro_InitExcision/test/sphere_pugh_ppm
+  EinsteinInitialData/Hydro_InitExcision/test/x_flip_pugh_eno
+  EinsteinInitialData/Hydro_InitExcision/test/x_pugh_eno
+
+EinsteinInitialData/IDAnalyticBH: 3 tests
+  EinsteinInitialData/IDAnalyticBH/test/kerr
+  EinsteinInitialData/IDAnalyticBH/test/test_bl
+  EinsteinInitialData/IDAnalyticBH/test/test_misner
+
+EinsteinInitialData/IDAxiBrillBH: 2 tests
+  EinsteinInitialData/IDAxiBrillBH/test/test_axibrill
+  EinsteinInitialData/IDAxiBrillBH/test/test_axibrill_nostagger
+
+EinsteinInitialData/IDAxiOddBrillBH: 2 tests
+  EinsteinInitialData/IDAxiOddBrillBH/test/E2xeon_test_axioddbh
+  EinsteinInitialData/IDAxiOddBrillBH/test/test_axioddbh
+
+EinsteinInitialData/IDLinearWaves: 2 tests
+  EinsteinInitialData/IDLinearWaves/test/test_pw_ADM_dir-x
+  EinsteinInitialData/IDLinearWaves/test/test_pw_ADM_dir-z
+
+EinsteinInitialData/RotatingDBHIVP: 2 tests
+  EinsteinInitialData/RotatingDBHIVP/test/E2xeon_test_rdbh
+  EinsteinInitialData/RotatingDBHIVP/test/test_rdbh
+
+EinsteinInitialData/TOVSolver: 5 tests
+  EinsteinInitialData/TOVSolver/test/test_one_boost_max
+  EinsteinInitialData/TOVSolver/test/test_one_static_max
+  EinsteinInitialData/TOVSolver/test/test_tov_carpet
+  EinsteinInitialData/TOVSolver/test/test_two_av
+  EinsteinInitialData/TOVSolver/test/test_two_max
+
+ExternalLibraries/PAPI: 1 tests
+  ExternalLibraries/PAPI/test/papi
+
+McLachlan/ML_BSSN: 6 tests
+  McLachlan/ML_BSSN_Test/test/ML_BSSN_EE_sgw3d
+  McLachlan/ML_BSSN_Test/test/ML_BSSN_EE_sgw3d_rhs
+  McLachlan/ML_BSSN_Test/test/ML_BSSN_NewRad
+  McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_harmonic
+  McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_harmonic_phi
+  McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_rhs
+
+McLachlan/ML_CCZ4: 2 tests
+  McLachlan/ML_CCZ4_Test/test/ML_CCZ4_sgw3d
+  McLachlan/ML_CCZ4_Test/test/ML_CCZ4_sgw3d_rhs
+
+McLachlan/ML_WaveToy: 3 tests
+  McLachlan/ML_WaveToy_Test/test/gaussian-RK4
+  McLachlan/ML_WaveToy_Test/test/gaussian-RK45
+  McLachlan/ML_WaveToy_Test/test/gaussian-RK45-adaptive
+

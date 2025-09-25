@@ -1,0 +1,556 @@
+# Test to Thorns Mapping
+# Generated from checked_tests.txt
+# Total tests: 171
+# Format: test_path: thorn1, thorn2, ...
+#
+# SPECIAL CASE: EinsteinExact/EinsteinExact_Test/test/* maps to ALL EinsteinExact physics thorns
+# EinsteinExact physics thorns: ['GaugeWave', 'KerrSchild', 'Minkowski', 'ModifiedSchwarzschildBL', 'ShiftedGaugeWave', 'Vaidya2']
+#
+CactusExamples/Poisson/test/charge_tatelliptic_petsc: 1 thorn
+  CactusExamples/Poisson
+
+CactusExamples/SampleBoundary/test/wavetoyc: 1 thorn
+  CactusExamples/SampleBoundary
+
+CactusExamples/WaveMoL/test/gaussian: 1 thorn
+  CactusExamples/WaveMoL
+
+CactusExamples/WaveToy1DF77/test/wavetoy1df77: 1 thorn
+  CactusExamples/WaveToy1DF77
+
+CactusExamples/WaveToy2DF77/test/test_WaveToy2D: 1 thorn
+  CactusExamples/WaveToy2DF77
+
+CactusNumerical/Cartoon2D/test/carpet: 1 thorn
+  CactusNumerical/Cartoon2D
+
+CactusNumerical/Cartoon2D/test/test_cartoon_3: 1 thorn
+  CactusNumerical/Cartoon2D
+
+CactusNumerical/Dissipation/test/test_ah: 1 thorn
+  CactusNumerical/Dissipation
+
+CactusNumerical/Dissipation/test/test_ob: 1 thorn
+  CactusNumerical/Dissipation
+
+CactusNumerical/InterpToArray/test/wavetoy: 1 thorn
+  CactusNumerical/InterpToArray
+
+CactusNumerical/InterpToArray/test/wavetoy2: 1 thorn
+  CactusNumerical/InterpToArray
+
+CactusNumerical/RotatingSymmetry180/test/Kerr-EE: 1 thorn
+  CactusNumerical/RotatingSymmetry180
+
+CactusNumerical/RotatingSymmetry180/test/Kerr-rotating-180-EE: 1 thorn
+  CactusNumerical/RotatingSymmetry180
+
+CactusNumerical/RotatingSymmetry180/test/Kerr-staggered-EE: 1 thorn
+  CactusNumerical/RotatingSymmetry180
+
+CactusNumerical/RotatingSymmetry90/test/Kerr-rotating-90-EE: 1 thorn
+  CactusNumerical/RotatingSymmetry90
+
+CactusNumerical/RotatingSymmetry90/test/Kerr-rotating-90-staggered-EE: 1 thorn
+  CactusNumerical/RotatingSymmetry90
+
+CactusNumerical/SlabTest/test/slabtest: 1 thorn
+  CactusNumerical/Slab
+
+CactusNumerical/TestLocalReduce/test/TestAvg: 1 thorn
+  CactusNumerical/TestLocalReduce
+
+CactusNumerical/TestLocalReduce/test/TestMax: 1 thorn
+  CactusNumerical/TestLocalReduce
+
+CactusNumerical/TestLocalReduce/test/TestSum: 1 thorn
+  CactusNumerical/TestLocalReduce
+
+CactusTest/TestArrays/test/arrays: 1 thorn
+  CactusTest/TestArrays
+
+CactusTest/TestComplex/test/TestComplex: 1 thorn
+  CactusTest/TestComplex
+
+CactusTest/TestComplex/test/TestComplexPow: 1 thorn
+  CactusTest/TestComplex
+
+CactusTest/TestFpointerNULL/test/test_fpointer_null: 1 thorn
+  CactusTest/TestFpointerNULL
+
+CactusTest/TestGlobalReduce/test/TestAvg_dest0: 1 thorn
+  CactusTest/TestGlobalReduce
+
+CactusTest/TestGlobalReduce/test/TestMax_dest0: 1 thorn
+  CactusTest/TestGlobalReduce
+
+CactusTest/TestGlobalReduce/test/TestMin: 1 thorn
+  CactusTest/TestGlobalReduce
+
+CactusTest/TestGlobalReduce/test/TestMin_dest0: 1 thorn
+  CactusTest/TestGlobalReduce
+
+CactusTest/TestGlobalReduce/test/TestScalar: 1 thorn
+  CactusTest/TestGlobalReduce
+
+CactusTest/TestGlobalReduce/test/TestSum_dest0: 1 thorn
+  CactusTest/TestGlobalReduce
+
+CactusTest/TestGlobalReduce/test/TestWeightAvg: 1 thorn
+  CactusTest/TestGlobalReduce
+
+CactusTest/TestGlobalReduce/test/TestWeightMax: 1 thorn
+  CactusTest/TestGlobalReduce
+
+CactusTest/TestGlobalReduce/test/TestWeightMin: 1 thorn
+  CactusTest/TestGlobalReduce
+
+CactusTest/TestGlobalReduce/test/TestWeightSum: 1 thorn
+  CactusTest/TestGlobalReduce
+
+CactusTest/TestMoL/test/ICN: 1 thorn
+  CactusTest/TestMoL
+
+CactusTest/TestMoL/test/ICN-avg: 1 thorn
+  CactusTest/TestMoL
+
+CactusTest/TestMoL/test/RK2: 1 thorn
+  CactusTest/TestMoL
+
+CactusTest/TestMoL/test/RK2-MR-2-1: 1 thorn
+  CactusTest/TestMoL
+
+CactusTest/TestMoL/test/RK2-central: 1 thorn
+  CactusTest/TestMoL
+
+CactusTest/TestMoL/test/RK3: 1 thorn
+  CactusTest/TestMoL
+
+CactusTest/TestMoL/test/RK4-MR-2-1: 1 thorn
+  CactusTest/TestMoL
+
+CactusTest/TestMoL/test/RK4-RK2: 1 thorn
+  CactusTest/TestMoL
+
+CactusTest/TestMoL/test/RK45: 1 thorn
+  CactusTest/TestMoL
+
+CactusTest/TestMoL/test/RK45CK: 1 thorn
+  CactusTest/TestMoL
+
+CactusTest/TestMoL/test/RK65: 1 thorn
+  CactusTest/TestMoL
+
+CactusTest/TestMoL/test/RK87: 1 thorn
+  CactusTest/TestMoL
+
+CactusTest/TestPar/test/expressions: 1 thorn
+  CactusTest/TestPar
+
+CactusUtils/Trigger/test/trigger: 1 thorn
+  CactusUtils/Trigger
+
+CactusUtils/Vectors/test/vectors: 1 thorn
+  CactusUtils/Vectors
+
+CactusWave/IDScalarWaveElliptic/test/test_waveell: 1 thorn
+  CactusWave/IDScalarWaveElliptic
+
+CactusWave/WaveBinarySource/test/test_binary_1: 1 thorn
+  CactusWave/WaveBinarySource
+
+CactusWave/WaveToyC/test/wave_output: 1 thorn
+  CactusWave/WaveToyC
+
+CactusWave/WaveToyCXX/test/test_rad: 1 thorn
+  CactusWave/WaveToyCXX
+
+CactusWave/WaveToyExtra/test/test_custom: 1 thorn
+  CactusWave/WaveToyExtra
+
+CactusWave/WaveToyF77/test/test_rad: 1 thorn
+  CactusWave/WaveToyF77
+
+CactusWave/WaveToyF77/test/test_rob: 1 thorn
+  CactusWave/WaveToyF77
+
+CactusWave/WaveToyF90/test/test_rad: 1 thorn
+  CactusWave/WaveToyF90
+
+CactusWave/WaveToyF90/test/test_wavef90_flat: 1 thorn
+  CactusWave/WaveToyF90
+
+CactusWave/WaveToyF90/test/test_wavef90_zero: 1 thorn
+  CactusWave/WaveToyF90
+
+CactusWave/WaveToyFreeF90/test/test_rad: 1 thorn
+  CactusWave/WaveToyFreeF90
+
+Carpet/Carpet/test/64k2: 1 thorn
+  Carpet/Carpet
+
+Carpet/Carpet/test/test_restrict_sync: 1 thorn
+  Carpet/Carpet
+
+Carpet/CarpetEvolutionMask/test/CarpetEvolutionMask_test: 1 thorn
+  Carpet/CarpetEvolutionMask
+
+Carpet/CarpetEvolutionMask/test/CarpetEvolutionMask_test_off: 1 thorn
+  Carpet/CarpetEvolutionMask
+
+Carpet/CarpetIOASCII/test/compact: 1 thorn
+  Carpet/CarpetIOASCII
+
+Carpet/CarpetIOHDF5/test/nobuffers: 1 thorn
+  Carpet/CarpetIOHDF5
+
+Carpet/CarpetIOScalar/test/coords: 1 thorn
+  Carpet/CarpetIOScalar
+
+Carpet/CarpetIOScalar/test/coords2: 1 thorn
+  Carpet/CarpetIOScalar
+
+Carpet/CarpetIOScalar/test/coords3: 1 thorn
+  Carpet/CarpetIOScalar
+
+Carpet/CarpetIOScalar/test/newsep: 1 thorn
+  Carpet/CarpetIOScalar
+
+Carpet/CarpetIntegrateTest/test/carpetintegrate: 1 thorn
+  Carpet/CarpetIntegrateTest
+
+Carpet/CarpetIntegrateTest/test/carpetintegrate-linear: 1 thorn
+  Carpet/CarpetIntegrateTest
+
+Carpet/CarpetProlongateTest/test/test_interp: 1 thorn
+  Carpet/CarpetProlongateTest
+
+Carpet/CarpetReduce/test/periodic_weight: 1 thorn
+  Carpet/CarpetReduce
+
+Carpet/CarpetRegrid2/test/regrid2_2D: 1 thorn
+  Carpet/CarpetRegrid2
+
+Carpet/CarpetRegrid2/test/regrid2_2cen: 1 thorn
+  Carpet/CarpetRegrid2
+
+Carpet/PeriodicCarpet/test/testperiodicinterp: 1 thorn
+  Carpet/PeriodicCarpet
+
+EinsteinAnalysis/ADMMass/test/tov: 1 thorn
+  EinsteinAnalysis/ADMMass
+
+EinsteinAnalysis/ADMMass/test/tov_carpet: 1 thorn
+  EinsteinAnalysis/ADMMass
+
+EinsteinAnalysis/AHFinder/test/test_AHF_2: 1 thorn
+  EinsteinAnalysis/AHFinder
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-Cartoon: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-Cartoon-EE: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-EE: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-EE: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-product: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-product-EE: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-inner-expansion: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-inner-expansion-EE: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-mean-curvature: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-mean-curvature-EE: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-modification-radius: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-modification-radius-EE: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-180: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-180-EE: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-90: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-90-EE: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius-EE: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius-definition-expansion-product-EE: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-mean-coordinate-radius: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-mean-coordinate-radius-EE: 1 thorn
+  EinsteinAnalysis/AHFinderDirect
+
+EinsteinAnalysis/Multipole/test/test_22: 1 thorn
+  EinsteinAnalysis/Multipole
+
+EinsteinAnalysis/Multipole/test/test_31: 1 thorn
+  EinsteinAnalysis/Multipole
+
+EinsteinAnalysis/Multipole/test/test_44: 1 thorn
+  EinsteinAnalysis/Multipole
+
+EinsteinAnalysis/Multipole/test/test_driscollhealy: 1 thorn
+  EinsteinAnalysis/Multipole
+
+EinsteinAnalysis/Multipole/test/test_rads: 1 thorn
+  EinsteinAnalysis/Multipole
+
+EinsteinAnalysis/Multipole/test/test_simpson: 1 thorn
+  EinsteinAnalysis/Multipole
+
+EinsteinAnalysis/Multipole/test/test_trapezoidal: 1 thorn
+  EinsteinAnalysis/Multipole
+
+EinsteinAnalysis/Multipole/test/test_vars: 1 thorn
+  EinsteinAnalysis/Multipole
+
+EinsteinAnalysis/Outflow/test/moving_tov: 1 thorn
+  EinsteinAnalysis/Outflow
+
+EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-EE: 1 thorn
+  EinsteinAnalysis/QuasiLocalMeasures
+
+EinsteinAnalysis/WeylScal4/test/teukolsky: 1 thorn
+  EinsteinAnalysis/WeylScal4
+
+EinsteinAnalysis/WeylScal4/test/teukolskyID: 1 thorn
+  EinsteinAnalysis/WeylScal4
+
+EinsteinAnalysis/WeylScal4/test/teukolskyParity: 1 thorn
+  EinsteinAnalysis/WeylScal4
+
+EinsteinEvolve/GRHydro/test/GRHydro_test_shock: 1 thorn
+  EinsteinEvolve/GRHydro
+
+EinsteinEvolve/GRHydro/test/GRHydro_test_shock_mp5: 1 thorn
+  EinsteinEvolve/GRHydro
+
+EinsteinEvolve/GRHydro/test/GRHydro_test_shock_ppm: 1 thorn
+  EinsteinEvolve/GRHydro
+
+EinsteinEvolve/GRHydro/test/GRHydro_test_tov_ppm_ML: 1 thorn
+  EinsteinEvolve/GRHydro
+
+EinsteinEvolve/GRHydro/test/GRHydro_test_tov_ppm_ML_disable_internal_excision: 1 thorn
+  EinsteinEvolve/GRHydro
+
+EinsteinEvolve/GRHydro/test/GRHydro_test_tov_ppm_no_trp_ML: 1 thorn
+  EinsteinEvolve/GRHydro
+
+EinsteinEvolve/GRHydro/test/test_one_hybrid: 1 thorn
+  EinsteinEvolve/GRHydro
+
+EinsteinEvolve/GRHydro/test/tov_carpetevolutionmask: 1 thorn
+  EinsteinEvolve/GRHydro
+
+EinsteinEvolve/GRHydro/test/tov_carpetevolutionmask2: 1 thorn
+  EinsteinEvolve/GRHydro
+
+EinsteinEvolve/GRHydro/test/tov_slowsector: 1 thorn
+  EinsteinEvolve/GRHydro
+
+EinsteinEvolve/GRHydro_InitData/test/magtov_poloidal: 1 thorn
+  EinsteinEvolve/GRHydro_InitData
+
+EinsteinEvolve/GRHydro_InitData/test/magtov_poloidal_poloidal_P_p_2: 1 thorn
+  EinsteinEvolve/GRHydro_InitData
+
+EinsteinExact/EinsteinExact_Test/test/GaugeWave: 6 thorns
+  EinsteinExact/GaugeWave
+  EinsteinExact/KerrSchild
+  EinsteinExact/Minkowski
+  EinsteinExact/ModifiedSchwarzschildBL
+  EinsteinExact/ShiftedGaugeWave
+  EinsteinExact/Vaidya2
+
+EinsteinExact/EinsteinExact_Test/test/KS-tilted-EE: 6 thorns
+  EinsteinExact/GaugeWave
+  EinsteinExact/KerrSchild
+  EinsteinExact/Minkowski
+  EinsteinExact/ModifiedSchwarzschildBL
+  EinsteinExact/ShiftedGaugeWave
+  EinsteinExact/Vaidya2
+
+EinsteinExact/EinsteinExact_Test/test/KerrSchild: 6 thorns
+  EinsteinExact/GaugeWave
+  EinsteinExact/KerrSchild
+  EinsteinExact/Minkowski
+  EinsteinExact/ModifiedSchwarzschildBL
+  EinsteinExact/ShiftedGaugeWave
+  EinsteinExact/Vaidya2
+
+EinsteinExact/EinsteinExact_Test/test/Minkowski: 6 thorns
+  EinsteinExact/GaugeWave
+  EinsteinExact/KerrSchild
+  EinsteinExact/Minkowski
+  EinsteinExact/ModifiedSchwarzschildBL
+  EinsteinExact/ShiftedGaugeWave
+  EinsteinExact/Vaidya2
+
+EinsteinExact/EinsteinExact_Test/test/ModifiedSchwarzschildBL: 6 thorns
+  EinsteinExact/GaugeWave
+  EinsteinExact/KerrSchild
+  EinsteinExact/Minkowski
+  EinsteinExact/ModifiedSchwarzschildBL
+  EinsteinExact/ShiftedGaugeWave
+  EinsteinExact/Vaidya2
+
+EinsteinExact/EinsteinExact_Test/test/ShiftedGaugeWave: 6 thorns
+  EinsteinExact/GaugeWave
+  EinsteinExact/KerrSchild
+  EinsteinExact/Minkowski
+  EinsteinExact/ModifiedSchwarzschildBL
+  EinsteinExact/ShiftedGaugeWave
+  EinsteinExact/Vaidya2
+
+EinsteinExact/EinsteinExact_Test/test/Vaidya2: 6 thorns
+  EinsteinExact/GaugeWave
+  EinsteinExact/KerrSchild
+  EinsteinExact/Minkowski
+  EinsteinExact/ModifiedSchwarzschildBL
+  EinsteinExact/ShiftedGaugeWave
+  EinsteinExact/Vaidya2
+
+EinsteinInitialData/DistortedBHIVP/test/test_dbh: 1 thorn
+  EinsteinInitialData/DistortedBHIVP
+
+EinsteinInitialData/Exact/test/Schwarzschild_EF: 1 thorn
+  EinsteinInitialData/Exact
+
+EinsteinInitialData/Exact/test/bowl-init: 1 thorn
+  EinsteinInitialData/Exact
+
+EinsteinInitialData/Hydro_InitExcision/test/diag_flip_pugh_eno: 1 thorn
+  EinsteinInitialData/Hydro_InitExcision
+
+EinsteinInitialData/Hydro_InitExcision/test/diag_pugh_eno: 1 thorn
+  EinsteinInitialData/Hydro_InitExcision
+
+EinsteinInitialData/Hydro_InitExcision/test/sphere_pugh_ppm: 1 thorn
+  EinsteinInitialData/Hydro_InitExcision
+
+EinsteinInitialData/Hydro_InitExcision/test/x_flip_pugh_eno: 1 thorn
+  EinsteinInitialData/Hydro_InitExcision
+
+EinsteinInitialData/Hydro_InitExcision/test/x_pugh_eno: 1 thorn
+  EinsteinInitialData/Hydro_InitExcision
+
+EinsteinInitialData/IDAnalyticBH/test/kerr: 1 thorn
+  EinsteinInitialData/IDAnalyticBH
+
+EinsteinInitialData/IDAnalyticBH/test/test_bl: 1 thorn
+  EinsteinInitialData/IDAnalyticBH
+
+EinsteinInitialData/IDAnalyticBH/test/test_misner: 1 thorn
+  EinsteinInitialData/IDAnalyticBH
+
+EinsteinInitialData/IDAxiBrillBH/test/test_axibrill: 1 thorn
+  EinsteinInitialData/IDAxiBrillBH
+
+EinsteinInitialData/IDAxiBrillBH/test/test_axibrill_nostagger: 1 thorn
+  EinsteinInitialData/IDAxiBrillBH
+
+EinsteinInitialData/IDAxiOddBrillBH/test/E2xeon_test_axioddbh: 1 thorn
+  EinsteinInitialData/IDAxiOddBrillBH
+
+EinsteinInitialData/IDAxiOddBrillBH/test/test_axioddbh: 1 thorn
+  EinsteinInitialData/IDAxiOddBrillBH
+
+EinsteinInitialData/IDLinearWaves/test/test_pw_ADM_dir-x: 1 thorn
+  EinsteinInitialData/IDLinearWaves
+
+EinsteinInitialData/IDLinearWaves/test/test_pw_ADM_dir-z: 1 thorn
+  EinsteinInitialData/IDLinearWaves
+
+EinsteinInitialData/RotatingDBHIVP/test/E2xeon_test_rdbh: 1 thorn
+  EinsteinInitialData/RotatingDBHIVP
+
+EinsteinInitialData/RotatingDBHIVP/test/test_rdbh: 1 thorn
+  EinsteinInitialData/RotatingDBHIVP
+
+EinsteinInitialData/TOVSolver/test/test_one_boost_max: 1 thorn
+  EinsteinInitialData/TOVSolver
+
+EinsteinInitialData/TOVSolver/test/test_one_static_max: 1 thorn
+  EinsteinInitialData/TOVSolver
+
+EinsteinInitialData/TOVSolver/test/test_tov_carpet: 1 thorn
+  EinsteinInitialData/TOVSolver
+
+EinsteinInitialData/TOVSolver/test/test_two_av: 1 thorn
+  EinsteinInitialData/TOVSolver
+
+EinsteinInitialData/TOVSolver/test/test_two_max: 1 thorn
+  EinsteinInitialData/TOVSolver
+
+ExternalLibraries/PAPI/test/papi: 1 thorn
+  ExternalLibraries/PAPI
+
+McLachlan/ML_BSSN_Test/test/ML_BSSN_EE_sgw3d: 1 thorn
+  McLachlan/ML_BSSN
+
+McLachlan/ML_BSSN_Test/test/ML_BSSN_EE_sgw3d_rhs: 1 thorn
+  McLachlan/ML_BSSN
+
+McLachlan/ML_BSSN_Test/test/ML_BSSN_NewRad: 1 thorn
+  McLachlan/ML_BSSN
+
+McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_harmonic: 1 thorn
+  McLachlan/ML_BSSN
+
+McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_harmonic_phi: 1 thorn
+  McLachlan/ML_BSSN
+
+McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_rhs: 1 thorn
+  McLachlan/ML_BSSN
+
+McLachlan/ML_CCZ4_Test/test/ML_CCZ4_sgw3d: 1 thorn
+  McLachlan/ML_CCZ4
+
+McLachlan/ML_CCZ4_Test/test/ML_CCZ4_sgw3d_rhs: 1 thorn
+  McLachlan/ML_CCZ4
+
+McLachlan/ML_WaveToy_Test/test/gaussian-RK4: 1 thorn
+  McLachlan/ML_WaveToy
+
+McLachlan/ML_WaveToy_Test/test/gaussian-RK45: 1 thorn
+  McLachlan/ML_WaveToy
+
+McLachlan/ML_WaveToy_Test/test/gaussian-RK45-adaptive: 1 thorn
+  McLachlan/ML_WaveToy
+

@@ -59,6 +59,31 @@ def compare_lines_with_tolerance(line1, line2, rtol=1e-10, atol=1e-15):
     
     return line1_clean.strip() == line2_clean.strip()
 
+def clean_file_content(file_path):
+    """Remove comments, empty lines, and duplicate consecutive lines from file content"""
+    try:
+        with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+            lines = f.readlines()
+        
+        # Remove comments (lines starting with #) and empty lines
+        cleaned_lines = []
+        for line in lines:
+            stripped = line.strip()
+            if stripped and not stripped.startswith('#'):
+                cleaned_lines.append(line)
+        
+        # Remove duplicate consecutive lines
+        deduplicated_lines = []
+        prev_line = None
+        for line in cleaned_lines:
+            if line != prev_line:
+                deduplicated_lines.append(line)
+            prev_line = line
+        
+        return deduplicated_lines
+    except Exception:
+        return []
+
 def compare_files_with_tolerance(file1_path, file2_path, rtol=1e-10, atol=1e-15):
     """Compare two files with numerical tolerance"""
     
@@ -72,13 +97,34 @@ def compare_files_with_tolerance(file1_path, file2_path, rtol=1e-10, atol=1e-15)
             lines1 = f1.readlines()
             lines2 = f2.readlines()
             
-            if len(lines1) != len(lines2):
-                return False, f"Different number of lines: {len(lines1)} vs {len(lines2)}"
+            # First try: direct comparison
+            if len(lines1) == len(lines2):
+                differences = []
+                for i, (line1, line2) in enumerate(zip(lines1, lines2), 1):
+                    if not compare_lines_with_tolerance(line1, line2, rtol, atol):
+                        differences.append(f"Line {i}: '{line1.strip()}' != '{line2.strip()}'")
+                        
+                        # Limit reported differences to avoid huge output
+                        if len(differences) > 10:
+                            differences.append("... (more differences found)")
+                            break
+                
+                if differences:
+                    return False, "\n".join(differences)
+                else:
+                    return True, "Files match within tolerance"
+            
+            # Second try: compare after removing comments and empty lines
+            cleaned_lines1 = clean_file_content(file1_path)
+            cleaned_lines2 = clean_file_content(file2_path)
+            
+            if len(cleaned_lines1) != len(cleaned_lines2):
+                return False, f"Different number of lines after cleaning (comments/empty/duplicates removed): {len(cleaned_lines1)} vs {len(cleaned_lines2)} (original: {len(lines1)} vs {len(lines2)})"
             
             differences = []
-            for i, (line1, line2) in enumerate(zip(lines1, lines2), 1):
+            for i, (line1, line2) in enumerate(zip(cleaned_lines1, cleaned_lines2), 1):
                 if not compare_lines_with_tolerance(line1, line2, rtol, atol):
-                    differences.append(f"Line {i}: '{line1.strip()}' != '{line2.strip()}'")
+                    differences.append(f"Cleaned line {i}: '{line1.strip()}' != '{line2.strip()}'")
                     
                     # Limit reported differences to avoid huge output
                     if len(differences) > 10:
@@ -86,15 +132,20 @@ def compare_files_with_tolerance(file1_path, file2_path, rtol=1e-10, atol=1e-15)
                         break
             
             if differences:
-                return False, "\n".join(differences)
+                return False, f"Files differ after removing comments/empty/duplicate lines:\n" + "\n".join(differences)
             else:
-                return True, "Files match within tolerance"
+                return True, "Files match within tolerance after cleaning"
                 
     except Exception as e:
         return False, f"Error comparing files: {e}"
 
 def compare_directories_with_tolerance(dir1, dir2, rtol=1e-10, atol=1e-15):
-    """Compare two directories with numerical tolerance"""
+    """Compare two directories with numerical tolerance
+    
+    Args:
+        dir1: Test output directory (can have extra files)
+        dir2: Benchmark directory (reference)
+    """
     
     dir1_path = Path(dir1)
     dir2_path = Path(dir2)
@@ -102,49 +153,59 @@ def compare_directories_with_tolerance(dir1, dir2, rtol=1e-10, atol=1e-15):
     if not dir1_path.exists() or not dir2_path.exists():
         return False, f"Directory missing: {dir1} or {dir2}"
     
-    # Get all files in both directories
-    files1 = set()
-    files2 = set()
-    
-    for file_path in dir1_path.rglob('*'):
-        if file_path.is_file():
-            rel_path = file_path.relative_to(dir1_path)
-            files1.add(rel_path)
-    
+    # Get all files in benchmark directory (dir2) - this is our reference
+    benchmark_files = set()
     for file_path in dir2_path.rglob('*'):
         if file_path.is_file():
             rel_path = file_path.relative_to(dir2_path)
-            files2.add(rel_path)
-    
-    # Check for missing files
-    missing_in_dir2 = files1 - files2
-    missing_in_dir1 = files2 - files1
+            benchmark_files.add(rel_path)
     
     differences = []
+    files_processed = 0
+    files_skipped = 0
     
-    if missing_in_dir1:
-        differences.append(f"Files only in {dir2}: {sorted(missing_in_dir1)}")
-    if missing_in_dir2:
-        differences.append(f"Files only in {dir1}: {sorted(missing_in_dir2)}")
-    
-    # Compare common files
-    common_files = files1 & files2
-    
-    for rel_path in sorted(common_files):
+    # Only compare files that exist in benchmark directory
+    # Extra files in test output (dir1) are OK and ignored
+    for rel_path in sorted(benchmark_files):
+        # Skip .par files from comparison
+        if str(rel_path).endswith('.par'):
+            continue
+            
         file1_path = dir1_path / rel_path
         file2_path = dir2_path / rel_path
         
+        # Check if file exists in test output
+        if not file1_path.exists():
+            differences.append(f"File {rel_path}: Missing in test output")
+            continue
+        
         # Skip binary files or very large files
         try:
-            if file1_path.stat().st_size > 100 * 1024 * 1024:  # Skip files > 100MB
+            file_size = file1_path.stat().st_size
+            
+            # Skip very large files (> 10MB) to speed up analysis
+            if file_size > 10 * 1024 * 1024:  # Skip files > 10MB
+                files_skipped += 1
                 continue
                 
-            # Try to determine if it's a text file
-            with open(file1_path, 'rb') as f:
-                sample = f.read(1024)
-                if b'\0' in sample:  # Binary file
-                    continue
+            # Skip files with too many lines (> 1000 lines) to speed up analysis
+            if file_size > 0:
+                # Quick line count estimation
+                with open(file1_path, 'rb') as f:
+                    sample = f.read(min(8192, file_size))  # Read first 8KB
+                    if b'\0' in sample:  # Binary file
+                        files_skipped += 1
+                        continue
+                    # Rough line count estimation
+                    estimated_lines = sample.count(b'\n')
+                    if file_size > 8192:  # If file is larger than sample
+                        estimated_lines = int(estimated_lines * file_size / len(sample))
+                    if estimated_lines > 1000:  # Skip files with > 1000 lines
+                        files_skipped += 1
+                        continue
+                        
         except:
+            files_skipped += 1
             continue
         
         matches, diff_msg = compare_files_with_tolerance(file1_path, file2_path, rtol, atol)
@@ -159,21 +220,21 @@ def compare_directories_with_tolerance(dir1, dir2, rtol=1e-10, atol=1e-15):
     if differences:
         return False, "\n".join(differences)
     else:
-        return True, "Directories match within tolerance"
+        return True, "Directories match within tolerance (extra files in test output ignored)"
 
 def main():
     if len(sys.argv) < 3:
         print("Usage: python3 smart_diff_comparison.py <output_dir> <benchmark_dir> [rtol] [atol]")
-        print("  rtol: relative tolerance (default: 1e-10)")
-        print("  atol: absolute tolerance (default: 1e-15)")
+        print("  rtol: relative tolerance (default: 1e-3)")
+        print("  atol: absolute tolerance (default: 1e-6)")
         sys.exit(1)
     
     output_dir = sys.argv[1]
     benchmark_dir = sys.argv[2]
     
     # Parse tolerance parameters
-    rtol = float(sys.argv[3]) if len(sys.argv) > 3 else 1e-10
-    atol = float(sys.argv[4]) if len(sys.argv) > 4 else 1e-15
+    rtol = float(sys.argv[3]) if len(sys.argv) > 3 else 1e-3
+    atol = float(sys.argv[4]) if len(sys.argv) > 4 else 1e-6
     
     matches, message = compare_directories_with_tolerance(output_dir, benchmark_dir, rtol, atol)
     

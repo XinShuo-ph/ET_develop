@@ -1,908 +1,964 @@
 {
-  "total_reanalyzed": 225,
+  "total_reanalyzed": 239,
   "now_passing": [
     {
+      "test": "CactusExamples/Poisson/test/charge_tatelliptic_petsc",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
       "test": "CactusExamples/SampleBoundary/test/wavetoyc",
-      "message": "Directories match within tolerance"
+      "message": "Directories match within tolerance (extra files in test output ignored)"
     },
     {
       "test": "CactusExamples/WaveMoL/test/gaussian",
-      "message": "Directories match within tolerance"
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusExamples/WaveToy1DF77/test/wavetoy1df77",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusExamples/WaveToy2DF77/test/test_WaveToy2D",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusNumerical/Cartoon2D/test/carpet",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusNumerical/Cartoon2D/test/test_cartoon_3",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusNumerical/Dissipation/test/test_ob",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusNumerical/Dissipation/test/test_ah",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusNumerical/InterpToArray/test/wavetoy2",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
     },
     {
       "test": "CactusNumerical/InterpToArray/test/wavetoy",
-      "message": "Directories match within tolerance"
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusNumerical/RotatingSymmetry180/test/Kerr-rotating-180-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusNumerical/RotatingSymmetry180/test/Kerr-staggered-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusNumerical/RotatingSymmetry180/test/Kerr-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusNumerical/RotatingSymmetry90/test/Kerr-rotating-90-staggered-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusNumerical/RotatingSymmetry90/test/Kerr-rotating-90-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusNumerical/SlabTest/test/slabtest",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusNumerical/TestLocalReduce/test/TestAvg",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
     },
     {
       "test": "CactusTest/TestArrays/test/arrays",
-      "message": "Directories match within tolerance"
-    },
-    {
-      "test": "CactusTest/TestComplex/test/TestComplexPow",
-      "message": "Directories match within tolerance"
-    },
-    {
-      "test": "CactusTest/TestComplex/test/TestComplex",
-      "message": "Directories match within tolerance"
-    },
-    {
-      "test": "CactusTest/TestFpointerNULL/test/test_fpointer_null",
-      "message": "Directories match within tolerance"
-    },
-    {
-      "test": "CactusTest/TestGlobalReduce/test/TestWeightMax",
-      "message": "Directories match within tolerance"
-    },
-    {
-      "test": "CactusTest/TestGlobalReduce/test/TestMin",
-      "message": "Directories match within tolerance"
+      "message": "Directories match within tolerance (extra files in test output ignored)"
     },
     {
       "test": "CactusTest/TestGlobalReduce/test/TestMin_dest0",
-      "message": "Directories match within tolerance"
-    },
-    {
-      "test": "CactusTest/TestGlobalReduce/test/TestWeightSum",
-      "message": "Directories match within tolerance"
-    },
-    {
-      "test": "CactusTest/TestGlobalReduce/test/TestAvg_dest0",
-      "message": "Directories match within tolerance"
+      "message": "Directories match within tolerance (extra files in test output ignored)"
     },
     {
       "test": "CactusTest/TestGlobalReduce/test/TestScalar",
-      "message": "Directories match within tolerance"
-    },
-    {
-      "test": "CactusTest/TestGlobalReduce/test/TestSum_dest0",
-      "message": "Directories match within tolerance"
+      "message": "Directories match within tolerance (extra files in test output ignored)"
     },
     {
       "test": "CactusTest/TestGlobalReduce/test/TestWeightMin",
-      "message": "Directories match within tolerance"
+      "message": "Directories match within tolerance (extra files in test output ignored)"
     },
     {
       "test": "CactusTest/TestGlobalReduce/test/TestMax_dest0",
-      "message": "Directories match within tolerance"
+      "message": "Directories match within tolerance (extra files in test output ignored)"
     },
     {
       "test": "CactusTest/TestGlobalReduce/test/TestWeightAvg",
-      "message": "Directories match within tolerance"
-    },
-    {
-      "test": "CactusTest/TestMoL/test/RK87",
-      "message": "Directories match within tolerance"
-    },
-    {
-      "test": "CactusTest/TestMoL/test/RK45",
-      "message": "Directories match within tolerance"
-    },
-    {
-      "test": "CactusTest/TestMoL/test/RK4-MR-2-1",
-      "message": "Directories match within tolerance"
-    },
-    {
-      "test": "CactusTest/TestMoL/test/ICN-avg",
-      "message": "Directories match within tolerance"
-    },
-    {
-      "test": "CactusTest/TestMoL/test/RK2-central",
-      "message": "Directories match within tolerance"
-    },
-    {
-      "test": "CactusTest/TestMoL/test/RK4-RK2",
-      "message": "Directories match within tolerance"
-    },
-    {
-      "test": "CactusTest/TestMoL/test/RK4",
-      "message": "Directories match within tolerance"
+      "message": "Directories match within tolerance (extra files in test output ignored)"
     },
     {
       "test": "CactusTest/TestMoL/test/RK2",
-      "message": "Directories match within tolerance"
+      "message": "Directories match within tolerance (extra files in test output ignored)"
     },
     {
-      "test": "CactusTest/TestMoL/test/RK3",
-      "message": "Directories match within tolerance"
+      "test": "CactusUtils/Trigger/test/trigger",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
     },
     {
-      "test": "CactusTest/TestMoL/test/RK65",
-      "message": "Directories match within tolerance"
+      "test": "CactusUtils/Vectors/test/vectors",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
     },
     {
-      "test": "CactusTest/TestMoL/test/RK2-MR-2-1",
-      "message": "Directories match within tolerance"
+      "test": "CactusWave/IDScalarWaveElliptic/test/test_waveell",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
     },
     {
-      "test": "CactusTest/TestMoL/test/RK45CK",
-      "message": "Directories match within tolerance"
-    },
-    {
-      "test": "CactusTest/TestMoL/test/ICN",
-      "message": "Directories match within tolerance"
-    },
-    {
-      "test": "CactusTest/TestPar/test/expressions",
-      "message": "Directories match within tolerance"
+      "test": "CactusWave/WaveBinarySource/test/test_binary_1",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
     },
     {
       "test": "CactusWave/WaveToyC/test/wave_output",
-      "message": "Directories match within tolerance"
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusWave/WaveToyCXX/test/test_rad",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusWave/WaveToyExtra/test/test_custom",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusWave/WaveToyF77/test/test_rob",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusWave/WaveToyF77/test/test_rad",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusWave/WaveToyF90/test/test_wavef90_zero",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusWave/WaveToyF90/test/test_rad",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusWave/WaveToyF90/test/test_wavef90_flat",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "CactusWave/WaveToyFreeF90/test/test_rad",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/ADMMass/test/tov",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/ADMMass/test/tov_carpet",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinder/test/test_AHF_2",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-180-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-inner-expansion",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-inner-expansion-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-product",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-modification-radius-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-Cartoon-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-Cartoon",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius-definition-expansion-product-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-mean-curvature",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-modification-radius",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-90-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-90",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-180",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-product-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-mean-coordinate-radius",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-mean-coordinate-radius-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-mean-curvature-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/Multipole/test/test_rads",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/Multipole/test/test_trapezoidal",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/Multipole/test/test_44",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/Multipole/test/test_22",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/Multipole/test/test_driscollhealy",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/Multipole/test/test_simpson",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/Multipole/test/test_31",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/Multipole/test/test_vars",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/Outflow/test/moving_tov",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-shifted",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-bl",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-boosted",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-tilted",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/WeylScal4/test/teukolskyID",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/WeylScal4/test/teukolskyParity",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinAnalysis/WeylScal4/test/teukolsky",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/GRHydro_test_tov_ppm_ML_disable_internal_excision",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/tov_carpetevolutionmask2",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/GRHydro_test_shock_mp5",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/GRHydro_test_shock",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/GRHydro_test_tov_ppm_ML",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/tov_slowsector",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/tov_carpetevolutionmask",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/test_one_hybrid",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/GRHydro_test_shock_ppm",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/GRHydro_test_tov_ppm_no_trp_ML",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro_InitData/test/magtov_poloidal_poloidal_P_p_2",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro_InitData/test/magtov_poloidal",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/DistortedBHIVP/test/test_dbh",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/DistortedBHIVP/test/E2xeon_test_dbh",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/Exact/test/bowl-init",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/Exact/test/Schwarzschild_EF",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/Hydro_InitExcision/test/diag_pugh_eno",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/Hydro_InitExcision/test/x_flip_pugh_eno",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/Hydro_InitExcision/test/sphere_pugh_ppm",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/Hydro_InitExcision/test/x_pugh_eno",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/Hydro_InitExcision/test/diag_flip_pugh_eno",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/IDAnalyticBH/test/test_misner",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/IDAnalyticBH/test/kerr",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/IDAnalyticBH/test/test_bl",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/IDAxiBrillBH/test/test_axibrill_nostagger",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/IDAxiBrillBH/test/test_axibrill",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/IDAxiOddBrillBH/test/test_axioddbh",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/IDAxiOddBrillBH/test/E2xeon_test_axioddbh",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/IDLinearWaves/test/test_pw_ADM_dir-x",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/IDLinearWaves/test/test_pw_ADM_dir-z",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/RotatingDBHIVP/test/E2xeon_test_rdbh",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/RotatingDBHIVP/test/test_rdbh",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/TOVSolver/test/test_tov_carpet",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/TOVSolver/test/test_two_max",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/TOVSolver/test/test_one_static_max",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/TOVSolver/test/test_one_boost_max",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinInitialData/TOVSolver/test/test_two_av",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/Carpet/test/64k2",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/Carpet/test/test_restrict_sync",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/CarpetEvolutionMask/test/CarpetEvolutionMask_test",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/CarpetEvolutionMask/test/CarpetEvolutionMask_test_off",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/CarpetIOASCII/test/compact",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/CarpetIOHDF5/test/nobuffers",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/CarpetIOScalar/test/coords3",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/CarpetIOScalar/test/coords2",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/CarpetIOScalar/test/newsep",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/CarpetIOScalar/test/coords",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/CarpetIntegrateTest/test/carpetintegrate",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/CarpetIntegrateTest/test/carpetintegrate-linear",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/CarpetInterp/test/waveinterp-1p",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_interp",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/CarpetReduce/test/periodic_weight",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/CarpetRegrid2/test/regrid2_2cen",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/CarpetRegrid2/test/regrid2_2D",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "Carpet/PeriodicCarpet/test/testperiodicinterp",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinExact/EinsteinExact_Test/test/ModifiedSchwarzschildBL",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinExact/EinsteinExact_Test/test/GaugeWave",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinExact/EinsteinExact_Test/test/Minkowski",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinExact/EinsteinExact_Test/test/KS-tilted-EE",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinExact/EinsteinExact_Test/test/KerrSchild",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinExact/EinsteinExact_Test/test/Vaidya2",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "EinsteinExact/EinsteinExact_Test/test/ShiftedGaugeWave",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "ExternalLibraries/PAPI/test/papi",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_harmonic_phi",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_harmonic",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_EE_sgw3d",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_NewRad",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_rhs",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_EE_sgw3d_rhs",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "McLachlan/ML_CCZ4_Test/test/ML_CCZ4_sgw3d",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "McLachlan/ML_CCZ4_Test/test/ML_CCZ4_sgw3d_rhs",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "McLachlan/ML_WaveToy_Test/test/gaussian-RK4",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "McLachlan/ML_WaveToy_Test/test/gaussian-RK45-adaptive",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
+    },
+    {
+      "test": "McLachlan/ML_WaveToy_Test/test/gaussian-RK45",
+      "message": "Directories match within tolerance (extra files in test output ignored)"
     }
   ],
   "still_failing": [
     {
-      "test": "CactusExamples/Poisson/test/charge_tatelliptic_petsc",
-      "message": "Files only in test_outputs_host/charge_tatelliptic_petsc: [PosixPath('charge_tatelliptic_petsc.par')]\nFile poisson-residual.d.asc:\nLine 25: '0\t15 15 15\t0\t-2.5 -2.5 -2.5\t-4.21651602522388e-12' != '0\t15 15 15\t0\t-2.5 -2.5 -2.5\t-4.21462864608202e-12'\nLine 26: '0\t16 16 16\t0\t-2 -2 -2\t-4.29678514990428e-12' != '0\t16 16 16\t0\t-2 -2 -2\t-4.29989377437323e-12'\nLine 27: '0\t17 17 17\t0\t-1.5 -1.5 -1.5\t-5.67390578964933e-12' != '0\t17 17 17\t0\t-1.5 -1.5 -1.5\t-5.67257352201977e-12'\nLine 28: '0\t18 18 18\t0\t-1 -1 -1\t-..."
+      "test": "CactusNumerical/Cartoon2D/test/schw-0050",
+      "message": "File gxz_3D_diagonal.xg:\nLine 70: '0.0866025403784\t\t-0.0033436814018' != '0.0866025403784\t\t-0.0033249210362'\nLine 78: '0.0866025403784\t\t0.0069768238042' != '0.0866025403784\t\t0.0070116148219'\nLine 86: '0.0866025403784\t\t0.0184347627479' != '0.0866025403784\t\t0.0184906721652'\nFile gxz_x_[2][2].xg:\nLine 437: '-0.0500000000000\t\t0.0033436814018' != '-0.0500000000000\t\t0.0033249210362'\nLine 438: '0.0500000000000\t\t-0.0033436814018' != '0.0500000000000\t\t-0.0033249210362'\nLine 491: '-0.0500000000000\t\t-0.006..."
     },
     {
-      "test": "CactusExamples/WaveToy1DF77/test/wavetoy1df77",
-      "message": "Files only in test_outputs_host/wavetoy1df77: [PosixPath('wavetoy1df77.par')]"
+      "test": "CactusNumerical/RotatingSymmetry180/test/KerrSchild-rotating-180-EE",
+      "message": "File admbase-curv.d.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 20: '0\t0 0 0 0\t19 19 19\t0\t4 0.25 4\t-0.00302918120161795 0.00262830445707919 -0.0574154187298521 0.0530448385965706 0.00270873867404063 -0.00560216716615793' != '0\t0 0 1 0\t19 19 19\t0\t4 0.25 4\t-0.00302918120161797 0.00262830445707919 -0.0574154187298521 0.0530448385965706 0.00270873867404063 -0.00560216716615792'\nCleaned line 21: '0\t0 0 0 0\t20 20 20\t0\t4.25 0.5 4.25\t-0.00297022751420039 -0.000744884628..."
     },
     {
-      "test": "CactusExamples/WaveToy2DF77/test/test_WaveToy2D",
-      "message": "Files only in test_outputs_host/test_WaveToy2D: [PosixPath('test_WaveToy2D.par')]"
-    },
-    {
-      "test": "CactusNumerical/Dissipation/test/test_ah",
-      "message": "File BH_diagnostics.ah1.gp:\nLine 43: '0\t0.000\t-0.000000\t-0.000000\t-0.000000\t1.033947203\t1.046961033\t1.037045542\t0.3590887261\t-1.339984289e-17\t2.966196515e-17\t0.3590887261\t1.494766148e-16\t0.3572919128\t-1.038449752\t1.038449752\t-1.038449752\t1.038449752\t-1.046961033\t1.046961033\t21.97889745\t25.05235532\t25.05235532\t1.139836763\t1.139836763\t185.5037091\t1.921061954\t3.842123909\t1.904755209e-15\t-1.904755209e-15\t-1.156123436e-27\t1.904755209e-15\t0.000000000\t0.000000000\t0.000000000\t0.000000000\t0.000000000\t-1...."
-    },
-    {
-      "test": "CactusNumerical/InterpToArray/test/wavetoy2",
-      "message": "File parrays3d[0].z.asc:\nDifferent number of lines: 8 vs 9"
-    },
-    {
-      "test": "CactusNumerical/TestLocalInterp2/test/test_local_interp_2",
-      "message": "Files only in test_outputs_host/test_local_interp_2: [PosixPath('symmetry.xg')]"
-    },
-    {
-      "test": "CactusNumerical/TestLocalReduce/test/TestAvg",
-      "message": "Files only in test_outputs_host/TestAvg: [PosixPath('TestAvg/int_avg_3D.xg'), PosixPath('TestAvg/real_avg_3D.xg')]"
-    },
-    {
-      "test": "CactusNumerical/TestLocalReduce/test/TestMax",
-      "message": "Files only in test_outputs_host/TestMax: [PosixPath('TestMax/int_max_3D.xg'), PosixPath('TestMax/real_max_3D.xg')]"
-    },
-    {
-      "test": "CactusNumerical/TestLocalReduce/test/TestSum",
-      "message": "Files only in test_outputs_host/TestSum: [PosixPath('TestSum/int_sum_3D.xg'), PosixPath('TestSum/real_sum_3D.xg')]"
-    },
-    {
-      "test": "CactusTest/TestGlobalReduce/test/gaussianSum_dest0",
-      "message": "File gf_sum.xg:\nLine 2: '0.0000000000000\t1.5000000000000' != '0.0000000000000\t1.4999999515547'"
+      "test": "CactusNumerical/RotatingSymmetry90/test/KerrSchild-rotating-90-EE",
+      "message": "File admbase-curv.d.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 12: '0\t0 0 0 0\t11 11 11\t0\t2 2 2\t0.00252764654786986 -0.08987816546247 -0.118921433238758 0.0709278649900537 -0.0817051349743928 0.0240452050487786' != '0\t0 0 1 0\t11 11 11\t0\t2 2 2\t0.00252764654786986 -0.08987816546247 -0.118921433238758 0.0709278649900538 -0.0817051349743928 0.0240452050487786'\nCleaned line 13: '0\t0 0 0 0\t12 12 12\t0\t2.25 2.25 2.25\t0.00538984002055953 -0.0734218208025295 -0.0931034725..."
     },
     {
       "test": "CactusTest/TestGlobalReduce/test/gaussianMax",
       "message": "File gf_max.xg:\nLine 2: '0.0000000000000\t0.7619139215916' != '0.0000000000000 0.7619139215916'"
     },
     {
-      "test": "CactusTest/TestGlobalReduce/test/gaussianSum",
-      "message": "File gf_sum.xg:\nLine 2: '0.0000000000000\t1.5000000000000' != '0.0000000000000\t1.5000000826204'"
-    },
-    {
-      "test": "CactusTest/TestGlobalReduce/test/TestAvg",
-      "message": "Files only in test_outputs_host/TestAvg: [PosixPath('TestAvg/int_avg_3D.xg'), PosixPath('TestAvg/real_avg_3D.xg'), PosixPath('int_avg_1D.xg'), PosixPath('int_avg_2D.xg'), PosixPath('real_avg_1D.xg'), PosixPath('real_avg_2D.xg')]\nFile int_avg_3D.xg:\nLine 2: '0.0000000000000\t91' != '0.0000000000000\t857'\nFile real_avg_3D.xg:\nLine 2: '0.0000000000000\t41.2500000000000' != '0.0000000000000\t614.1250000000000'"
-    },
-    {
-      "test": "CactusTest/TestGlobalReduce/test/TestMax",
-      "message": "Files only in test_outputs_host/TestMax: [PosixPath('TestMax/int_max_3D.xg'), PosixPath('TestMax/real_max_3D.xg'), PosixPath('int_max_1D.xg'), PosixPath('int_max_2D.xg'), PosixPath('real_max_1D.xg'), PosixPath('real_max_2D.xg')]\nFile int_max_3D.xg:\nLine 2: '0.0000000000000\t330' != '0.0000000000000\t4913'\nFile real_max_3D.xg:\nLine 2: '0.0000000000000\t200.0000000000000' != '0.0000000000000\t4096.0000000000000'"
-    },
-    {
-      "test": "CactusTest/TestGlobalReduce/test/gaussianMax_dest0",
-      "message": "File gf_max.xg:\nLine 2: '0.0000000000000\t0.7619139215916' != '0.0000000000000 0.7619139215916'"
-    },
-    {
       "test": "CactusTest/TestGlobalReduce/test/TestSum",
-      "message": "Files only in test_outputs_host/TestSum: [PosixPath('TestSum/int_sum_3D.xg'), PosixPath('TestSum/real_sum_3D.xg'), PosixPath('int_sum_1D.xg'), PosixPath('int_sum_2D.xg'), PosixPath('real_sum_1D.xg'), PosixPath('real_sum_2D.xg')]\nFile int_sum_3D.xg:\nLine 2: '0.0000000000000\t18200' != '0.0000000000000\t3511808'\nFile real_sum_3D.xg:\nLine 2: '0.0000000000000\t8250.0000000000000' != '0.0000000000000\t2515456.0000000000000'"
+      "message": "File int_sum_3D.xg:\nLine 2: '0.0000000000000\t18200' != '0.0000000000000\t3511808'\nFile real_sum_3D.xg:\nLine 2: '0.0000000000000\t8250.0000000000000' != '0.0000000000000\t2515456.0000000000000'"
     },
     {
-      "test": "CactusUtils/Trigger/test/trigger",
-      "message": "Files only in test_outputs_host/trigger: [PosixPath('trigger.par')]"
+      "test": "EinsteinAnalysis/AHFinderDirect/test/checkpointML-EE",
+      "message": "File phi.d.ast: Missing in test output"
     },
     {
-      "test": "CactusUtils/Vectors/test/vectors",
-      "message": "Files only in test_outputs_host/vectors: [PosixPath('vectors.par')]"
+      "test": "EinsteinAnalysis/AHFinderDirect/test/misner1.2-025",
+      "message": "File BH_diagnostics.ah1.gp:\nLine 43: '0\t0.000\t0.000000\t0.000000\t1.127429\t0.4629877399\t0.8620337830\t0.6607444025\t0.1428095297\t0.000000000\t0.000000000\t0.1428095297\t0.000000000\t0.1481106493\t-0.6623426517\t0.6623426517\t-0.6623426517\t0.6623426517\t0.5370122601\t1.862033783\t31.71510506\t32.86874710\t32.86874710\t1.036375161\t1.036375161\t338.0476684\t2.593307672\t5.186615343\t2.593214469e-15\t-2.593214469e-15\t-7.187685149e-27\t2.593214469e-15\t0.000000000\t0.000000000\t0.000000000\t0.000000000\t0.000000000\t-3.551603456..."
     },
     {
-      "test": "CactusWave/IDScalarWaveElliptic/test/test_waveell",
-      "message": "File phi_nm1.tl:\nLine 2: '0.0000000000000\t0.1867765566287' != '0.0000000000000\t0.1867765534911'\nLine 3: '0.3000000000000\t0.1861610732706' != '0.3000000000000\t0.1861610730267'\nLine 4: '0.6000000000000\t0.1847231649349' != '0.6000000000000\t0.1847231649143'\nFile phi_nm2.tl:\nLine 2: '0.0000000000000\t0.1910204854850' != '0.0000000000000\t0.1910204828174'\nLine 3: '0.3000000000000\t0.1903119931562' != '0.3000000000000\t0.1903119929423'"
+      "test": "EinsteinAnalysis/Extract/test/qc0-mclachlan",
+      "message": "File Qeven_R1_21.tl:\nLine 2: '0.0000000000000000       -6.8879703480481482E-017  -2.0990665892819406E-007' != '0.0000000000000000        1.8884915202420550E-017  -2.0990665907637933E-007'\nFile Qeven_R1_21.ul:\nLine 2: '0.0000000000000000       -6.8879703480481482E-017  -2.0990665892819406E-007' != '0.0000000000000000        1.8884915202420550E-017  -2.0990665907637933E-007'\nFile Qeven_R1_41.tl:\nLine 2: '0.0000000000000000       -2.8375041574137138E-017   1.4716154408734039E-007' != '0.00000000000..."
     },
     {
-      "test": "CactusWave/WaveBinarySource/test/test_binary_1",
-      "message": "Files only in test_outputs_host/test_binary_1: [PosixPath('test_binary_1.par')]"
+      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-minkowski",
+      "message": "File quasilocalmeasures-qlm_weyl_scalars.x.asc:\nLine 7: '0\t0 0\t0\t1.57676079825852e-15 -6.02439341281525e-15 -2.89671594114161e-15 -3.82491368722108e-15 2.78747942471378e-14 -5.20695303602503e-31 2.89671594114161e-15 -3.82491368722107e-15 1.57676079825852e-15 6.02439341281525e-15 2.46187566540152e-27 -3.24350066115566e-44 -2.15745994352293e-41 1.46769815328355e-57 0.842269161344715 -8.13069584325314e-17 -9.73572820612692e-40 -4.63376266564651e-55' != '0\t0 0\t0\t-4.32625789301635e-15 -1.875444089551..."
     },
     {
-      "test": "CactusWave/WaveToyC/test/test_rad",
-      "message": "Files only in test_outputs_host/test_rad: [PosixPath('test_rad/phi.xl'), PosixPath('test_rad/phi_max.tl'), PosixPath('test_rad/phi_min.tl'), PosixPath('test_rad/phi_nm1.tl'), PosixPath('test_rad/phi_nm2.tl'), PosixPath('test_rad/phi_norm_inf.tl'), PosixPath('test_rad/test_rad.par'), PosixPath('test_rad.par')]"
+      "test": "EinsteinEvolve/GRHydro/test/cylexp_tvd_mc2_hlle",
+      "message": "File grhydro-divb.y.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 4: '0\t0\t0 0 0\t5 6 4\t0\t0 1.2 0\t0' != '0\t0\t0 1 0\t5 6 4\t0\t0 1.2 0\t0'\nCleaned line 5: '0\t0\t0 0 0\t5 7 4\t0\t0 2.4 0\t0' != '0\t0\t0 1 0\t5 7 4\t0\t0 2.4 0\t0'\nCleaned line 9: '10\t0\t0 0 0\t5 6 4\t0.15\t0 1.2 0\t1.73472354416495e-18' != '10\t0\t0 1 0\t5 6 4\t0.15\t0 1.2 0\t1.78893358460108e-18'\nCleaned line 10: '10\t0\t0 0 0\t5 7 4\t0.15\t0 2.4 0\t-0.000629618908396269' != '10\t0\t0 1 0\t5 7 4\t0.15\t0 2.4 0\t-0.000629618908396269'\nFile..."
     },
     {
-      "test": "CactusWave/WaveToyCXX/test/test_rad",
-      "message": "Files only in test_outputs_host/test_rad: [PosixPath('test_rad/phi.xl'), PosixPath('test_rad/phi_max.tl'), PosixPath('test_rad/phi_min.tl'), PosixPath('test_rad/phi_nm1.tl'), PosixPath('test_rad/phi_nm2.tl'), PosixPath('test_rad/phi_norm_inf.tl'), PosixPath('test_rad/test_rad.par'), PosixPath('test_rad.par')]"
+      "test": "EinsteinEvolve/GRHydro/test/balsara2_1d",
+      "message": "File grhydro-divb.x.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 9: '0\t0\t0 0 0\t11 4 4\t0\t0.05 0 0\t0' != '0\t0\t0 1 0\t11 4 4\t0\t0.05 0 0\t0'\nCleaned line 10: '0\t0\t0 0 0\t12 4 4\t0\t0.1 0 0\t0' != '0\t0\t0 1 0\t12 4 4\t0\t0.1 0 0\t0'\nCleaned line 11: '0\t0\t0 0 0\t13 4 4\t0\t0.15 0 0\t0' != '0\t0\t0 1 0\t13 4 4\t0\t0.15 0 0\t0'\nCleaned line 12: '0\t0\t0 0 0\t14 4 4\t0\t0.2 0 0\t0' != '0\t0\t0 1 0\t14 4 4\t0\t0.2 0 0\t0'\nCleaned line 13: '0\t0\t0 0 0\t15 4 4\t0\t0.25 0 0\t0' != '0\t0\t0 1 0\t15 4 4\t0\t0.25 0 0\t0'\n..."
     },
     {
-      "test": "CactusWave/WaveToyExtra/test/test_custom",
-      "message": "Files only in test_outputs_host/test_custom: [PosixPath('test_custom.par')]"
+      "test": "EinsteinEvolve/GRHydro/test/balsara5_2d",
+      "message": "File grhydro-divb.y.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 4: '0\t0\t0 0 0\t5 6 4\t0\t0 0.0707106781186548 0\t0' != '0\t0\t0 1 0\t5 6 4\t0\t0 0.0707106781186548 0\t0'\nCleaned line 5: '0\t0\t0 0 0\t5 7 4\t0\t0 0.14142135623731 0\t0' != '0\t0\t0 1 0\t5 7 4\t0\t0 0.14142135623731 0\t0'\nCleaned line 9: '10\t0\t0 0 0\t5 6 4\t0.00353553390593274\t0 0.0707106781186548 0\t-2.35922392732846e-15' != '10\t0\t0 1 0\t5 6 4\t0.00353553390593274\t0 0.0707106781186548 0\t-6.30051566474776e-15'\nCleaned line 1..."
     },
     {
-      "test": "CactusWave/WaveToyF77/test/test_rob",
-      "message": "Files only in test_outputs_host/test_rob: [PosixPath('test_rob.par')]"
+      "test": "EinsteinEvolve/GRHydro/test/test_tov_carpet_refined_nosync",
+      "message": "File rho.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 389 vs 443 (original: 409 vs 472)\nFile rho.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 226 vs 452 (original: 246 vs 481)\nFile rho.z.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 226 vs 452 (original: 246 vs 481)"
     },
     {
-      "test": "CactusWave/WaveToyF77/test/test_rad",
-      "message": "Files only in test_outputs_host/test_rad: [PosixPath('test_rad/phi.xl'), PosixPath('test_rad/phi_max.tl'), PosixPath('test_rad/phi_min.tl'), PosixPath('test_rad/phi_nm1.tl'), PosixPath('test_rad/phi_nm2.tl'), PosixPath('test_rad/phi_norm_inf.tl'), PosixPath('test_rad/test_rad.par'), PosixPath('test_rad.par')]"
+      "test": "EinsteinEvolve/GRHydro/test/balsara4_1d",
+      "message": "File grhydro-divb.x.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 9: '0\t0\t0 0 0\t11 4 4\t0\t0.05 0 0\t0' != '0\t0\t0 1 0\t11 4 4\t0\t0.05 0 0\t0'\nCleaned line 10: '0\t0\t0 0 0\t12 4 4\t0\t0.1 0 0\t0' != '0\t0\t0 1 0\t12 4 4\t0\t0.1 0 0\t0'\nCleaned line 11: '0\t0\t0 0 0\t13 4 4\t0\t0.15 0 0\t0' != '0\t0\t0 1 0\t13 4 4\t0\t0.15 0 0\t0'\nCleaned line 12: '0\t0\t0 0 0\t14 4 4\t0\t0.2 0 0\t0' != '0\t0\t0 1 0\t14 4 4\t0\t0.2 0 0\t0'\nCleaned line 13: '0\t0\t0 0 0\t15 4 4\t0\t0.25 0 0\t0' != '0\t0\t0 1 0\t15 4 4\t0\t0.25 0 0\t0'\n..."
     },
     {
-      "test": "CactusWave/WaveToyF90/test/test_wavef90_zero",
-      "message": "Files only in test_outputs_host/test_wavef90_zero: [PosixPath('test_wavef90_zero.par')]"
+      "test": "EinsteinEvolve/GRHydro/test/balsara1_2d",
+      "message": "File grhydro-divb.y.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 9: '0\t0\t0 0 0\t10 11 4\t0\t0 0.0353553390593274 0\t0' != '0\t0\t0 1 0\t10 11 4\t0\t0 0.0353553390593274 0\t0'\nCleaned line 10: '0\t0\t0 0 0\t10 12 4\t0\t0 0.0707106781186548 0\t0' != '0\t0\t0 1 0\t10 12 4\t0\t0 0.0707106781186548 0\t0'\nCleaned line 11: '0\t0\t0 0 0\t10 13 4\t0\t0 0.106066017177982 0\t0' != '0\t0\t0 1 0\t10 13 4\t0\t0 0.106066017177982 0\t0'\nCleaned line 12: '0\t0\t0 0 0\t10 14 4\t0\t0 0.14142135623731 0\t0' != '0\t0\t0 1 0\t..."
     },
     {
-      "test": "CactusWave/WaveToyF90/test/test_rad",
-      "message": "Files only in test_outputs_host/test_rad: [PosixPath('test_rad/phi.xl'), PosixPath('test_rad/phi_max.tl'), PosixPath('test_rad/phi_min.tl'), PosixPath('test_rad/phi_nm1.tl'), PosixPath('test_rad/phi_nm2.tl'), PosixPath('test_rad/phi_norm_inf.tl'), PosixPath('test_rad/test_rad.par'), PosixPath('test_rad.par')]"
+      "test": "EinsteinEvolve/GRHydro/test/cylexp_tvd_mc2_hlle_dc",
+      "message": "File grhydro-divb.y.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 4: '0\t0\t0 0 0\t5 6 4\t0\t0 1.2 0\t0' != '0\t0\t0 1 0\t5 6 4\t0\t0 1.2 0\t0'\nCleaned line 5: '0\t0\t0 0 0\t5 7 4\t0\t0 2.4 0\t0' != '0\t0\t0 1 0\t5 7 4\t0\t0 2.4 0\t0'\nCleaned line 9: '10\t0\t0 0 0\t5 6 4\t0.15\t0 1.2 0\t-1.47408275606804e-20' != '10\t0\t0 1 0\t5 6 4\t0.15\t0 1.2 0\t0'\nCleaned line 10: '10\t0\t0 0 0\t5 7 4\t0.15\t0 2.4 0\t7.91892180768721e-20' != '10\t0\t0 1 0\t5 7 4\t0.15\t0 2.4 0\t0'\nFile hydrobase-bvec.y.asc:\nFiles differ aft..."
     },
     {
-      "test": "CactusWave/WaveToyF90/test/test_wavef90_flat",
-      "message": "Files only in test_outputs_host/test_wavef90_flat: [PosixPath('test_wavef90_flat.par')]"
+      "test": "EinsteinEvolve/GRHydro/test/GRHydro_test_shock_weno",
+      "message": "File dens_3D_diagonal.xg:\nLine 22: '-5.6291651245989\t\tnan' != '-5.6291651245989\t\t10.0000000000000'\nLine 23: '-4.7631397208144\t\tnan' != '-4.7631397208144\t\t10.0000000000000'\nLine 24: '-3.8971143170300\t\tnan' != '-3.8971143170300\t\t10.0000000000000'\nLine 25: '-3.0310889132455\t\tnan' != '-3.0310889132455\t\t10.0000000000000'\nLine 26: '-2.1650635094611\t\tnan' != '-2.1650635094611\t\t10.0000000000000'\nLine 27: '-1.2990381056767\t\tnan' != '-1.2990381056767\t\t9.9823840278220'\nLine 28: '-0.4330127018922\t\tnan' != '..."
     },
     {
-      "test": "CactusWave/WaveToyFreeF90/test/test_rad",
-      "message": "Files only in test_outputs_host/test_rad: [PosixPath('test_rad/phi.xl'), PosixPath('test_rad/phi_max.tl'), PosixPath('test_rad/phi_min.tl'), PosixPath('test_rad/phi_nm1.tl'), PosixPath('test_rad/phi_nm2.tl'), PosixPath('test_rad/phi_norm_inf.tl'), PosixPath('test_rad/test_rad.par'), PosixPath('test_rad.par')]"
+      "test": "EinsteinEvolve/GRHydro/test/balsara3_2d",
+      "message": "File grhydro-divb.y.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 4: '0\t0\t0 0 0\t5 6 4\t0\t0 0.0707106781186548 0\t0' != '0\t0\t0 1 0\t5 6 4\t0\t0 0.0707106781186548 0\t0'\nCleaned line 5: '0\t0\t0 0 0\t5 7 4\t0\t0 0.14142135623731 0\t0' != '0\t0\t0 1 0\t5 7 4\t0\t0 0.14142135623731 0\t0'\nCleaned line 9: '10\t0\t0 0 0\t5 6 4\t0.00353553390593274\t0 0.0707106781186548 0\t-6.2803698347351e-14' != '10\t0\t0 1 0\t5 6 4\t0.00353553390593274\t0 0.0707106781186548 0\t0'\nCleaned line 10: '10\t0\t0 0 0\t5 7 4\t..."
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara3_1d",
+      "message": "File grhydro-divb.x.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 9: '0\t0\t0 0 0\t11 4 4\t0\t0.05 0 0\t0' != '0\t0\t0 1 0\t11 4 4\t0\t0.05 0 0\t0'\nCleaned line 10: '0\t0\t0 0 0\t12 4 4\t0\t0.1 0 0\t0' != '0\t0\t0 1 0\t12 4 4\t0\t0.1 0 0\t0'\nCleaned line 11: '0\t0\t0 0 0\t13 4 4\t0\t0.15 0 0\t0' != '0\t0\t0 1 0\t13 4 4\t0\t0.15 0 0\t0'\nCleaned line 12: '0\t0\t0 0 0\t14 4 4\t0\t0.2 0 0\t0' != '0\t0\t0 1 0\t14 4 4\t0\t0.2 0 0\t0'\nCleaned line 13: '0\t0\t0 0 0\t15 4 4\t0\t0.25 0 0\t0' != '0\t0\t0 1 0\t15 4 4\t0\t0.25 0 0\t0'\n..."
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara1_1d_dc",
+      "message": "File grhydro-divb.x.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 9: '0\t0\t0 0 0\t11 4 4\t0\t0.05 0 0\t0' != '0\t0\t0 1 0\t11 4 4\t0\t0.05 0 0\t0'\nCleaned line 10: '0\t0\t0 0 0\t12 4 4\t0\t0.1 0 0\t0' != '0\t0\t0 1 0\t12 4 4\t0\t0.1 0 0\t0'\nCleaned line 11: '0\t0\t0 0 0\t13 4 4\t0\t0.15 0 0\t0' != '0\t0\t0 1 0\t13 4 4\t0\t0.15 0 0\t0'\nCleaned line 12: '0\t0\t0 0 0\t14 4 4\t0\t0.2 0 0\t0' != '0\t0\t0 1 0\t14 4 4\t0\t0.2 0 0\t0'\nCleaned line 13: '0\t0\t0 0 0\t15 4 4\t0\t0.25 0 0\t0' != '0\t0\t0 1 0\t15 4 4\t0\t0.25 0 0\t0'\n..."
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara4_2d",
+      "message": "File grhydro-divb.y.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 4: '0\t0\t0 0 0\t5 6 4\t0\t0 0.0707106781186548 0\t0' != '0\t0\t0 1 0\t5 6 4\t0\t0 0.0707106781186548 0\t0'\nCleaned line 5: '0\t0\t0 0 0\t5 7 4\t0\t0 0.14142135623731 0\t0' != '0\t0\t0 1 0\t5 7 4\t0\t0 0.14142135623731 0\t0'\nCleaned line 9: '10\t0\t0 0 0\t5 6 4\t0.00353553390593274\t0 0.0707106781186548 0\t4.64737515092784e-13' != '10\t0\t0 1 0\t5 6 4\t0.00353553390593274\t0 0.0707106781186548 0\t2.19824158875781e-14'\nCleaned line 10:..."
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara1_1d",
+      "message": "File grhydro-divb.x.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 9: '0\t0\t0 0 0\t11 4 4\t0\t0.05 0 0\t0' != '0\t0\t0 1 0\t11 4 4\t0\t0.05 0 0\t0'\nCleaned line 10: '0\t0\t0 0 0\t12 4 4\t0\t0.1 0 0\t0' != '0\t0\t0 1 0\t12 4 4\t0\t0.1 0 0\t0'\nCleaned line 11: '0\t0\t0 0 0\t13 4 4\t0\t0.15 0 0\t0' != '0\t0\t0 1 0\t13 4 4\t0\t0.15 0 0\t0'\nCleaned line 12: '0\t0\t0 0 0\t14 4 4\t0\t0.2 0 0\t0' != '0\t0\t0 1 0\t14 4 4\t0\t0.2 0 0\t0'\nCleaned line 13: '0\t0\t0 0 0\t15 4 4\t0\t0.25 0 0\t0' != '0\t0\t0 1 0\t15 4 4\t0\t0.25 0 0\t0'\n..."
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara1_2d_dc",
+      "message": "File grhydro-divb.y.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 9: '0\t0\t0 0 0\t10 11 4\t0\t0 0.0353553390593274 0\t0' != '0\t0\t0 1 0\t10 11 4\t0\t0 0.0353553390593274 0\t0'\nCleaned line 10: '0\t0\t0 0 0\t10 12 4\t0\t0 0.0707106781186548 0\t0' != '0\t0\t0 1 0\t10 12 4\t0\t0 0.0707106781186548 0\t0'\nCleaned line 11: '0\t0\t0 0 0\t10 13 4\t0\t0 0.106066017177982 0\t0' != '0\t0\t0 1 0\t10 13 4\t0\t0 0.106066017177982 0\t0'\nCleaned line 12: '0\t0\t0 0 0\t10 14 4\t0\t0 0.14142135623731 0\t0' != '0\t0\t0 1 0\t..."
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara5_1d",
+      "message": "File grhydro-divb.x.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 9: '0\t0\t0 0 0\t11 4 4\t0\t0.05 0 0\t0' != '0\t0\t0 1 0\t11 4 4\t0\t0.05 0 0\t0'\nCleaned line 10: '0\t0\t0 0 0\t12 4 4\t0\t0.1 0 0\t0' != '0\t0\t0 1 0\t12 4 4\t0\t0.1 0 0\t0'\nCleaned line 11: '0\t0\t0 0 0\t13 4 4\t0\t0.15 0 0\t0' != '0\t0\t0 1 0\t13 4 4\t0\t0.15 0 0\t0'\nCleaned line 12: '0\t0\t0 0 0\t14 4 4\t0\t0.2 0 0\t0' != '0\t0\t0 1 0\t14 4 4\t0\t0.2 0 0\t0'\nCleaned line 13: '0\t0\t0 0 0\t15 4 4\t0\t0.25 0 0\t0' != '0\t0\t0 1 0\t15 4 4\t0\t0.25 0 0\t0'\n..."
+    },
+    {
+      "test": "EinsteinEvolve/GRHydro/test/balsara2_2d",
+      "message": "File grhydro-divb.y.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 9: '0\t0\t0 0 0\t10 11 4\t0\t0 0.0353553390593274 0\t0' != '0\t0\t0 1 0\t10 11 4\t0\t0 0.0353553390593274 0\t0'\nCleaned line 10: '0\t0\t0 0 0\t10 12 4\t0\t0 0.0707106781186548 0\t0' != '0\t0\t0 1 0\t10 12 4\t0\t0 0.0707106781186548 0\t0'\nCleaned line 11: '0\t0\t0 0 0\t10 13 4\t0\t0 0.106066017177982 0\t0' != '0\t0\t0 1 0\t10 13 4\t0\t0 0.106066017177982 0\t0'\nCleaned line 12: '0\t0\t0 0 0\t10 14 4\t0\t0 0.14142135623731 0\t0' != '0\t0\t0 1 0\t..."
+    },
+    {
+      "test": "EinsteinInitialData/TwoPunctures/test/twopunctures",
+      "message": "File ham_3D_diagonal.xg:\nLine 6: '-6.9282032302755\t\t0.0076313641502' != '-6.9282032302755\t\t0.0094071449171'\nLine 7: '-6.5206618637887\t\t0.0076313641502' != '-6.5206618637887\t\t0.0094071449171'\nLine 8: '-6.1131204973019\t\t0.0019428519640' != '-6.1131204973019\t\t-0.0065053758533'\nLine 9: '-5.7055791308151\t\t0.0012007217718' != '-5.7055791308151\t\t-0.0061822052750'\nLine 10: '-5.2980377643283\t\t0.0056641513235' != '-5.2980377643283\t\t0.0002904252657'\nLine 11: '-4.8904963978415\t\t0.0025541090271' != '-4.89049..."
+    },
+    {
+      "test": "EinsteinInitialData/TwoPunctures/test/twopunctures_carpet",
+      "message": "File gxx..asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 1 vs 2 (original: 4 vs 5)\nFile gxx.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 50 vs 60 (original: 54 vs 105)\nFile gxx.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 50 vs 100 (original: 54 vs 105)\nFile gxx.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 50 vs 100 (original: 54 vs 105)\nFile..."
+    },
+    {
+      "test": "EinsteinInitialData/TwoPunctures/test/bhns_interp",
+      "message": "File alp.x.asc:\nLine 9: '0\t0\t0 0 0\t0 0 0\t0\t-60 0 0\t0.971686764674217' != '0\t0 0 0 0\t0 0 0\t0\t-60 0 0\t0.971686764674217'\nLine 10: '0\t0\t0 0 0\t512 0 0\t0\t-57 0 0\t0.968590255831246' != '0\t0 0 0 0\t512 0 0\t0\t-57 0 0\t0.968590255831246'\nLine 11: '0\t0\t0 0 0\t1024 0 0\t0\t-54 0 0\t0.964733270245097' != '0\t0 0 0 0\t1024 0 0\t0\t-54 0 0\t0.964733270245097'\nLine 12: '0\t0\t0 0 0\t1536 0 0\t0\t-51 0 0\t0.959796440855496' != '0\t0 0 0 0\t1536 0 0\t0\t-51 0 0\t0.959796440855496'\nLine 13: '0\t0\t0 0 0\t2048 0 0\t0\t-48 0 0\t0.953252465769..."
+    },
+    {
+      "test": "Carpet/Carpet/test/no-overlap",
+      "message": "File r.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 148 vs 160 (original: 154 vs 168)\nFile r.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 15 vs 30 (original: 21 vs 38)\nFile r.z.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 15 vs 30 (original: 21 vs 38)\nFile weight.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 148 vs 160 (original: 154 vs 168)..."
+    },
+    {
+      "test": "Carpet/Carpet/test/kasner_amr",
+      "message": "File admbase-metric.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 162 vs 198 (original: 232 vs 460)\nFile admbase-metric.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 162 vs 324 (original: 172 vs 340)\nFile admbase-metric.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 162 vs 324 (original: 172 vs 340)\nFile admbase-metric.z.asc:\nDifferent number of lines after cleaning (comments/empty..."
+    },
+    {
+      "test": "Carpet/Carpet/test/kasner",
+      "message": "File admbase-metric.d.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 7: '0\t0 0 0 0\t9 9 9\t1\t1 1 1\t1 0 0 1 0 1' != '0\t1 0 0 0\t3 3 3\t1\t-5 -5 -5\t0.868940446145067 0 0 0.868940446145067 0 1.07276598289514'\nCleaned line 8: '0\t0 0 0 0\t10 10 10\t1\t2 2 2\t1 0 0 1 0 1' != '0\t1 0 0 0\t4 4 4\t1\t-4 -4 -4\t0.868940446145067 0 0 0.868940446145067 0 1.07276598289514'\nCleaned line 9: '0\t0 0 0 0\t11 11 11\t1\t3 3 3\t1 0 0 1 0 1' != '0\t1 0 0 0\t5 5 5\t1\t-3 -3 -3\t0.868940446145067 0 0 0.86894044..."
+    },
+    {
+      "test": "Carpet/CarpetEvolutionMask/test/buffer_mask",
+      "message": "File buffer_mask.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 109 vs 121 (original: 117 vs 132)\nFile buffer_mask.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 62 vs 124 (original: 70 vs 135)\nFile buffer_mask.z.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 62 vs 124 (original: 70 vs 135)"
+    },
+    {
+      "test": "Carpet/CarpetIOASCII/test/grid-coords",
+      "message": "File grid-coordinates.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 77 vs 99 (original: 79 vs 101)\nFile grid-coordinates.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 77 vs 154 (original: 90 vs 178)\nFile grid-coordinates.xy.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 616 vs 1232 (original: 717 vs 1432)\nFile grid-coordinates.xz.asc:\nDifferent number of lines after cleaning (comment..."
+    },
+    {
+      "test": "Carpet/CarpetIOASCII/test/newsep",
+      "message": "File grid-coordinates.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 77 vs 99 (original: 79 vs 101)\nFile grid-coordinates.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 77 vs 154 (original: 90 vs 178)\nFile grid-coordinates.xy.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 616 vs 1232 (original: 717 vs 1432)\nFile grid-coordinates.xz.asc:\nDifferent number of lines after cleaning (comment..."
+    },
+    {
+      "test": "Carpet/CarpetIOASCII/test/coords",
+      "message": "File grid-coordinates..asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 11 vs 22 (original: 24 vs 35)\nFile grid-coordinates.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 77 vs 99 (original: 101 vs 189)\nFile grid-coordinates.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 77 vs 154 (original: 101 vs 189)\nFile grid-coordinates.xy.asc:\nDifferent number of lines after cleaning (comments/empt..."
+    },
+    {
+      "test": "Carpet/CarpetInterp/test/waveinterp-2p",
+      "message": "File phi..asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 31 vs 62 (original: 64 vs 95)\nFile phi.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 651 vs 1302 (original: 715 vs 1397)\nFile phi.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 651 vs 1302 (original: 715 vs 1397)\nFile phi.z.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 651 vs 775 (original: 7..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_o3",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 164 (original: 312 vs 620)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 312 (original: 162 vs 320)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 312 (original: 162 vs 320)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_o1",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 148 vs 152 (original: 308 vs 612)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 148 vs 296 (original: 154 vs 304)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 148 vs 296 (original: 154 vs 304)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_horest_o3",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 164 (original: 314 vs 624)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 312 (original: 162 vs 320)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 312 (original: 162 vs 320)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_o5",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 176 (original: 316 vs 628)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 328 (original: 170 vs 336)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 328 (original: 170 vs 336)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_o7",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 172 vs 188 (original: 320 vs 636)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 172 vs 344 (original: 178 vs 352)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 172 vs 344 (original: 178 vs 352)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_horest_o5",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 176 (original: 318 vs 632)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 328 (original: 170 vs 336)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 328 (original: 170 vs 336)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_o4",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 176 (original: 318 vs 632)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 328 (original: 170 vs 336)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 328 (original: 170 vs 336)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_o5",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 176 (original: 318 vs 632)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 328 (original: 170 vs 336)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 328 (original: 170 vs 336)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_o1",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 148 vs 152 (original: 310 vs 616)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 148 vs 296 (original: 154 vs 304)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 148 vs 296 (original: 154 vs 304)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_tvd_hi",
+      "message": "File carpetprolongatetest-difference.x.asc:\nLine 3: '0\t0\t0 0 0\t0 104448 104448\t0\t-1.015 0.005 0.005\t-17.171577625 0' != '0\t0 0 0 0\t0 104448 104448\t0\t-1.015 0.005 0.005\t-17.171577625 0'\nLine 4: '0\t0\t0 0 0\t1024 104448 104448\t0\t-1.005 0.005 0.005\t-17.000425875 0' != '0\t0 0 0 0\t1024 104448 104448\t0\t-1.005 0.005 0.005\t-17.000425875 0'\nLine 5: '0\t0\t0 0 0\t2048 104448 104448\t0\t-0.995 0.005 0.005\t-16.829274125 0' != '0\t0 0 0 0\t2048 104448 104448\t0\t-0.995 0.005 0.005\t-16.829274125 0'\nLine 6: '0\t0\t0 0 0\t30..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_o0",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 148 vs 152 (original: 310 vs 616)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 148 vs 296 (original: 154 vs 304)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 148 vs 296 (original: 154 vs 304)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_o2",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 164 (original: 314 vs 624)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 312 (original: 162 vs 320)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 312 (original: 162 vs 320)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_o3",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 164 (original: 314 vs 624)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 312 (original: 162 vs 320)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 312 (original: 162 vs 320)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_tvd",
+      "message": "File carpetprolongatetest-difference.x.asc:\nLine 3: '0\t0\t0 0 0\t0 53248 53248\t0\t-1.03 0.01 0.01\t-17.346321 0' != '0\t0 0 0 0\t0 53248 53248\t0\t-1.03 0.01 0.01\t-17.346321 0'\nLine 4: '0\t0\t0 0 0\t1024 53248 53248\t0\t-1.01 0.01 0.01\t-17.001707 0' != '0\t0 0 0 0\t1024 53248 53248\t0\t-1.01 0.01 0.01\t-17.001707 0'\nLine 5: '0\t0\t0 0 0\t2048 53248 53248\t0\t-0.99 0.01 0.01\t-16.657093 0' != '0\t0 0 0 0\t2048 53248 53248\t0\t-0.99 0.01 0.01\t-16.657093 0'\nLine 6: '0\t0\t0 0 0\t3072 53248 53248\t0\t-0.97 0.01 0.01\t-16.312479 0' !..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_tvd_z",
+      "message": "File carpetprolongatetest-difference.x.asc:\nLine 3: '0\t0\t0 0 0\t0 53248 53248\t0\t-1.03 0.01 0.01\t0.21 0' != '0\t0 0 0 0\t0 53248 53248\t0\t-1.03 0.01 0.01\t0.21 0'\nLine 4: '0\t0\t0 0 0\t1024 53248 53248\t0\t-1.01 0.01 0.01\t0.21 0' != '0\t0 0 0 0\t1024 53248 53248\t0\t-1.01 0.01 0.01\t0.21 0'\nLine 5: '0\t0\t0 0 0\t2048 53248 53248\t0\t-0.99 0.01 0.01\t0.21 0' != '0\t0 0 0 0\t2048 53248 53248\t0\t-0.99 0.01 0.01\t0.21 0'\nLine 6: '0\t0\t0 0 0\t3072 53248 53248\t0\t-0.97 0.01 0.01\t0.21 0' != '0\t0 0 0 0\t3072 53248 53248\t0\t-0.97 0.01..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_tvd_y",
+      "message": "File carpetprolongatetest-difference.x.asc:\nLine 3: '0\t0\t0 0 0\t0 53248 53248\t0\t-1.03 0.01 0.01\t0.19 0' != '0\t0 0 0 0\t0 53248 53248\t0\t-1.03 0.01 0.01\t0.19 0'\nLine 4: '0\t0\t0 0 0\t1024 53248 53248\t0\t-1.01 0.01 0.01\t0.19 0' != '0\t0 0 0 0\t1024 53248 53248\t0\t-1.01 0.01 0.01\t0.19 0'\nLine 5: '0\t0\t0 0 0\t2048 53248 53248\t0\t-0.99 0.01 0.01\t0.19 0' != '0\t0 0 0 0\t2048 53248 53248\t0\t-0.99 0.01 0.01\t0.19 0'\nLine 6: '0\t0\t0 0 0\t3072 53248 53248\t0\t-0.97 0.01 0.01\t0.19 0' != '0\t0 0 0 0\t3072 53248 53248\t0\t-0.97 0.01..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_o11",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 188 vs 212 (original: 328 vs 652)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 188 vs 376 (original: 194 vs 384)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 188 vs 376 (original: 194 vs 384)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_tvd_x",
+      "message": "File carpetprolongatetest-difference.x.asc:\nLine 3: '0\t0\t0 0 0\t0 53248 53248\t0\t-1.03 0.01 0.01\t-17.51 0' != '0\t0 0 0 0\t0 53248 53248\t0\t-1.03 0.01 0.01\t-17.51 0'\nLine 4: '0\t0\t0 0 0\t1024 53248 53248\t0\t-1.01 0.01 0.01\t-17.17 0' != '0\t0 0 0 0\t1024 53248 53248\t0\t-1.01 0.01 0.01\t-17.17 0'\nLine 5: '0\t0\t0 0 0\t2048 53248 53248\t0\t-0.99 0.01 0.01\t-16.83 0' != '0\t0 0 0 0\t2048 53248 53248\t0\t-0.99 0.01 0.01\t-16.83 0'\nLine 6: '0\t0\t0 0 0\t3072 53248 53248\t0\t-0.97 0.01 0.01\t-16.49 0' != '0\t0 0 0 0\t3072 53248 5324..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o3",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 164 (original: 314 vs 624)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 312 (original: 162 vs 320)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 312 (original: 162 vs 320)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o2",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 164 (original: 314 vs 624)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 312 (original: 162 vs 320)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 156 vs 312 (original: 162 vs 320)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o0",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 148 vs 152 (original: 310 vs 616)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 148 vs 296 (original: 154 vs 304)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 148 vs 296 (original: 154 vs 304)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o1",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 148 vs 152 (original: 310 vs 616)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 148 vs 296 (original: 154 vs 304)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 148 vs 296 (original: 154 vs 304)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_o9",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 180 vs 200 (original: 324 vs 644)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 180 vs 360 (original: 186 vs 368)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 180 vs 360 (original: 186 vs 368)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o5",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 176 (original: 318 vs 632)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 328 (original: 170 vs 336)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 328 (original: 170 vs 336)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o4",
+      "message": "File carpetprolongatetest-difference.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 176 (original: 318 vs 632)\nFile carpetprolongatetest-difference.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 328 (original: 170 vs 336)\nFile carpetprolongatetest-difference.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 164 vs 328 (original: 170 vs 336)\nFile carpetprolongatetest-differ..."
+    },
+    {
+      "test": "Carpet/CarpetReduce/test/nonstaggered_excl",
+      "message": "File weight..asc:\nLine 3: '0\t0\t0 0 0\t5 10 1\t0\t0 0 0\t0' != '0\t0 0 0 0\t5 10 1\t0\t0 0 0\t0'\nLine 5: '1\t0\t0 0 0\t5 10 1\t1\t0 0 0\t0' != '1\t0 0 0 0\t5 10 1\t1\t0 0 0\t0'\nLine 7: '2\t0\t0 0 0\t5 10 1\t2\t0 0 0\t0' != '2\t0 0 0 0\t5 10 1\t2\t0 0 0\t0'\nFile weight.x.asc:\nLine 3: '0\t0\t0 0 0\t0 10 1\t0\t-0.909090909090909 0 0\t0.5' != '0\t0 0 0 0\t0 10 1\t0\t-0.909090909090909 0 0\t0.5'\nLine 4: '0\t0\t0 0 0\t1 10 1\t0\t-0.727272727272727 0 0\t0.5' != '0\t0 0 0 0\t1 10 1\t0\t-0.727272727272727 0 0\t0.5'\nLine 5: '0\t0\t0 0 0\t2 10 1\t0\t-0.54545454545..."
+    },
+    {
+      "test": "Carpet/CarpetReduce/test/nonstaggered",
+      "message": "File weight..asc:\nLine 3: '0\t0\t0 0 0\t0 5 1\t0\t0 0 0\t0.5' != '0\t0 0 0 0\t0 5 1\t0\t0 0 0\t0.5'\nLine 5: '1\t0\t0 0 0\t0 5 1\t1\t0 0 0\t0.5' != '1\t0 0 0 0\t0 5 1\t1\t0 0 0\t0.5'\nLine 7: '2\t0\t0 0 0\t0 5 1\t2\t0 0 0\t0.5' != '2\t0 0 0 0\t0 5 1\t2\t0 0 0\t0.5'\nFile weight.x.asc:\nLine 3: '0\t0\t0 0 0\t0 5 1\t0\t0 0 0\t0.5' != '0\t0 0 0 0\t0 5 1\t0\t0 0 0\t0.5'\nLine 6: '1\t0\t0 0 0\t0 5 1\t1\t0 0 0\t0.5' != '1\t0 0 0 0\t0 5 1\t1\t0 0 0\t0.5'\nLine 9: '2\t0\t0 0 0\t0 5 1\t2\t0 0 0\t0.5' != '2\t0 0 0 0\t0 5 1\t2\t0 0 0\t0.5'\nFile weight.y.asc:\nLine 3: '0\t0\t0 0 0..."
+    },
+    {
+      "test": "Carpet/CarpetReduce/test/staggered",
+      "message": "File weight..asc:\nLine 3: '0\t0\t0 0 0\t0 5 2\t0\t0 0 0.125\t1' != '0\t0 0 0 0\t0 5 2\t0\t0 0 0.125\t1'\nLine 5: '1\t0\t0 0 0\t0 5 2\t1\t0 0 0.125\t1' != '1\t0 0 0 0\t0 5 2\t1\t0 0 0.125\t1'\nLine 7: '2\t0\t0 0 0\t0 5 2\t2\t0 0 0.125\t1' != '2\t0 0 0 0\t0 5 2\t2\t0 0 0.125\t1'\nFile weight.x.asc:\nLine 3: '0\t0\t0 0 0\t0 5 2\t0\t0 0 0.125\t1' != '0\t0 0 0 0\t0 5 2\t0\t0 0 0.125\t1'\nLine 6: '1\t0\t0 0 0\t0 5 2\t1\t0 0 0.125\t1' != '1\t0 0 0 0\t0 5 2\t1\t0 0 0.125\t1'\nLine 9: '2\t0\t0 0 0\t0 5 2\t2\t0 0 0.125\t1' != '2\t0 0 0 0\t0 5 2\t2\t0 0 0.125\t1'\nFile weight.y..."
+    },
+    {
+      "test": "Carpet/CarpetRegrid2/test/regrid2_granularity",
+      "message": "File grid-coordinates.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 58 vs 70 (original: 160 vs 315)\nFile grid-coordinates.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 60 vs 120 (original: 68 vs 131)\nFile grid-coordinates.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 60 vs 120 (original: 68 vs 131)\nFile grid-coordinates.z.asc:\nDifferent number of lines after cleaning (comments/emp..."
+    },
+    {
+      "test": "Carpet/LoopControl/test/test-minkowski-carpet-1lev",
+      "message": "File alp.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 70 vs 82 (original: 76 vs 148)\nFile alp.z.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 70 vs 82 (original: 76 vs 90)"
+    },
+    {
+      "test": "Carpet/PeriodicCarpet/test/ml-gw1d-small-amr",
+      "message": "File At11.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 283 vs 301 (original: 306 vs 327)\nFile At11.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 21 vs 42 (original: 44 vs 68)\nFile At11.z.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 21 vs 42 (original: 44 vs 68)\nFile At12.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 283 vs 301 (original: 306 ..."
+    },
+    {
+      "test": "CTThorns/CT_MultiLevel/test/constraints_spherical",
+      "message": "File ct_analytic-ct_epsi.d.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 7: '0\t0 0 0 0\t24 24 24\t0\t-0.4 -0.4 -0.4\t1' != '0\t0 0 0 0\t24 24 24\t0\t-0.4 -0.4 -0.4\t1.00247875217667'\nCleaned line 8: '0\t0 0 0 0\t28 28 28\t0\t-0.2 -0.2 -0.2\t1' != '0\t0 0 0 0\t28 28 28\t0\t-0.2 -0.2 -0.2\t1.22313016014843'\nCleaned line 9: '0\t0 0 0 0\t32 32 32\t0\t0 0 0\t1' != '0\t0 0 0 0\t32 32 32\t0\t0 0 0\t2'\nCleaned line 10: '0\t0 0 0 0\t36 36 36\t0\t0.2 0.2 0.2\t1' != '0\t1 0 0 0\t0 0 0\t0\t-1.6 -1.6 -1.6\t1'\nClean..."
+    },
+    {
+      "test": "CTThorns/CT_MultiLevel/test/boostedpuncture",
+      "message": "File admbase-curv.d.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 91 vs 109 (original: 99 vs 193)\nFile admbase-curv.x.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 91 vs 182 (original: 99 vs 193)\nFile admbase-curv.y.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates removed): 91 vs 182 (original: 99 vs 193)\nFile admbase-curv.z.asc:\nDifferent number of lines after cleaning (comments/empty/duplicates re..."
+    },
+    {
+      "test": "CTThorns/CT_MultiLevel/test/poisson",
+      "message": "File ct_analytic-ct_epsi.d.asc:\nFiles differ after removing comments/empty/duplicate lines:\nCleaned line 10: '0\t0 0 0 0\t144 144 144\t0\t0.2 0.2 0.2\t0.786627861066553' != '0\t0 0 1 0\t144 144 144\t0\t0.2 0.2 0.2\t0.786627861066553'\nCleaned line 11: '0\t0 0 0 0\t160 160 160\t0\t0.4 0.4 0.4\t0.382892885975112' != '0\t0 0 1 0\t160 160 160\t0\t0.4 0.4 0.4\t0.382892885975112'\nCleaned line 12: '0\t0 0 0 0\t176 176 176\t0\t0.6 0.6 0.6\t0.115325121038062' != '0\t0 0 1 0\t176 176 176\t0\t0.6 0.6 0.6\t0.115325121038063'\nCleaned line..."
     }
   ],
   "analysis_errors": [
     {
-      "test": "EinsteinAnalysis/AHFinder/test/test_AHF_2",
+      "test": "EinsteinAnalysis/ADMMass/test/tov_whisky",
       "error": "Output directory not found on host"
     },
     {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-180-EE",
+      "test": "EinsteinAnalysis/AHFinderDirect/test/recoverML-EE",
       "error": "Output directory not found on host"
     },
     {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-inner-expansion",
+      "test": "EinsteinAnalysis/Extract/test/extract_physical",
       "error": "Output directory not found on host"
     },
     {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-inner-expansion-EE",
+      "test": "EinsteinEOS/EOS_Omni/test/eos_omni",
       "error": "Output directory not found on host"
     },
     {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-product",
+      "test": "EinsteinInitialData/IDBrillData/test/test_brilldata_1",
       "error": "Output directory not found on host"
     },
     {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius",
+      "test": "EinsteinInitialData/TwoPunctures/test/bam",
       "error": "Output directory not found on host"
     },
     {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/checkpointML-EE",
+      "test": "EinsteinInitialData/TwoPunctures/test/idpuncture",
       "error": "Output directory not found on host"
     },
     {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-modification-radius-EE",
+      "test": "Carpet/CarpetIOHDF5/test/CarpetWaveToyNewRecover_test_1proc",
       "error": "Output directory not found on host"
     },
     {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-Cartoon-EE",
+      "test": "Carpet/CarpetIOHDF5/test/CarpetWaveToyRecover_test_1proc",
       "error": "Output directory not found on host"
     },
     {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-Cartoon",
+      "test": "Carpet/CarpetRegrid/test/test_BSSN_MoL_Carpet_keep",
       "error": "Output directory not found on host"
     },
     {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius-definition-expansion-product-EE",
+      "test": "Carpet/CarpetRegrid2/test/test_BSSN_MoL_Carpet",
       "error": "Output directory not found on host"
     },
     {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius-EE",
+      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_MP_O8_bh",
       "error": "Output directory not found on host"
     },
     {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-EE",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-mean-curvature",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-modification-radius",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-90-EE",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-90",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-180",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-product-EE",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/misner1.2-025",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-EE",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-mean-coordinate-radius",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-mean-coordinate-radius-EE",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-mean-curvature-EE",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/Extract/test/qc0-mclachlan",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/Multipole/test/test_rads",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/Multipole/test/test_trapezoidal",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/Multipole/test/test_44",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/Multipole/test/test_22",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/Multipole/test/test_driscollhealy",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/Multipole/test/test_simpson",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/Multipole/test/test_31",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/Multipole/test/test_vars",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/Outflow/test/moving_tov",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-minkowski",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-shifted",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-EE",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-bl",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-boosted",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-tilted",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/WeylScal4/test/teukolskyID",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/WeylScal4/test/teukolskyParity",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinAnalysis/WeylScal4/test/teukolsky",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/cylexp_tvd_mc2_hlle",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/balsara2_1d",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/balsara5_2d",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/test_tov_carpet_refined_nosync",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/GRHydro_test_shock_mp5",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/balsara4_1d",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/balsara1_2d",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/cylexp_tvd_mc2_hlle_dc",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/GRHydro_test_shock_weno",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/balsara3_2d",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/balsara3_1d",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/GRHydro_test_shock",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/balsara1_1d_dc",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/balsara4_2d",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/balsara1_1d",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/balsara1_2d_dc",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/tov_carpetevolutionmask",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/balsara5_1d",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro/test/GRHydro_test_shock_ppm",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinEvolve/GRHydro_InitData/test/magtov_poloidal",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/DistortedBHIVP/test/test_dbh",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/DistortedBHIVP/test/E2xeon_test_dbh",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/Exact/test/bowl-init",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/Hydro_InitExcision/test/diag_pugh_eno",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/Hydro_InitExcision/test/x_flip_pugh_eno",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/Hydro_InitExcision/test/sphere_pugh_ppm",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/Hydro_InitExcision/test/x_pugh_eno",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/Hydro_InitExcision/test/diag_flip_pugh_eno",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/IDAnalyticBH/test/test_misner",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/IDAnalyticBH/test/kerr",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/IDAnalyticBH/test/test_bl",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/IDAxiBrillBH/test/test_axibrill_nostagger",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/IDAxiBrillBH/test/test_axibrill",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/IDAxiOddBrillBH/test/test_axioddbh",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/IDAxiOddBrillBH/test/E2xeon_test_axioddbh",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/IDLinearWaves/test/test_pw_ADM_dir-z",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/RotatingDBHIVP/test/E2xeon_test_rdbh",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/RotatingDBHIVP/test/test_rdbh",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinInitialData/TwoPunctures/test/bhns_interp",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/Carpet/test/no-overlap",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/Carpet/test/64k2",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/Carpet/test/kasner_amr",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/Carpet/test/test_restrict_sync",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/Carpet/test/kasner",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetEvolutionMask/test/CarpetEvolutionMask_test",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetEvolutionMask/test/CarpetEvolutionMask_test_off",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetEvolutionMask/test/buffer_mask",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetIOASCII/test/grid-coords",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetIOASCII/test/newsep",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetIOASCII/test/compact",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetIOASCII/test/coords",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetIOHDF5/test/nobuffers",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetIOScalar/test/coords3",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetIOScalar/test/coords2",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetIOScalar/test/newsep",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetIOScalar/test/coords",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetIntegrateTest/test/carpetintegrate",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetIntegrateTest/test/carpetintegrate-linear",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetInterp/test/waveinterp-2p",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetInterp/test/waveinterp-1p",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_o3",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_o1",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_horest_o3",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_o5",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_o7",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_horest_o5",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_o4",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_o5",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_interp",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_o1",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_tvd_hi",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_o0",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_o2",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_o3",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_tvd",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_tvd_z",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_tvd_y",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_o11",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_tvd_x",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o3",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o2",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o0",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o1",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_o9",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o5",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetProlongateTest/test/test_cc_rest_o4",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetReduce/test/periodic_weight",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetReduce/test/nonstaggered_excl",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetReduce/test/nonstaggered",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetReduce/test/staggered",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetRegrid2/test/regrid2_granularity",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetRegrid2/test/regrid2_2cen",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/CarpetRegrid2/test/regrid2_2D",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/LoopControl/test/test-minkowski-carpet-1lev",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/PeriodicCarpet/test/testperiodicinterp",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/PeriodicCarpet/test/ml-gw1d-small",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "Carpet/PeriodicCarpet/test/ml-gw1d-small-amr",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "CTThorns/CT_MultiLevel/test/constraints_spherical",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "CTThorns/CT_MultiLevel/test/boostedpuncture",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "CTThorns/CT_MultiLevel/test/poisson",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinExact/EinsteinExact_Test/test/ModifiedSchwarzschildBL",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinExact/EinsteinExact_Test/test/GaugeWave",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinExact/EinsteinExact_Test/test/Minkowski",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinExact/EinsteinExact_Test/test/Vaidya2",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "EinsteinExact/EinsteinExact_Test/test/ShiftedGaugeWave",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "ExternalLibraries/PAPI/test/papi",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_O8_sgw3d",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_harmonic_phi",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_harmonic",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_EE_sgw3d",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_NewRad",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_rhs",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "McLachlan/ML_BSSN_Test/test/ML_BSSN_EE_sgw3d_rhs",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "McLachlan/ML_CCZ4_Test/test/ML_CCZ4_sgw3d",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "McLachlan/ML_CCZ4_Test/test/ML_CCZ4_sgw3d_rhs",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "McLachlan/ML_WaveToy_Test/test/gaussian-RK4",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "McLachlan/ML_WaveToy_Test/test/gaussian-RK45-adaptive",
-      "error": "Output directory not found on host"
-    },
-    {
-      "test": "McLachlan/ML_WaveToy_Test/test/gaussian-RK45",
+      "test": "PITTNullCode/SphericalHarmonicRecon/test/regression_test",
       "error": "Output directory not found on host"
     }
   ]

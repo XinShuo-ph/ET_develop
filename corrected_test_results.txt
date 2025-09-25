@@ -1,256 +1,231 @@
 Einstein Toolkit Test Results - CORRECTED ANALYSIS
 =======================================================
-Date: 2025-09-19 12:17:57
+Date: 2025-09-24 13:07:36
 
 ORIGINAL ANALYSIS (Container - Basic Diff):
   Total tests: 300
-  Passed: 0
-  Failed: 300
+  Passed: 37
+  Failed: 263
 
 SMART REANALYSIS (Host - Numerical Tolerance):
-  Tests reanalyzed: 225
-  Now passing: 32
-  Still failing: 29  
-  Analysis errors: 164
+  Tests reanalyzed: 239
+  Now passing: 156
+  Still failing: 70  
+  Analysis errors: 13
 
 CORRECTED FINAL RESULTS:
   Total tests: 300
-  Passed: 32
-  Failed: 193
-  Success rate: 10.7% (was 0.0%)
+  Passed: 193
+  Failed: 83
+  Success rate: 64.3% (was 12.3%)
 
 IMPROVEMENT:
-  Additional tests now passing: 32
-  Improvement: +10.7 percentage points
+  Additional tests now passing: 156
+  Improvement: +52.0 percentage points
 
 =======================================================
 TESTS THAT NOW PASS (due to smart numerical comparison):
+  ✅ CactusExamples/Poisson/test/charge_tatelliptic_petsc
   ✅ CactusExamples/SampleBoundary/test/wavetoyc
   ✅ CactusExamples/WaveMoL/test/gaussian
+  ✅ CactusExamples/WaveToy1DF77/test/wavetoy1df77
+  ✅ CactusExamples/WaveToy2DF77/test/test_WaveToy2D
+  ✅ CactusNumerical/Cartoon2D/test/carpet
+  ✅ CactusNumerical/Cartoon2D/test/test_cartoon_3
+  ✅ CactusNumerical/Dissipation/test/test_ob
+  ✅ CactusNumerical/Dissipation/test/test_ah
+  ✅ CactusNumerical/InterpToArray/test/wavetoy2
   ✅ CactusNumerical/InterpToArray/test/wavetoy
+  ✅ CactusNumerical/RotatingSymmetry180/test/Kerr-rotating-180-EE
+  ✅ CactusNumerical/RotatingSymmetry180/test/Kerr-staggered-EE
+  ✅ CactusNumerical/RotatingSymmetry180/test/Kerr-EE
+  ✅ CactusNumerical/RotatingSymmetry90/test/Kerr-rotating-90-staggered-EE
+  ✅ CactusNumerical/RotatingSymmetry90/test/Kerr-rotating-90-EE
+  ✅ CactusNumerical/SlabTest/test/slabtest
+  ✅ CactusNumerical/TestLocalReduce/test/TestAvg
   ✅ CactusTest/TestArrays/test/arrays
-  ✅ CactusTest/TestComplex/test/TestComplexPow
-  ✅ CactusTest/TestComplex/test/TestComplex
-  ✅ CactusTest/TestFpointerNULL/test/test_fpointer_null
-  ✅ CactusTest/TestGlobalReduce/test/TestWeightMax
-  ✅ CactusTest/TestGlobalReduce/test/TestMin
   ✅ CactusTest/TestGlobalReduce/test/TestMin_dest0
-  ✅ CactusTest/TestGlobalReduce/test/TestWeightSum
-  ✅ CactusTest/TestGlobalReduce/test/TestAvg_dest0
   ✅ CactusTest/TestGlobalReduce/test/TestScalar
-  ✅ CactusTest/TestGlobalReduce/test/TestSum_dest0
   ✅ CactusTest/TestGlobalReduce/test/TestWeightMin
   ✅ CactusTest/TestGlobalReduce/test/TestMax_dest0
   ✅ CactusTest/TestGlobalReduce/test/TestWeightAvg
-  ✅ CactusTest/TestMoL/test/RK87
-  ✅ CactusTest/TestMoL/test/RK45
-  ✅ CactusTest/TestMoL/test/RK4-MR-2-1
-  ✅ CactusTest/TestMoL/test/ICN-avg
-  ✅ CactusTest/TestMoL/test/RK2-central
-  ✅ CactusTest/TestMoL/test/RK4-RK2
-  ✅ CactusTest/TestMoL/test/RK4
   ✅ CactusTest/TestMoL/test/RK2
-  ✅ CactusTest/TestMoL/test/RK3
-  ✅ CactusTest/TestMoL/test/RK65
-  ✅ CactusTest/TestMoL/test/RK2-MR-2-1
-  ✅ CactusTest/TestMoL/test/RK45CK
-  ✅ CactusTest/TestMoL/test/ICN
-  ✅ CactusTest/TestPar/test/expressions
+  ✅ CactusUtils/Trigger/test/trigger
+  ✅ CactusUtils/Vectors/test/vectors
+  ✅ CactusWave/IDScalarWaveElliptic/test/test_waveell
+  ✅ CactusWave/WaveBinarySource/test/test_binary_1
   ✅ CactusWave/WaveToyC/test/wave_output
+  ✅ CactusWave/WaveToyCXX/test/test_rad
+  ✅ CactusWave/WaveToyExtra/test/test_custom
+  ✅ CactusWave/WaveToyF77/test/test_rob
+  ✅ CactusWave/WaveToyF77/test/test_rad
+  ✅ CactusWave/WaveToyF90/test/test_wavef90_zero
+  ✅ CactusWave/WaveToyF90/test/test_rad
+  ✅ CactusWave/WaveToyF90/test/test_wavef90_flat
+  ✅ CactusWave/WaveToyFreeF90/test/test_rad
+  ✅ EinsteinAnalysis/ADMMass/test/tov
+  ✅ EinsteinAnalysis/ADMMass/test/tov_carpet
+  ✅ EinsteinAnalysis/AHFinder/test/test_AHF_2
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-180-EE
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-inner-expansion
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-inner-expansion-EE
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-product
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-modification-radius-EE
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-Cartoon-EE
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-Cartoon
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius-definition-expansion-product-EE
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius-EE
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-EE
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-mean-curvature
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-modification-radius
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-90-EE
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-90
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-180
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-product-EE
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-EE
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-mean-coordinate-radius
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-mean-coordinate-radius-EE
+  ✅ EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-mean-curvature-EE
+  ✅ EinsteinAnalysis/Multipole/test/test_rads
+  ✅ EinsteinAnalysis/Multipole/test/test_trapezoidal
+  ✅ EinsteinAnalysis/Multipole/test/test_44
+  ✅ EinsteinAnalysis/Multipole/test/test_22
+  ✅ EinsteinAnalysis/Multipole/test/test_driscollhealy
+  ✅ EinsteinAnalysis/Multipole/test/test_simpson
+  ✅ EinsteinAnalysis/Multipole/test/test_31
+  ✅ EinsteinAnalysis/Multipole/test/test_vars
+  ✅ EinsteinAnalysis/Outflow/test/moving_tov
+  ✅ EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks
+  ✅ EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-shifted
+  ✅ EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-EE
+  ✅ EinsteinAnalysis/QuasiLocalMeasures/test/qlm-bl
+  ✅ EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-boosted
+  ✅ EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-tilted
+  ✅ EinsteinAnalysis/WeylScal4/test/teukolskyID
+  ✅ EinsteinAnalysis/WeylScal4/test/teukolskyParity
+  ✅ EinsteinAnalysis/WeylScal4/test/teukolsky
+  ✅ EinsteinEvolve/GRHydro/test/GRHydro_test_tov_ppm_ML_disable_internal_excision
+  ✅ EinsteinEvolve/GRHydro/test/tov_carpetevolutionmask2
+  ✅ EinsteinEvolve/GRHydro/test/GRHydro_test_shock_mp5
+  ✅ EinsteinEvolve/GRHydro/test/GRHydro_test_shock
+  ✅ EinsteinEvolve/GRHydro/test/GRHydro_test_tov_ppm_ML
+  ✅ EinsteinEvolve/GRHydro/test/tov_slowsector
+  ✅ EinsteinEvolve/GRHydro/test/tov_carpetevolutionmask
+  ✅ EinsteinEvolve/GRHydro/test/test_one_hybrid
+  ✅ EinsteinEvolve/GRHydro/test/GRHydro_test_shock_ppm
+  ✅ EinsteinEvolve/GRHydro/test/GRHydro_test_tov_ppm_no_trp_ML
+  ✅ EinsteinEvolve/GRHydro_InitData/test/magtov_poloidal_poloidal_P_p_2
+  ✅ EinsteinEvolve/GRHydro_InitData/test/magtov_poloidal
+  ✅ EinsteinInitialData/DistortedBHIVP/test/test_dbh
+  ✅ EinsteinInitialData/DistortedBHIVP/test/E2xeon_test_dbh
+  ✅ EinsteinInitialData/Exact/test/bowl-init
+  ✅ EinsteinInitialData/Exact/test/Schwarzschild_EF
+  ✅ EinsteinInitialData/Hydro_InitExcision/test/diag_pugh_eno
+  ✅ EinsteinInitialData/Hydro_InitExcision/test/x_flip_pugh_eno
+  ✅ EinsteinInitialData/Hydro_InitExcision/test/sphere_pugh_ppm
+  ✅ EinsteinInitialData/Hydro_InitExcision/test/x_pugh_eno
+  ✅ EinsteinInitialData/Hydro_InitExcision/test/diag_flip_pugh_eno
+  ✅ EinsteinInitialData/IDAnalyticBH/test/test_misner
+  ✅ EinsteinInitialData/IDAnalyticBH/test/kerr
+  ✅ EinsteinInitialData/IDAnalyticBH/test/test_bl
+  ✅ EinsteinInitialData/IDAxiBrillBH/test/test_axibrill_nostagger
+  ✅ EinsteinInitialData/IDAxiBrillBH/test/test_axibrill
+  ✅ EinsteinInitialData/IDAxiOddBrillBH/test/test_axioddbh
+  ✅ EinsteinInitialData/IDAxiOddBrillBH/test/E2xeon_test_axioddbh
+  ✅ EinsteinInitialData/IDLinearWaves/test/test_pw_ADM_dir-x
+  ✅ EinsteinInitialData/IDLinearWaves/test/test_pw_ADM_dir-z
+  ✅ EinsteinInitialData/RotatingDBHIVP/test/E2xeon_test_rdbh
+  ✅ EinsteinInitialData/RotatingDBHIVP/test/test_rdbh
+  ✅ EinsteinInitialData/TOVSolver/test/test_tov_carpet
+  ✅ EinsteinInitialData/TOVSolver/test/test_two_max
+  ✅ EinsteinInitialData/TOVSolver/test/test_one_static_max
+  ✅ EinsteinInitialData/TOVSolver/test/test_one_boost_max
+  ✅ EinsteinInitialData/TOVSolver/test/test_two_av
+  ✅ Carpet/Carpet/test/64k2
+  ✅ Carpet/Carpet/test/test_restrict_sync
+  ✅ Carpet/CarpetEvolutionMask/test/CarpetEvolutionMask_test
+  ✅ Carpet/CarpetEvolutionMask/test/CarpetEvolutionMask_test_off
+  ✅ Carpet/CarpetIOASCII/test/compact
+  ✅ Carpet/CarpetIOHDF5/test/nobuffers
+  ✅ Carpet/CarpetIOScalar/test/coords3
+  ✅ Carpet/CarpetIOScalar/test/coords2
+  ✅ Carpet/CarpetIOScalar/test/newsep
+  ✅ Carpet/CarpetIOScalar/test/coords
+  ✅ Carpet/CarpetIntegrateTest/test/carpetintegrate
+  ✅ Carpet/CarpetIntegrateTest/test/carpetintegrate-linear
+  ✅ Carpet/CarpetInterp/test/waveinterp-1p
+  ✅ Carpet/CarpetProlongateTest/test/test_interp
+  ✅ Carpet/CarpetReduce/test/periodic_weight
+  ✅ Carpet/CarpetRegrid2/test/regrid2_2cen
+  ✅ Carpet/CarpetRegrid2/test/regrid2_2D
+  ✅ Carpet/PeriodicCarpet/test/testperiodicinterp
+  ✅ EinsteinExact/EinsteinExact_Test/test/ModifiedSchwarzschildBL
+  ✅ EinsteinExact/EinsteinExact_Test/test/GaugeWave
+  ✅ EinsteinExact/EinsteinExact_Test/test/Minkowski
+  ✅ EinsteinExact/EinsteinExact_Test/test/KS-tilted-EE
+  ✅ EinsteinExact/EinsteinExact_Test/test/KerrSchild
+  ✅ EinsteinExact/EinsteinExact_Test/test/Vaidya2
+  ✅ EinsteinExact/EinsteinExact_Test/test/ShiftedGaugeWave
+  ✅ ExternalLibraries/PAPI/test/papi
+  ✅ McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_harmonic_phi
+  ✅ McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_harmonic
+  ✅ McLachlan/ML_BSSN_Test/test/ML_BSSN_EE_sgw3d
+  ✅ McLachlan/ML_BSSN_Test/test/ML_BSSN_NewRad
+  ✅ McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_rhs
+  ✅ McLachlan/ML_BSSN_Test/test/ML_BSSN_EE_sgw3d_rhs
+  ✅ McLachlan/ML_CCZ4_Test/test/ML_CCZ4_sgw3d
+  ✅ McLachlan/ML_CCZ4_Test/test/ML_CCZ4_sgw3d_rhs
+  ✅ McLachlan/ML_WaveToy_Test/test/gaussian-RK4
+  ✅ McLachlan/ML_WaveToy_Test/test/gaussian-RK45-adaptive
+  ✅ McLachlan/ML_WaveToy_Test/test/gaussian-RK45
 
-TESTS STILL FAILING (29):
-  ❌ CactusExamples/Poisson/test/charge_tatelliptic_petsc
-  ❌ CactusExamples/WaveToy1DF77/test/wavetoy1df77
-  ❌ CactusExamples/WaveToy2DF77/test/test_WaveToy2D
-  ❌ CactusNumerical/Dissipation/test/test_ah
-  ❌ CactusNumerical/InterpToArray/test/wavetoy2
-  ❌ CactusNumerical/TestLocalInterp2/test/test_local_interp_2
-  ❌ CactusNumerical/TestLocalReduce/test/TestAvg
-  ❌ CactusNumerical/TestLocalReduce/test/TestMax
-  ❌ CactusNumerical/TestLocalReduce/test/TestSum
-  ❌ CactusTest/TestGlobalReduce/test/gaussianSum_dest0
+TESTS STILL FAILING (70):
+  ❌ CactusNumerical/Cartoon2D/test/schw-0050
+  ❌ CactusNumerical/RotatingSymmetry180/test/KerrSchild-rotating-180-EE
+  ❌ CactusNumerical/RotatingSymmetry90/test/KerrSchild-rotating-90-EE
   ❌ CactusTest/TestGlobalReduce/test/gaussianMax
-  ❌ CactusTest/TestGlobalReduce/test/gaussianSum
-  ❌ CactusTest/TestGlobalReduce/test/TestAvg
-  ❌ CactusTest/TestGlobalReduce/test/TestMax
-  ❌ CactusTest/TestGlobalReduce/test/gaussianMax_dest0
   ❌ CactusTest/TestGlobalReduce/test/TestSum
-  ❌ CactusUtils/Trigger/test/trigger
-  ❌ CactusUtils/Vectors/test/vectors
-  ❌ CactusWave/IDScalarWaveElliptic/test/test_waveell
-  ❌ CactusWave/WaveBinarySource/test/test_binary_1
-  ... and 9 more
+  ❌ EinsteinAnalysis/AHFinderDirect/test/checkpointML-EE
+  ❌ EinsteinAnalysis/AHFinderDirect/test/misner1.2-025
+  ❌ EinsteinAnalysis/Extract/test/qc0-mclachlan
+  ❌ EinsteinAnalysis/QuasiLocalMeasures/test/qlm-minkowski
+  ❌ EinsteinEvolve/GRHydro/test/cylexp_tvd_mc2_hlle
+  ❌ EinsteinEvolve/GRHydro/test/balsara2_1d
+  ❌ EinsteinEvolve/GRHydro/test/balsara5_2d
+  ❌ EinsteinEvolve/GRHydro/test/test_tov_carpet_refined_nosync
+  ❌ EinsteinEvolve/GRHydro/test/balsara4_1d
+  ❌ EinsteinEvolve/GRHydro/test/balsara1_2d
+  ❌ EinsteinEvolve/GRHydro/test/cylexp_tvd_mc2_hlle_dc
+  ❌ EinsteinEvolve/GRHydro/test/GRHydro_test_shock_weno
+  ❌ EinsteinEvolve/GRHydro/test/balsara3_2d
+  ❌ EinsteinEvolve/GRHydro/test/balsara3_1d
+  ❌ EinsteinEvolve/GRHydro/test/balsara1_1d_dc
+  ... and 50 more
 
-ANALYSIS ERRORS (164):
-  ⚠️  EinsteinAnalysis/AHFinder/test/test_AHF_2: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-180-EE: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-inner-expansion: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-inner-expansion-EE: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-product: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/checkpointML-EE: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-modification-radius-EE: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-Cartoon-EE: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-Cartoon: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius-definition-expansion-product-EE: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-areal-radius-EE: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-EE: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-mean-curvature: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-modification-radius: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-90-EE: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-90: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-rotating-180: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-expansion-product-EE: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/misner1.2-025: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-EE: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-mean-coordinate-radius: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-selection-mean-coordinate-radius-EE: Output directory not found on host
-  ⚠️  EinsteinAnalysis/AHFinderDirect/test/Kerr-definition-mean-curvature-EE: Output directory not found on host
-  ⚠️  EinsteinAnalysis/Extract/test/qc0-mclachlan: Output directory not found on host
-  ⚠️  EinsteinAnalysis/Multipole/test/test_rads: Output directory not found on host
-  ⚠️  EinsteinAnalysis/Multipole/test/test_trapezoidal: Output directory not found on host
-  ⚠️  EinsteinAnalysis/Multipole/test/test_44: Output directory not found on host
-  ⚠️  EinsteinAnalysis/Multipole/test/test_22: Output directory not found on host
-  ⚠️  EinsteinAnalysis/Multipole/test/test_driscollhealy: Output directory not found on host
-  ⚠️  EinsteinAnalysis/Multipole/test/test_simpson: Output directory not found on host
-  ⚠️  EinsteinAnalysis/Multipole/test/test_31: Output directory not found on host
-  ⚠️  EinsteinAnalysis/Multipole/test/test_vars: Output directory not found on host
-  ⚠️  EinsteinAnalysis/Outflow/test/moving_tov: Output directory not found on host
-  ⚠️  EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks: Output directory not found on host
-  ⚠️  EinsteinAnalysis/QuasiLocalMeasures/test/qlm-minkowski: Output directory not found on host
-  ⚠️  EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-shifted: Output directory not found on host
-  ⚠️  EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-EE: Output directory not found on host
-  ⚠️  EinsteinAnalysis/QuasiLocalMeasures/test/qlm-bl: Output directory not found on host
-  ⚠️  EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-boosted: Output directory not found on host
-  ⚠️  EinsteinAnalysis/QuasiLocalMeasures/test/qlm-ks-tilted: Output directory not found on host
-  ⚠️  EinsteinAnalysis/WeylScal4/test/teukolskyID: Output directory not found on host
-  ⚠️  EinsteinAnalysis/WeylScal4/test/teukolskyParity: Output directory not found on host
-  ⚠️  EinsteinAnalysis/WeylScal4/test/teukolsky: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/cylexp_tvd_mc2_hlle: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/balsara2_1d: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/balsara5_2d: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/test_tov_carpet_refined_nosync: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/GRHydro_test_shock_mp5: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/balsara4_1d: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/balsara1_2d: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/cylexp_tvd_mc2_hlle_dc: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/GRHydro_test_shock_weno: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/balsara3_2d: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/balsara3_1d: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/GRHydro_test_shock: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/balsara1_1d_dc: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/balsara4_2d: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/balsara1_1d: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/balsara1_2d_dc: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/tov_carpetevolutionmask: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/balsara5_1d: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro/test/GRHydro_test_shock_ppm: Output directory not found on host
-  ⚠️  EinsteinEvolve/GRHydro_InitData/test/magtov_poloidal: Output directory not found on host
-  ⚠️  EinsteinInitialData/DistortedBHIVP/test/test_dbh: Output directory not found on host
-  ⚠️  EinsteinInitialData/DistortedBHIVP/test/E2xeon_test_dbh: Output directory not found on host
-  ⚠️  EinsteinInitialData/Exact/test/bowl-init: Output directory not found on host
-  ⚠️  EinsteinInitialData/Hydro_InitExcision/test/diag_pugh_eno: Output directory not found on host
-  ⚠️  EinsteinInitialData/Hydro_InitExcision/test/x_flip_pugh_eno: Output directory not found on host
-  ⚠️  EinsteinInitialData/Hydro_InitExcision/test/sphere_pugh_ppm: Output directory not found on host
-  ⚠️  EinsteinInitialData/Hydro_InitExcision/test/x_pugh_eno: Output directory not found on host
-  ⚠️  EinsteinInitialData/Hydro_InitExcision/test/diag_flip_pugh_eno: Output directory not found on host
-  ⚠️  EinsteinInitialData/IDAnalyticBH/test/test_misner: Output directory not found on host
-  ⚠️  EinsteinInitialData/IDAnalyticBH/test/kerr: Output directory not found on host
-  ⚠️  EinsteinInitialData/IDAnalyticBH/test/test_bl: Output directory not found on host
-  ⚠️  EinsteinInitialData/IDAxiBrillBH/test/test_axibrill_nostagger: Output directory not found on host
-  ⚠️  EinsteinInitialData/IDAxiBrillBH/test/test_axibrill: Output directory not found on host
-  ⚠️  EinsteinInitialData/IDAxiOddBrillBH/test/test_axioddbh: Output directory not found on host
-  ⚠️  EinsteinInitialData/IDAxiOddBrillBH/test/E2xeon_test_axioddbh: Output directory not found on host
-  ⚠️  EinsteinInitialData/IDLinearWaves/test/test_pw_ADM_dir-z: Output directory not found on host
-  ⚠️  EinsteinInitialData/RotatingDBHIVP/test/E2xeon_test_rdbh: Output directory not found on host
-  ⚠️  EinsteinInitialData/RotatingDBHIVP/test/test_rdbh: Output directory not found on host
-  ⚠️  EinsteinInitialData/TwoPunctures/test/bhns_interp: Output directory not found on host
-  ⚠️  Carpet/Carpet/test/no-overlap: Output directory not found on host
-  ⚠️  Carpet/Carpet/test/64k2: Output directory not found on host
-  ⚠️  Carpet/Carpet/test/kasner_amr: Output directory not found on host
-  ⚠️  Carpet/Carpet/test/test_restrict_sync: Output directory not found on host
-  ⚠️  Carpet/Carpet/test/kasner: Output directory not found on host
-  ⚠️  Carpet/CarpetEvolutionMask/test/CarpetEvolutionMask_test: Output directory not found on host
-  ⚠️  Carpet/CarpetEvolutionMask/test/CarpetEvolutionMask_test_off: Output directory not found on host
-  ⚠️  Carpet/CarpetEvolutionMask/test/buffer_mask: Output directory not found on host
-  ⚠️  Carpet/CarpetIOASCII/test/grid-coords: Output directory not found on host
-  ⚠️  Carpet/CarpetIOASCII/test/newsep: Output directory not found on host
-  ⚠️  Carpet/CarpetIOASCII/test/compact: Output directory not found on host
-  ⚠️  Carpet/CarpetIOASCII/test/coords: Output directory not found on host
-  ⚠️  Carpet/CarpetIOHDF5/test/nobuffers: Output directory not found on host
-  ⚠️  Carpet/CarpetIOScalar/test/coords3: Output directory not found on host
-  ⚠️  Carpet/CarpetIOScalar/test/coords2: Output directory not found on host
-  ⚠️  Carpet/CarpetIOScalar/test/newsep: Output directory not found on host
-  ⚠️  Carpet/CarpetIOScalar/test/coords: Output directory not found on host
-  ⚠️  Carpet/CarpetIntegrateTest/test/carpetintegrate: Output directory not found on host
-  ⚠️  Carpet/CarpetIntegrateTest/test/carpetintegrate-linear: Output directory not found on host
-  ⚠️  Carpet/CarpetInterp/test/waveinterp-2p: Output directory not found on host
-  ⚠️  Carpet/CarpetInterp/test/waveinterp-1p: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_o3: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_o1: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_horest_o3: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_o5: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_o7: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_horest_o5: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_o4: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_o5: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_interp: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_o1: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_tvd_hi: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_o0: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_o2: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_o3: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_tvd: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_tvd_z: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_tvd_y: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_o11: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_tvd_x: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_rest_o3: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_rest_o2: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_rest_o0: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_rest_o1: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_o9: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_rest_o5: Output directory not found on host
-  ⚠️  Carpet/CarpetProlongateTest/test/test_cc_rest_o4: Output directory not found on host
-  ⚠️  Carpet/CarpetReduce/test/periodic_weight: Output directory not found on host
-  ⚠️  Carpet/CarpetReduce/test/nonstaggered_excl: Output directory not found on host
-  ⚠️  Carpet/CarpetReduce/test/nonstaggered: Output directory not found on host
-  ⚠️  Carpet/CarpetReduce/test/staggered: Output directory not found on host
-  ⚠️  Carpet/CarpetRegrid2/test/regrid2_granularity: Output directory not found on host
-  ⚠️  Carpet/CarpetRegrid2/test/regrid2_2cen: Output directory not found on host
-  ⚠️  Carpet/CarpetRegrid2/test/regrid2_2D: Output directory not found on host
-  ⚠️  Carpet/LoopControl/test/test-minkowski-carpet-1lev: Output directory not found on host
-  ⚠️  Carpet/PeriodicCarpet/test/testperiodicinterp: Output directory not found on host
-  ⚠️  Carpet/PeriodicCarpet/test/ml-gw1d-small: Output directory not found on host
-  ⚠️  Carpet/PeriodicCarpet/test/ml-gw1d-small-amr: Output directory not found on host
-  ⚠️  CTThorns/CT_MultiLevel/test/constraints_spherical: Output directory not found on host
-  ⚠️  CTThorns/CT_MultiLevel/test/boostedpuncture: Output directory not found on host
-  ⚠️  CTThorns/CT_MultiLevel/test/poisson: Output directory not found on host
-  ⚠️  EinsteinExact/EinsteinExact_Test/test/ModifiedSchwarzschildBL: Output directory not found on host
-  ⚠️  EinsteinExact/EinsteinExact_Test/test/GaugeWave: Output directory not found on host
-  ⚠️  EinsteinExact/EinsteinExact_Test/test/Minkowski: Output directory not found on host
-  ⚠️  EinsteinExact/EinsteinExact_Test/test/Vaidya2: Output directory not found on host
-  ⚠️  EinsteinExact/EinsteinExact_Test/test/ShiftedGaugeWave: Output directory not found on host
-  ⚠️  ExternalLibraries/PAPI/test/papi: Output directory not found on host
-  ⚠️  McLachlan/ML_BSSN_Test/test/ML_BSSN_O8_sgw3d: Output directory not found on host
-  ⚠️  McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_harmonic_phi: Output directory not found on host
-  ⚠️  McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_harmonic: Output directory not found on host
-  ⚠️  McLachlan/ML_BSSN_Test/test/ML_BSSN_EE_sgw3d: Output directory not found on host
-  ⚠️  McLachlan/ML_BSSN_Test/test/ML_BSSN_NewRad: Output directory not found on host
-  ⚠️  McLachlan/ML_BSSN_Test/test/ML_BSSN_sgw3d_rhs: Output directory not found on host
-  ⚠️  McLachlan/ML_BSSN_Test/test/ML_BSSN_EE_sgw3d_rhs: Output directory not found on host
-  ⚠️  McLachlan/ML_CCZ4_Test/test/ML_CCZ4_sgw3d: Output directory not found on host
-  ⚠️  McLachlan/ML_CCZ4_Test/test/ML_CCZ4_sgw3d_rhs: Output directory not found on host
-  ⚠️  McLachlan/ML_WaveToy_Test/test/gaussian-RK4: Output directory not found on host
-  ⚠️  McLachlan/ML_WaveToy_Test/test/gaussian-RK45-adaptive: Output directory not found on host
-  ⚠️  McLachlan/ML_WaveToy_Test/test/gaussian-RK45: Output directory not found on host
+ANALYSIS ERRORS (13):
+  ⚠️  EinsteinAnalysis/ADMMass/test/tov_whisky: Output directory not found on host
+  ⚠️  EinsteinAnalysis/AHFinderDirect/test/recoverML-EE: Output directory not found on host
+  ⚠️  EinsteinAnalysis/Extract/test/extract_physical: Output directory not found on host
+  ⚠️  EinsteinEOS/EOS_Omni/test/eos_omni: Output directory not found on host
+  ⚠️  EinsteinInitialData/IDBrillData/test/test_brilldata_1: Output directory not found on host
+  ⚠️  EinsteinInitialData/TwoPunctures/test/bam: Output directory not found on host
+  ⚠️  EinsteinInitialData/TwoPunctures/test/idpuncture: Output directory not found on host
+  ⚠️  Carpet/CarpetIOHDF5/test/CarpetWaveToyNewRecover_test_1proc: Output directory not found on host
+  ⚠️  Carpet/CarpetIOHDF5/test/CarpetWaveToyRecover_test_1proc: Output directory not found on host
+  ⚠️  Carpet/CarpetRegrid/test/test_BSSN_MoL_Carpet_keep: Output directory not found on host
+  ⚠️  Carpet/CarpetRegrid2/test/test_BSSN_MoL_Carpet: Output directory not found on host
+  ⚠️  McLachlan/ML_BSSN_Test/test/ML_BSSN_MP_O8_bh: Output directory not found on host
+  ⚠️  PITTNullCode/SphericalHarmonicRecon/test/regression_test: Output directory not found on host
 
 =======================================================
 RECOMMENDATIONS:
-✅ 32 tests were false failures due to numerical precision
-🔧 29 tests have genuine issues needing investigation
-📋 164 tests need path/setup fixes
+✅ 156 tests were false failures due to numerical precision
+🔧 70 tests have genuine issues needing investigation
+📋 13 tests need path/setup fixes
+
+📄 All checked tests saved to: checked_tests.txt
 
 For missing thorn issues, run: python3 check_missing_thorns.py

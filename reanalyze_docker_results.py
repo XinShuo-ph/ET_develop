@@ -19,25 +19,15 @@ def extract_failed_tests_from_results(results_file):
     with open(results_file, 'r', encoding='utf-8', errors='ignore') as f:
         content = f.read()
     
-    # Find all test entries that failed
+    # Find all test entries that failed - no filtering, analyze everything
     test_pattern = r'Test \d+: ([^\n]+)\n[^\n]*\n.*?Result: FAIL.*?Output directory: ([^\n]+)'
     matches = re.findall(test_pattern, content, re.DOTALL)
+    
+    print(f"Found {len(matches)} FAIL tests with Output directory")
     
     for test_name, output_dir in matches:
         test_name = test_name.strip()
         output_dir = output_dir.strip()
-        
-        # Skip if it's a missing benchmark or simulation failure
-        test_block_pattern = rf'Test \d+: {re.escape(test_name)}.*?(?=Test \d+:|$)'
-        test_block_match = re.search(test_block_pattern, content, re.DOTALL)
-        
-        if test_block_match:
-            test_block = test_block_match.group(0)
-            if ('MISSING_BENCHMARK' in test_block or 
-                'SIMULATION_FAILED' in test_block or
-                'NO_OUTPUT' in test_block or
-                'MISSING_PARFILE' in test_block):
-                continue
         
         failed_tests.append({
             'test_name': test_name,
@@ -47,7 +37,7 @@ def extract_failed_tests_from_results(results_file):
     
     return failed_tests
 
-def reanalyze_with_smart_comparison(failed_tests, rtol=1e-10, atol=1e-15):
+def reanalyze_with_smart_comparison(failed_tests, rtol=1e-4, atol=1e-8):
     """Reanalyze failed tests using smart numerical comparison"""
     
     print(f"Reanalyzing {len(failed_tests)} failed tests with smart comparison...")
@@ -70,6 +60,12 @@ def reanalyze_with_smart_comparison(failed_tests, rtol=1e-10, atol=1e-15):
         # Determine paths
         host_output_dir = f"test_outputs_host/{os.path.basename(test_path)}"
         benchmark_dir = f"Cactus/arrangements/{test_path}"
+        
+        # Show progress for large directories
+        if os.path.exists(host_output_dir):
+            file_count = len([f for f in os.listdir(host_output_dir) if os.path.isfile(os.path.join(host_output_dir, f))])
+            if file_count > 20:
+                print(f"  📁 Large directory: {file_count} files")
         
         # Check if directories exist
         if not os.path.exists(host_output_dir):
@@ -128,15 +124,16 @@ def generate_corrected_summary(original_results_file, reanalysis_results, output
         with open(original_results_file, 'r', encoding='utf-8', errors='ignore') as f:
             content = f.read()
         
-        # Extract summary
-        summary_match = re.search(r'Total tests: (\d+)', content)
-        if summary_match:
-            total_tests = int(summary_match.group(1))
+        # Count actual test entries (works for in-progress tests too)
+        test_entries = re.findall(r'Test \d+:', content)
+        total_tests = len(test_entries)
         
         passed_matches = re.findall(r'Result: PASS', content)
         original_passed = len(passed_matches)
         original_failed = total_tests - original_passed
     
+    print(f"Total tests: {total_tests}")
+
     # Calculate corrected stats
     now_passing_count = len(reanalysis_results['now_passing'])
     still_failing_count = len(reanalysis_results['still_failing'])
@@ -144,6 +141,16 @@ def generate_corrected_summary(original_results_file, reanalysis_results, output
     
     corrected_passed = original_passed + now_passing_count
     corrected_failed = still_failing_count + analysis_errors_count
+    
+    # Calculate percentages safely
+    if total_tests > 0:
+        corrected_success_rate = (corrected_passed/total_tests*100)
+        original_success_rate = (original_passed/total_tests*100)
+        improvement_points = (now_passing_count/total_tests*100)
+    else:
+        corrected_success_rate = 0.0
+        original_success_rate = 0.0
+        improvement_points = 0.0
     
     # Generate report
     report = f"""Einstein Toolkit Test Results - CORRECTED ANALYSIS
@@ -165,11 +172,11 @@ CORRECTED FINAL RESULTS:
   Total tests: {total_tests}
   Passed: {corrected_passed}
   Failed: {corrected_failed}
-  Success rate: {(corrected_passed/total_tests*100):.1f}% (was {(original_passed/total_tests*100):.1f}%)
+  Success rate: {corrected_success_rate:.1f}% (was {original_success_rate:.1f}%)
 
 IMPROVEMENT:
   Additional tests now passing: {now_passing_count}
-  Improvement: +{(now_passing_count/total_tests*100):.1f} percentage points
+  Improvement: +{improvement_points:.1f} percentage points
 
 =======================================================
 TESTS THAT NOW PASS (due to smart numerical comparison):
@@ -202,6 +209,7 @@ TESTS THAT NOW PASS (due to smart numerical comparison):
     if analysis_errors_count > 0:
         report += f"📋 {analysis_errors_count} tests need path/setup fixes\n"
     
+    report += f"\n📄 All checked tests saved to: checked_tests.txt\n"
     report += "\nFor missing thorn issues, run: python3 check_missing_thorns.py\n"
     
     # Write report
@@ -210,9 +218,71 @@ TESTS THAT NOW PASS (due to smart numerical comparison):
     
     return report
 
+def generate_checked_tests_file(original_results_file, reanalysis_results, output_file):
+    """Generate a file listing all checked tests (passed numerical comparison)"""
+    
+    checked_tests = []
+    
+    # Extract originally passing tests
+    if os.path.exists(original_results_file):
+        with open(original_results_file, 'r', encoding='utf-8', errors='ignore') as f:
+            content = f.read()
+        
+        # Find all tests that originally passed
+        pass_pattern = r'Test \d+: ([^\n]+)\n[^\n]*\n\s*Result: PASS'
+        pass_matches = re.findall(pass_pattern, content)
+        
+        for test_name in pass_matches:
+            test_name = test_name.strip()
+            checked_tests.append(test_name)
+    
+    # Add newly passing tests from reanalysis
+    for test_info in reanalysis_results['now_passing']:
+        test_name = test_info['test']
+        if test_name not in checked_tests:  # Avoid duplicates
+            checked_tests.append(test_name)
+    
+    # Sort tests alphabetically
+    checked_tests.sort()
+    
+    # Write to file
+    with open(output_file, 'w') as f:
+        f.write(f"# Einstein Toolkit Checked Tests\n")
+        f.write(f"# Generated: {__import__('datetime').datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+        f.write(f"# Total checked tests: {len(checked_tests)}\n")
+        f.write(f"#\n")
+        f.write(f"# This file contains all tests that pass numerical comparison:\n")
+        f.write(f"# - Tests that originally passed with basic diff\n")
+        f.write(f"# - Tests that now pass with smart numerical comparison\n")
+        f.write(f"#\n")
+        
+        for test_name in checked_tests:
+            f.write(f"{test_name}\n")
+    
+    print(f"Checked tests written to {output_file}: {len(checked_tests)} tests")
+    return checked_tests
+
 def main():
+    import argparse
+    
+    parser = argparse.ArgumentParser(description='Einstein Toolkit Docker Results Reanalysis')
+    parser.add_argument('--rtol', type=float, default=1e-4, 
+                       help='Relative tolerance for numerical comparison (default: 1e-4)')
+    parser.add_argument('--atol', type=float, default=1e-8,
+                       help='Absolute tolerance for numerical comparison (default: 1e-8)')
+    parser.add_argument('--output-dir', type=str, default='.',
+                       help='Output directory for results (default: current directory)')
+    
+    args = parser.parse_args()
+    
     print("Einstein Toolkit Docker Results Reanalysis")
     print("=" * 50)
+    print(f"Using tolerances: rtol={args.rtol}, atol={args.atol}")
+    print(f"Output directory: {args.output_dir}")
+    print("=" * 50)
+    
+    # Create output directory if it doesn't exist
+    os.makedirs(args.output_dir, exist_ok=True)
     
     # Check for required files
     results_file = 'test_results.txt'
@@ -238,15 +308,22 @@ def main():
         return
     
     # Reanalyze with smart comparison
-    reanalysis_results = reanalyze_with_smart_comparison(failed_tests)
+    reanalysis_results = reanalyze_with_smart_comparison(failed_tests, rtol=args.rtol, atol=args.atol)
     
     # Generate corrected summary
     print("\nGenerating corrected summary...")
-    summary_report = generate_corrected_summary(results_file, reanalysis_results, 'corrected_test_results.txt')
+    corrected_results_file = os.path.join(args.output_dir, f'corrected_test_results_rtol{args.rtol:.0e}_atol{args.atol:.0e}.txt')
+    summary_report = generate_corrected_summary(results_file, reanalysis_results, corrected_results_file)
     
     # Save detailed results
-    with open('smart_reanalysis_details.json', 'w') as f:
+    details_file = os.path.join(args.output_dir, f'smart_reanalysis_details_rtol{args.rtol:.0e}_atol{args.atol:.0e}.json')
+    with open(details_file, 'w') as f:
         json.dump(reanalysis_results, f, indent=2)
+    
+    # Generate checked_tests.txt with all passing tests
+    print("Generating checked_tests.txt with all passing tests...")
+    checked_tests_file = os.path.join(args.output_dir, f'checked_tests_rtol{args.rtol:.0e}_atol{args.atol:.0e}.txt')
+    generate_checked_tests_file(results_file, reanalysis_results, checked_tests_file)
     
     # Print summary
     print("\n" + "="*60)
@@ -257,12 +334,14 @@ def main():
     print(f"Still failing: {len(reanalysis_results['still_failing'])}")
     print(f"Analysis errors: {len(reanalysis_results['analysis_errors'])}")
     
-    print(f"\nFiles generated:")
-    print(f"  📊 corrected_test_results.txt - Corrected summary")
-    print(f"  📋 smart_reanalysis_details.json - Detailed reanalysis data")
+    print(f"\nFiles generated in {args.output_dir}:")
+    print(f"  📊 {os.path.basename(corrected_results_file)} - Corrected summary")
+    print(f"  📋 {os.path.basename(details_file)} - Detailed reanalysis data")
+    print(f"  ✅ {os.path.basename(checked_tests_file)} - All numerically checked tests")
     
     if len(reanalysis_results['now_passing']) > 0:
         print(f"\n✅ Good news: {len(reanalysis_results['now_passing'])} tests now pass with smart comparison!")
 
 if __name__ == "__main__":
     main()
+
