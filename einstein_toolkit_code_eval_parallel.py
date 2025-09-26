@@ -314,8 +314,11 @@ class EinsteinToolkitTester:
         test_results = []
         overall_success = True
         
-        # Create host directories for test outputs
-        host_output_base_dir = "test_outputs_host"
+        # Create host directories for test outputs (worker-specific)
+        if worker_id is not None:
+            host_output_base_dir = f"test_outputs_host_worker_{worker_id}"
+        else:
+            host_output_base_dir = "test_outputs_host"
         os.makedirs(host_output_base_dir, exist_ok=True)
         
         for test_path in tests:
@@ -485,6 +488,15 @@ class EinsteinToolkitTester:
                     'error': f'Comparison error: {str(e)}'
                 })
                 overall_success = False
+            finally:
+                # Clean up host output directory after each test to prevent contamination
+                if os.path.exists(host_output_dir):
+                    if worker_id is not None:
+                        print(f"[Worker {worker_id}]       Cleaning up test output: {host_output_dir}")
+                    else:
+                        print(f"    Cleaning up test output: {host_output_dir}")
+                    import shutil
+                    shutil.rmtree(host_output_dir)
         
         return {
             'success': overall_success,
@@ -750,6 +762,15 @@ void mock_function(CCTK_ARGUMENTS) {{
             self.tester.cleanup_backups(self.worker_id)
         if self.docker_mgr:
             self.docker_mgr.stop_container()
+        
+        # Clean up worker-specific test output directory
+        worker_output_dir = f"test_outputs_host_worker_{self.worker_id}"
+        if os.path.exists(worker_output_dir):
+            print(f"[Worker {self.worker_id}] Cleaning up worker test outputs: {worker_output_dir}")
+            import shutil
+            shutil.rmtree(worker_output_dir)
+            print(f"[Worker {self.worker_id}] Worker test outputs cleaned up")
+        
         print(f"[Worker {self.worker_id}] Cleanup completed")
 
 def generate_code_with_api(prompt_text, api_key, max_tokens=4000):
@@ -958,6 +979,34 @@ def main():
     print(f"Numerical tolerance: rtol={args.rtol}, atol={args.atol}")
     print()
     
+    # Clean up any existing test outputs from previous runs
+    print("Cleaning up previous test outputs...")
+    import shutil
+    import glob
+    
+    # Clean up general test outputs directory
+    host_output_base_dir = "test_outputs_host"
+    cleaned_dirs = []
+    
+    if os.path.exists(host_output_base_dir):
+        print(f"  - Removing: {host_output_base_dir}")
+        shutil.rmtree(host_output_base_dir)
+        cleaned_dirs.append(host_output_base_dir)
+    
+    # Clean up any worker-specific test output directories
+    worker_output_dirs = glob.glob("test_outputs_host_worker_*")
+    for worker_dir in worker_output_dirs:
+        if os.path.exists(worker_dir):
+            print(f"  - Removing: {worker_dir}")
+            shutil.rmtree(worker_dir)
+            cleaned_dirs.append(worker_dir)
+    
+    if cleaned_dirs:
+        print("  - Previous test outputs cleaned up")
+    else:
+        print("  - No previous test outputs found")
+    print()
+    
     # Load dataset and filter valid examples
     print("Loading HuggingFace dataset...")
     print("  - Downloading dataset files...")
@@ -1043,6 +1092,33 @@ def main():
                 print(f"Worker {worker_id} failed with error: {e}")
     
     print(f"\nParallel execution completed. Collected {len(all_results)} results.")
+    
+    # Final cleanup of test outputs to ensure clean state
+    print("Final cleanup of test outputs...")
+    import shutil
+    import glob
+    
+    # Clean up general test outputs directory
+    host_output_base_dir = "test_outputs_host"
+    cleaned_dirs = []
+    
+    if os.path.exists(host_output_base_dir):
+        print(f"  - Removing: {host_output_base_dir}")
+        shutil.rmtree(host_output_base_dir)
+        cleaned_dirs.append(host_output_base_dir)
+    
+    # Clean up any remaining worker-specific test output directories
+    worker_output_dirs = glob.glob("test_outputs_host_worker_*")
+    for worker_dir in worker_output_dirs:
+        if os.path.exists(worker_dir):
+            print(f"  - Removing: {worker_dir}")
+            shutil.rmtree(worker_dir)
+            cleaned_dirs.append(worker_dir)
+    
+    if cleaned_dirs:
+        print("  - Final test outputs cleaned up")
+    else:
+        print("  - No test outputs to clean up")
     
     # Save final results
     results_file = os.path.join(args.output_dir, f"parallel_evaluation_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json")

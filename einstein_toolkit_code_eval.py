@@ -412,6 +412,12 @@ class EinsteinToolkitTester:
                     'error': f'Comparison error: {str(e)}'
                 })
                 overall_success = False
+            finally:
+                # Clean up host output directory after each test to prevent contamination
+                if os.path.exists(host_output_dir):
+                    print(f"    Cleaning up test output: {host_output_dir}")
+                    import shutil
+                    shutil.rmtree(host_output_dir)
         
         return {
             'success': overall_success,
@@ -637,6 +643,15 @@ def main():
     print(f"Numerical tolerance: rtol={args.rtol}, atol={args.atol}")
     print()
     
+    # Clean up any existing test outputs from previous runs
+    host_output_base_dir = "test_outputs_host"
+    if os.path.exists(host_output_base_dir):
+        print(f"Cleaning up previous test outputs: {host_output_base_dir}")
+        import shutil
+        shutil.rmtree(host_output_base_dir)
+        print("  - Previous test outputs cleaned up")
+    print()
+    
     # Load dataset and filter valid examples
     print("Loading HuggingFace dataset...")
     print("  - Downloading dataset files...")
@@ -830,6 +845,14 @@ void mock_function(CCTK_ARGUMENTS) {{
     
     # Stop Docker container
     docker_mgr.stop_container()
+    
+    # Final cleanup of test outputs to ensure clean state
+    host_output_base_dir = "test_outputs_host"
+    if os.path.exists(host_output_base_dir):
+        print(f"Final cleanup of test outputs: {host_output_base_dir}")
+        import shutil
+        shutil.rmtree(host_output_base_dir)
+        print("  - Final test outputs cleaned up")
     
     # Save final results
     results_file = os.path.join(args.output_dir, f"evaluation_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json")
