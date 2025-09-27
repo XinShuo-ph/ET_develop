@@ -340,7 +340,7 @@ def main():
     print(f"  ✅ {os.path.basename(checked_tests_file)} - All numerically checked tests")
     
     if len(reanalysis_results['now_passing']) > 0:
-        print(f"\n✅ Good news: {len(reanalysis_results['now_passing'])} tests now pass with smart comparison!")
+        print(f"\n{len(reanalysis_results['now_passing'])} tests now pass with smart comparison!")
 
 if __name__ == "__main__":
     main()

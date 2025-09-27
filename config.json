@@ -1,0 +1,93 @@
+{
+  "api": {
+    "base_url": "https://genai-sg-og.tiktok-row.org/gpt/openapi/online/v2/crawl/openai/deployments/gpt_openapi",
+    "api_version": "2024-03-01-preview",
+    "model_name": "gcp-claude4-sonnet",
+    "api_key_env_var": "SEED_LLM_API_KEY",
+    "max_tokens": 4000,
+    "timeout": 300,
+    "retry_attempts": 3
+  },
+  
+  "docker": {
+    "image_name": "rynge/einsteintoolkit",
+    "container_prefix": "ET_code_eval",
+    "working_directory": "/opt/Cactus",
+    "setup_timeout": 30,
+    "build_timeout": 600,
+    "test_timeout": 1200
+  },
+  
+  "dataset": {
+    "name": "xinshuo/ET_code_with_context_doc",
+    "split": "train",
+    "cache_dir": null,
+    "valid_thorns_file": "Cactus/configs/sim/ThornList",
+    "context_char_limit": 8000,
+    "doc_char_limit": 15000
+  },
+  
+  "prompt": {
+    "template_file": "prompt.txt",
+    "variables": {
+      "context_char_limit": 8000,
+      "doc_char_limit": 15000
+    }
+  },
+  
+  "evaluation": {
+    "scoring": {
+      "build_points": 40,
+      "test_run_points": 10,
+      "test_accuracy_points": 50,
+      "total_points": 100
+    },
+    "tolerances": {
+      "rtol": 1e-6,
+      "atol": 1e-12
+    },
+    "parallel": {
+      "default_workers": 4,
+      "max_workers": 8
+    }
+  },
+  
+  "paths": {
+    "base_directory": ".",
+    "output_directory": "results",
+    "test_outputs_base": "test_outputs_host",
+    "benchmark_base": "Cactus/arrangements",
+    "scratch_directory": "scratch",
+    "thorn_to_tests_file": "thorn_to_tests.txt",
+    "container_file_changes": [
+      ["Cactus/configs/sim/ThornList", "/opt/Cactus/configs/sim/ThornList"],
+      ["run_all_tests.sh", "/opt/Cactus/run_all_tests.sh"],
+      ["test_names.txt", "/opt/Cactus/test_names.txt"],
+      ["ADMConstraints", "/opt/Cactus/arrangements/EinsteinAnalysis/ADMConstraints"]
+    ]
+  },
+  
+  "final_upload": {
+    "upload_enabled": true,
+    "result_dataset_name": "xinshuo/ET_evaluated",
+    "private_dataset": false
+  },
+  
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(levelname)s - %(message)s",
+    "log_api_calls": true,
+    "log_docker_commands": true,
+    "worker_prefix": "[Worker {worker_id}]",
+    "buildlog_keywords": ["Done", "error:"],
+    "line_truncation_n_char": 200,
+    "build_streaming_enabled": true,
+    "build_streaming_interval_sec": 5.0
+  },
+  
+  "limits": {
+    "max_examples": 100,
+    "min_score_filter": 0.0,
+    "output_top_n": null
+  }
+}

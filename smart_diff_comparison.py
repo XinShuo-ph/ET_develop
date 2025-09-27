@@ -220,7 +220,7 @@ def compare_directories_with_tolerance(dir1, dir2, rtol=1e-10, atol=1e-15):
     if differences:
         return False, "\n".join(differences)
     else:
-        return True, "Directories match within tolerance (extra files in test output ignored)"
+        return True, "Directories match within tolerance"
 
 def main():
     if len(sys.argv) < 3:

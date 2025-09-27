@@ -99,3 +99,4 @@ et_test_data/
 scratch/
 !scratch/evaluation_results_*.json
 !scratch/parallel_evaluation_results_*.json
+legacy/

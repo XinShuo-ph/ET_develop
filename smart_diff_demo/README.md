@@ -57,23 +57,13 @@ $ python3 ../smart_diff_comparison.py output benchmark_bad 1e-1 1e-2
 # Actual difference: 2.00e-19 (within tolerance)
 ```
 
-## File Filtering
-
-The script also ignores **metadata files** that shouldn't affect test results:
-- **`.par` files** - Parameter file copies (not physics output)
-
-**Example**: Test output directory has extra `test.par` file → Still passes
-```bash
-$ python3 ../smart_diff_comparison.py output_with_par benchmark_without_par
-Directories match within tolerance  # .par file ignored
-```
 
 ## Einstein Toolkit Impact
 
-This approach eliminated **32+ false positive test failures** by:
+This approach eliminated **100+ false positive test failures** by:
 1. **Numerical tolerance** - Ignoring computational precision artifacts  
 2. **File filtering** - Ignoring metadata like `.par` files
-3. **Focus on physics** - Only real differences cause failures
+3. **Focus on physics** - Only real differences (above tolerance) cause failures
 
 **Default settings work well for ET:**
 - `rtol=1e-4` (relative tolerance)  

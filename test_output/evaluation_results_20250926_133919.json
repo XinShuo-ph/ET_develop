@@ -1,0 +1,74 @@
+[
+  {
+    "worker_id": 0,
+    "example_index": 0,
+    "thorn_name": "CactusExamples/Poisson",
+    "src_filename": "uniform_charge.c",
+    "generated_code": "#include <assert.h>\n#include <math.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\n#include \"cctk.h\"\n#include \"cctk_Arguments.h\"\n#include \"cctk_Parameters.h\"\n\n#include \"util_Table.h\"\n\nvoid Poisson_prepare(CCTK_ARGUMENTS)\n{\n  DECLARE_CCTK_ARGUMENTS;\n  DECLARE_CCTK_PARAMETERS;\n  \n  int i, j, k;\n  int index;\n  \n  for (k = 0; k < cctk_lsh[2]; k++) {\n    for (j = 0; j < cctk_lsh[1]; j++) {\n      for (i = 0; i < cctk_lsh[0]; i++) {\n        index = CCTK_GFINDEX3D(cctkGH, i, j, k);\n        \n        phi[index] = 0.0;\n        res[index] = 0.0;\n      }\n    }\n  }\n}\n\nvoid Poisson_solve(CCTK_ARGUMENTS)\n{\n  DECLARE_CCTK_ARGUMENTS;\n  DECLARE_CCTK_PARAMETERS;\n  \n  int i, j, k;\n  int index;\n  CCTK_REAL x, y, z, r;\n  CCTK_REAL rho;\n  CCTK_REAL volume;\n  int ierr;\n  int options_table;\n  \n  volume = 4.0 * M_PI * radius * radius * radius / 3.0;\n  \n  for (k = 0; k < cctk_lsh[2]; k++) {\n    for (j = 0; j < cctk_lsh[1]; j++) {\n      for (i = 0; i < cctk_lsh[0]; i++) {\n        index = CCTK_GFINDEX3D(cctkGH, i, j, k);\n        \n        x = CCTK_ORIGIN_SPACE(0) + (cctk_lbnd[0] + i) * CCTK_DELTA_SPACE(0);\n        y = CCTK_ORIGIN_SPACE(1) + (cctk_lbnd[1] + j) * CCTK_DELTA_SPACE(1);\n        z = CCTK_ORIGIN_SPACE(2) + (cctk_lbnd[2] + k) * CCTK_DELTA_SPACE(2);\n        \n        r = sqrt(x*x + y*y + z*z);\n        \n        if (r <= radius) {\n          rho = charge / volume;\n        } else {\n          rho = 0.0;\n        }\n        \n        res[index] = rho;\n      }\n    }\n  }\n  \n  options_table = Util_TableCreateFromString(options);\n  if (options_table < 0) {\n    CCTK_WARN(0, \"Could not create options table\");\n  }\n  \n  ierr = TATelliptic_Solve(cctkGH, 3, options_table,\n                          1.0, 1.0, 0.0, 0.0, 0.0,\n                          \"Poisson::phi\", \"Poisson::res\", solver);\n  \n  if (ierr != 0) {\n    CCTK_VWarn(0, __LINE__, __FILE__, CCTK_THORNSTRING,\n               \"TATelliptic_Solve failed with error code %d\", ierr);\n  }\n  \n  Util_TableDestroy(options_table);\n}\n\nvoid Poisson_boundaries_select(CCTK_ARGUMENTS)\n{\n  DECLARE_CCTK_ARGUMENTS;\n  \n  int ierr;\n  int faces = CCTK_ALL_FACES;\n  int boundary_width = 1;\n  int table_handle;\n  \n  table_handle = Util_TableCreateFromString(\"value=0.0\");\n  if (table_handle < 0) {\n    CCTK_WARN(0, \"Could not create boundary table\");\n  }\n  \n  ierr = Boundary_SelectGroupForBC(cctkGH, faces, boundary_width, table_handle,\n                                   \"Poisson::potential\", \"scalar\");\n  \n  if (ierr != 0) {\n    CCTK_VWarn(0, __LINE__, __FILE__, CCTK_THORNSTRING,\n               \"Boundary_SelectGroupForBC failed with error code %d\", ierr);\n  }\n  \n  Util_TableDestroy(table_handle);\n}",
+    "build_result": {
+      "success": false,
+      "return_code": 1,
+      "stdout": "Using configuration: sim\nBuilding sim\nCactus - version: 4.2.3\nBuilding configuration sim\nChecking status of thorn CoordBase\nChecking status of thorn Boundary\nChecking status of thorn ADMCoupling\nChecking status of thorn ADMMacros\nChecking status of thorn ADMMass\nChecking status of thorn AEILocalInterp\nChecking status of thorn zlib\nChecking status of thorn GenericFD\nChecking status of thorn CycleClock\nChecking status of thorn Vectors\nChecking status of thorn IOUtil\nChecking status of thorn Fortran\nChecking status of thorn CarpetRegridTest\nChecking status of thorn CarpetTracker\nChecking status of thorn Constants\nChecking status of thorn Convert_to_HydroBase\nChecking status of thorn CoordGauge\nChecking status of thorn DemoInterp\nChecking status of thorn SphericalSurface\nChecking status of thorn DistortedBHIVP\nChecking status of thorn EOS_Base\nChecking status of thorn EOS_IdealFluid\nChecking status of thorn EinsteinExact_Test\nChecking status of thorn EllBase\nChecking status of thorn OpenBLAS\nChecking status of thorn Exact\nChecking status of thorn Extract\nChecking status of thorn FFTW3\nChecking status of thorn FleshInfo\nChecking status of thorn GSL\nChecking status of thorn Socket\nChecking status of thorn pthreads\nChecking status of thorn HelloWorld\nChecking status of thorn HighOrderWaveTest\nChecking status of thorn HydroBase\nChecking status of thorn Hydro_InitExcision\nChecking status of thorn IDAnalyticBH\nChecking status of thorn IDAxiBrillBH\nChecking status of thorn IDAxiOddBrillBH\nChecking status of thorn IDConstraintViolate\nChecking status of thorn IDFileADM\nChecking status of thorn IDLinearWaves\nChecking status of thorn IDScalarWave\nChecking status of thorn IDScalarWaveC\nChecking status of thorn IDScalarWaveCXX\nChecking status of thorn IDScalarWaveElliptic\nChecking status of thorn IDWaveMoL\nChecking status of thorn ID_converter_ILGRMHD\nChecking status of thorn IOASCII\nChecking status of thorn IOBasic\nChecking status of thorn libjpeg\nChecking status of thorn InitBase\nChecking status of thorn InterpToArray\nChecking status of thorn LORENE\nChecking status of thorn LocalInterp\nChecking status of thorn LocalInterp2\nChecking status of thorn LocalReduce\nChecking status of thorn ML_BSSN_Test\nChecking status of thorn ML_CCZ4_Test\nChecking status of thorn ML_WaveToy_Test\nChecking status of thorn Meudon_Bin_BH\nChecking status of thorn Meudon_Bin_NS\nChecking status of thorn Meudon_Mag_NS\nChecking status of thorn MoL\nChecking status of thorn NaNCatcher\nChecking status of thorn NaNChecker\nChecking status of thorn NewRad\nChecking status of thorn Nice\nChecking status of thorn Noise\nChecking status of thorn Norms\nChecking status of thorn NullDecomp\nChecking status of thorn NullGrid\nChecking status of thorn NullVars\nChecking status of thorn OpenSSL\nChecking status of thorn Outflow\nChecking status of thorn PAPI\nChecking status of thorn TATelliptic\nChecking status of thorn PunctureTracker\nChecking status of thorn TGRtensor\nChecking status of thorn ReductionTest\nChecking status of thorn ReductionTest2\nChecking status of thorn ReductionTest3\nChecking status of thorn ReflectionSymmetry\nChecking status of thorn RegridSyncTest\nChecking status of thorn RotatingDBHIVP\nChecking status of thorn SampleBoundary\nChecking status of thorn SampleIO\nChecking status of thorn Seed_Magnetic_Fields\nChecking status of thorn SetMask_SphericalSurface\nChecking status of thorn SlabTest\nChecking status of thorn StaticConformal\nChecking status of thorn SummationByParts\nChecking status of thorn SymBase\nChecking status of thorn SystemStatistics\nChecking status of thorn TerminationTrigger\nChecking status of thorn TestAllTypes\nChecking status of thorn TestArrays\nChecking status of thorn TestComplex\nChecking status of thorn TestCoordinates\nChecking status of thorn TestFortranCrayPointers\nChecking status of thorn TestFortranDependencies2\nChecking status of thorn TestFpointerNULL\nChecking status of thorn TestFreeF90\nChecking status of thorn TestGlobalReduce\nChecking status of thorn TestInclude1\nChecking status of thorn TestInclude2\nChecking status of thorn TestLocalInterp2\nChecking status of thorn TestLocalReduce\nChecking status of thorn TestLoop\nChecking status of thorn TestMath\nChecking status of thorn TestMoL\nChecking status of thorn TestPar\nChecking status of thorn TestReduce\nChecking status of thorn TestSchedule\nChecking status of thorn TestStrings\nChecking status of thorn TestTable\nChecking status of thorn TestTimers\nChecking status of thorn TestTypes\nChecking status of thorn Time\nChecking status of thorn TimerInfo\nChecking status of thorn TmunuBase\nChecking status of thorn Trigger\nChecking status of thorn TwoPunctures\nChecking status of thorn WatchDog\nChecking status of thorn WaveBinarySource\nChecking status of thorn WaveToy1DF77\nChecking status of thorn WaveToy2DF77\nChecking status of thorn WaveToyExtra\nChecking status of thorn CactusBindings\nChecking status of thorn CartGrid3D\nChecking status of thorn hwloc\nChecking status of thorn SpaceMask\nChecking status of thorn CalcK\nChecking status of thorn CarpetProlongateTest\nChecking status of thorn Cartoon2D\nChecking status of thorn Dissipation\nChecking status of thorn EHFinder\nChecking status of thorn EOS_Polytrope\nChecking status of thorn EllSOR\nChecking status of thorn IDBrillData\nChecking status of thorn IOJpeg\nChecking status of thorn ML_BSSN_Helper\nChecking status of thorn ML_CCZ4_Helper\nChecking status of thorn NullInterp\nChecking status of thorn TOVSolver\nChecking status of thorn TestFortranDependencies1\nChecking status of thorn WaveMoL\nChecking status of thorn WaveToyC\nChecking status of thorn WaveToyCXX\nChecking status of thorn WaveToyF77\nChecking status of thorn WaveToyF90\nChecking status of thorn WaveToyFreeF90\nChecking status of thorn ADMAnalysis\nChecking status of thorn ADMBase\nChecking status of thorn AHFinder\nChecking status of thorn MPI\nChecking status of thorn LoopControl\nChecking status of thorn EOS_Hybrid\nCOMPILING arrangements/EinsteinAnalysis/AHFinder/src/AHFinder_int.F\nChecking status of thorn PETSc\nCOMPILING arrangements/EinsteinAnalysis/AHFinder/src/AHFinder_min.F\n/opt/Cactus/configs/sim/build/AHFinder/AHFinder_min.f:75:10: Error: IF clause at (1) requires a scalar LOGICAL expression\n/opt/Cactus/configs/sim/config-data/make.config.rules:378: recipe for target 'AHFinder_min.F.o' failed\nmake[3]: *** [AHFinder_min.F.o] Error 1\nmake[3]: *** Waiting for unfinished jobs....\nChecking status of thorn PUGH\n/opt/Cactus/lib/make/make.thornlib:112: recipe for target 'make.checked' failed\nmake[2]: *** [make.checked] Error 2\n/opt/Cactus/lib/make/make.configuration:181: recipe for target '/opt/Cactus/configs/sim/lib/libthorn_AHFinder.a' failed\nmake[1]: *** [/opt/Cactus/configs/sim/lib/libthorn_AHFinder.a] Error 2\nmake[1]: *** Waiting for unfinished jobs....\nMakefile:256: recipe for target 'sim' failed\nmake: *** [sim] Error 2\n",
+      "stderr": ""
+    },
+    "test_result": {
+      "total_tests": 0,
+      "passed_tests": 0,
+      "failed_tests": 0,
+      "test_results": []
+    },
+    "score_result": {
+      "overall_score": 0.0,
+      "build_score": 0.0,
+      "test_run_score": 0.0,
+      "test_accuracy_score": 0.0,
+      "breakdown": {
+        "build_success": false,
+        "total_tests": 0,
+        "passed_tests": 0,
+        "failed_tests": 0,
+        "test_success_rate": 0.0,
+        "tests_attempted": false
+      },
+      "grade": "F"
+    },
+    "timestamp": "2025-09-26T13:34:12.435346",
+    "success": true
+  },
+  {
+    "worker_id": 0,
+    "example_index": 1,
+    "thorn_name": "CactusExamples/Poisson",
+    "src_filename": "make.code.defn",
+    "generated_code": "# Main make.code.defn file for thorn Poisson\n# Source files in this directory\nSRCS = uniform_charge.c\n\n# Subdirectories containing source files  \nSUBDIRS =",
+    "build_result": {
+      "success": false,
+      "return_code": -1,
+      "stdout": "",
+      "stderr": "Command timed out"
+    },
+    "test_result": {
+      "total_tests": 0,
+      "passed_tests": 0,
+      "failed_tests": 0,
+      "test_results": []
+    },
+    "score_result": {
+      "overall_score": 0.0,
+      "build_score": 0.0,
+      "test_run_score": 0.0,
+      "test_accuracy_score": 0.0,
+      "breakdown": {
+        "build_success": false,
+        "total_tests": 0,
+        "passed_tests": 0,
+        "failed_tests": 0,
+        "test_success_rate": 0.0,
+        "tests_attempted": false
+      },
+      "grade": "F"
+    },
+    "timestamp": "2025-09-26T13:39:18.376791",
+    "success": true
+  }
+]

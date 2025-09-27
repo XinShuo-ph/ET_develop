@@ -1,0 +1,249 @@
+[
+  {
+    "worker_id": 0,
+    "example_index": 0,
+    "thorn_name": "CactusExamples/Poisson",
+    "src_filename": "uniform_charge.c",
+    "generated_code": "#include <assert.h>\n#include <math.h>\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\n#include \"cctk.h\"\n#include \"cctk_Arguments.h\"\n#include \"cctk_Parameters.h\"\n\n#include \"util_Table.h\"\n\nvoid Poisson_prepare(CCTK_ARGUMENTS)\n{\n  DECLARE_CCTK_ARGUMENTS;\n  DECLARE_CCTK_PARAMETERS;\n  \n  int i, j, k;\n  int index;\n  \n  for (k = 0; k < cctk_lsh[2]; k++) {\n    for (j = 0; j < cctk_lsh[1]; j++) {\n      for (i = 0; i < cctk_lsh[0]; i++) {\n        index = CCTK_GFINDEX3D(cctkGH, i, j, k);\n        \n        phi[index] = 0.0;\n        res[index] = 0.0;\n      }\n    }\n  }\n}\n\nvoid Poisson_solve(CCTK_ARGUMENTS)\n{\n  DECLARE_CCTK_ARGUMENTS;\n  DECLARE_CCTK_PARAMETERS;\n  \n  int i, j, k;\n  int index;\n  CCTK_REAL x, y, z, r;\n  CCTK_REAL rho;\n  CCTK_REAL volume;\n  int ierr;\n  int options_table;\n  \n  volume = 4.0 * M_PI * radius * radius * radius / 3.0;\n  \n  for (k = 0; k < cctk_lsh[2]; k++) {\n    for (j = 0; j < cctk_lsh[1]; j++) {\n      for (i = 0; i < cctk_lsh[0]; i++) {\n        index = CCTK_GFINDEX3D(cctkGH, i, j, k);\n        \n        x = CCTK_ORIGIN_SPACE(0) + (cctk_lbnd[0] + i) * CCTK_DELTA_SPACE(0);\n        y = CCTK_ORIGIN_SPACE(1) + (cctk_lbnd[1] + j) * CCTK_DELTA_SPACE(1);\n        z = CCTK_ORIGIN_SPACE(2) + (cctk_lbnd[2] + k) * CCTK_DELTA_SPACE(2);\n        \n        r = sqrt(x*x + y*y + z*z);\n        \n        if (r <= radius) {\n          rho = charge / volume;\n        } else {\n          rho = 0.0;\n        }\n        \n        res[index] = rho;\n      }\n    }\n  }\n  \n  options_table = Util_TableCreateFromString(options);\n  if (options_table < 0) {\n    CCTK_WARN(0, \"Could not create options table\");\n  }\n  \n  ierr = TATelliptic_Solve(cctkGH, 3, \n                          &phi[0], &res[0],\n                          \"Poisson::potential\",\n                          \"Poisson::residual\",\n                          solver, options_table);\n  \n  if (ierr) {\n    CCTK_VWarn(0, __LINE__, __FILE__, CCTK_THORNSTRING,\n               \"TATelliptic_Solve failed with error code %d\", ierr);\n  }\n  \n  Util_TableDestroy(options_table);\n}\n\nvoid Poisson_boundaries_select(CCTK_ARGUMENTS)\n{\n  DECLARE_CCTK_ARGUMENTS;\n  DECLARE_CCTK_PARAMETERS;\n  \n  int ierr;\n  int faces = CCTK_ALL_FACES;\n  int boundary_width = 1;\n  int table_handle;\n  CCTK_REAL dirichlet_value = 0.0;\n  \n  table_handle = Util_TableCreate(UTIL_TABLE_FLAGS_DEFAULT);\n  if (table_handle < 0) {\n    CCTK_WARN(0, \"Could not create table for boundary conditions\");\n  }\n  \n  ierr = Util_TableSetReal(table_handle, dirichlet_value, \"DIRICHLET_VALUE\");\n  if (ierr < 0) {\n    CCTK_WARN(0, \"Could not set Dirichlet value in table\");\n  }\n  \n  ierr = Boundary_SelectGroupForBC(cctkGH, faces, boundary_width, table_handle,\n                                   \"Poisson::potential\", \"Dirichlet\");\n  if (ierr < 0) {\n    CCTK_VWarn(0, __LINE__, __FILE__, CCTK_THORNSTRING,\n               \"Failed to register Dirichlet boundary condition: %d\", ierr);\n  }\n  \n  Util_TableDestroy(table_handle);\n}",
+    "build_result": {
+      "success": false,
+      "return_code": 1,
+      "stdout": "... (line 2130) ...\n2130: Checking status of thorn PeriodicCarpet\n2131: Checking status of thorn Poisson\n2132: COMPILING arrangements/EinsteinInitialData/NoExcision/src/getlevelinfo.cc\n2133: COMPILING arrangements/CactusExamples/Poisson/src/uniform_charge.c\n2134: /opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c: In function 'Poisson_solve':\n2135: /opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:40:13: error: conflicting type qualifiers for 'x'\n2136:    CCTK_REAL x, y, z, r;\n2137:              ^\n2138: In file included from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:14:0,\n2139:                  from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_ScheduleFunctions.h:1,\n2140:                  from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk.h:6,\n... (line 2152) ...\n2152:  #define DECLARE_CCTK_ARGUMENTS DECLARE_POISSON_CARGUMENTS\n2153:                                 ^\n2154: /opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:35:3: note: in expansion of macro 'DECLARE_CCTK_ARGUMENTS'\n2155:    DECLARE_CCTK_ARGUMENTS;\n2156:    ^\n2157: /opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:40:16: error: conflicting type qualifiers for 'y'\n2158:    CCTK_REAL x, y, z, r;\n2159:                 ^\n2160: In file included from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:14:0,\n2161:                  from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_ScheduleFunctions.h:1,\n2162:                  from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk.h:6,\n... (line 2174) ...\n2174:  #define DECLARE_CCTK_ARGUMENTS DECLARE_POISSON_CARGUMENTS\n2175:                                 ^\n2176: /opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:35:3: note: in expansion of macro 'DECLARE_CCTK_ARGUMENTS'\n2177:    DECLARE_CCTK_ARGUMENTS;\n2178:    ^\n2179: /opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:40:19: error: conflicting type qualifiers for 'z'\n2180:    CCTK_REAL x, y, z, r;\n2181:                    ^\n2182: In file included from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:14:0,\n2183:                  from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_ScheduleFunctions.h:1,\n2184:                  from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk.h:6,\n... (line 2196) ...\n2196:  #define DECLARE_CCTK_ARGUMENTS DECLARE_POISSON_CARGUMENTS\n2197:                                 ^\n2198: /opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:35:3: note: in expansion of macro 'DECLARE_CCTK_ARGUMENTS'\n2199:    DECLARE_CCTK_ARGUMENTS;\n2200:    ^\n2201: /opt/Cactus/arrangements/CactusExamples/Poisson/src/uniform_charge.c:40:22: error: conflicting type qualifiers for 'r'\n2202:    CCTK_REAL x, y, z, r;\n2203:                       ^\n2204: In file included from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_Arguments.h:14:0,\n2205:                  from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk_ScheduleFunctions.h:1,\n2206:                  from /opt/Cactus/configs/sim/bindings/include/Poisson/cctk.h:6,",
+      "stderr": "Warning: default thorn list contents have changed"
+    },
+    "test_result": {
+      "total_tests": 0,
+      "passed_tests": 0,
+      "failed_tests": 0,
+      "test_results": []
+    },
+    "score_result": {
+      "overall_score": 0.0,
+      "build_score": 0.0,
+      "test_run_score": 0.0,
+      "test_accuracy_score": 0.0,
+      "breakdown": {
+        "build_success": false,
+        "total_tests": 0,
+        "passed_tests": 0,
+        "failed_tests": 0,
+        "test_success_rate": 0.0,
+        "tests_attempted": false
+      }
+    },
+    "timestamp": "2025-09-26T15:11:30.764758",
+    "success": true
+  },
+  {
+    "worker_id": 1,
+    "example_index": 1,
+    "thorn_name": "CactusExamples/Poisson",
+    "src_filename": "make.code.defn",
+    "generated_code": "# Main make.code.defn file for thorn Poisson\n# Source files in this directory\nSRCS = uniform_charge.c\n\n# Subdirectories containing source files  \nSUBDIRS =",
+    "build_result": {
+      "success": true,
+      "return_code": 0,
+      "stdout": "... (line 2134) ...\n2134: ar: `u' modifier ignored since `D' is the default (see `U')\n2135: Checking status of thorn TestCarpetGridInfo\n2136: Updating /opt/Cactus/configs/sim/lib/libthorn_NoExcision.a\n2137: ar: `u' modifier ignored since `D' is the default (see `U')\n2138: Creating cactus_sim in /opt/Cactus/exe from EinsteinAnalysis/ADMAnalysis EinsteinBase/ADMBase EinsteinAnalysis/ADMConstraints EinsteinBase/ADMCoupling EinsteinBase/ADMMacros EinsteinAnalysis/ADMMas...\n2139: Done creating cactus_sim.\n2140: All done !\n2141: Building utilities for sim\n2142: Building utilities for sim\n2143: Copying AH2xdmf from /opt/Cactus/arrangements/EinsteinAnalysis/AHFinderDirect/src/util/AH2xdmf.py to /opt/Cactus/exe/sim\n2144: Compiling /opt/Cactus/arrangements/Carpet/CarpetIOASCII/src/util/carpet2xgraph.c\n2145: Compiling /opt/Cactus/arrangements/Carpet/CarpetIOHDF5/src/util/hdf5toascii_slicer.cc\n... (line 2224) ...\n2224: Creating setmeta in /opt/Cactus/exe/sim from /opt/Cactus/configs/sim/build/SphericalHarmonicRecon/setmeta.o\n2225: Creating findlast in /opt/Cactus/exe/sim from /opt/Cactus/configs/sim/build/SphericalHarmonicRecon/findlast.o\n2226: Creating printtime in /opt/Cactus/exe/sim from /opt/Cactus/configs/sim/build/SphericalHarmonicRecon/printtime.o\n2227: Creating readmeta in /opt/Cactus/exe/sim from /opt/Cactus/configs/sim/build/SphericalHarmonicRecon/readmeta.o\n2228: Creating Riemann1d in /opt/Cactus/exe/sim from /opt/Cactus/configs/sim/build/GRHydro/Riemann1d.o\n2229: Done.",
+      "stderr": "Warning: default thorn list contents have changed"
+    },
+    "test_result": {
+      "success": true,
+      "message": "Ran 1 tests with smart numerical comparison",
+      "test_results": [
+        {
+          "test_name": "charge_tatelliptic_petsc",
+          "test_path": "CactusExamples/Poisson/test/charge_tatelliptic_petsc",
+          "success": true,
+          "comparison_message": "Directories match within tolerance",
+          "rtol": 1e-06,
+          "atol": 1e-12
+        }
+      ],
+      "total_tests": 1,
+      "passed_tests": 1,
+      "failed_tests": 0,
+      "rtol": 1e-06,
+      "atol": 1e-12
+    },
+    "score_result": {
+      "overall_score": 100.0,
+      "build_score": 40,
+      "test_run_score": 10,
+      "test_accuracy_score": 50.0,
+      "breakdown": {
+        "build_success": true,
+        "total_tests": 1,
+        "passed_tests": 1,
+        "failed_tests": 0,
+        "test_success_rate": 1.0,
+        "tests_attempted": true
+      }
+    },
+    "timestamp": "2025-09-26T15:11:42.893671",
+    "success": true
+  },
+  {
+    "worker_id": 2,
+    "example_index": 2,
+    "thorn_name": "CactusExamples/SampleBoundary",
+    "src_filename": "Register.c",
+    "generated_code": "/*@@\n   @file      Register.c\n   @date      6 May 2003\n   @author    David Rideout\n   @desc\n              Registration of boundary conditions provided by this thorn\n   @enddesc\n   @version   $Id$\n @@*/\n\n#include \"cctk.h\"\n#include \"cctk_Arguments.h\"\n#include \"cctk_Parameters.h\"\n\n#include \"SampleBnd.h\"\n\n/* the rcs ID and its dummy function to use it */\nstatic const char *rcsid = \"$Header$\";\nCCTK_FILEVERSION(CactusExamples_SampleBoundary_Register_c);\n\n/********************************************************************\n ********************    External Routines   ************************\n ********************************************************************/\n\n/*@@\n   @routine    SampleBoundary_RegisterBCs\n   @date       6 May 2003\n   @author     David Rideout\n   @desc\n               Register boundary conditions that this thorn provides\n   @enddesc\n\n   @calls      Boundary_RegisterPhysicalBC\n\n   @var        CCTK_ARGUMENTS\n   @vdesc      standard Cactus argument list\n   @vtype      various\n   @vio        in\n   @endvar\n\n   @returntype int\n   @returndesc\n               return code of @seeroutine Boundary_RegisterPhysicalBC <BR>\n               0 for success\n   @endreturndesc\n@@*/\n\nvoid SampleBoundary_RegisterBCs(CCTK_ARGUMENTS)\n{\n  DECLARE_CCTK_ARGUMENTS;\n  int ierr;\n\n  /* Register the linear extrapolation boundary condition */\n  ierr = Boundary_RegisterPhysicalBC(cctkGH, \n                                     (CCTK_INT (*) (CCTK_POINTER_TO_CONST,\n                                                    CCTK_INT,\n                                                    CCTK_INT *,\n                                                    CCTK_INT *,\n                                                    CCTK_INT *,\n                                                    CCTK_INT *)) BndLinExtrap,\n                                     \"LinearExtrap\");\n  if (ierr < 0)\n  {\n    CCTK_WARN(0, \"Failed to register LinearExtrap boundary condition\");\n  }\n}",
+    "build_result": {
+      "success": true,
+      "return_code": 0,
+      "stdout": "... (line 2146) ...\n2146: COMPILING arrangements/EinsteinInitialData/NoExcision/src/getlevelinfo.cc\n2147: Checking status of thorn TestCarpetGridInfo\n2148: Updating /opt/Cactus/configs/sim/lib/libthorn_NoExcision.a\n2149: ar: `u' modifier ignored since `D' is the default (see `U')\n2150: Creating cactus_sim in /opt/Cactus/exe from EinsteinAnalysis/ADMAnalysis EinsteinBase/ADMBase EinsteinAnalysis/ADMConstraints EinsteinBase/ADMCoupling EinsteinBase/ADMMacros EinsteinAnalysis/ADMMas...\n2151: Done creating cactus_sim.\n2152: All done !\n2153: Building utilities for sim\n2154: Building utilities for sim\n2155: Copying AH2xdmf from /opt/Cactus/arrangements/EinsteinAnalysis/AHFinderDirect/src/util/AH2xdmf.py to /opt/Cactus/exe/sim\n2156: Compiling /opt/Cactus/arrangements/Carpet/CarpetIOASCII/src/util/carpet2xgraph.c\n2157: Compiling /opt/Cactus/arrangements/Carpet/CarpetIOHDF5/src/util/hdf5toascii_slicer.cc\n... (line 2236) ...\n2236: Creating setmeta in /opt/Cactus/exe/sim from /opt/Cactus/configs/sim/build/SphericalHarmonicRecon/setmeta.o\n2237: Creating findlast in /opt/Cactus/exe/sim from /opt/Cactus/configs/sim/build/SphericalHarmonicRecon/findlast.o\n2238: Creating printtime in /opt/Cactus/exe/sim from /opt/Cactus/configs/sim/build/SphericalHarmonicRecon/printtime.o\n2239: Creating readmeta in /opt/Cactus/exe/sim from /opt/Cactus/configs/sim/build/SphericalHarmonicRecon/readmeta.o\n2240: Creating Riemann1d in /opt/Cactus/exe/sim from /opt/Cactus/configs/sim/build/GRHydro/Riemann1d.o\n2241: Done.",
+      "stderr": "Warning: default thorn list contents have changed"
+    },
+    "test_result": {
+      "success": false,
+      "message": "Ran 1 tests with smart numerical comparison",
+      "test_results": [
+        {
+          "test_name": "wavetoyc",
+          "test_path": "CactusExamples/SampleBoundary/test/wavetoyc",
+          "success": false,
+          "error": "Simulation failed with code 1"
+        }
+      ],
+      "total_tests": 1,
+      "passed_tests": 0,
+      "failed_tests": 1,
+      "rtol": 1e-06,
+      "atol": 1e-12
+    },
+    "score_result": {
+      "overall_score": 50.0,
+      "build_score": 40,
+      "test_run_score": 10,
+      "test_accuracy_score": 0.0,
+      "breakdown": {
+        "build_success": true,
+        "total_tests": 1,
+        "passed_tests": 0,
+        "failed_tests": 1,
+        "test_success_rate": 0.0,
+        "tests_attempted": true
+      }
+    },
+    "timestamp": "2025-09-26T15:11:51.065299",
+    "success": true
+  },
+  {
+    "worker_id": 3,
+    "example_index": 3,
+    "thorn_name": "CactusExamples/SampleBoundary",
+    "src_filename": "SampleBnd.h",
+    "generated_code": "/*@@\n   @header    SampleBnd.h\n   @date      6 May 2003\n   @author    David Rideout\n   @desc \n              Header file for SampleBoundary thorn\n   @enddesc \n   @version   $Header$\n @@*/\n\n#ifndef _SAMPLEBND_H_\n#define _SAMPLEBND_H_\n\n#include \"cctk.h\"\n\n#ifdef __cplusplus\nextern \"C\" \n{\n#endif\n\n/* Function pointer type for physical boundary condition functions */\ntypedef int (*phys_bc_fn_ptr)(const cGH *GH, \n                              int num_vars, \n                              int *var_indices, \n                              int *faces, \n                              int *boundary_widths, \n                              int *table_handles);\n\n/* Scheduled function prototypes */\nvoid SampleBoundary_RegisterBCs(CCTK_ARGUMENTS);\n\n/* Boundary condition function prototypes */\nint BndLinExtrap(const cGH *GH, \n                 int num_vars, \n                 int *vars, \n                 int *faces, \n                 int *widths, \n                 int *tables);\n\n/* Fortran routine prototype */\nvoid CCTK_FCALL CCTK_FNAME(Linear_extrap_one_bndry)(int *doBC, \n                                                    const int *lsh, \n                                                    CCTK_REAL *var_ptr);\n\n#ifdef __cplusplus\n}\n#endif\n\n#endif /* _SAMPLEBND_H_ */",
+    "build_result": {
+      "success": false,
+      "return_code": 1,
+      "stdout": "... (line 1927) ...\n1927: Checking status of thorn SampleBoundary\n1928: Checking status of thorn SampleIO\n1929: Checking status of thorn Seed_Magnetic_Fields\n1930: COMPILING arrangements/CactusExamples/SampleBoundary/src/Register.c\n1931: In file included from /opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/Register.c:13:0:\n1932: /opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/SampleBnd.h:41:17: error: 'CCTK_FNAME' declared as function returning a function\n1933:  void CCTK_FCALL CCTK_FNAME(Linear_extrap_one_bndry)(int *doBC,\n1934:                  ^\n1935: /opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/SampleBnd.h:43:53: warning: parameter names (without types) in function declaration\n1936:                                                      CCTK_REAL *var_ptr);\n1937:                                                      ^",
+      "stderr": "Warning: default thorn list contents have changed"
+    },
+    "test_result": {
+      "total_tests": 0,
+      "passed_tests": 0,
+      "failed_tests": 0,
+      "test_results": []
+    },
+    "score_result": {
+      "overall_score": 0.0,
+      "build_score": 0.0,
+      "test_run_score": 0.0,
+      "test_accuracy_score": 0.0,
+      "breakdown": {
+        "build_success": false,
+        "total_tests": 0,
+        "passed_tests": 0,
+        "failed_tests": 0,
+        "test_success_rate": 0.0,
+        "tests_attempted": false
+      }
+    },
+    "timestamp": "2025-09-26T15:10:36.256284",
+    "success": true
+  },
+  {
+    "worker_id": 4,
+    "example_index": 4,
+    "thorn_name": "CactusExamples/SampleBoundary",
+    "src_filename": "LinearExtrapBnd.c",
+    "generated_code": "/*@@\n   @file      LinearExtrapBnd.c\n   @date      6 May 2003\n   @author    David Rideout\n   @desc \n              C wrapper for linear extrapolation boundary condition\n   @enddesc \n   @version   $Header$\n @@*/\n\n#include \"cctk.h\"\n#include \"cctk_Arguments.h\"\n#include \"cctk_Parameters.h\"\n#include \"SampleBnd.h\"\n\nstatic const char *rcsid = \"$Header$\";\n\nCCTK_FILEVERSION(CactusExamples_SampleBoundary_LinearExtrapBnd_c);\n\n/* Fortran routine prototype */\nvoid CCTK_FCALL CCTK_FNAME(Linear_extrap_one_bndry)(int *doBC, int *lsh, CCTK_REAL *var);\n\n/*@@\n   @routine    BndLinExtrap\n   @date       6 May 2003\n   @author     David Rideout\n   @desc \n               Apply linear extrapolation boundary condition to a set of variables\n   @enddesc \n   @calls      Linear_extrap_one_bndry\n   @history \n   @endhistory\n   @var        GH\n   @vdesc      Pointer to CCTK grid hierarchy\n   @vtype      const CCTK_POINTER_TO_CONST\n   @vio        in\n   @endvar\n   @var        num_vars\n   @vdesc      Number of variables to apply boundary condition to\n   @vtype      const CCTK_INT\n   @vio        in\n   @endvar\n   @var        var_indices\n   @vdesc      Array of variable indices\n   @vtype      const CCTK_INT *\n   @vio        in\n   @endvar\n   @var        faces\n   @vdesc      Array of face flags\n   @vtype      const CCTK_INT *\n   @vio        in\n   @endvar\n   @var        widths\n   @vdesc      Array of boundary widths\n   @vtype      const CCTK_INT *\n   @vio        in\n   @endvar\n   @var        table_handles\n   @vdesc      Array of table handles\n   @vtype      const CCTK_INT *\n   @vio        in\n   @endvar\n   @returntype int\n   @returndesc\n               0 for success, negative for error\n   @endreturndesc\n@@*/\n\nint BndLinExtrap(const CCTK_POINTER_TO_CONST GH, const CCTK_INT num_vars, \n                 const CCTK_INT *var_indices, const CCTK_INT *faces, \n                 const CCTK_INT *widths, const CCTK_INT *table_handles)\n{\n  const cGH *cctkGH = (const cGH *) GH;\n  int i, j;\n  int var_index;\n  int doBC[6];\n  int lsh[3];\n  CCTK_REAL *var_ptr;\n  int retval = 0;\n\n  /* Check that we have a 3D grid */\n  if (cctkGH->cctk_dim != 3)\n  {\n    CCTK_VWarn(1, __LINE__, __FILE__, CCTK_THORNSTRING,\n               \"LinearExtrap boundary condition only works in 3D\");\n    return -1;\n  }\n\n  /* Check that the grid has at least 3 points in each direction */\n  if (cctkGH->cctk_lsh[0] < 3 || cctkGH->cctk_lsh[1] < 3 || cctkGH->cctk_lsh[2] < 3)\n  {\n    CCTK_VWarn(1, __LINE__, __FILE__, CCTK_THORNSTRING,\n               \"LinearExtrap boundary condition requires at least 3 grid points \"\n               \"in each direction\");\n    return -2;\n  }\n\n  /* Set up local grid size */\n  for (i = 0; i < 3; i++)\n  {\n    lsh[i] = cctkGH->cctk_lsh[i];\n  }\n\n  /* Loop over all variables */\n  for (i = 0; i < num_vars; i++)\n  {\n    var_index = var_indices[i];\n    \n    /* Check for valid variable index */\n    if (var_index < 0)\n    {\n      CCTK_VWarn(1, __LINE__, __FILE__, CCTK_THORNSTRING,\n                 \"Invalid variable index %d\", var_index);\n      retval = -3;\n      continue;\n    }\n\n    /* Get pointer to variable data */\n    var_ptr = (CCTK_REAL *) CCTK_VarDataPtrI(cctkGH, 0, var_index);\n    if (!var_ptr)\n    {\n      CCTK_VWarn(1, __LINE__, __FILE__, CCTK_THORNSTRING,\n                 \"Cannot get data pointer for variable index %d\", var_index);\n      retval = -4;\n      continue;\n    }\n\n    /* Check that variable is CCTK_REAL */\n    if (CCTK_VarTypeI(var_index) != CCTK_VARIABLE_REAL)\n    {\n      CCTK_VWarn(1, __LINE__, __FILE__, CCTK_THORNSTRING,\n                 \"LinearExtrap boundary condition only supports CCTK_REAL variables\");\n      retval = -5;\n      continue;\n    }\n\n    /* Set up face flags - determine which faces to apply BC to */\n    for (j = 0; j < 6; j++)\n    {\n      doBC[j] = 0;\n    }\n\n    /* If faces array is provided, use it to determine which faces to apply BC to */\n    if (faces)\n    {\n      /* faces array contains flags for each face */\n      for (j = 0; j < 6; j++)\n      {\n        if (j < 6 && faces[6*i + j])\n        {\n          doBC[j] = 1;\n        }\n      }\n    }\n    else\n    {\n      /* Apply to all faces if no face specification is given */\n      for (j = 0; j < 6; j++)\n      {\n        doBC[j] = 1;\n      }\n    }\n\n    /* Call the Fortran routine to do the actual work */\n    CCTK_FNAME(Linear_extrap_one_bndry)(doBC, lsh, var_ptr);\n  }\n\n  return retval;\n}",
+    "build_result": {
+      "success": true,
+      "return_code": 0,
+      "stdout": "... (line 2135) ...\n2135: COMPILING arrangements/EinsteinInitialData/NoExcision/src/getlevelinfo.cc\n2136: Checking status of thorn TestCarpetGridInfo\n2137: Updating /opt/Cactus/configs/sim/lib/libthorn_NoExcision.a\n2138: ar: `u' modifier ignored since `D' is the default (see `U')\n2139: Creating cactus_sim in /opt/Cactus/exe from EinsteinAnalysis/ADMAnalysis EinsteinBase/ADMBase EinsteinAnalysis/ADMConstraints EinsteinBase/ADMCoupling EinsteinBase/ADMMacros EinsteinAnalysis/ADMMas...\n2140: Done creating cactus_sim.\n2141: All done !\n2142: Building utilities for sim\n2143: Building utilities for sim\n2144: Copying AH2xdmf from /opt/Cactus/arrangements/EinsteinAnalysis/AHFinderDirect/src/util/AH2xdmf.py to /opt/Cactus/exe/sim\n2145: Compiling /opt/Cactus/arrangements/Carpet/CarpetIOASCII/src/util/carpet2xgraph.c\n2146: Compiling /opt/Cactus/arrangements/Carpet/CarpetIOHDF5/src/util/hdf5toascii_slicer.cc\n... (line 2225) ...\n2225: Creating setmeta in /opt/Cactus/exe/sim from /opt/Cactus/configs/sim/build/SphericalHarmonicRecon/setmeta.o\n2226: Creating findlast in /opt/Cactus/exe/sim from /opt/Cactus/configs/sim/build/SphericalHarmonicRecon/findlast.o\n2227: Creating printtime in /opt/Cactus/exe/sim from /opt/Cactus/configs/sim/build/SphericalHarmonicRecon/printtime.o\n2228: Creating readmeta in /opt/Cactus/exe/sim from /opt/Cactus/configs/sim/build/SphericalHarmonicRecon/readmeta.o\n2229: Creating Riemann1d in /opt/Cactus/exe/sim from /opt/Cactus/configs/sim/build/GRHydro/Riemann1d.o\n2230: Done.",
+      "stderr": "Warning: default thorn list contents have changed"
+    },
+    "test_result": {
+      "success": false,
+      "message": "Ran 1 tests with smart numerical comparison",
+      "test_results": [
+        {
+          "test_name": "wavetoyc",
+          "test_path": "CactusExamples/SampleBoundary/test/wavetoyc",
+          "success": false,
+          "comparison_message": "File phi_3D_diagonal.xg:\nLine 36: '3.8971143170300\t\t0.0000000000000' != '3.8971143170300\t\t0.1147438523199'\nLine 53: '3.3774990747593\t\t0.1834789746868' != '3.3774990747593\t\t0.2332458551223'\nLine 54: '3.8971143170300\t\t0.1362019299447' != '3.8971143170300\t\t0.1174050741283'\nLine 70: '2.8578838324886\t\t0.3280736698044' != '2.8578838324886\t\t0.3444364169039'\nLine 71: '3.3774990747593\t\t0.1583183990117' != '3.3774990747593\t\t0.2331730662156'\nLine 72: '3.8971143170300\t\t0.1442399532978' != '3.8971143170300\t\t...",
+          "rtol": 1e-06,
+          "atol": 1e-12
+        }
+      ],
+      "total_tests": 1,
+      "passed_tests": 0,
+      "failed_tests": 1,
+      "rtol": 1e-06,
+      "atol": 1e-12
+    },
+    "score_result": {
+      "overall_score": 50.0,
+      "build_score": 40,
+      "test_run_score": 10,
+      "test_accuracy_score": 0.0,
+      "breakdown": {
+        "build_success": true,
+        "total_tests": 1,
+        "passed_tests": 0,
+        "failed_tests": 1,
+        "test_success_rate": 0.0,
+        "tests_attempted": true
+      }
+    },
+    "timestamp": "2025-09-26T15:12:02.173241",
+    "success": true
+  },
+  {
+    "worker_id": 5,
+    "example_index": 5,
+    "thorn_name": "CactusExamples/SampleBoundary",
+    "src_filename": "make.code.defn",
+    "generated_code": "# Main make.code.defn file for thorn SampleBoundary\n# Source files in this directory\nSRCS = Register.c LinearExtrapBnd.c\n\n# Subdirectories containing source files  \nSUBDIRS =",
+    "build_result": {
+      "success": false,
+      "return_code": 1,
+      "stdout": "... (line 2136) ...\n2136: Updating /opt/Cactus/configs/sim/lib/libthorn_NoExcision.a\n2137: ar: `u' modifier ignored since `D' is the default (see `U')\n2138: Creating cactus_sim in /opt/Cactus/exe from EinsteinAnalysis/ADMAnalysis EinsteinBase/ADMBase EinsteinAnalysis/ADMConstraints EinsteinBase/ADMCoupling EinsteinBase/ADMMacros EinsteinAnalysis/ADMMas...\n2139: /opt/Cactus/configs/sim/lib/libthorn_SampleBoundary.a(LinearExtrapBnd.c.o): In function `BndLinExtrap':\n2140: /opt/Cactus/arrangements/CactusExamples/SampleBoundary/src/LinearExtrapBnd.c:234: undefined reference to `linear_extrap_one_bndry_'\n2141: collect2: error: ld returned 1 exit status\n2142: /opt/Cactus/lib/make/make.configuration:149: recipe for target '/opt/Cactus/exe/cactus_sim' failed\n2143: make[1]: *** [/opt/Cactus/exe/cactus_sim] Error 1\n2144: Makefile:256: recipe for target 'sim' failed\n2145: make: *** [sim] Error 2",
+      "stderr": "Warning: default thorn list contents have changed"
+    },
+    "test_result": {
+      "total_tests": 0,
+      "passed_tests": 0,
+      "failed_tests": 0,
+      "test_results": []
+    },
+    "score_result": {
+      "overall_score": 0.0,
+      "build_score": 0.0,
+      "test_run_score": 0.0,
+      "test_accuracy_score": 0.0,
+      "breakdown": {
+        "build_success": false,
+        "total_tests": 0,
+        "passed_tests": 0,
+        "failed_tests": 0,
+        "test_success_rate": 0.0,
+        "tests_attempted": false
+      }
+    },
+    "timestamp": "2025-09-26T15:11:25.854477",
+    "success": true
+  }
+]

@@ -1,0 +1,42 @@
+You are an expert C/C++ developer working on EinsteinToolkit, a codebase for numerical relativity simulations.
+
+Create C/C++ code for the file `{src_filename}` in thorn `{thorn_name}`.
+
+## Thorn Information:
+- Name: {thorn_name}
+- Target file: {src_filename}
+
+## Interface Definition in interface.ccl:
+```
+{interface}
+```
+
+## Schedule Definition in schedule.ccl:
+```
+{schedule}
+```
+
+## Parameters Definition in param.ccl:
+```
+{param}
+```
+
+## Configuration Definition in configuration.ccl:
+```
+{configuration}
+```
+
+{doc_context_section}
+
+## Related Code Context:
+
+{context}
+
+
+## Instructions:
+Generate only the complete C/C++ source code for `{src_filename}`. Include necessary headers, functions, and follow EinsteinToolkit conventions. 
+
+
+IMPORTANT: Return ONLY the raw C/C++ source code. Do NOT use markdown code blocks (```c or ```). Do NOT include any explanations, comments outside the code, or formatting. Just return the plain C/C++ source code that can be directly saved to a .c file.
+
+Code:
